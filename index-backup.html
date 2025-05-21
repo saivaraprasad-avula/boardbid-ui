@@ -6,8 +6,7 @@
     <title>BoardBid.ai | DSP for Digital Billboards</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -35,50 +34,28 @@
       body {
         font-family: 'Inter', sans-serif;
       }
-      #yellow-light-wrapper {
-        transition: opacity 1s ease;
-        }
-
     </style>
   </head>
   <body class="bg-white text-gray-800">
+    <!-- Hero -->
+    <section class="relative min-h-screen bg-white flex flex-col justify-center items-center text-center overflow-hidden">
+      <div class="z-10">
+        <img src="assets/logo.png" alt="BoardBid Logo" class="h-48 mx-auto mb-6">
+        <p class="text-xl max-w-2xl text-gray-600 mx-auto mb-6">
+          A Demand-Side Platform empowering small businesses to discover, bid & launch digital billboard campaigns across the USA and beyond.
+        </p>
+        <a href="mailto:founders@boardbid.ai"
+           class="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-xl shadow hover:scale-105 transition duration-300">
+          Request Access
+        </a>
+      </div>
+    
+      <!-- Particle crowd at bottom -->
+      <div id="crowd-canvas" class="absolute bottom-0 w-full h-[30vh] z-0"></div>
+    </section>
+    
 
-    <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex flex-col justify-center items-center px-6 text-center bg-white transition-colors duration-1000">
-        <div class="animate-slideUp mb-12 mt-24">
-          <img src="assets/logo.png" alt="BoardBid Logo" class="h-30 md:h-36 mb-12 animate-fadeIn mx-auto">
-          <p class="text-xl md:text-2xl max-w-2xl text-gray-600 mb-6 animate-fadeIn">A Demand-Side Platform empowering small businesses to discover, bid & launch digital billboard campaigns across the USA and beyond.</p>
-          <a href="mailto:founders@boardbid.ai" class="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-xl shadow hover:scale-105 hover:bg-emerald-400 transition duration-300">Request Access</a>
-        </div>
-      
-                <!-- Yellow Light Animation (below CTA, above scroll) -->
-        <div id="yellow-light-wrapper" class="transition-opacity duration-700">
-            <lottie-player
-            id="yellow-light"
-            src="assets/yellow-light.json"
-            background="transparent"
-            speed="1"
-            style="width: 100px; height: 100px;"
-            autoplay
-            loop="false"
-            ></lottie-player>
-        </div>
-        
-        <!-- Scroll Down Animation (initially hidden) -->
-        <div id="scroll-indicator" class="mt-8 animate-bounce transition-opacity duration-500">
-            <lottie-player
-            src="assets/scroll-down.json"
-            background="transparent"
-            speed="1"
-            style="width: 100px; height: 100px; margin: 0 auto;"
-            autoplay
-            loop
-            ></lottie-player>
-        </div>
-
-      </section>
-      
-  
+    
 
     <!-- How It Works -->
     <section class="py-20 px-6 text-center bg-gray-50 animate-fadeIn mb-24">
@@ -195,5 +172,38 @@
       <a href="mailto:founders@boardbid.ai" class="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-xl hover:scale-105 hover:bg-emerald-400 transition duration-300">Request Access</a>
     </footer>
 
+    <script>
+      tsParticles.load("crowd-canvas", {
+        fullScreen: false,
+        background: {
+          color: "#ffffff",
+        },
+        particles: {
+          number: {
+            value: 1000,
+            density: { enable: true, area: 2000 }
+          },
+          color: { value: "#333" },
+          shape: {
+            type: "circle" // could be 'image' if you want tiny person icon
+          },
+          opacity: {
+            value: 0.7,
+            random: true
+          },
+          size: {
+            value: 2,
+            random: true
+          },
+          move: {
+            enable: true,
+            speed: 0.5,
+            direction: "right",
+            outModes: { default: "out" }
+          }
+        }
+      });
+    </script>
+    
   </body>
 </html>
