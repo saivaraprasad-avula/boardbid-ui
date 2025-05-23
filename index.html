@@ -3,23 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BoardBid.ai | DSP for Digital Billboards</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>BoardBid.ai | Programmatic DOOH & Digital Billboard Advertising</title>
+    <meta name="description" content="BoardBid.ai helps brands launch programmatic DOOH campaigns with AI-powered strategy, real-time pricing, and zero agency friction." />
+  
     <!-- Favicon and Web App Meta -->
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="manifest" href="assets/site.webmanifest">
-    <meta name="theme-color" content="#10b981">
-    
+    <meta name="theme-color" content="#0ea5e9" />
+  
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="BoardBid.ai | Programmatic DOOH & Digital Billboard Advertising" />
+    <meta property="og:description" content="Run smarter outdoor campaigns with AI. Targeted, real-time, and fully automated." />
+    <meta property="og:image" content="https://boardbid.ai/assets/logo.png" />
+    <meta property="og:url" content="https://boardbid.ai" />
+    <meta name="twitter:card" content="summary_large_image" />
+  
+    <!-- Keywords for SEO -->
+    <meta name="keywords" content="programmatic DOOH, digital billboard advertising, AI advertising platform, outdoor campaigns, real-time ad bidding, DSP for brands, place-based media, BoardBid.ai" />
+  
+    <!-- Fonts and Scripts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="main.js"></script>
+  
+    <!-- Tailwind Config -->
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            colors: {
+              brand: '#0ea5e9'
+            },
             animation: {
               fadeIn: 'fadeIn 1.5s ease-in-out',
               slideUp: 'slideUp 1s ease-out',
@@ -39,13 +57,74 @@
         }
       }
     </script>
+
     <style>
       body {
         font-family: 'Inter', sans-serif;
       }
 
+      @media (max-width: 640px) {
+        h1 {
+          font-size: 1.5rem !important;
+          line-height: 2.25rem !important;
+        }
+
+        .text-base {
+          font-size: 0.95rem !important;
+        }
+
+        .md\:text-lg {
+          font-size: 1rem !important;
+        }
+
+        .px-6 {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+
+        .py-20 {
+          padding-top: 3rem !important;
+          padding-bottom: 3rem !important;
+        }
+
+        .h-28 {
+          height: 5rem !important;
+        }
+
+        .md\:h-36 {
+          height: 5rem !important;
+        }
+
+        .gap-10 {
+          gap: 1.25rem !important;
+        }
+
+        .grid-cols-1.md\:grid-cols-5 {
+          grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        }
+
+        .md\:grid-cols-3 {
+          grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        }
+
+        .text-3xl {
+          font-size: 1.875rem !important;
+          line-height: 2.25rem !important;
+        }
+
+        .text-2xl {
+          font-size: 1.5rem !important;
+          line-height: 2rem !important;
+        }
+
+        .text-xl {
+          font-size: 1.25rem !important;
+          line-height: 1.75rem !important;
+        }
+      }
     </style>
   </head>
+  
   <body class="bg-white text-gray-800">
 
     <!-- Sticky Header -->
@@ -65,11 +144,27 @@
 
     <!-- Hero Section -->
     <section id="hero" class="relative min-h-screen flex flex-col justify-center items-center px-6 text-center bg-white transition-colors duration-1000">
-      <div class="animate-fadeIn mt-24 mb-12 transition-opacity duration-1000">
-        <img src="assets/logo.png" alt="BoardBid Logo" class="h-30 md:h-36 mb-12 animate-fadeIn mx-auto">
-        <p class="text-xl md:text-2xl max-w-2xl text-gray-600 mb-6 animate-fadeIn">A Demand-Side Platform empowering businesses to discover, bid & launch digital billboard campaigns through simplified programmatic DOOH.</p>
-        <a href="mailto:founders@boardbid.ai" class="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-xl shadow hover:scale-105 hover:bg-emerald-400 transition duration-300">Request Access</a>
+      <div class="animate-fadeIn mt-20 mb-10 transition-opacity duration-1000 max-w-xl mx-auto">
+        <!-- Logo -->
+        <img src="assets/logo.png" alt="BoardBid Logo" class="h-28 md:h-36 mb-6 mx-auto drop-shadow-md">
+    
+        <!-- Headline -->
+        <h1 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4 leading-tight">
+          Programmatic DOOH advertising <br class="hidden md:inline"> for ambitious brands
+        </h1>
+    
+        <!-- Subheading -->
+        <p class="text-base md:text-lg text-gray-800 leading-relaxed mb-5 max-w-2xl mx-auto">
+          From launch to IPO, plan and book impactful billboard campaigns with
+          <span class="text-green-600 font-semibold">AI-powered strategy</span>,
+          <span class="text-green-600 font-semibold">real-time pricing</span>, and
+          <span class="text-green-600 font-semibold">zero agency friction</span>.
+        </p>
+    
+        <!-- CTA -->
+        <br><a href="mailto:founders@boardbid.ai" class="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-xl hover:scale-105 hover:bg-emerald-400 transition duration-300">Request Access</a>
       </div>
+    
       <!-- Scroll Down Animation -->
       <div id="scroll-indicator" class="mt-12 animate-bounce transition-opacity duration-700 opacity-0">
         <lottie-player
@@ -82,6 +177,7 @@
         ></lottie-player>
       </div>
     </section>
+    
   
 
     <!-- How It Works -->
@@ -237,12 +333,7 @@
 
     <!-- Social Icons -->
     <div class="flex gap-6">
-      <a href="https://twitter.com/boardbid" target="_blank" aria-label="Twitter">
-        <svg class="w-6 h-6 text-gray-600 hover:text-blue-600 transition" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.28 4.28 0 001.88-2.37 8.6 8.6 0 01-2.71 1.04A4.26 4.26 0 0016.11 4c-2.4 0-4.34 1.95-4.34 4.36 0 .34.04.67.1.98C7.69 9.15 4.07 7.1 1.67 4.1a4.36 4.36 0 00-.59 2.2c0 1.52.77 2.86 1.95 3.64A4.27 4.27 0 012 9.15v.05a4.36 4.36 0 003.48 4.27c-.4.11-.84.16-1.29.16-.31 0-.62-.03-.92-.08a4.35 4.35 0 004.06 3.03A8.56 8.56 0 012 19.54a12.06 12.06 0 006.56 1.93c7.88 0 12.2-6.54 12.2-12.21 0-.19 0-.38-.01-.57A8.66 8.66 0 0024 5.15a8.42 8.42 0 01-2.54.7z" />
-        </svg>
-      </a>
-      <a href="https://linkedin.com/company/boardbid" target="_blank" aria-label="LinkedIn">
+      <a href="https://linkedin.com/company/boardbid-ai" target="_blank" aria-label="LinkedIn">
         <svg class="w-6 h-6 text-gray-600 hover:text-blue-800 transition" fill="currentColor" viewBox="0 0 24 24">
           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.266c-.966 0-1.75-.786-1.75-1.754s.784-1.754 1.75-1.754c.965 0 1.75.786 1.75 1.754s-.785 1.754-1.75 1.754zm13.5 11.266h-3v-5.604c0-1.336-.026-3.054-1.861-3.054-1.862 0-2.147 1.454-2.147 2.958v5.7h-3v-10h2.882v1.364h.041c.402-.762 1.381-1.563 2.843-1.563 3.04 0 3.604 2.001 3.604 4.601v5.598z" />
         </svg>
