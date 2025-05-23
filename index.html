@@ -1,129 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BoardBid.ai | Programmatic DOOH & Digital Billboard Advertising</title>
-    <meta name="description" content="BoardBid.ai helps brands launch programmatic DOOH campaigns with AI-powered strategy, real-time pricing, and zero agency friction." />
-  
-    <!-- Favicon and Web App Meta -->
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="assets/site.webmanifest">
-    <meta name="theme-color" content="#0ea5e9" />
-  
-    <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="BoardBid.ai | Programmatic DOOH & Digital Billboard Advertising" />
-    <meta property="og:description" content="Run smarter outdoor campaigns with AI. Targeted, real-time, and fully automated." />
-    <meta property="og:image" content="https://boardbid.ai/assets/logo.png" />
-    <meta property="og:url" content="https://boardbid.ai" />
-    <meta name="twitter:card" content="summary_large_image" />
-  
-    <!-- Keywords for SEO -->
-    <meta name="keywords" content="programmatic DOOH, digital billboard advertising, AI advertising platform, outdoor campaigns, real-time ad bidding, DSP for brands, place-based media, BoardBid.ai" />
-  
-    <!-- Fonts and Scripts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="main.js"></script>
-  
-    <!-- Tailwind Config -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: '#0ea5e9'
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BoardBid.ai | Programmatic DOOH & Digital Billboard Advertising</title>
+  <meta name="description" content="BoardBid.ai helps brands launch programmatic DOOH campaigns with AI-powered strategy, real-time pricing, and zero agency friction." />
+
+  <!-- SEO -->
+  <meta name="keywords" content="programmatic DOOH, digital billboard advertising, AI advertising platform, outdoor campaigns, real-time ad bidding, DSP for brands, place-based media, BoardBid.ai" />
+
+  <!-- Favicon and App Meta -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BoardBid.ai | Programmatic DOOH & Digital Billboard Advertising" />
+  <meta property="og:description" content="Run smarter outdoor campaigns with AI. Targeted, real-time, and fully automated." />
+  <meta property="og:image" content="https://boardbid.ai/assets/logo.png" />
+  <meta property="og:url" content="https://boardbid.ai" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Preload logo for LCP boost -->
+  <link rel="preload" as="image" href="assets/logo.png" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#0ea5e9'
+          },
+          animation: {
+            fadeIn: 'fadeIn 1.5s ease-in-out',
+            slideUp: 'slideUp 1s ease-out',
+            pulseSlow: 'pulse 4s infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 },
             },
-            animation: {
-              fadeIn: 'fadeIn 1.5s ease-in-out',
-              slideUp: 'slideUp 1s ease-out',
-              pulseSlow: 'pulse 4s infinite',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: 0 },
-                '100%': { opacity: 1 },
-              },
-              slideUp: {
-                '0%': { opacity: 0, transform: 'translateY(40px)' },
-                '100%': { opacity: 1, transform: 'translateY(0)' },
-              }
+            slideUp: {
+              '0%': { opacity: 0, transform: 'translateY(40px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
             }
           }
         }
       }
-    </script>
+    }
+  </script>
 
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
+  <!-- Defer JS -->
+  <script defer src="main.js"></script>
+  <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-      @media (max-width: 640px) {
-        h1 {
-          font-size: 1.5rem !important;
-          line-height: 2.25rem !important;
-        }
+  <!-- Prevent scroll jump on reload -->
+  <style>
+    html, body {
+      scroll-behavior: auto !important;
+      overscroll-behavior: none;
+    }
+    body.prevent-scroll-jump {
+      overflow: hidden;
+    }
+  </style>
+</head>
 
-        .text-base {
-          font-size: 0.95rem !important;
-        }
-
-        .md\:text-lg {
-          font-size: 1rem !important;
-        }
-
-        .px-6 {
-          padding-left: 1rem !important;
-          padding-right: 1rem !important;
-        }
-
-        .py-20 {
-          padding-top: 3rem !important;
-          padding-bottom: 3rem !important;
-        }
-
-        .h-28 {
-          height: 5rem !important;
-        }
-
-        .md\:h-36 {
-          height: 5rem !important;
-        }
-
-        .gap-10 {
-          gap: 1.25rem !important;
-        }
-
-        .grid-cols-1.md\:grid-cols-5 {
-          grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-        }
-
-        .md\:grid-cols-3 {
-          grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-        }
-
-        .text-3xl {
-          font-size: 1.875rem !important;
-          line-height: 2.25rem !important;
-        }
-
-        .text-2xl {
-          font-size: 1.5rem !important;
-          line-height: 2rem !important;
-        }
-
-        .text-xl {
-          font-size: 1.25rem !important;
-          line-height: 1.75rem !important;
-        }
-      }
-    </style>
-  </head>
+  
+  
   
   <body class="bg-white text-gray-800">
 
@@ -167,7 +124,7 @@
       </div>
     
       <!-- Scroll Down Animation -->
-      <div id="scroll-indicator" class="mt-12 animate-bounce transition-opacity duration-700 opacity-0">
+      <a href="#how-it-works" class="mt-12 animate-bounce opacity-100 hover:opacity-80 transition duration-700 block">
         <lottie-player
           src="assets/scroll-down.json"
           background="transparent"
@@ -176,13 +133,14 @@
           autoplay
           loop
         ></lottie-player>
-      </div>
+      </a>
+
     </section>
     
   
 
     <!-- How It Works -->
-    <section class="py-20 px-6 text-center bg-gray-50 animate-fadeIn mb-24">
+    <section id="how-it-works" class="py-20 px-6 text-center bg-gray-50 animate-fadeIn mb-24">
       <h2 class="text-3xl font-bold mb-12 animate-slideUp">How It Works</h2>
       <div class="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
     
