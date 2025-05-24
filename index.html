@@ -32,7 +32,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Preload logo for LCP boost -->
-  <link rel="preload" as="image" href="assets/logo-optimized.avif" />
+  <link rel="preload" as="image" href="assets/logo-optimized.avif" type="image/avif">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -99,30 +99,33 @@
     
 
 
-    <!-- Hero Section -->
+      <!-- Hero Section -->
     <section id="hero" class="relative min-h-screen flex flex-col justify-center items-center px-6 text-center bg-white transition-colors duration-1000">
-      <div class="animate-fadeIn mt-20 mb-10 transition-opacity duration-1000 max-w-xl mx-auto">
-        <!-- Logo -->
-        <img src="assets/logo-optimized.avif" alt="BoardBid Logo" class="h-[202px] md:h-[259px] mx-auto drop-shadow-md">
-    
-        <!-- Headline -->
+
+      <!-- Logo with animation -->
+      <div class="animate-fadeIn mt-20 mb-4 transition-opacity duration-1000">
+        <img src="assets/logo-optimized.avif"
+        alt="BoardBid Logo"
+        class="h-[220px] md:h-[259px] mx-auto drop-shadow-sm object-contain"
+        style="padding-bottom: 0; margin-bottom: -50px;">   
+      </div>
+
+      <!-- Headline + Text -->
+      <div class="animate-fadeIn mb-10 max-w-xl mx-auto">
         <h1 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4 leading-tight">
           Programmatic DOOH advertising <br class="hidden md:inline"> for ambitious brands
         </h1>
-    
-        <!-- Subheading -->
-        <p class="text-base md:text-lg text-gray-800 leading-relaxed mb-5 max-w-2xl mx-auto">
+        <p class="text-base md:text-lg text-gray-800 leading-relaxed mb-10 max-w-2xl mx-auto">
           From launch to IPO, plan and book impactful billboard campaigns with
           <span class="text-gray-700 font-semibold">AI-powered strategy</span>,
           <span class="text-gray-700 font-semibold">real-time pricing</span>, and
           <span class="text-gray-700 font-semibold">zero agency friction</span>.
-          
         </p>
-    
-        <!-- CTA -->
-        <br><a href="mailto:founders@boardbid.ai" class="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-xl hover:scale-105 hover:bg-emerald-400 transition duration-300">Request Access</a>
+        <a href="mailto:founders@boardbid.ai" class="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-xl hover:scale-105 hover:bg-emerald-400 transition duration-300">
+          Request Access
+        </a>
       </div>
-    
+
       <!-- Scroll Down Animation -->
       <a href="#how-it-works" class="mt-12 animate-bounce opacity-100 hover:opacity-80 transition duration-700 block">
         <lottie-player
@@ -136,7 +139,7 @@
       </a>
 
     </section>
-    
+
   
 
     <!-- How It Works -->
