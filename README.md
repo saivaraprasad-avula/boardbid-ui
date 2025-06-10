@@ -1,1 +1,48 @@
-# boardbid-ui
+# BoardBid.ai — Programmatic DOOH & Digital Billboard Advertising
+
+BoardBid.ai is a modern Demand-Side Platform (DSP) designed for ambitious startups and growing brands to plan, book, and launch digital billboard campaigns with real-time pricing, AI-powered strategy, and zero agency friction.
+
+> ⚡ Built with React, Vite, and Tailwind CSS  
+> 🌐 Deployed via Cloudflare Pages  
+> 🎯 Campaign Engine Integration coming soon!
+
+---
+
+## 🚀 Features
+
+- ✨ Smooth one-page scroll experience with sticky header and animations
+- 🎯 Hero section with animated CTA and Lottie scroll-down indicator
+- 🧩 Modular React components (Hero, How It Works, Dashboard Preview, etc.)
+- 📱 Responsive Tailwind styling and Inter font
+- 🛠️ Setup for fast API integration (Campaigns, SSP inventory, Uploads)
+- 🧪 Optimized for performance and SEO
+
+---
+
+## 🧱 Tech Stack
+
+- **React 18** — Component-based SPA
+- **Vite** — Lightning-fast dev server and build tool
+- **Tailwind CSS 3** — Utility-first styling
+- **React Router** — Route navigation (`/`, `/login`)
+- **Lottie** — Scroll animations
+- **Cloudflare Pages** — Free static hosting & CDN
+
+---
+
+## 📦 Project Structure
+
+boardbid-ui/
+├── public/ # Favicon, 404, robots.txt
+├── src/
+│ ├── components/ # All page sections as components
+│ ├── pages/ # Home, Login, etc.
+│ ├── App.jsx # Main routing logic
+│ ├── main.jsx # Vite entry point
+│ └── index.css # Tailwind CSS directives
+├── index.html # Vite template
+├── vite.config.js # Vite build config
+├── tailwind.config.js # Tailwind customizations
+├── postcss.config.js # Required for Tailwind
+└── README.md # This file
+
