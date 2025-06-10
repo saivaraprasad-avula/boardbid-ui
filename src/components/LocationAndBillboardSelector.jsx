@@ -48,7 +48,7 @@ export default function LocationAndBillboardSelector({
 
   // Load billboards from JSON
       useEffect(() => {
-        fetch('/mock/mock_billboards.json')
+        fetch('./mock/mock_billboards.json')
           .then((res) => res.json())
           .then((data) => {
             setFilteredBillboards(data);     // if you have filtering logic

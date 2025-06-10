@@ -54,7 +54,7 @@ export default function Header({ staticHeader = false }) {
       <nav className="space-x-6 text-sm font-semibold text-gray-700">
         {loggedIn ? (
           <>
-            <a href="/dashboard" className="hover:text-emerald-600 transition">Dashboard</a>
+            <Link to="/dashboard" className="hover:text-emerald-600 transition">Dashboard</Link>
             <button
               onClick={() => {
                 logOut();

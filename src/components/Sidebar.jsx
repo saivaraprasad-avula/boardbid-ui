@@ -20,12 +20,12 @@ export default function Sidebar() {
       </nav>
 
       <div className="absolute bottom-6 w-full px-4">
-        <a
-          href="/admin"
+        <Link
+          to="/admin"
           className="flex items-center text-sm font-medium text-gray-600 hover:text-emerald-600"
         >
           🛠️ Admin
-        </a>
+        </Link>
       </div>
     </aside>
   );

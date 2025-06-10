@@ -49,7 +49,7 @@ export default function WhyChoose() {
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="flex justify-center lg:w-1/3">
             <lottie-player
-              src="/assets/about-us.json"
+              src="./assets/about-us.json"
               background="transparent"
               speed="1"
               style={{ width: 200, height: 200 }}
