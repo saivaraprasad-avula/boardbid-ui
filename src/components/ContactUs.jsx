@@ -4,7 +4,7 @@ export default function ContactUs() {
       <section className="py-20 px-6 text-center bg-gray-50 animate-fadeIn mb-4">
         <div className="flex justify-center">
           <lottie-player
-            src="/assets/access-lock.json"
+            src="./assets/access-lock.json"
             background="transparent"
             speed="1"
             style={{ width: 80, height: 80 }}

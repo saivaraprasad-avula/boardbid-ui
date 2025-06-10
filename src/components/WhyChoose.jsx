@@ -4,7 +4,7 @@ export default function WhyChoose() {
     <section className="py-20 px-6 text-center bg-white animate-fadeIn mb-12">
       <div className="mb-6 flex justify-center">
         <lottie-player
-          src="/assets/why-choose.json"
+          src="./assets/why-choose.json"
           background="transparent"
           speed="1"
           style={{ width: 200, height: 200 }}

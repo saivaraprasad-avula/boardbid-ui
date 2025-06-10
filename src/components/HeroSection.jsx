@@ -14,7 +14,7 @@ export default function HeroSection() {
     indicator.style.transition = 'opacity 0.6s ease';
     indicator.innerHTML = `
     <lottie-player
-      src="/assets/scroll-down.json"
+      src="./assets/scroll-down.json"
       background="transparent"
       speed="1"
       style="width:100px;height:100px;margin:0 auto;cursor:pointer;display:block;"

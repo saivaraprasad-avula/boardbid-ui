@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { isLoggedIn, logOut } from '../utils/auth';
+import { Link } from 'react-router-dom';
 
 export default function Header({ staticHeader = false }) {
   const headerRef = useRef(null);
@@ -42,13 +43,13 @@ export default function Header({ staticHeader = false }) {
       id="sticky-header"
       className="fixed top-0 left-0 right-0 w-full h-20 bg-white/90 backdrop-blur z-50 shadow-md px-6 flex justify-between items-center transform -translate-y-4 opacity-0 pointer-events-none transition-all duration-500"
     >
-      <a href="/dashboard" className="flex items-center">
+      <Link to="/dashboard" className="flex items-center">
         <img
           src="https://ik.imagekit.io/boardbid/logo-optimized.avif?updatedAt=1748049683476"
           alt="BoardBid Logo"
           className="h-14 sm:h-16 mt-1"
         />
-      </a>
+      </Link>
 
       <nav className="space-x-6 text-sm font-semibold text-gray-700">
         {loggedIn ? (
@@ -65,7 +66,7 @@ export default function Header({ staticHeader = false }) {
             </button>
           </>
         ) : (
-          <a href="/login" className="hover:text-emerald-600 transition">Login</a>
+          <Link to="/login" className="hover:text-emerald-600 transition">Login</Link>
         )}
       </nav>
     </header>
