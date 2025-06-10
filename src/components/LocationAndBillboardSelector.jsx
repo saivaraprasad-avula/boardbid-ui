@@ -177,7 +177,7 @@ export default function LocationAndBillboardSelector({
                   checked={selectedBillboards.includes(b.id)}
                   onChange={() => toggleBillboard(b.id)}
                 />
-                <span>{b.name} ({b.city}, {b.state})</span>
+                <span>{b.name} ({b.city}, {b.state}, {b.zipcode})</span>
               </label>
             </li>
           ))}

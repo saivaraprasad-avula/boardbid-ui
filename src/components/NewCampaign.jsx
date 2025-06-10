@@ -1,5 +1,7 @@
+// src/components/NewCampaign.jsx
 import { useState, useEffect } from 'react';
 import LocationAndBillboardSelector from './LocationAndBillboardSelector';
+import CampaignSummary from './CampaignSummary';
 import { db } from '../utils/db';
 
 export default function NewCampaign() {
@@ -76,27 +78,6 @@ export default function NewCampaign() {
       return allBillboards.filter((b) => b.zipcode?.toLowerCase().startsWith(zipcode.toLowerCase()));
     }
     return allBillboards;
-  };
-
-  const getSmartSummary = () => {
-    const selected = allBillboards.filter((b) => selectedBillboards.includes(b.id));
-
-    if (selected.length === 0) return 'None selected';
-    if (selectedTab === 'map') return 'All Available Billboards';
-
-    const key = selectedTab === 'city' ? 'city' : selectedTab === 'state' ? 'state' : 'zipcode';
-    const inputValue = selectedTab === 'city' ? city : selectedTab === 'state' ? state : zipcode;
-
-    const allMatch = selected.every(b => b[key]?.toLowerCase() === inputValue.toLowerCase());
-    const partialMatch = selected.some(b => b[key]?.toLowerCase().startsWith(inputValue.toLowerCase()));
-
-    if (allMatch) {
-      return `${key.charAt(0).toUpperCase() + key.slice(1)}: ${inputValue}`;
-    } else if (partialMatch) {
-      return `${key.charAt(0).toUpperCase() + key.slice(1)} containing: ${inputValue}`;
-    }
-
-    return 'Custom selection';
   };
 
   const hasPreviewData = campaignName || budget || selectedBillboards.length > 0;
@@ -208,25 +189,17 @@ export default function NewCampaign() {
       {hasPreviewData && (
         <div className="mt-12 bg-gray-50 border border-gray-200 rounded-xl px-6 py-6">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">📋 Campaign Summary</h3>
-          <div className="space-y-2 text-sm text-gray-700">
-            <p><strong>📝 Name:</strong> {campaignName || '—'}</p>
-            <p><strong>💰 Budget:</strong> {budget ? `$${budget}` : '—'}</p>
-            <p><strong>📍 Location Type:</strong> {selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1)}</p>
-            {selectedTab === 'city' && <p><strong>🏙️ City:</strong> {city || '—'}</p>}
-            {selectedTab === 'state' && <p><strong>🗺️ State:</strong> {state || '—'}</p>}
-            {selectedTab === 'zipcode' && <p><strong>🏷️ ZIP Code:</strong> {zipcode || '—'}</p>}
-            <p><strong>📡 Selected Billboards:</strong> {getSmartSummary()}</p>
-            <p><strong>🎨 Selected Creative:</strong> {selectedCreative?.name || 'None selected'}</p>
-            {selectedCreative?.url && (
-              <div className="mt-3">
-                {selectedCreative.type.startsWith('image') ? (
-                  <img src={selectedCreative.url} alt="Selected Creative" className="h-28 rounded-md shadow" />
-                ) : (
-                  <video src={selectedCreative.url} controls className="h-28 rounded-md shadow" />
-                )}
-              </div>
-            )}
-          </div>
+          <CampaignSummary
+            campaignName={campaignName}
+            budget={budget}
+            selectedTab={selectedTab}
+            city={city}
+            state={state}
+            zipcode={zipcode}
+            selectedBillboards={selectedBillboards}
+            allBillboards={allBillboards}
+            selectedCreative={selectedCreative}
+          />
         </div>
       )}
     </div>
