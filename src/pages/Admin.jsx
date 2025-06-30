@@ -52,6 +52,18 @@ export default function Admin() {
             <p className="mt-3 text-green-600 text-sm font-medium">✅ All campaigns cleared from IndexedDB.</p>
           )}
         </div>
+
+        {/* Blog Editor */}
+        <div className="bg-white shadow-md rounded-xl border border-gray-200 p-6 hover:shadow-lg transition">
+          <h3 className="text-lg font-semibold text-gray-800 mb-3">✍️ Blog Posts</h3>
+          <p className="text-sm text-gray-600 mb-4">Create and manage blog posts for your site.</p>
+          <a
+            href="/boardbid-ui/admin/blogs"
+            className="w-full block text-center py-2 bg-emerald-600 text-white font-medium rounded-lg hover:bg-emerald-700 transition"
+          >
+            Open Blog Editor
+          </a>
+        </div>
       </div>
     </InternalLayout>
   );
