@@ -9,6 +9,7 @@ import Reports from './pages/Reports';
 import BlogList from './pages/BlogList';
 import BlogEditor from './pages/BlogEditor';
 import BlogView from './pages/BlogView';
+import Blogs from './pages/Blogs';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/admin/blogs/new" element={<BlogEditor />} />
       <Route path="/admin/blogs/:id" element={<BlogEditor />} />
       <Route path="/blog/:id" element={<BlogView />} />
+      <Route path="/blogs" element={<Blogs />} />
     </Routes>
   );
 }

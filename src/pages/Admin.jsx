@@ -57,12 +57,20 @@ export default function Admin() {
         <div className="bg-white shadow-md rounded-xl border border-gray-200 p-6 hover:shadow-lg transition">
           <h3 className="text-lg font-semibold text-gray-800 mb-3">✍️ Blog Posts</h3>
           <p className="text-sm text-gray-600 mb-4">Create and manage blog posts for your site.</p>
-          <a
-            href="/boardbid-ui/admin/blogs"
-            className="w-full block text-center py-2 bg-emerald-600 text-white font-medium rounded-lg hover:bg-emerald-700 transition"
-          >
-            Open Blog Editor
-          </a>
+          <div className="space-y-2">
+            <a
+              href="/boardbid-ui/admin/blogs/new"
+              className="w-full block text-center py-2 bg-emerald-600 text-white font-medium rounded-lg hover:bg-emerald-700 transition"
+            >
+              Create New Blog
+            </a>
+            <a
+              href="/boardbid-ui/admin/blogs"
+              className="w-full block text-center py-2 bg-emerald-500 text-white font-medium rounded-lg hover:bg-emerald-600 transition"
+            >
+              Manage Blog Posts
+            </a>
+          </div>
         </div>
       </div>
     </InternalLayout>
