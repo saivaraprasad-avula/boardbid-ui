@@ -52,6 +52,7 @@ export default function Header({ staticHeader = false }) {
       </Link>
 
       <nav className="space-x-6 text-sm font-semibold text-gray-700">
+        <Link to="/blogs" className="hover:text-emerald-600 transition">Blog</Link>
         {loggedIn ? (
           <>
             <Link to="/dashboard" className="hover:text-emerald-600 transition">Dashboard</Link>
