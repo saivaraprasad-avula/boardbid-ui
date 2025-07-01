@@ -7,12 +7,16 @@ const mockPosts = [
     title: "Introducing BoardBid",
     summary: "Welcome to our new blog!",
     date: "2023-08-01",
+    coverImage: "https://placekitten.com/800/400",
+    bgColor: "#ffffff",
   },
   {
     id: 2,
     title: "How It Works",
     summary: "A quick look at how to use BoardBid.ai",
     date: "2023-08-10",
+    coverImage: "https://placekitten.com/800/401",
+    bgColor: "#ffffff",
   },
 ];
 
@@ -26,7 +30,11 @@ export default function BlogList() {
           key={post.id}
           onClick={() => navigate(`/blog/${post.id}`)}
           className="cursor-pointer hover:shadow-lg transition-shadow"
+          style={{ backgroundColor: post.bgColor }}
         >
+          {post.coverImage && (
+            <img src={post.coverImage} alt={post.title} className="w-full h-40 object-cover" />
+          )}
           <CardHeader>
             <CardTitle>{post.title}</CardTitle>
             <p className="text-sm text-muted-foreground">{post.date}</p>
