@@ -24,6 +24,14 @@ db.version(3).stores({
     '++id, title, createdAt, font, textColor, bgColor, coverImage'
 });
 
+// v4 adds metadata fields for posts
+db.version(4).stores({
+  campaigns: '++id, campaignName, createdAt',
+  creatives: '++id, name, url, type',
+  posts:
+    '++id, title, createdAt, font, textColor, bgColor, coverImage, tags, slug, status, publishDate, metaTitle, metaDesc'
+});
+
 // Optional: helper methods
 export const addCampaign = async (campaign) => {
   return await db.campaigns.add(campaign);
