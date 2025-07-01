@@ -268,6 +268,7 @@ export default function BlogEditor() {
           value={content}
           onChange={setContent}
           modules={modules}
+          style={{ height: '300px' }}
         />
       )}
       {previewMode && (
