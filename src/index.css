@@ -8,3 +8,4 @@ body {
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
 }
+@import 'react-quill/dist/quill.snow.css';
