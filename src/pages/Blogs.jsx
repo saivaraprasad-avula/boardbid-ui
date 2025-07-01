@@ -25,9 +25,22 @@ export default function Blogs() {
             <Link
               key={post.id}
               to={`/blog/${post.id}`}
-              className="block p-4 bg-white rounded-xl border hover:bg-gray-50"
+              className="block p-4 rounded-xl border hover:bg-gray-50"
+              style={{ backgroundColor: post.bgColor || '#ffffff' }}
             >
-              <h3 className="text-lg font-semibold">{post.title}</h3>
+              {post.coverImage && (
+                <img
+                  src={post.coverImage}
+                  alt="cover"
+                  className="w-full h-40 object-cover rounded mb-2"
+                />
+              )}
+              <h3
+                className="text-lg font-semibold"
+                style={{ color: post.textColor || '#000000', fontFamily: post.font }}
+              >
+                {post.title}
+              </h3>
               <p className="text-sm text-gray-500">
                 {new Date(post.createdAt).toLocaleDateString()}
               </p>
