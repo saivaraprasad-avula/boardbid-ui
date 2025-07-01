@@ -1,5 +1,4 @@
 /* index.css */
-@import 'react-quill/dist/quill.snow.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,4 +8,3 @@ body {
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
 }
-@import 'react-quill/dist/quill.snow.css';
