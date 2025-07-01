@@ -16,6 +16,14 @@ db.version(2).stores({
   posts: '++id, title, createdAt'
 });
 
+// v3 adds styling fields and cover images for blog posts
+db.version(3).stores({
+  campaigns: '++id, campaignName, createdAt',
+  creatives: '++id, name, url, type',
+  posts:
+    '++id, title, createdAt, font, textColor, bgColor, coverImage'
+});
+
 // Optional: helper methods
 export const addCampaign = async (campaign) => {
   return await db.campaigns.add(campaign);

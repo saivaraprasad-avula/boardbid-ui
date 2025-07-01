@@ -8,6 +8,19 @@ export default function BlogEditor() {
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [font, setFont] = useState('sans');
+  const [textColor, setTextColor] = useState('#000000');
+  const [bgColor, setBgColor] = useState('#ffffff');
+  const [coverImage, setCoverImage] = useState('');
+
+  function toBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
 
   useEffect(() => {
     if (id) {
@@ -15,6 +28,10 @@ export default function BlogEditor() {
         if (post) {
           setTitle(post.title);
           setContent(post.content);
+          if (post.font) setFont(post.font);
+          if (post.textColor) setTextColor(post.textColor);
+          if (post.bgColor) setBgColor(post.bgColor);
+          if (post.coverImage) setCoverImage(post.coverImage);
         }
       });
     }
@@ -23,9 +40,24 @@ export default function BlogEditor() {
   const handleSave = async () => {
     if (!title.trim()) return;
     if (id) {
-      await db.posts.update(Number(id), { title, content });
+      await db.posts.update(Number(id), {
+        title,
+        content,
+        font,
+        textColor,
+        bgColor,
+        coverImage
+      });
     } else {
-      await db.posts.add({ title, content, createdAt: new Date() });
+      await db.posts.add({
+        title,
+        content,
+        createdAt: new Date(),
+        font,
+        textColor,
+        bgColor,
+        coverImage
+      });
     }
     navigate('/admin/blogs');
   };
@@ -48,6 +80,54 @@ export default function BlogEditor() {
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
+        <div className="flex space-x-4">
+          <label className="flex items-center space-x-2 text-sm">
+            <span>Font</span>
+            <select
+              className="border rounded p-1"
+              value={font}
+              onChange={(e) => setFont(e.target.value)}
+            >
+              <option value="sans">Sans</option>
+              <option value="serif">Serif</option>
+              <option value="mono">Mono</option>
+            </select>
+          </label>
+          <label className="flex items-center space-x-2 text-sm">
+            <span>Text</span>
+            <input
+              type="color"
+              value={textColor}
+              onChange={(e) => setTextColor(e.target.value)}
+            />
+          </label>
+          <label className="flex items-center space-x-2 text-sm">
+            <span>Background</span>
+            <input
+              type="color"
+              value={bgColor}
+              onChange={(e) => setBgColor(e.target.value)}
+            />
+          </label>
+        </div>
+        <div>
+          <label className="block text-sm mb-1">Cover Image</label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={async (e) => {
+              const file = e.target.files[0];
+              if (file) {
+                const data = await toBase64(file);
+                setCoverImage(data);
+              }
+            }}
+            className="block w-full text-sm text-gray-600"
+          />
+          {coverImage && (
+            <img src={coverImage} alt="cover" className="mt-2 h-40 object-cover rounded" />
+          )}
+        </div>
         <button
           onClick={handleSave}
           className="py-2 px-4 bg-emerald-600 text-white rounded-lg"

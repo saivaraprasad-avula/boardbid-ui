@@ -32,8 +32,24 @@ export default function BlogList() {
       </div>
       <div className="space-y-4">
         {posts.map((post) => (
-          <div key={post.id} className="bg-white p-4 rounded-xl border">
-            <h3 className="text-lg font-semibold">{post.title}</h3>
+          <div
+            key={post.id}
+            className="p-4 rounded-xl border"
+            style={{ backgroundColor: post.bgColor || '#ffffff' }}
+          >
+            {post.coverImage && (
+              <img
+                src={post.coverImage}
+                alt="cover"
+                className="w-full h-40 object-cover rounded mb-2"
+              />
+            )}
+            <h3
+              className="text-lg font-semibold"
+              style={{ color: post.textColor || '#000000', fontFamily: post.font }}
+            >
+              {post.title}
+            </h3>
             <p className="text-sm text-gray-500 mb-2">
               {new Date(post.createdAt).toLocaleDateString()}
             </p>
