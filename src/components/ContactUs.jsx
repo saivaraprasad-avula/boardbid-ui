@@ -20,10 +20,10 @@ export default function ContactUs() {
           </p>
   
           <a
-            href="mailto:founders@boardbid.ai"
+            href="/sign-up"
             className="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-xl hover:bg-emerald-600 transition duration-300"
           >
-            Request Access
+            Get Started
           </a>
         </div>
       </section>
