@@ -1,14 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
-import { isLoggedIn, logOut } from '../utils/auth';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from '@clerk/clerk-react';
 
 export default function Header({ staticHeader = false }) {
   const headerRef = useRef(null);
-  const [loggedIn, setLoggedIn] = useState(isLoggedIn());
-
-  useEffect(() => {
-    setLoggedIn(isLoggedIn());
-  }, []);
 
   useEffect(() => {
     if (staticHeader) {
@@ -53,22 +54,18 @@ export default function Header({ staticHeader = false }) {
 
       <nav className="space-x-6 text-sm font-semibold text-gray-700">
         <Link to="/blogs" className="hover:text-emerald-600 transition">Blog</Link>
-        {loggedIn ? (
-          <>
-            <Link to="/dashboard" className="hover:text-emerald-600 transition">Dashboard</Link>
-            <button
-              onClick={() => {
-                logOut();
-                window.location.href = '/';
-              }}
-              className="text-red-500 hover:text-red-700"
-            >
-              Logout
-            </button>
-          </>
-        ) : (
-          <Link to="/login" className="hover:text-emerald-600 transition">Login</Link>
-        )}
+        <SignedOut>
+          <SignInButton mode="modal">
+            <button className="hover:text-emerald-600 transition">Login</button>
+          </SignInButton>
+          <SignUpButton mode="modal">
+            <button className="hover:text-emerald-600 transition">Sign Up</button>
+          </SignUpButton>
+        </SignedOut>
+        <SignedIn>
+          <Link to="/dashboard" className="hover:text-emerald-600 transition">Dashboard</Link>
+          <UserButton afterSignOutUrl="/" />
+        </SignedIn>
       </nav>
     </header>
   );

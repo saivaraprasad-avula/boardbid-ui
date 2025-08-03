@@ -1,8 +1,9 @@
-import { getLoggedInUser } from '../utils/auth';
+import { useUser } from '@clerk/clerk-react';
 import InternalLayout from '../layout/InternalLayout';
 
 export default function Dashboard() {
-  const userEmail = getLoggedInUser();
+  const { user } = useUser();
+  const userEmail = user?.primaryEmailAddress?.emailAddress;
 
   return (
     <InternalLayout>

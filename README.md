@@ -24,7 +24,7 @@ BoardBid.ai is a modern Demand-Side Platform (DSP) designed for ambitious startu
 - **React 18** — Component-based SPA
 - **Vite** — Lightning-fast dev server and build tool
 - **Tailwind CSS 3** — Utility-first styling
-- **React Router** — Route navigation (`/`, `/login`)
+- **React Router** — Route navigation (`/`, `/login`, `/sign-up`)
 - **Lottie** — Scroll animations
 - **Cloudflare Pages** — Free static hosting & CDN
 
@@ -36,7 +36,7 @@ boardbid-ui/
 ├── public/ # Favicon, 404, robots.txt
 ├── src/
 │ ├── components/ # All page sections as components
-│ ├── pages/ # Home, Login, etc.
+│ ├── pages/ # Home, auth pages, etc.
 │ ├── App.jsx # Main routing logic
 │ ├── main.jsx # Vite entry point
 │ └── index.css # Tailwind CSS directives
@@ -67,5 +67,15 @@ boardbid-ui/
    ```bash
    npm run build
    ```
+
+## 🔐 Authentication
+
+This project uses [Clerk](https://clerk.com/docs/quickstarts/react) for user management. Create a `.env` file at the project root with:
+
+```
+VITE_CLERK_PUBLISHABLE_KEY=pk_test_aW50ZW5zZS1zY29ycGlvbi00Ny5jbGVyay5hY2NvdW50cy5kZXYk
+```
+
+The application expects this key at runtime.
 
 
