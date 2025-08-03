@@ -1,5 +1,6 @@
 // src/components/HeroSection.jsx
 import { useEffect, useRef } from 'react';
+import { SignUpButton } from '@clerk/clerk-react';
 
 export default function HeroSection() {
   const placeholderRef = useRef(null);
@@ -74,12 +75,11 @@ export default function HeroSection() {
           </span>
           .
         </p>
-        <a
-          href="/sign-up"
-          className="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-xl hover:bg-emerald-600 transition duration-300"
-        >
-          Get Started
-        </a>
+        <SignUpButton mode="modal">
+          <button className="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-xl hover:bg-emerald-600 transition duration-300">
+            Get Started
+          </button>
+        </SignUpButton>
       </div>
 
       {/* Scroll Down Animation */}
