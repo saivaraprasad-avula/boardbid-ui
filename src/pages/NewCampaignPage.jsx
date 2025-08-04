@@ -9,7 +9,7 @@ export default function NewCampaignPage() {
           className="airtable-embed airtable-dynamic-height w-full"
           frameBorder="0"
           onWheel=""
-          style={{ background: "transparent", border: "1px solid #ccc" }}
+          style={{ background: "transparent", border: "1px solid #ccc", height: '1300px' }}
         />
       </div>
     </InternalLayout>
