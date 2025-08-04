@@ -1,4 +1,4 @@
-import InternalLayout from '../layout/InternalLayout';
+import InternalLayout from "../layout/InternalLayout";
 
 export default function NewCampaignPage() {
   return (
@@ -9,7 +9,7 @@ export default function NewCampaignPage() {
           className="airtable-embed airtable-dynamic-height w-full"
           frameBorder="0"
           onWheel=""
-          style={{ background: 'transparent', border: '1px solid #ccc', height: '2000px' }}
+          style={{ background: "transparent", border: "1px solid #ccc" }}
         />
       </div>
     </InternalLayout>
