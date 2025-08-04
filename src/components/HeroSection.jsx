@@ -71,7 +71,7 @@ export default function HeroSection() {
         <div className="mx-auto max-w-2xl lg:mx-0 lg:flex lg:items-center lg:gap-x-14">
           <div className="w-full lg:max-w-xl lg:flex-shrink-0 xl:max-w-2xl">
             <img
-              src="https://ik.imagekit.io/boardbid/Billboard%20Illustration%20Curve.avif?updatedAt=1754315644156"
+              src="https://ik.imagekit.io/boardbid/logo-optimized.avif?updatedAt=1748049683476"
               alt="BoardBid logo"
               className="mb-8 h-32 w-auto"
             />
@@ -91,13 +91,6 @@ export default function HeroSection() {
                 </button>
               </SignUpButton>
             </div>
-          </div>
-          <div className="mt-14 sm:mt-20 lg:mt-0 lg:flex-1">
-            <img
-              src="https://ik.imagekit.io/boardbid/Billboard%20Illustration%20Curve.avif?updatedAt=1754315644156"
-              alt="Billboard illustration"
-              className="w-full max-w-md mx-auto"
-            />
           </div>
         </div>
       </div>
