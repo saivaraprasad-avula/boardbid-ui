@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
 
 const campaignTypeOptions = [
@@ -96,13 +96,13 @@ export default function DoohCampaignRequestForm() {
   const [campaignGoalsOther, setCampaignGoalsOther] = useState("");
   const [budget, setBudget] = useState("");
   const [targetLocations, setTargetLocations] = useState([]);
-  const [cityInput, setCityInput] = useState("");
   const [cities, setCities] = useState([]);
   const [zipCodes, setZipCodes] = useState("");
-  const [dmaInput, setDmaInput] = useState("");
   const [dmas, setDmas] = useState([]);
-  const [eventInput, setEventInput] = useState("");
   const [events, setEvents] = useState([]);
+  const [dmaOptions, setDmaOptions] = useState([]);
+  const [eventOptions, setEventOptions] = useState([]);
+  const [cityOptions, setCityOptions] = useState([]);
   const [specificVenues, setSpecificVenues] = useState("");
   const [customFile, setCustomFile] = useState(null);
   const [screenTypes, setScreenTypes] = useState([]);
@@ -121,37 +121,40 @@ export default function DoohCampaignRequestForm() {
     }
   };
 
-  const addCity = () => {
-    if (cityInput.trim()) {
-      setCities([...cities, cityInput.trim()]);
-      setCityInput("");
-    }
+  useEffect(() => {
+    fetch("/assets/full_us_dma_list.json")
+      .then((res) => res.json())
+      .then((data) =>
+        setDmaOptions(
+          data.map((d) => `${d["DMA Name"]} (${d["DMA Code"]})`)
+        )
+      );
+
+    fetch("/assets/global_events.json")
+      .then((res) => res.json())
+      .then((data) =>
+        setEventOptions(
+          data.map((e) => `${e["Event Name"]} - ${e.City}`)
+        )
+      );
+
+    fetch("/assets/uscities.json")
+      .then((res) => res.json())
+      .then((data) =>
+        setCityOptions(data.map((c) => `${c.city}, ${c.state_id}`))
+      );
+  }, []);
+
+  const handleCityChange = (e) => {
+    setCities(Array.from(e.target.selectedOptions, (o) => o.value));
   };
 
-  const removeCity = (index) => {
-    setCities(cities.filter((_, i) => i !== index));
+  const handleDmaChange = (e) => {
+    setDmas(Array.from(e.target.selectedOptions, (o) => o.value));
   };
 
-  const addDma = () => {
-    if (dmaInput.trim()) {
-      setDmas([...dmas, dmaInput.trim()]);
-      setDmaInput("");
-    }
-  };
-
-  const removeDma = (index) => {
-    setDmas(dmas.filter((_, i) => i !== index));
-  };
-
-  const addEvent = () => {
-    if (eventInput.trim()) {
-      setEvents([...events, eventInput.trim()]);
-      setEventInput("");
-    }
-  };
-
-  const removeEvent = (index) => {
-    setEvents(events.filter((_, i) => i !== index));
+  const handleEventChange = (e) => {
+    setEvents(Array.from(e.target.selectedOptions, (o) => o.value));
   };
 
   const handleFileChange = (e) => {
@@ -169,12 +172,9 @@ export default function DoohCampaignRequestForm() {
     setCampaignGoalsOther("");
     setBudget("");
     setTargetLocations([]);
-    setCityInput("");
     setCities([]);
     setZipCodes("");
-    setDmaInput("");
     setDmas([]);
-    setEventInput("");
     setEvents([]);
     setSpecificVenues("");
     setCustomFile(null);
@@ -360,31 +360,28 @@ export default function DoohCampaignRequestForm() {
 
         {targetLocations.includes("City") && (
           <div className="mt-4">
-            <label className="block text-sm font-medium text-gray-900">Enter Specific City</label>
-            <div className="mt-2 flex gap-2">
-              <input
-                type="text"
-                value={cityInput}
-                onChange={(e) => setCityInput(e.target.value)}
-                placeholder="City, State"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-              />
-              <button
-                type="button"
-                onClick={addCity}
-                className="rounded-md bg-white px-3 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-gray-300 hover:bg-gray-50"
+            <label className="block text-sm font-medium text-gray-900">Cities</label>
+            <div className="mt-2 grid grid-cols-1 sm:max-w-lg">
+              <select
+                multiple
+                value={cities}
+                onChange={handleCityChange}
+                className="col-start-1 row-start-1 w-full rounded-md bg-white h-48 py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
               >
-                + Add city
-              </button>
+                {cityOptions.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+              <ChevronDownIcon
+                aria-hidden="true"
+                className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-start justify-self-end text-gray-500 sm:size-4"
+              />
             </div>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {cities.map((c, idx) => (
-                <span key={idx} className="inline-flex items-center rounded-full bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                  {c}
-                  <button type="button" onClick={() => removeCity(idx)} className="ml-1 text-indigo-500">&times;</button>
-                </span>
-              ))}
-            </div>
+            <p className="mt-2 text-sm text-gray-500">
+              Hold Ctrl (Windows) or Command (Mac) to select multiple cities.
+            </p>
           </div>
         )}
 
@@ -404,61 +401,55 @@ export default function DoohCampaignRequestForm() {
 
         {targetLocations.includes("DMA") && (
           <div className="mt-4">
-            <label className="block text-sm font-medium text-gray-900">DMA</label>
-            <div className="mt-2 flex gap-2">
-              <input
-                type="text"
-                value={dmaInput}
-                onChange={(e) => setDmaInput(e.target.value)}
-                placeholder="DMA code or name"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-              />
-              <button
-                type="button"
-                onClick={addDma}
-                className="rounded-md bg-white px-3 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-gray-300 hover:bg-gray-50"
+            <label className="block text-sm font-medium text-gray-900">DMAs</label>
+            <div className="mt-2 grid grid-cols-1 sm:max-w-lg">
+              <select
+                multiple
+                value={dmas}
+                onChange={handleDmaChange}
+                className="col-start-1 row-start-1 w-full rounded-md bg-white h-48 py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
               >
-                + Add record
-              </button>
+                {dmaOptions.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+              <ChevronDownIcon
+                aria-hidden="true"
+                className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-start justify-self-end text-gray-500 sm:size-4"
+              />
             </div>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {dmas.map((d, idx) => (
-                <span key={idx} className="inline-flex items-center rounded-full bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                  {d}
-                  <button type="button" onClick={() => removeDma(idx)} className="ml-1 text-indigo-500">&times;</button>
-                </span>
-              ))}
-            </div>
+            <p className="mt-2 text-sm text-gray-500">
+              Hold Ctrl (Windows) or Command (Mac) to select multiple DMAs.
+            </p>
           </div>
         )}
 
         {targetLocations.includes("Events / Conferences") && (
           <div className="mt-4">
             <label className="block text-sm font-medium text-gray-900">Events / Conferences</label>
-            <div className="mt-2 flex gap-2">
-              <input
-                type="text"
-                value={eventInput}
-                onChange={(e) => setEventInput(e.target.value)}
-                placeholder="Event name"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-              />
-              <button
-                type="button"
-                onClick={addEvent}
-                className="rounded-md bg-white px-3 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-gray-300 hover:bg-gray-50"
+            <div className="mt-2 grid grid-cols-1 sm:max-w-lg">
+              <select
+                multiple
+                value={events}
+                onChange={handleEventChange}
+                className="col-start-1 row-start-1 w-full rounded-md bg-white h-48 py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
               >
-                + Add event
-              </button>
+                {eventOptions.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+              <ChevronDownIcon
+                aria-hidden="true"
+                className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-start justify-self-end text-gray-500 sm:size-4"
+              />
             </div>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {events.map((ev, idx) => (
-                <span key={idx} className="inline-flex items-center rounded-full bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                  {ev}
-                  <button type="button" onClick={() => removeEvent(idx)} className="ml-1 text-indigo-500">&times;</button>
-                </span>
-              ))}
-            </div>
+            <p className="mt-2 text-sm text-gray-500">
+              Hold Ctrl (Windows) or Command (Mac) to select multiple events.
+            </p>
           </div>
         )}
 
