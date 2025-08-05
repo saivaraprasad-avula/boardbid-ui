@@ -96,14 +96,13 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
           <hgroup>
-            <h2 className="text-base/7 font-semibold text-indigo-400">Get started</h2>
-            <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
-              Boost your productivity. Start using our app today.
+          <h2 className="text-base/6 font-semibold text-indigo-400">Out-of-home, without the overwhelm</h2>
+            <p className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              Turn Heads. Drive Growth.
             </p>
           </hgroup>
-          <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-gray-400">
-            Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur
-            commodo do ea.
+          <p className="mx-auto mt-6 max-w-xl text-lg text-gray-400">
+            We plan and manage your billboard campaigns end-to-end from strategy to booking, built around your goals.
           </p>
           <div className="mt-8 flex justify-center">
             <SignUpButton mode="modal" afterSignUpUrl="/dashboard">
@@ -117,9 +116,9 @@ export default function Footer() {
         </div>
         <div className="mt-24 border-t border-white/10 pt-12 xl:grid xl:grid-cols-3 xl:gap-8">
           <img
-            alt="Company name"
-            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-            className="h-9"
+            alt="Boardbid.ai Logo"
+            src="https://ik.imagekit.io/boardbid/logo-optimized.avif?updatedAt=1748049683476"
+            className="h-16"
           />
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -186,7 +185,7 @@ export default function Footer() {
             ))}
           </div>
           <p className="mt-8 text-sm/6 text-gray-400 md:order-1 md:mt-0">
-            &copy; 2024 Your Company, Inc. All rights reserved.
+            &copy; 2025 Boardbid, Inc. All rights reserved.
           </p>
         </div>
       </div>
