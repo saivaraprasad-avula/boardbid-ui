@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { SignInButton, SignUpButton } from '@clerk/clerk-react'
+import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/clerk-react'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -47,11 +47,18 @@ export default function Hero() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <SignInButton mode="modal" afterSignInUrl="/dashboard">
-              <button className="text-sm font-semibold text-white hover:text-indigo-400">
-                Log in <span aria-hidden="true">&rarr;</span>
-              </button>
-            </SignInButton>
+            <SignedOut>
+              <SignInButton mode="modal" afterSignInUrl="/dashboard">
+                <button className="text-sm font-semibold text-white hover:text-indigo-400">
+                  Log in <span aria-hidden="true">&rarr;</span>
+                </button>
+              </SignInButton>
+            </SignedOut>
+            <SignedIn>
+              <a href="/dashboard" className="text-sm font-semibold text-white hover:text-indigo-400">
+                Dashboard <span aria-hidden="true">&rarr;</span>
+              </a>
+            </SignedIn>
           </div>
         </nav>
 
@@ -88,11 +95,21 @@ export default function Hero() {
                   ))}
                 </div>
                 <div className="py-6">
-                  <SignInButton mode="modal" afterSignInUrl="/dashboard">
-                    <button className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-white hover:bg-gray-800">
-                      Log in
-                    </button>
-                  </SignInButton>
+                  <SignedOut>
+                    <SignInButton mode="modal" afterSignInUrl="/dashboard">
+                      <button className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-white hover:bg-gray-800">
+                        Log in
+                      </button>
+                    </SignInButton>
+                  </SignedOut>
+                  <SignedIn>
+                    <a
+                      href="/dashboard"
+                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-white hover:bg-gray-800"
+                    >
+                      Dashboard
+                    </a>
+                  </SignedIn>
                 </div>
               </div>
             </div>
@@ -126,11 +143,21 @@ export default function Hero() {
             <span className="font-semibold text-gray-100">zero agency friction</span>.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <SignUpButton mode="modal" afterSignUpUrl="/dashboard">
-              <button className="rounded-md bg-indigo-500 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-indigo-400">
-                Get started
-              </button>
-            </SignUpButton>
+            <SignedOut>
+              <SignUpButton mode="modal" afterSignUpUrl="/dashboard">
+                <button className="rounded-md bg-indigo-500 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-indigo-400">
+                  Get started
+                </button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <a
+                href="/dashboard"
+                className="rounded-md bg-indigo-500 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-indigo-400"
+              >
+                Dashboard
+              </a>
+            </SignedIn>
             <a href="#" className="text-sm font-semibold text-gray-300 hover:text-white">
               Learn more <span aria-hidden="true">→</span>
             </a>
