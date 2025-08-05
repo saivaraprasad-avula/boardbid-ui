@@ -122,7 +122,8 @@ export default function DoohCampaignRequestForm() {
   };
 
   useEffect(() => {
-    fetch("/assets/full_us_dma_list.json")
+    const baseUrl = import.meta.env.BASE_URL;
+    fetch(`${baseUrl}assets/full_us_dma_list.json`)
       .then((res) => res.json())
       .then((data) =>
         setDmaOptions(
@@ -130,7 +131,7 @@ export default function DoohCampaignRequestForm() {
         )
       );
 
-    fetch("/assets/global_events.json")
+    fetch(`${baseUrl}assets/global_events.json`)
       .then((res) => res.json())
       .then((data) =>
         setEventOptions(
@@ -138,7 +139,7 @@ export default function DoohCampaignRequestForm() {
         )
       );
 
-    fetch("/assets/uscities.json")
+    fetch(`${baseUrl}assets/uscities.json`)
       .then((res) => res.json())
       .then((data) =>
         setCityOptions(data.map((c) => `${c.city}, ${c.state_id}`))
