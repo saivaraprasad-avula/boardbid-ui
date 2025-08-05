@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from '@headlessui/react';
+import { UserButton } from '@clerk/clerk-react';
 import {
   Bars3Icon,
   ChartPieIcon,
@@ -140,19 +141,12 @@ export default function InternalLayout({ children }) {
                     ))}
                   </ul>
                 </li>
-                <li className="-mx-6 mt-auto">
-                  <Link
-                    to="#"
-                    className="flex items-center gap-x-4 px-6 py-3 text-sm/6 font-semibold text-white hover:bg-indigo-700"
-                  >
-                    <img
-                      alt=""
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      className="size-8 rounded-full bg-indigo-700"
-                    />
-                    <span className="sr-only">Your profile</span>
-                    <span aria-hidden="true">Tom Cook</span>
-                  </Link>
+                <li className="-mx-6 mt-auto px-6 py-3">
+                  <UserButton
+                    afterSignOutUrl="/"
+                    userProfileMode="navigation"
+                    userProfileUrl="/account"
+                  />
                 </li>
               </ul>
             </nav>
@@ -165,14 +159,11 @@ export default function InternalLayout({ children }) {
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
           <div className="flex-1 text-sm/6 font-semibold text-white">{currentPage}</div>
-          <Link to="#">
-            <span className="sr-only">Your profile</span>
-            <img
-              alt=""
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              className="size-8 rounded-full bg-indigo-700"
-            />
-          </Link>
+          <UserButton
+            afterSignOutUrl="/"
+            userProfileMode="navigation"
+            userProfileUrl="/account"
+          />
         </div>
 
         <main className="py-10 lg:pl-72">
