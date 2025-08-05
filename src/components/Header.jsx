@@ -55,10 +55,10 @@ export default function Header({ staticHeader = false }) {
       <nav className="space-x-6 text-sm font-semibold text-gray-700">
         <Link to="/blogs" className="hover:text-emerald-600 transition">Blog</Link>
         <SignedOut>
-          <SignInButton mode="modal">
+          <SignInButton mode="modal" afterSignInUrl="/dashboard">
             <button className="hover:text-emerald-600 transition">Login</button>
           </SignInButton>
-          <SignUpButton mode="modal">
+          <SignUpButton mode="modal" afterSignUpUrl="/dashboard">
             <button className="hover:text-emerald-600 transition">Sign Up</button>
           </SignUpButton>
         </SignedOut>

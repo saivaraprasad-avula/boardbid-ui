@@ -5,7 +5,6 @@ import HowItWorks from '../components/HowItWorks';
 import Integrations from '../components/Integrations';
 import DashboardPreview from '../components/DashboardPreview';
 import WhyChoose from '../components/WhyChoose';
-import ContactUs from '../components/ContactUs';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
       <Integrations />
       <DashboardPreview />
       <WhyChoose />
-      <ContactUs />
       <Footer />
     </>
   );
