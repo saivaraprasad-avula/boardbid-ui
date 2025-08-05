@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useNavigate } from 'react-router-dom';
 import { ClerkProvider } from '@clerk/clerk-react';
 import './index.css';
 import App from './App.jsx';
@@ -10,12 +10,26 @@ if (!PUBLISHABLE_KEY) {
   throw new Error('Missing Clerk Publishable Key');
 }
 
+function ClerkApp() {
+  const navigate = useNavigate();
+  return (
+    <ClerkProvider
+      publishableKey={PUBLISHABLE_KEY}
+      navigate={(to) => navigate(to)}
+      signInUrl="/login"
+      signUpUrl="/sign-up"
+      userProfileUrl="/account"
+      afterSignOutUrl="/"
+    >
+      <App />
+    </ClerkProvider>
+  );
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-      <BrowserRouter basename="/boardbid-ui">
-        <App />
-      </BrowserRouter>
-    </ClerkProvider>
+    <BrowserRouter basename="/boardbid-ui">
+      <ClerkApp />
+    </BrowserRouter>
   </StrictMode>,
 );

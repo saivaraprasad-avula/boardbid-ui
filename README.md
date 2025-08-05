@@ -24,7 +24,7 @@ BoardBid.ai is a modern Demand-Side Platform (DSP) designed for ambitious startu
 - **React 18** — Component-based SPA
 - **Vite** — Lightning-fast dev server and build tool
 - **Tailwind CSS 3** — Utility-first styling
-- **React Router** — Route navigation (`/`, `/login`, `/sign-up`)
+- **React Router** — Route navigation (`/`, `/login`, `/sign-up`, `/account`)
 - **Lottie** — Scroll animations
 - **Cloudflare Pages** — Free static hosting & CDN
 
@@ -77,5 +77,7 @@ VITE_CLERK_PUBLISHABLE_KEY=pk_test_aW50ZW5zZS1zY29ycGlvbi00Ny5jbGVyay5hY2NvdW50c
 ```
 
 The application expects this key at runtime.
+
+Authenticated users can access dashboards, campaign tools, and manage their profile on `/account`.
 
 

@@ -62,11 +62,15 @@ export default function Header({ staticHeader = false }) {
             <button className="hover:text-emerald-600 transition">Sign Up</button>
           </SignUpButton>
         </SignedOut>
-        <SignedIn>
-          <Link to="/dashboard" className="hover:text-emerald-600 transition">Dashboard</Link>
-          <UserButton afterSignOutUrl="/" />
-        </SignedIn>
-      </nav>
-    </header>
-  );
-}
+          <SignedIn>
+            <Link to="/dashboard" className="hover:text-emerald-600 transition">Dashboard</Link>
+            <UserButton
+              afterSignOutUrl="/"
+              userProfileMode="navigation"
+              userProfileUrl="/account"
+            />
+          </SignedIn>
+        </nav>
+      </header>
+    );
+  }
