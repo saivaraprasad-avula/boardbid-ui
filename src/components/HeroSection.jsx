@@ -25,8 +25,8 @@ export default function Hero() {
               <span className="sr-only">BoardBid.ai</span>
               <img
                 alt="BoardBid logo"
-                src="https://ik.imagekit.io/boardbid/BB12.svg?updatedAt=1754544642236"
-                className="h-32 w-auto"
+                src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg?updatedAt=1754564817584"
+                className="h-8 w-auto"
               />
             </a>
           </div>
@@ -68,8 +68,8 @@ export default function Hero() {
             <div className="flex items-center justify-between">
               <a href="/" className="-m-1.5 p-1.5">
                 <img
-                  alt=""
-                  src="https://ik.imagekit.io/boardbid/BB12.svg?updatedAt=1754544642236"
+                  alt="BoardBid logo Mobile"
+                  src="https://ik.imagekit.io/boardbid/Artboard%201.svg?updatedAt=1754564838031"
                   className="h-16 w-auto"
                 />
               </a>

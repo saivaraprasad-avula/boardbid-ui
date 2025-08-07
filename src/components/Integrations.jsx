@@ -15,7 +15,7 @@ export default function Integrations() {
   ];
 
   return (
-    <section className="py-12 px-6 text-center bg-white mb-20">
+    <section className="py-12 px-6 text-center bg-white mb-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="text-center">
