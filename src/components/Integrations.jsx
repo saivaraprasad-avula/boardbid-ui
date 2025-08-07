@@ -23,7 +23,7 @@ export default function Integrations() {
               Our Unparalleled Reach
             </h2>
             <p className="mt-2 text-lg text-gray-600">
-              To Billboards Across the Globe
+              to billboards across the globe
             </p>
           </div>
 
@@ -32,7 +32,7 @@ export default function Integrations() {
             {stats.map((stat) => (
               <div
                 key={stat.id}
-                className="bg-gray-50 py-6 px-4 rounded-lg shadow-sm"
+                className="bg-gray-50 py-6 px-4 rounded-lg shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-md"
               >
                 <dd className="text-2xl font-bold text-gray-900">{stat.value}</dd>
                 <dt className="mt-1 text-sm text-gray-600">{stat.name}</dt>
@@ -47,7 +47,7 @@ export default function Integrations() {
         <p className="text-gray-600 text-sm mb-3">Powered by</p>
         <div className="flex justify-center items-center">
           {partners.map((p, i) => (
-            <img key={i} src={p.src} alt={p.name} className="h-10" />
+            <img key={i} src={p.src} alt={p.name} className="h-10 transform transition duration-300 hover:scale-105" />
           ))}
         </div>
       </div>
