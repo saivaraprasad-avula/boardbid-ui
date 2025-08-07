@@ -6,7 +6,7 @@ const stats = [
   { id: 5, name: 'Countries', value: '22' },
 ];
 
-export function Integrations() {
+export default function Integrations() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

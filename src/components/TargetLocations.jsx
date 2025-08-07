@@ -1,4 +1,4 @@
-export function TargetLocations() {
+export default function TargetLocations() {
     return (
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
