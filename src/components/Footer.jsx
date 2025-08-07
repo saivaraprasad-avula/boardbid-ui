@@ -14,12 +14,11 @@ const navigation = {
     { name: 'Documentation', href: '#' },
     { name: 'Guides', href: '#' },
   ],
-  company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-  ],
+    company: [
+      { name: 'About', href: '#' },
+      { name: 'Jobs', href: '#' },
+      { name: 'Press', href: '#' },
+    ],
   legal: [
     { name: 'Terms of service', href: '#' },
     { name: 'Privacy policy', href: '#' },
