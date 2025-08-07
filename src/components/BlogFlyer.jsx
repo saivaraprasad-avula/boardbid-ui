@@ -1,58 +1,56 @@
 const posts = [
     {
       id: 1,
-      title: 'Boost your conversion rate',
+      title: 'How to Use Different Types of Digital Billboards',
       href: '#',
       description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
-      date: 'Mar 16, 2020',
-      datetime: '2020-03-16',
+        'Digital billboards are a powerful tool for advertising, but they come in various types. Understanding how to use each type effectively can maximize your advertising impact.',
+      imageUrl:'https://ik.imagekit.io/boardbid/Blog%20Creative%20city.webp',
+      date: 'Jul 21, 2025',
+      datetime: '2025-07-21',
       category: { title: 'Marketing', href: '#' },
       author: {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
+        name: 'Jamie Rush',
+        role: '',
         href: '#',
         imageUrl:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          '',
       },
     },
     {
       id: 2,
-      title: 'How to use search engine optimization to drive sales',
+      title: 'Advantages of Digital Out Of Home Advertising',
       href: '#',
-      description: 'Optio cum necessitatibus dolor voluptatum provident commodi et. Qui aperiam fugiat nemo cumque.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80',
-      date: 'Mar 10, 2020',
-      datetime: '2020-03-10',
-      category: { title: 'Sales', href: '#' },
+      description: 'Digital Out Of Home (DOOH) advertising offers numerous advantages over traditional advertising methods. From real-time updates to targeted messaging, learn how DOOH can enhance your marketing strategy.',
+      imageUrl:'https://ik.imagekit.io/boardbid/adv%20creative.png',
+      date: 'Jul 28, 2025',
+      datetime: '2025-07-28',
+      category: { title: 'Marketing', href: '#' },
       author: {
-        name: 'Lindsay Walton',
-        role: 'Front-end Developer',
+        name: 'Kavya Mohana Adusumilli',
+        role: '',
         href: '#',
         imageUrl:
-          'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          '',
       },
     },
     {
       id: 3,
-      title: 'Improve your customer experience',
+      title: 'Benefits of Programmatic DOOH Advertising',
       href: '#',
       description:
-        'Cupiditate maiores ullam eveniet adipisci in doloribus nulla minus. Voluptas iusto libero adipisci rem et corporis. Nostrud sint anim sunt aliqua. Nulla eu labore irure incididunt velit cillum quis magna dolore.',
+        'Programmatic DOOH advertising revolutionizes how brands reach their audience. By automating the buying process, it allows for more efficient and targeted advertising campaigns.',
       imageUrl:
-        'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80',
-      date: 'Feb 12, 2020',
-      datetime: '2020-02-12',
-      category: { title: 'Business', href: '#' },
+        'https://ik.imagekit.io/boardbid/p2.webp',
+      date: 'Aug 04, 2025',
+      datetime: '2025-08-04',
+      category: { title: 'Technology', href: '#' },
       author: {
-        name: 'Tom Cook',
-        role: 'Director of Product',
+        name: 'Sai Vara Prasad Avula',
+        role: '',
         href: '#',
         imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          '',
       },
     },
   ]
@@ -100,7 +98,6 @@ const posts = [
                     <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">{post.description}</p>
                   </div>
                   <div className="relative mt-8 flex items-center gap-x-4 justify-self-end">
-                    <img alt="" src={post.author.imageUrl} className="size-10 rounded-full bg-gray-100" />
                     <div className="text-sm/6">
                       <p className="font-semibold text-gray-900">
                         <a href={post.author.href}>
@@ -108,7 +105,6 @@ const posts = [
                           {post.author.name}
                         </a>
                       </p>
-                      <p className="text-gray-600">{post.author.role}</p>
                     </div>
                   </div>
                 </div>

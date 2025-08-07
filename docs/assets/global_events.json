@@ -1,0 +1,872 @@
+[
+  {
+    "Event Name": "CES",
+    "City": "Las Vegas",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "SXSW",
+    "City": "Austin",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "Web Summit",
+    "City": "Lisbon",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "TechCrunch Disrupt",
+    "City": "San Francisco",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "Collision",
+    "City": "Toronto",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "VivaTech",
+    "City": "Paris",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "Slush",
+    "City": "Helsinki",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "Dreamforce",
+    "City": "San Francisco",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "Google Cloud Next",
+    "City": "San Francisco",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "Apple WWDC",
+    "City": "Cupertino",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "Microsoft Build",
+    "City": "Seattle",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "AWS re:Invent",
+    "City": "Las Vegas",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "OpenAI Dev Day",
+    "City": "San Francisco",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "SAP Sapphire",
+    "City": "Orlando",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "Oracle CloudWorld",
+    "City": "Las Vegas",
+    "Vertical": "Tech / Innovation"
+  },
+  {
+    "Event Name": "Cannes Lions",
+    "City": "Cannes",
+    "Vertical": "Marketing / Advertising"
+  },
+  {
+    "Event Name": "Advertising Week",
+    "City": "New York",
+    "Vertical": "Marketing / Advertising"
+  },
+  {
+    "Event Name": "INBOUND",
+    "City": "Boston",
+    "Vertical": "Marketing / Advertising"
+  },
+  {
+    "Event Name": "ANA Masters of Marketing",
+    "City": "Orlando",
+    "Vertical": "Marketing / Advertising"
+  },
+  {
+    "Event Name": "DMEXCO",
+    "City": "Cologne",
+    "Vertical": "Marketing / Advertising"
+  },
+  {
+    "Event Name": "IAB ALM",
+    "City": "Palm Springs",
+    "Vertical": "Marketing / Advertising"
+  },
+  {
+    "Event Name": "Adweek NexTech",
+    "City": "New York",
+    "Vertical": "Marketing / Advertising"
+  },
+  {
+    "Event Name": "Programmatic I/O",
+    "City": "Las Vegas",
+    "Vertical": "Marketing / Advertising"
+  },
+  {
+    "Event Name": "HLTH",
+    "City": "Las Vegas",
+    "Vertical": "Healthcare / Life Sciences"
+  },
+  {
+    "Event Name": "J.P. Morgan Healthcare",
+    "City": "San Francisco",
+    "Vertical": "Healthcare / Life Sciences"
+  },
+  {
+    "Event Name": "BIO International",
+    "City": "Rotating",
+    "Vertical": "Healthcare / Life Sciences"
+  },
+  {
+    "Event Name": "HIMSS",
+    "City": "Orlando",
+    "Vertical": "Healthcare / Life Sciences"
+  },
+  {
+    "Event Name": "MedTech Conference",
+    "City": "Boston",
+    "Vertical": "Healthcare / Life Sciences"
+  },
+  {
+    "Event Name": "Future of Healthcare",
+    "City": "London",
+    "Vertical": "Healthcare / Life Sciences"
+  },
+  {
+    "Event Name": "Digital Health Summit",
+    "City": "Las Vegas",
+    "Vertical": "Healthcare / Life Sciences"
+  },
+  {
+    "Event Name": "Shoptalk",
+    "City": "Las Vegas",
+    "Vertical": "Retail / eCommerce"
+  },
+  {
+    "Event Name": "NRF Big Show",
+    "City": "New York",
+    "Vertical": "Retail / eCommerce"
+  },
+  {
+    "Event Name": "RetailX",
+    "City": "Chicago",
+    "Vertical": "Retail / eCommerce"
+  },
+  {
+    "Event Name": "eTail East",
+    "City": "Boston",
+    "Vertical": "Retail / eCommerce"
+  },
+  {
+    "Event Name": "DTCx",
+    "City": "Miami",
+    "Vertical": "Retail / eCommerce"
+  },
+  {
+    "Event Name": "GroceryShop",
+    "City": "Las Vegas",
+    "Vertical": "Retail / eCommerce"
+  },
+  {
+    "Event Name": "CommerceNext",
+    "City": "New York",
+    "Vertical": "Retail / eCommerce"
+  },
+  {
+    "Event Name": "Money20/20",
+    "City": "Las Vegas",
+    "Vertical": "Fintech / Crypto"
+  },
+  {
+    "Event Name": "Finovate",
+    "City": "New York",
+    "Vertical": "Fintech / Crypto"
+  },
+  {
+    "Event Name": "Consensus",
+    "City": "Austin",
+    "Vertical": "Fintech / Crypto"
+  },
+  {
+    "Event Name": "Bitcoin Conference",
+    "City": "Nashville",
+    "Vertical": "Fintech / Crypto"
+  },
+  {
+    "Event Name": "Sibos",
+    "City": "Rotating",
+    "Vertical": "Fintech / Crypto"
+  },
+  {
+    "Event Name": "Paris Fintech Forum",
+    "City": "Paris",
+    "Vertical": "Fintech / Crypto"
+  },
+  {
+    "Event Name": "RSA Conference",
+    "City": "San Francisco",
+    "Vertical": "Security / Enterprise IT"
+  },
+  {
+    "Event Name": "Black Hat USA",
+    "City": "Las Vegas",
+    "Vertical": "Security / Enterprise IT"
+  },
+  {
+    "Event Name": "Gartner IT Symposium",
+    "City": "Orlando",
+    "Vertical": "Security / Enterprise IT"
+  },
+  {
+    "Event Name": "InfoSec Europe",
+    "City": "London",
+    "Vertical": "Security / Enterprise IT"
+  },
+  {
+    "Event Name": "Oktane",
+    "City": "San Francisco",
+    "Vertical": "Security / Enterprise IT"
+  },
+  {
+    "Event Name": "KubeCon + CloudNativeCon",
+    "City": "Chicago",
+    "Vertical": "Security / Enterprise IT"
+  },
+  {
+    "Event Name": "Comic-Con International",
+    "City": "San Diego",
+    "Vertical": "Entertainment / Gaming"
+  },
+  {
+    "Event Name": "E3",
+    "City": "Los Angeles",
+    "Vertical": "Entertainment / Gaming"
+  },
+  {
+    "Event Name": "Gamescom",
+    "City": "Cologne",
+    "Vertical": "Entertainment / Gaming"
+  },
+  {
+    "Event Name": "Tribeca Film Festival",
+    "City": "New York",
+    "Vertical": "Entertainment / Gaming"
+  },
+  {
+    "Event Name": "Sundance Film Festival",
+    "City": "Park City",
+    "Vertical": "Entertainment / Gaming"
+  },
+  {
+    "Event Name": "Coachella",
+    "City": "Indio",
+    "Vertical": "Entertainment / Gaming"
+  },
+  {
+    "Event Name": "SXSW Music",
+    "City": "Austin",
+    "Vertical": "Entertainment / Gaming"
+  },
+  {
+    "Event Name": "The Game Awards",
+    "City": "Los Angeles",
+    "Vertical": "Entertainment / Gaming"
+  },
+  {
+    "Event Name": "Skift Global Forum",
+    "City": "New York",
+    "Vertical": "Travel / Hospitality"
+  },
+  {
+    "Event Name": "World Travel Market",
+    "City": "London",
+    "Vertical": "Travel / Hospitality"
+  },
+  {
+    "Event Name": "ITB Berlin",
+    "City": "Berlin",
+    "Vertical": "Travel / Hospitality"
+  },
+  {
+    "Event Name": "Phocuswright Conference",
+    "City": "Fort Lauderdale",
+    "Vertical": "Travel / Hospitality"
+  },
+  {
+    "Event Name": "Global Wellness Summit",
+    "City": "Rotating",
+    "Vertical": "Travel / Hospitality"
+  },
+  {
+    "Event Name": "COP Climate Conference",
+    "City": "Rotating",
+    "Vertical": "Sustainability / ESG"
+  },
+  {
+    "Event Name": "Climate Week NYC",
+    "City": "New York",
+    "Vertical": "Sustainability / ESG"
+  },
+  {
+    "Event Name": "GreenBiz",
+    "City": "Scottsdale",
+    "Vertical": "Sustainability / ESG"
+  },
+  {
+    "Event Name": "Sustainable Brands",
+    "City": "San Diego",
+    "Vertical": "Sustainability / ESG"
+  },
+  {
+    "Event Name": "VERGE",
+    "City": "San Jose",
+    "Vertical": "Sustainability / ESG"
+  },
+  {
+    "Event Name": "World Economic Forum",
+    "City": "Davos",
+    "Vertical": "Misc / Global Leadership"
+  },
+  {
+    "Event Name": "TED Conference",
+    "City": "Vancouver",
+    "Vertical": "Misc / Thought Leadership"
+  },
+  {
+    "Event Name": "South Summit",
+    "City": "Madrid",
+    "Vertical": "Misc / Innovation"
+  },
+  {
+    "Event Name": "The Next Web",
+    "City": "Amsterdam",
+    "Vertical": "Misc / Innovation"
+  },
+  {
+    "Event Name": "Dubai Expo",
+    "City": "Dubai",
+    "Vertical": "Misc / Global Expo"
+  },
+  {
+    "Event Name": "The Battery Show",
+    "City": "Detroit",
+    "Vertical": "Misc / Industrial Tech"
+  },
+  {
+    "Event Name": "SEMA Show",
+    "City": "Las Vegas",
+    "Vertical": "Automotive"
+  },
+  {
+    "Event Name": "NADA Show",
+    "City": "Las Vegas",
+    "Vertical": "Automotive"
+  },
+  {
+    "Event Name": "IAA Mobility",
+    "City": "Munich",
+    "Vertical": "Automotive"
+  },
+  {
+    "Event Name": "Automechanika",
+    "City": "Frankfurt",
+    "Vertical": "Automotive"
+  },
+  {
+    "Event Name": "Detroit Auto Show",
+    "City": "Detroit",
+    "Vertical": "Automotive"
+  },
+  {
+    "Event Name": "L.A. Auto Show",
+    "City": "Los Angeles",
+    "Vertical": "Automotive"
+  },
+  {
+    "Event Name": "HR Tech Conference",
+    "City": "Las Vegas",
+    "Vertical": "Human Resources"
+  },
+  {
+    "Event Name": "SHRM Annual Conference",
+    "City": "Chicago",
+    "Vertical": "Human Resources"
+  },
+  {
+    "Event Name": "Unleash America",
+    "City": "Las Vegas",
+    "Vertical": "Human Resources"
+  },
+  {
+    "Event Name": "Workday Rising",
+    "City": "San Francisco",
+    "Vertical": "Human Resources"
+  },
+  {
+    "Event Name": "HR Transform",
+    "City": "Las Vegas",
+    "Vertical": "Human Resources"
+  },
+  {
+    "Event Name": "ISTE Live",
+    "City": "Denver",
+    "Vertical": "Education / EdTech"
+  },
+  {
+    "Event Name": "SXSW EDU",
+    "City": "Austin",
+    "Vertical": "Education / EdTech"
+  },
+  {
+    "Event Name": "ASU+GSV Summit",
+    "City": "San Diego",
+    "Vertical": "Education / EdTech"
+  },
+  {
+    "Event Name": "EDUCAUSE",
+    "City": "Chicago",
+    "Vertical": "Education / EdTech"
+  },
+  {
+    "Event Name": "BETT",
+    "City": "London",
+    "Vertical": "Education / EdTech"
+  },
+  {
+    "Event Name": "Global Business Travel Association (GBTA)",
+    "City": "Dallas",
+    "Vertical": "Travel / Hospitality"
+  },
+  {
+    "Event Name": "Luxury Travel Mart",
+    "City": "Moscow",
+    "Vertical": "Travel / Hospitality"
+  },
+  {
+    "Event Name": "ILTM Cannes",
+    "City": "Cannes",
+    "Vertical": "Travel / Hospitality"
+  },
+  {
+    "Event Name": "ACTE Global Summit",
+    "City": "Rotating",
+    "Vertical": "Travel / Hospitality"
+  },
+  {
+    "Event Name": "HSMAI Marketing Strategy Conference",
+    "City": "New York",
+    "Vertical": "Travel / Hospitality"
+  },
+  {
+    "Event Name": "IMTS - International Manufacturing Technology Show",
+    "City": "Chicago",
+    "Vertical": "Manufacturing"
+  },
+  {
+    "Event Name": "FABTECH",
+    "City": "Atlanta",
+    "Vertical": "Manufacturing"
+  },
+  {
+    "Event Name": "Smart Manufacturing Experience",
+    "City": "Pittsburgh",
+    "Vertical": "Manufacturing"
+  },
+  {
+    "Event Name": "Automate",
+    "City": "Detroit",
+    "Vertical": "Manufacturing"
+  },
+  {
+    "Event Name": "Hannover Messe",
+    "City": "Hannover",
+    "Vertical": "Manufacturing"
+  },
+  {
+    "Event Name": "ICSC Las Vegas",
+    "City": "Las Vegas",
+    "Vertical": "Real Estate / PropTech"
+  },
+  {
+    "Event Name": "National Multifamily Housing Council (NMHC)",
+    "City": "Orlando",
+    "Vertical": "Real Estate / PropTech"
+  },
+  {
+    "Event Name": "CREtech New York",
+    "City": "New York",
+    "Vertical": "Real Estate / PropTech"
+  },
+  {
+    "Event Name": "PropTech NYC",
+    "City": "New York",
+    "Vertical": "Real Estate / PropTech"
+  },
+  {
+    "Event Name": "MIPIM",
+    "City": "Cannes",
+    "Vertical": "Real Estate / PropTech"
+  },
+  {
+    "Event Name": "DistribuTECH",
+    "City": "Dallas",
+    "Vertical": "Energy / Utilities"
+  },
+  {
+    "Event Name": "CERAWeek",
+    "City": "Houston",
+    "Vertical": "Energy / Utilities"
+  },
+  {
+    "Event Name": "RE+ (Solar Power International)",
+    "City": "Anaheim",
+    "Vertical": "Energy / Utilities"
+  },
+  {
+    "Event Name": "PowerGen International",
+    "City": "New Orleans",
+    "Vertical": "Energy / Utilities"
+  },
+  {
+    "Event Name": "Offshore Technology Conference (OTC)",
+    "City": "Houston",
+    "Vertical": "Energy / Utilities"
+  },
+  {
+    "Event Name": "World of Concrete",
+    "City": "Las Vegas",
+    "Vertical": "Construction / Infrastructure"
+  },
+  {
+    "Event Name": "The Utility Expo",
+    "City": "Louisville",
+    "Vertical": "Construction / Infrastructure"
+  },
+  {
+    "Event Name": "CONEXPO-CON/AGG",
+    "City": "Las Vegas",
+    "Vertical": "Construction / Infrastructure"
+  },
+  {
+    "Event Name": "Greenbuild International Conference",
+    "City": "Washington DC",
+    "Vertical": "Construction / Infrastructure"
+  },
+  {
+    "Event Name": "International Roofing Expo",
+    "City": "Dallas",
+    "Vertical": "Construction / Infrastructure"
+  },
+  {
+    "Event Name": "AUSA Annual Meeting",
+    "City": "Washington DC",
+    "Vertical": "Government / Defense"
+  },
+  {
+    "Event Name": "Sea-Air-Space Expo",
+    "City": "Maryland",
+    "Vertical": "Government / Defense"
+  },
+  {
+    "Event Name": "National League of Cities City Summit",
+    "City": "Atlanta",
+    "Vertical": "Government / Policy"
+  },
+  {
+    "Event Name": "Defense TechConnect",
+    "City": "Washington DC",
+    "Vertical": "Government / Defense"
+  },
+  {
+    "Event Name": "Smart Cities Connect",
+    "City": "Denver",
+    "Vertical": "Government / Policy"
+  },
+  {
+    "Event Name": "AgriTech Expo Zambia",
+    "City": "Chisamba",
+    "Vertical": "Agriculture"
+  },
+  {
+    "Event Name": "World Ag Expo",
+    "City": "Tulare",
+    "Vertical": "Agriculture"
+  },
+  {
+    "Event Name": "AGRITECHNICA",
+    "City": "Hanover",
+    "Vertical": "Agriculture"
+  },
+  {
+    "Event Name": "National Farm Machinery Show",
+    "City": "Louisville",
+    "Vertical": "Agriculture"
+  },
+  {
+    "Event Name": "Farm Progress Show",
+    "City": "Decatur",
+    "Vertical": "Agriculture"
+  },
+  {
+    "Event Name": "Legalweek",
+    "City": "New York",
+    "Vertical": "Legal / Compliance"
+  },
+  {
+    "Event Name": "Clio Cloud Conference",
+    "City": "Nashville",
+    "Vertical": "Legal / Compliance"
+  },
+  {
+    "Event Name": "ABA Techshow",
+    "City": "Chicago",
+    "Vertical": "Legal / Compliance"
+  },
+  {
+    "Event Name": "International Bar Association (IBA)",
+    "City": "Paris",
+    "Vertical": "Legal / Compliance"
+  },
+  {
+    "Event Name": "ACAMS Conference",
+    "City": "Las Vegas",
+    "Vertical": "Legal / Compliance"
+  },
+  {
+    "Event Name": "MODEX",
+    "City": "Atlanta",
+    "Vertical": "Supply Chain / Logistics"
+  },
+  {
+    "Event Name": "ProMat",
+    "City": "Chicago",
+    "Vertical": "Supply Chain / Logistics"
+  },
+  {
+    "Event Name": "Manifest",
+    "City": "Las Vegas",
+    "Vertical": "Supply Chain / Logistics"
+  },
+  {
+    "Event Name": "CSCMP EDGE",
+    "City": "Kissimmee",
+    "Vertical": "Supply Chain / Logistics"
+  },
+  {
+    "Event Name": "Parcel Forum",
+    "City": "Nashville",
+    "Vertical": "Supply Chain / Logistics"
+  },
+  {
+    "Event Name": "MAGIC Las Vegas",
+    "City": "Las Vegas",
+    "Vertical": "Fashion / Apparel"
+  },
+  {
+    "Event Name": "Project Tokyo",
+    "City": "Tokyo",
+    "Vertical": "Fashion / Apparel"
+  },
+  {
+    "Event Name": "Pure London",
+    "City": "London",
+    "Vertical": "Fashion / Apparel"
+  },
+  {
+    "Event Name": "Texworld USA",
+    "City": "New York",
+    "Vertical": "Fashion / Apparel"
+  },
+  {
+    "Event Name": "Premi\u00c3\u00a8re Vision",
+    "City": "Paris",
+    "Vertical": "Fashion / Apparel"
+  },
+  {
+    "Event Name": "Natural Products Expo West",
+    "City": "Anaheim",
+    "Vertical": "Food / Beverage"
+  },
+  {
+    "Event Name": "SIAL Paris",
+    "City": "Paris",
+    "Vertical": "Food / Beverage"
+  },
+  {
+    "Event Name": "Gulfood",
+    "City": "Dubai",
+    "Vertical": "Food / Beverage"
+  },
+  {
+    "Event Name": "Fancy Food Show",
+    "City": "New York",
+    "Vertical": "Food / Beverage"
+  },
+  {
+    "Event Name": "Anuga",
+    "City": "Cologne",
+    "Vertical": "Food / Beverage"
+  },
+  {
+    "Event Name": "Paris Air Show",
+    "City": "Paris",
+    "Vertical": "Aerospace / Aviation"
+  },
+  {
+    "Event Name": "Farnborough International Airshow",
+    "City": "Farnborough",
+    "Vertical": "Aerospace / Aviation"
+  },
+  {
+    "Event Name": "NBAA Business Aviation Convention",
+    "City": "Orlando",
+    "Vertical": "Aerospace / Aviation"
+  },
+  {
+    "Event Name": "Singapore Airshow",
+    "City": "Singapore",
+    "Vertical": "Aerospace / Aviation"
+  },
+  {
+    "Event Name": "Dubai Airshow",
+    "City": "Dubai",
+    "Vertical": "Aerospace / Aviation"
+  },
+  {
+    "Event Name": "Move America",
+    "City": "Austin",
+    "Vertical": "Transportation / Mobility"
+  },
+  {
+    "Event Name": "Transport Logistic",
+    "City": "Munich",
+    "Vertical": "Transportation / Mobility"
+  },
+  {
+    "Event Name": "ITS World Congress",
+    "City": "Dubai",
+    "Vertical": "Transportation / Mobility"
+  },
+  {
+    "Event Name": "Intermodal Europe",
+    "City": "Rotterdam",
+    "Vertical": "Transportation / Mobility"
+  },
+  {
+    "Event Name": "AutoMobility LA",
+    "City": "Los Angeles",
+    "Vertical": "Transportation / Mobility"
+  },
+  {
+    "Event Name": "PDAC",
+    "City": "Toronto",
+    "Vertical": "Mining / Metals"
+  },
+  {
+    "Event Name": "Mining Indaba",
+    "City": "Cape Town",
+    "Vertical": "Mining / Metals"
+  },
+  {
+    "Event Name": "MINExpo International",
+    "City": "Las Vegas",
+    "Vertical": "Mining / Metals"
+  },
+  {
+    "Event Name": "Expomin",
+    "City": "Santiago",
+    "Vertical": "Mining / Metals"
+  },
+  {
+    "Event Name": "Euro Mine Expo",
+    "City": "Skellefte\u00c3\u00a5",
+    "Vertical": "Mining / Metals"
+  },
+  {
+    "Event Name": "Plastimagen",
+    "City": "Mexico City",
+    "Vertical": "Chemicals / Plastics"
+  },
+  {
+    "Event Name": "K Trade Fair",
+    "City": "D\u00c3\u00bcsseldorf",
+    "Vertical": "Chemicals / Plastics"
+  },
+  {
+    "Event Name": "Chinaplas",
+    "City": "Shenzhen",
+    "Vertical": "Chemicals / Plastics"
+  },
+  {
+    "Event Name": "American Coatings Show",
+    "City": "Indianapolis",
+    "Vertical": "Chemicals / Plastics"
+  },
+  {
+    "Event Name": "India Chem",
+    "City": "Mumbai",
+    "Vertical": "Chemicals / Plastics"
+  },
+  {
+    "Event Name": "FIBO Global Fitness",
+    "City": "Cologne",
+    "Vertical": "Sports / Fitness"
+  },
+  {
+    "Event Name": "IHRSA Convention",
+    "City": "Los Angeles",
+    "Vertical": "Sports / Fitness"
+  },
+  {
+    "Event Name": "SportAccord",
+    "City": "Birmingham",
+    "Vertical": "Sports / Fitness"
+  },
+  {
+    "Event Name": "The Running Event",
+    "City": "Austin",
+    "Vertical": "Sports / Fitness"
+  },
+  {
+    "Event Name": "Outdoor Retailer",
+    "City": "Denver",
+    "Vertical": "Sports / Fitness"
+  },
+  {
+    "Event Name": "SuperReturn International",
+    "City": "Berlin",
+    "Vertical": "Finance / Investment"
+  },
+  {
+    "Event Name": "Milken Institute Global Conference",
+    "City": "Beverly Hills",
+    "Vertical": "Finance / Investment"
+  },
+  {
+    "Event Name": "Global ETF Exchange",
+    "City": "Miami",
+    "Vertical": "Finance / Investment"
+  },
+  {
+    "Event Name": "InsureTech Connect",
+    "City": "Las Vegas",
+    "Vertical": "Finance / Investment"
+  },
+  {
+    "Event Name": "Private Equity International",
+    "City": "New York",
+    "Vertical": "Finance / Investment"
+  }
+]

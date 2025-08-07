@@ -116,8 +116,8 @@ export default function Footer() {
         <div className="mt-24 border-t border-white/10 pt-12 xl:grid xl:grid-cols-3 xl:gap-8">
           <img
             alt="Boardbid.ai Logo"
-            src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg?updatedAt=1754564817584"
-            className="h-8 invert"
+            src="https://ik.imagekit.io/boardbid/BoardBid%20logo-White.svg"
+            className="h-8"
           />
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">

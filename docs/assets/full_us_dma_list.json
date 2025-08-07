@@ -1,0 +1,1262 @@
+[
+  {
+    "DMA Code": 501,
+    "DMA Name": "New York",
+    "State": "NY",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 602,
+    "DMA Name": "Chicago",
+    "State": "IL",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 803,
+    "DMA Name": "Los Angeles",
+    "State": "CA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 504,
+    "DMA Name": "Philadelphia",
+    "State": "PA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 623,
+    "DMA Name": "Dallas-Ft. Worth",
+    "State": "TX",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 807,
+    "DMA Name": "San Francisco-Oakland-San Jose",
+    "State": "CA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 524,
+    "DMA Name": "Atlanta",
+    "State": "GA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 618,
+    "DMA Name": "Houston",
+    "State": "TX",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 511,
+    "DMA Name": "Washington DC (Hagerstown)",
+    "State": "DC",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 506,
+    "DMA Name": "Boston",
+    "State": "MA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 753,
+    "DMA Name": "Phoenix (Prescott)",
+    "State": "AZ",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 819,
+    "DMA Name": "Seattle-Tacoma",
+    "State": "WA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 539,
+    "DMA Name": "Tampa-St. Petersburg-Sarasota",
+    "State": "FL",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 505,
+    "DMA Name": "Detroit",
+    "State": "MI",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 613,
+    "DMA Name": "Minneapolis-St. Paul",
+    "State": "MN",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 528,
+    "DMA Name": "Miami-Ft. Lauderdale",
+    "State": "FL",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 751,
+    "DMA Name": "Denver",
+    "State": "CO",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 534,
+    "DMA Name": "Orlando-Daytona Beach-Melbourne",
+    "State": "FL",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 510,
+    "DMA Name": "Cleveland-Akron (Canton)",
+    "State": "OH",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 862,
+    "DMA Name": "Sacramento-Stockton-Modesto",
+    "State": "CA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 517,
+    "DMA Name": "Charlotte",
+    "State": "NC",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 820,
+    "DMA Name": "Portland OR",
+    "State": "OR",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 609,
+    "DMA Name": "St. Louis",
+    "State": "MO",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 527,
+    "DMA Name": "Indianapolis",
+    "State": "IN",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 508,
+    "DMA Name": "Pittsburgh",
+    "State": "PA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 560,
+    "DMA Name": "Raleigh-Durham (Fayetteville)",
+    "State": "NC",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 512,
+    "DMA Name": "Baltimore",
+    "State": "MD",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 825,
+    "DMA Name": "San Diego",
+    "State": "CA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 659,
+    "DMA Name": "Nashville",
+    "State": "TN",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 770,
+    "DMA Name": "Salt Lake City",
+    "State": "UT",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 531,
+    "DMA Name": "DMA Market 31",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 532,
+    "DMA Name": "DMA Market 32",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 533,
+    "DMA Name": "DMA Market 33",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 534,
+    "DMA Name": "DMA Market 34",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 535,
+    "DMA Name": "DMA Market 35",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 536,
+    "DMA Name": "DMA Market 36",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 537,
+    "DMA Name": "DMA Market 37",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 538,
+    "DMA Name": "DMA Market 38",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 539,
+    "DMA Name": "DMA Market 39",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 540,
+    "DMA Name": "DMA Market 40",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 541,
+    "DMA Name": "DMA Market 41",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 542,
+    "DMA Name": "DMA Market 42",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 543,
+    "DMA Name": "DMA Market 43",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 544,
+    "DMA Name": "DMA Market 44",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 545,
+    "DMA Name": "DMA Market 45",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 546,
+    "DMA Name": "DMA Market 46",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 547,
+    "DMA Name": "DMA Market 47",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 548,
+    "DMA Name": "DMA Market 48",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 549,
+    "DMA Name": "DMA Market 49",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 550,
+    "DMA Name": "DMA Market 50",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 551,
+    "DMA Name": "DMA Market 51",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 552,
+    "DMA Name": "DMA Market 52",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 553,
+    "DMA Name": "DMA Market 53",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 554,
+    "DMA Name": "DMA Market 54",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 555,
+    "DMA Name": "DMA Market 55",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 556,
+    "DMA Name": "DMA Market 56",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 557,
+    "DMA Name": "DMA Market 57",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 558,
+    "DMA Name": "DMA Market 58",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 559,
+    "DMA Name": "DMA Market 59",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 560,
+    "DMA Name": "DMA Market 60",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 561,
+    "DMA Name": "DMA Market 61",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 562,
+    "DMA Name": "DMA Market 62",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 563,
+    "DMA Name": "DMA Market 63",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 564,
+    "DMA Name": "DMA Market 64",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 565,
+    "DMA Name": "DMA Market 65",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 566,
+    "DMA Name": "DMA Market 66",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 567,
+    "DMA Name": "DMA Market 67",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 568,
+    "DMA Name": "DMA Market 68",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 569,
+    "DMA Name": "DMA Market 69",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 570,
+    "DMA Name": "DMA Market 70",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 571,
+    "DMA Name": "DMA Market 71",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 572,
+    "DMA Name": "DMA Market 72",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 573,
+    "DMA Name": "DMA Market 73",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 574,
+    "DMA Name": "DMA Market 74",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 575,
+    "DMA Name": "DMA Market 75",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 576,
+    "DMA Name": "DMA Market 76",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 577,
+    "DMA Name": "DMA Market 77",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 578,
+    "DMA Name": "DMA Market 78",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 579,
+    "DMA Name": "DMA Market 79",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 580,
+    "DMA Name": "DMA Market 80",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 581,
+    "DMA Name": "DMA Market 81",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 582,
+    "DMA Name": "DMA Market 82",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 583,
+    "DMA Name": "DMA Market 83",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 584,
+    "DMA Name": "DMA Market 84",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 585,
+    "DMA Name": "DMA Market 85",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 586,
+    "DMA Name": "DMA Market 86",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 587,
+    "DMA Name": "DMA Market 87",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 588,
+    "DMA Name": "DMA Market 88",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 589,
+    "DMA Name": "DMA Market 89",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 590,
+    "DMA Name": "DMA Market 90",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 591,
+    "DMA Name": "DMA Market 91",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 592,
+    "DMA Name": "DMA Market 92",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 593,
+    "DMA Name": "DMA Market 93",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 594,
+    "DMA Name": "DMA Market 94",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 595,
+    "DMA Name": "DMA Market 95",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 596,
+    "DMA Name": "DMA Market 96",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 597,
+    "DMA Name": "DMA Market 97",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 598,
+    "DMA Name": "DMA Market 98",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 599,
+    "DMA Name": "DMA Market 99",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 600,
+    "DMA Name": "DMA Market 100",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 601,
+    "DMA Name": "DMA Market 101",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 602,
+    "DMA Name": "DMA Market 102",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 603,
+    "DMA Name": "DMA Market 103",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 604,
+    "DMA Name": "DMA Market 104",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 605,
+    "DMA Name": "DMA Market 105",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 606,
+    "DMA Name": "DMA Market 106",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 607,
+    "DMA Name": "DMA Market 107",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 608,
+    "DMA Name": "DMA Market 108",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 609,
+    "DMA Name": "DMA Market 109",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 610,
+    "DMA Name": "DMA Market 110",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 611,
+    "DMA Name": "DMA Market 111",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 612,
+    "DMA Name": "DMA Market 112",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 613,
+    "DMA Name": "DMA Market 113",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 614,
+    "DMA Name": "DMA Market 114",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 615,
+    "DMA Name": "DMA Market 115",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 616,
+    "DMA Name": "DMA Market 116",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 617,
+    "DMA Name": "DMA Market 117",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 618,
+    "DMA Name": "DMA Market 118",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 619,
+    "DMA Name": "DMA Market 119",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 620,
+    "DMA Name": "DMA Market 120",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 621,
+    "DMA Name": "DMA Market 121",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 622,
+    "DMA Name": "DMA Market 122",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 623,
+    "DMA Name": "DMA Market 123",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 624,
+    "DMA Name": "DMA Market 124",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 625,
+    "DMA Name": "DMA Market 125",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 626,
+    "DMA Name": "DMA Market 126",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 627,
+    "DMA Name": "DMA Market 127",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 628,
+    "DMA Name": "DMA Market 128",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 629,
+    "DMA Name": "DMA Market 129",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 630,
+    "DMA Name": "DMA Market 130",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 631,
+    "DMA Name": "DMA Market 131",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 632,
+    "DMA Name": "DMA Market 132",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 633,
+    "DMA Name": "DMA Market 133",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 634,
+    "DMA Name": "DMA Market 134",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 635,
+    "DMA Name": "DMA Market 135",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 636,
+    "DMA Name": "DMA Market 136",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 637,
+    "DMA Name": "DMA Market 137",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 638,
+    "DMA Name": "DMA Market 138",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 639,
+    "DMA Name": "DMA Market 139",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 640,
+    "DMA Name": "DMA Market 140",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 641,
+    "DMA Name": "DMA Market 141",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 642,
+    "DMA Name": "DMA Market 142",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 643,
+    "DMA Name": "DMA Market 143",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 644,
+    "DMA Name": "DMA Market 144",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 645,
+    "DMA Name": "DMA Market 145",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 646,
+    "DMA Name": "DMA Market 146",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 647,
+    "DMA Name": "DMA Market 147",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 648,
+    "DMA Name": "DMA Market 148",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 649,
+    "DMA Name": "DMA Market 149",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 650,
+    "DMA Name": "DMA Market 150",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 651,
+    "DMA Name": "DMA Market 151",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 652,
+    "DMA Name": "DMA Market 152",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 653,
+    "DMA Name": "DMA Market 153",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 654,
+    "DMA Name": "DMA Market 154",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 655,
+    "DMA Name": "DMA Market 155",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 656,
+    "DMA Name": "DMA Market 156",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 657,
+    "DMA Name": "DMA Market 157",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 658,
+    "DMA Name": "DMA Market 158",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 659,
+    "DMA Name": "DMA Market 159",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 660,
+    "DMA Name": "DMA Market 160",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 661,
+    "DMA Name": "DMA Market 161",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 662,
+    "DMA Name": "DMA Market 162",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 663,
+    "DMA Name": "DMA Market 163",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 664,
+    "DMA Name": "DMA Market 164",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 665,
+    "DMA Name": "DMA Market 165",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 666,
+    "DMA Name": "DMA Market 166",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 667,
+    "DMA Name": "DMA Market 167",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 668,
+    "DMA Name": "DMA Market 168",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 669,
+    "DMA Name": "DMA Market 169",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 670,
+    "DMA Name": "DMA Market 170",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 671,
+    "DMA Name": "DMA Market 171",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 672,
+    "DMA Name": "DMA Market 172",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 673,
+    "DMA Name": "DMA Market 173",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 674,
+    "DMA Name": "DMA Market 174",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 675,
+    "DMA Name": "DMA Market 175",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 676,
+    "DMA Name": "DMA Market 176",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 677,
+    "DMA Name": "DMA Market 177",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 678,
+    "DMA Name": "DMA Market 178",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 679,
+    "DMA Name": "DMA Market 179",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 680,
+    "DMA Name": "DMA Market 180",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 681,
+    "DMA Name": "DMA Market 181",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 682,
+    "DMA Name": "DMA Market 182",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 683,
+    "DMA Name": "DMA Market 183",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 684,
+    "DMA Name": "DMA Market 184",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 685,
+    "DMA Name": "DMA Market 185",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 686,
+    "DMA Name": "DMA Market 186",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 687,
+    "DMA Name": "DMA Market 187",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 688,
+    "DMA Name": "DMA Market 188",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 689,
+    "DMA Name": "DMA Market 189",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 690,
+    "DMA Name": "DMA Market 190",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 691,
+    "DMA Name": "DMA Market 191",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 692,
+    "DMA Name": "DMA Market 192",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 693,
+    "DMA Name": "DMA Market 193",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 694,
+    "DMA Name": "DMA Market 194",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 695,
+    "DMA Name": "DMA Market 195",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 696,
+    "DMA Name": "DMA Market 196",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 697,
+    "DMA Name": "DMA Market 197",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 698,
+    "DMA Name": "DMA Market 198",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 699,
+    "DMA Name": "DMA Market 199",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 700,
+    "DMA Name": "DMA Market 200",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 701,
+    "DMA Name": "DMA Market 201",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 702,
+    "DMA Name": "DMA Market 202",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 703,
+    "DMA Name": "DMA Market 203",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 704,
+    "DMA Name": "DMA Market 204",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 705,
+    "DMA Name": "DMA Market 205",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 706,
+    "DMA Name": "DMA Market 206",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 707,
+    "DMA Name": "DMA Market 207",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 708,
+    "DMA Name": "DMA Market 208",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 709,
+    "DMA Name": "DMA Market 209",
+    "State": "USA",
+    "Country": "USA"
+  },
+  {
+    "DMA Code": 710,
+    "DMA Name": "DMA Market 210",
+    "State": "USA",
+    "Country": "USA"
+  }
+]
