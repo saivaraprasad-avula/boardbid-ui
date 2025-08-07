@@ -96,8 +96,8 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
           <hgroup>
-          <h2 className="text-base/6 font-semibold text-indigo-400">Out-of-home, without the overwhelm</h2>
-            <p className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          <h2 className="text-base/6 font-semibold font-sans text-indigo-400">Out-of-home, without the overwhelm</h2>
+            <p className="mt-2 text-4xl font-semibold font-sans tracking-tight text-white sm:text-5xl">
               Turn Heads. Drive Growth.
             </p>
           </hgroup>
@@ -123,7 +123,7 @@ export default function Footer() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm/6 font-semibold text-white">Solutions</h3>
+                <h3 className="text-sm/6 font-semibold font-sans text-white">Solutions</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
@@ -135,7 +135,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-white">Support</h3>
+                <h3 className="text-sm/6 font-semibold font-sans text-white">Support</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
@@ -149,7 +149,7 @@ export default function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm/6 font-semibold text-white">Company</h3>
+                <h3 className="text-sm/6 font-semibold font-sans text-white">Company</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
@@ -161,7 +161,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-white">Legal</h3>
+                <h3 className="text-sm/6 font-semibold font-sans text-white">Legal</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>

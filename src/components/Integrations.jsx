@@ -19,7 +19,7 @@ export default function Integrations() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="text-center">
-            <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+            <h2 className="text-4xl font-semibold font-sans tracking-tight text-gray-900 sm:text-5xl">
               Our Unparalleled Reach
             </h2>
             <p className="mt-2 text-lg text-gray-600">
