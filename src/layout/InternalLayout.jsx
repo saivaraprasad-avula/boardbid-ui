@@ -27,7 +27,6 @@ const navigation = [
   { name: 'Upload Creative', href: '/upload-creative', icon: DocumentDuplicateIcon },
   { name: 'New Campaign', href: '/campaign/new', icon: FolderIcon },
   { name: 'Reports', href: '/reports', icon: ChartPieIcon },
-  { name: 'Admin', href: '/admin', icon: UsersIcon },
 ];
 const teams = [
   { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },

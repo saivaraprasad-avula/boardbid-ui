@@ -5,12 +5,11 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/clerk-react'
 
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Pricing', href: '#' },
-  { name: 'Blog', href: '#' },
-  { name: 'Contact', href: '#' },
-]
+  const navigation = [
+    { name: 'Product', href: '#' },
+    { name: 'Pricing', href: '#' },
+    { name: 'Contact', href: '#' },
+  ]
 
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
