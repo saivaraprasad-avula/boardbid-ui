@@ -68,7 +68,7 @@ export default function HowItWorks() {
       id="how-it-works"
       className="scroll-mt-32 py-20 px-6 text-center bg-gray-50 animate-fadeIn mb-24"
     >
-      <h2 className="text-3xl font-bold mb-12 animate-slideUp">How It Works</h2>
+      <h2 className="text-3xl font-bold font-sans mb-12 animate-slideUp">How It Works</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
         {steps.map((step, index) => (
@@ -88,7 +88,7 @@ export default function HowItWorks() {
                 {step.svg}
               </svg>
             </div>
-            <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+            <h3 className="text-xl font-semibold font-sans mb-2">{step.title}</h3>
             <p className="text-sm text-gray-500 border-t border-gray-200 mt-4 pt-3">
               {step.description}
             </p>

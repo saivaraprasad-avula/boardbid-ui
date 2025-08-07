@@ -2,7 +2,7 @@
 export default function DashboardPreview() {
   return (
     <section className="py-20 px-6 text-center bg-gray-50 animate-fadeIn mb-12">
-      <h2 className="text-3xl font-bold mb-6 animate-slideUp">Advertiser Dashboard Preview</h2>
+      <h2 className="text-3xl font-bold font-sans mb-6 animate-slideUp">Advertiser Dashboard Preview</h2>
       <p className="text-gray-600 mb-10">
         A glimpse into what our booking and reporting interface will look like.
       </p>

@@ -13,7 +13,7 @@ export default function WhyChoose() {
         />
       </div>
 
-      <h2 className="text-3xl font-bold mb-6 animate-slideUp">Why Choose BoardBid.ai?</h2>
+      <h2 className="text-3xl font-bold font-sans mb-6 animate-slideUp">Why Choose BoardBid.ai?</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {[
@@ -38,7 +38,7 @@ export default function WhyChoose() {
             key={i}
             className="p-6 bg-white rounded-xl border border-gray-200 shadow hover:shadow-lg transform transition-transform hover:-translate-y-2"
           >
-            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+            <h3 className="text-xl font-semibold font-sans mb-2">{item.title}</h3>
             <p className="text-gray-600">{item.desc}</p>
           </div>
         ))}
@@ -58,7 +58,7 @@ export default function WhyChoose() {
             />
           </div>
           <div className="text-left lg:w-2/3">
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">Our Philosophy</h3>
+            <h3 className="text-2xl font-bold font-sans mb-4 text-gray-800">Our Philosophy</h3>
             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
               <strong>BoardBid.ai</strong> is a modern DSP purpose-built for high-growth startups and emerging brands — from launch to IPO — to plan and book out-of-home media without bloated agency fees or delays.
               <br /><br />
