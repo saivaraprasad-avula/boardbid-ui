@@ -16,7 +16,7 @@ export default function TargetLocations() {
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
                 <img
                   alt=""
-                  src=""
+                  src="https://ik.imagekit.io/boardbid/gym.webp?updatedAt=1754586806387"
                   className="h-80 object-cover object-left"
                 />
                 <div className="p-10 pt-4">
@@ -52,7 +52,7 @@ export default function TargetLocations() {
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]">
                 <img
                   alt=""
-                  src=""
+                  src="https://ik.imagekit.io/boardbid/office.webp"
                   className="h-80 object-cover object-left"
                 />
                 <div className="p-10 pt-4">
@@ -70,12 +70,12 @@ export default function TargetLocations() {
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
                 <img
                   alt=""
-                  src=""
+                  src="https://ik.imagekit.io/boardbid/dining.webp"
                   className="h-80 object-cover"
                 />
                 <div className="p-10 pt-4">
                   <h3 className="text-sm/4 font-semibold text-indigo-600">5:30pm</h3>
-                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Bar</p>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Restaurants and Bars</p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
                     Unwind after work with engaging ads at local bars and restaurants.
                   </p>
@@ -88,7 +88,7 @@ export default function TargetLocations() {
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
                 <img
                   alt=""
-                  src=""
+                  src="https://ik.imagekit.io/boardbid/t5.webp?updatedAt=1754588452070"
                   className="h-80 object-cover"
                 />
                 <div className="p-10 pt-4">

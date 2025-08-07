@@ -3,14 +3,13 @@ import InternalLayout from "../layout/InternalLayout";
 export default function NewCampaignPage() {
   return (
     <InternalLayout>
-      <div className="max-w-5xl mx-auto w-full">
+      <div className="w-full px-0 py-10">
         <iframe
-          className="airtable-embed"
-          src="https://airtable.com/embed/appq8sWGxB7KeB9EQ/pag0MpfZJx4fS4mMY/form"
+          className="w-full h-[1000px]"
+          src="https://forms.fillout.com/t/umZFxzNKgUus"
           frameBorder="0"
-          width="100%"
-          height="1000"
-          style={{ background: "transparent", border: "1px solid #ccc" }}
+          style={{ background: "transparent", border: "none" }}
+          allowFullScreen
         />
       </div>
     </InternalLayout>
