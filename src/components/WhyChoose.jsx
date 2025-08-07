@@ -1,7 +1,7 @@
 // src/components/WhyChooseUs.jsx
 export default function WhyChoose() {
   return (
-    <section className="py-20 px-6 text-center bg-white animate-fadeIn mb-12">
+    <section className="py-20 px-6 text-center bg-white animate-fadeIn">
       <div className="mb-6 flex justify-center">
         <lottie-player
           src="./assets/why-choose.json"

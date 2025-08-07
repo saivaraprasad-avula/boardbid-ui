@@ -5,6 +5,7 @@ import HowItWorks from '../components/HowItWorks';
 import Integrations from '../components/Integrations';
 import TargetLocations from '../components/TargetLocations';
 import WhyChoose from '../components/WhyChoose';
+import BlogFlyer from '../components/BlogFlyer';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Integrations />
       <TargetLocations />
       <WhyChoose />
+      <BlogFlyer />
       <Footer />
     </>
   );

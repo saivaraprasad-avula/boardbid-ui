@@ -2,25 +2,28 @@ export default function TargetLocations() {
     return (
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
-          <p className="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl">
-            Everything you need to deploy your app
-          </p>
+        <div className="flex justify-center">
+            <div className="text-center">
+                <h2 className="text-base/7 font-semibold text-indigo-600">Follow Your Audience throughout the Day</h2>
+                <h2 className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                Deliver Your Message Across Environments
+                </h2>
+            </div>
+        </div>
           <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
             <div className="relative lg:col-span-3">
               <div className="absolute inset-0 rounded-lg bg-white max-lg:rounded-t-4xl lg:rounded-tl-4xl" />
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
                 <img
                   alt=""
-                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-01-performance.png"
+                  src=""
                   className="h-80 object-cover object-left"
                 />
                 <div className="p-10 pt-4">
-                  <h3 className="text-sm/4 font-semibold text-indigo-600">Performance</h3>
-                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Lightning-fast builds</p>
+                  <h3 className="text-sm/4 font-semibold text-indigo-600">6am</h3>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Gym</p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida justo et nulla efficitur, maximus
-                    egestas sem pellentesque.
+                   Fitness Activities are a great way to start the day, and our billboards are there to catch audiences' attention.
                   </p>
                 </div>
               </div>
@@ -31,15 +34,14 @@ export default function TargetLocations() {
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
                 <img
                   alt=""
-                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-01-releases.png"
+                  src="https://ik.imagekit.io/boardbid/trainstation.webp?updatedAt=1754571176795"
                   className="h-80 object-cover object-left lg:object-right"
                 />
                 <div className="p-10 pt-4">
-                  <h3 className="text-sm/4 font-semibold text-indigo-600">Releases</h3>
-                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Push to deploy</p>
+                  <h3 className="text-sm/4 font-semibold text-indigo-600">7:30am</h3>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Train Station</p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                    Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa, laoreet dapibus ex elit vitae
-                    odio.
+                    Catch commuters on their way to work with strategic placements at train stations.
                   </p>
                 </div>
               </div>
@@ -50,14 +52,14 @@ export default function TargetLocations() {
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]">
                 <img
                   alt=""
-                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-01-speed.png"
+                  src=""
                   className="h-80 object-cover object-left"
                 />
                 <div className="p-10 pt-4">
-                  <h3 className="text-sm/4 font-semibold text-indigo-600">Speed</h3>
-                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Built for power users</p>
+                  <h3 className="text-sm/4 font-semibold text-indigo-600">9am</h3>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Office</p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                    Sed congue eros non finibus molestie. Vestibulum euismod augue.
+                    Engage professionals at work with targeted ads.
                   </p>
                 </div>
               </div>
@@ -68,14 +70,14 @@ export default function TargetLocations() {
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
                 <img
                   alt=""
-                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-01-integrations.png"
+                  src=""
                   className="h-80 object-cover"
                 />
                 <div className="p-10 pt-4">
-                  <h3 className="text-sm/4 font-semibold text-indigo-600">Integrations</h3>
-                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Connect your favorite tools</p>
+                  <h3 className="text-sm/4 font-semibold text-indigo-600">5:30pm</h3>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Bar</p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                    Maecenas at augue sed elit dictum vulputate, in nisi aliquam maximus arcu.
+                    Unwind after work with engaging ads at local bars and restaurants.
                   </p>
                 </div>
               </div>
@@ -86,14 +88,14 @@ export default function TargetLocations() {
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
                 <img
                   alt=""
-                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-01-network.png"
+                  src=""
                   className="h-80 object-cover"
                 />
                 <div className="p-10 pt-4">
-                  <h3 className="text-sm/4 font-semibold text-indigo-600">Network</h3>
-                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Globally distributed CDN</p>
+                  <h3 className="text-sm/4 font-semibold text-indigo-600">8pm</h3>
+                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">Taxis and Rideshares</p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                    Aenean vulputate justo commodo auctor vehicula in malesuada semper.
+                    Reach audiences on the move with ads in taxis and rideshares, ensuring your message travels with them.
                   </p>
                 </div>
               </div>
