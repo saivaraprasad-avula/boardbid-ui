@@ -2,20 +2,19 @@
 export default function HowItWorks() {
   const steps = [
     {
-      title: 'Browse Inventory',
-      description: 'Explore premium billboard Ad spaces across USA via leading SSPs.',
+      title: 'Plan your Requirements',
+      description: 'Brainstorm you requirements with our AI or Human Experts.',
       iconColor: 'text-emerald-500',
       svg: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"
+        <path 
+        stroke-linecap="round" stroke-linejoin="round"
+        d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" 
         />
       ),
     },
     {
-      title: 'Upload Creatives',
-      description: 'Upload your ad creatives in supported formats, hassle-free.',
+      title: 'Finalize Creatives',
+      description: 'Upload your ad creatives or get help from us to design them.',
       iconColor: 'text-blue-500',
       svg: (
         <path
@@ -27,7 +26,7 @@ export default function HowItWorks() {
     },
     {
       title: 'Allocate Budget',
-      description: 'Choose campaign spend, regions, and timeframe.',
+      description: 'Decide campaign spend, regions, and timeframe.',
       iconColor: 'text-yellow-500',
       svg: (
         <path
@@ -39,7 +38,7 @@ export default function HowItWorks() {
     },
     {
       title: 'Launch Campaign',
-      description: 'Book instantly, or schedule delivery with confidence.',
+      description: 'Start instantly, or schedule delivery with confidence.',
       iconColor: 'text-purple-500',
       svg: (
         <path

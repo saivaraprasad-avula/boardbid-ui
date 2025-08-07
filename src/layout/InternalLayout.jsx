@@ -78,8 +78,8 @@ export default function InternalLayout({ children }) {
               <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-indigo-600 px-6 pb-4">
                 <div className="flex h-16 shrink-0 items-center">
                   <img
-                    alt="Your Company"
-                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=white"
+                    alt="Boardbid Logo"
+                    src="https://ik.imagekit.io/boardbid/logo-optimized.avif?updatedAt=1748049683476"
                     className="h-8 w-auto"
                   />
                 </div>
@@ -159,9 +159,9 @@ export default function InternalLayout({ children }) {
           <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-indigo-600 px-6 pb-4">
             <div className="flex h-16 shrink-0 items-center">
               <img
-                alt="Your Company"
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=white"
-                className="h-8 w-auto"
+                alt="Boardbid Logo"
+                src="https://ik.imagekit.io/boardbid/logo-optimized.avif?updatedAt=1748049683476"
+                className="h-14 w-auto"
               />
             </div>
             <nav className="flex flex-1 flex-col">
