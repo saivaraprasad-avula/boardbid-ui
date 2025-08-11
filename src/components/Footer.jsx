@@ -16,7 +16,7 @@ const navigation = {
   social: [
     {
       name: 'LinkedIn',
-      href: 'http://localhost:5173/boardbid-ui/',
+      href: 'https://www.linkedin.com/company/boardbid-ai',
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path d="M20 2H4C3.447 2 3 2.447 3 3v18c0 .553.447 1 1 1h16c.553 0 1-.447 1-1V3c0-.553-.447-1-1-1zM9 18H6V9h3v9zm-1.5-10.2c-.966 0-1.75-.79-1.75-1.8 0-1.01.784-1.8 1.75-1.8s1.75.79 1.75 1.8c0 1.01-.784 1.8-1.75 1.8zM18 18h-3v-4.8c0-1.14-.024-2.6-1.8-2.6-1.8 0-2.2 1.2-2.2 2.5V18h-3V9h2.9v1.2h.04c.4-.76 1.38-1.56 2.84-1.56 3.02 0 3.72 2 3.72 4.6V18z" />
