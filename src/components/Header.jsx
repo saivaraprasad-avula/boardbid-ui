@@ -44,7 +44,7 @@ export default function Header({ staticHeader = false }) {
       id="sticky-header"
       className="fixed top-0 left-0 right-0 w-full h-20 bg-white/90 backdrop-blur z-50 shadow-md px-6 flex justify-between items-center transform -translate-y-4 opacity-0 pointer-events-none transition-all duration-500"
     >
-      <Link to="/dashboard" className="flex items-center">
+      <Link to="/" className="flex items-center">
         <img
           src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg"
           alt="BoardBid Logo"
