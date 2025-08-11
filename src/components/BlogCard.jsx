@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function BlogCard({ post }) {
   return (
     <article className="flex flex-col items-start justify-between">
@@ -14,19 +16,19 @@ export default function BlogCard({ post }) {
           <time dateTime={post.datetime} className="text-gray-500 dark:text-gray-400">
             {post.date}
           </time>
-          <a
-            href={post.category.href}
+          <Link
+            to={post.category.href}
             className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800"
           >
             {post.category.title}
-          </a>
+          </Link>
         </div>
         <div className="group relative grow">
           <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
-            <a href={post.href}>
+            <Link to={post.href}>
               <span className="absolute inset-0" />
               {post.title}
-            </a>
+            </Link>
           </h3>
           <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600 dark:text-gray-400">{post.description}</p>
         </div>
@@ -40,10 +42,10 @@ export default function BlogCard({ post }) {
           )}
           <div className="text-sm/6">
             <p className="font-semibold text-gray-900 dark:text-white">
-              <a href={post.author.href}>
+              <Link to={post.author.href}>
                 <span className="absolute inset-0" />
                 {post.author.name}
-              </a>
+              </Link>
             </p>
             {post.author.role && (
               <p className="text-gray-600 dark:text-gray-400">{post.author.role}</p>
