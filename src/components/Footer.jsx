@@ -1,28 +1,17 @@
 // src/components/Footer.jsx
 import { SignUpButton } from '@clerk/clerk-react';
+import { Link } from 'react-router-dom';
 
 const navigation = {
-  solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Automation', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
+  support: [{ name: 'Submit ticket', href: '/support' }],
+  company: [
+    { name: 'About', href: '/about' },
+    { name: 'Blogs', href: '/blogs' },
+    { name: 'Press', href: '/press' },
   ],
-  support: [
-    { name: 'Submit ticket', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-  ],
-    company: [
-      { name: 'About', href: '#' },
-      { name: 'Jobs', href: '#' },
-      { name: 'Press', href: '#' },
-    ],
   legal: [
-    { name: 'Terms of service', href: '#' },
-    { name: 'Privacy policy', href: '#' },
-    { name: 'License', href: '#' },
+    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Privacy Policy', href: '/privacy' },
   ],
   social: [
     {
@@ -119,58 +108,42 @@ export default function Footer() {
             src="https://ik.imagekit.io/boardbid/BoardBid%20logo-White.svg?updatedAt=1754722842401"
             className="h-8"
           />
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm/6 font-semibold font-sans text-white">Solutions</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.solutions.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold font-sans text-white">Support</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.support.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 xl:col-span-2 xl:mt-0">
+            <div>
+              <h3 className="text-sm/6 font-semibold font-sans text-white">Support</h3>
+              <ul role="list" className="mt-6 space-y-4">
+                {navigation.support.map((item) => (
+                  <li key={item.name}>
+                    <Link to={item.href} className="text-sm/6 text-gray-400 hover:text-white">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm/6 font-semibold font-sans text-white">Company</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold font-sans text-white">Legal</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.legal.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div>
+              <h3 className="text-sm/6 font-semibold font-sans text-white">Company</h3>
+              <ul role="list" className="mt-6 space-y-4">
+                {navigation.company.map((item) => (
+                  <li key={item.name}>
+                    <Link to={item.href} className="text-sm/6 text-gray-400 hover:text-white">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-sm/6 font-semibold font-sans text-white">Legal</h3>
+              <ul role="list" className="mt-6 space-y-4">
+                {navigation.legal.map((item) => (
+                  <li key={item.name}>
+                    <Link to={item.href} className="text-sm/6 text-gray-400 hover:text-white">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
