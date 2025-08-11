@@ -7,6 +7,7 @@ import TargetLocations from '../components/TargetLocations';
 import WhyChoose from '../components/WhyChoose';
 import BlogFlyer from '../components/BlogFlyer';
 import Footer from '../components/Footer';
+import { posts } from '../data/blogs';
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
       <Integrations />
       <TargetLocations />
       <WhyChoose />
-      <BlogFlyer />
+      <BlogFlyer posts={posts} />
       <Footer />
     </>
   );
