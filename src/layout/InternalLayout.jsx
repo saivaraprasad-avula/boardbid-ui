@@ -217,7 +217,11 @@ export default function InternalLayout({ children }) {
                   <BellIcon className="size-6" />
                 </button>
                 <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" />
-                <UserButton afterSignOutUrl="/" userProfileMode="navigation" userProfileUrl="/account" />
+                <UserButton
+                  afterSignOutUrl={import.meta.env.BASE_URL}
+                  userProfileMode="navigation"
+                  userProfileUrl={`${import.meta.env.BASE_URL}account`}
+                />
               </div>
             </div>
           </div>
