@@ -46,7 +46,7 @@ export default function Header({ staticHeader = false }) {
     >
       <Link to="/dashboard" className="flex items-center">
         <img
-          src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg?updatedAt=1754564817584"
+          src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg"
           alt="BoardBid Logo"
           className="h-8 sm:h-8 mt-1"
         />

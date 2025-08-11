@@ -147,7 +147,7 @@ export default function InternalLayout({ children }) {
             <div className="flex h-16 shrink-0 items-center">
               <img
                 alt="Boardbid Logo"
-                src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg?updatedAt=1754564817584"
+                src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg"
                 className="h-8 w-auto"
               />
             </div>

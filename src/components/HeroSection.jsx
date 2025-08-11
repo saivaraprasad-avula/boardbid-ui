@@ -24,7 +24,7 @@ export default function Hero() {
               <span className="sr-only">BoardBid.ai</span>
               <img
                 alt="BoardBid logo"
-                src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg?updatedAt=1754564817584"
+                src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg"
                 className="h-8 w-auto"
               />
             </a>
@@ -68,7 +68,7 @@ export default function Hero() {
               <a href="/" className="-m-1.5 p-1.5">
                 <img
                   alt="BoardBid logo Mobile"
-                  src="https://ik.imagekit.io/boardbid/Artboard%201.svg?updatedAt=1754564838031"
+                  src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg"
                   className="h-16 w-auto"
                 />
               </a>
@@ -121,7 +121,7 @@ export default function Hero() {
         <div className="mx-auto max-w-4xl">
           <div className="text-center rounded-3xl bg-[#bfcde0] shadow-md px-32 py-24">
             <h1 className="text-[36px] lg:text-[50px] tracking-[-0.72px] lg:tracking-[-2px] font-sans leading-[1.15] lg:leading-none text-black font-normal text-center mb-6 lg:mb-11">
-              We make billboard<br />advertising easy
+              We make Digital Out-of-Home (DOOH) advertising easy
             </h1>
             <p className="text-neutral-950 text-base font-normal">
               From launch to IPO, plan and book impactful billboard campaigns with{' '}
