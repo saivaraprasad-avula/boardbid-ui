@@ -10,6 +10,7 @@ import Account from './pages/Account';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Blogs from './pages/Blogs';
+import BlogPost from './pages/BlogPost';
 import About from './pages/About';
 import Press from './pages/Press';
 import Support from './pages/Support';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/reports" element={<ProtectedRoute><Reports /></ProtectedRoute>} /> {/* ✅ Add this route */}
         <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:slug" element={<BlogPost />} />
         <Route path="/about" element={<About />} />
         <Route path="/press" element={<Press />} />
         <Route path="/support" element={<Support />} />
