@@ -7,6 +7,12 @@ import NewCampaignPage from './pages/NewCampaignPage';
 import UploadCreative from './pages/UploadCreative';
 import Reports from './pages/Reports';
 import Account from './pages/Account';
+import TermsOfService from './pages/TermsOfService';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Blogs from './pages/Blogs';
+import About from './pages/About';
+import Press from './pages/Press';
+import Support from './pages/Support';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -20,6 +26,12 @@ function App() {
         <Route path="/upload-creative" element={<ProtectedRoute><UploadCreative /></ProtectedRoute>} />
         <Route path="/reports" element={<ProtectedRoute><Reports /></ProtectedRoute>} /> {/* ✅ Add this route */}
         <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/press" element={<Press />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
     </Routes>
   );
 }
