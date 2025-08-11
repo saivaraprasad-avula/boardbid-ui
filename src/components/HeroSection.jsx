@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/clerk-react'
@@ -20,14 +21,14 @@ export default function Hero() {
       <header className="absolute inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
-            <a href="/" className="-m-1.5 p-1.5">
+            <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">BoardBid.ai</span>
               <img
                 alt="BoardBid logo"
                 src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg"
                 className="h-8 w-auto"
               />
-            </a>
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -54,9 +55,9 @@ export default function Hero() {
               </SignInButton>
             </SignedOut>
             <SignedIn>
-              <a href="/dashboard" className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
+              <Link to="/dashboard" className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
                 Dashboard <span aria-hidden="true">&rarr;</span>
-              </a>
+              </Link>
             </SignedIn>
           </div>
         </nav>
@@ -65,13 +66,13 @@ export default function Hero() {
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="/" className="-m-1.5 p-1.5">
+              <Link to="/" className="-m-1.5 p-1.5">
                 <img
                   alt="BoardBid logo Mobile"
                   src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg"
                   className="h-16 w-auto"
                 />
-              </a>
+              </Link>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
@@ -102,12 +103,12 @@ export default function Hero() {
                     </SignInButton>
                   </SignedOut>
                   <SignedIn>
-                    <a
-                      href="/dashboard"
+                    <Link
+                      to="/dashboard"
                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:bg-gray-50"
                     >
                       Dashboard
-                    </a>
+                    </Link>
                   </SignedIn>
                 </div>
               </div>
@@ -137,12 +138,12 @@ export default function Hero() {
                 </SignUpButton>
               </SignedOut>
               <SignedIn>
-                <a
-                  href="/dashboard"
+                <Link
+                  to="/dashboard"
                   className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-gray-800"
                 >
                   Dashboard
-                </a>
+                </Link>
               </SignedIn>
               <a href="#" className="text-sm font-semibold text-gray-900 hover:underline">
                 Learn more →
