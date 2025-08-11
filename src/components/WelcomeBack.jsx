@@ -1,4 +1,5 @@
 import { useUser } from '@clerk/clerk-react';
+import { Link } from 'react-router-dom';
 
 const stats = [
 ];
@@ -30,12 +31,12 @@ export default function WelcomeBack() {
             </div>
           </div>
           <div className="mt-5 flex justify-center sm:mt-0">
-            <a
-              href="/account"
+            <Link
+              to="/account"
               className="flex items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs inset-ring inset-ring-gray-300 hover:bg-gray-50 dark:bg-white/10 dark:text-white dark:shadow-none dark:inset-ring-white/5 dark:hover:bg-white/20"
             >
               View profile
-            </a>
+            </Link>
           </div>
         </div>
       </div>

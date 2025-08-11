@@ -12,11 +12,9 @@ import {
   Bars3Icon,
   BellIcon,
   ChartPieIcon,
-  Cog6ToothIcon,
   DocumentDuplicateIcon,
   FolderIcon,
   HomeIcon,
-  UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import { UserButton } from '@clerk/clerk-react';
@@ -95,7 +93,7 @@ export default function InternalLayout({ children }) {
                         ))}
                       </ul>
                     </li>
-                    <li>
+                    <li className="mt-auto">
                       <div className="text-xs/6 font-semibold text-gray-400">Your teams</div>
                       <ul role="list" className="-mx-2 mt-2 space-y-1">
                         {teams.map((team) => (
@@ -124,15 +122,6 @@ export default function InternalLayout({ children }) {
                           </li>
                         ))}
                       </ul>
-                    </li>
-                    <li className="mt-auto">
-                      <a
-                        href="#"
-                        className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]"
-                      >
-                        <Cog6ToothIcon className="size-6 shrink-0 text-gray-400 group-hover:text-[#288dcf]" />
-                        Settings
-                      </a>
                     </li>
                   </ul>
                 </nav>
@@ -179,7 +168,7 @@ export default function InternalLayout({ children }) {
                     ))}
                   </ul>
                 </li>
-                <li>
+                <li className="mt-auto">
                   <div className="text-xs/6 font-semibold text-gray-400">Your teams</div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
                     {teams.map((team) => (
@@ -208,15 +197,6 @@ export default function InternalLayout({ children }) {
                       </li>
                     ))}
                   </ul>
-                </li>
-                <li className="mt-auto">
-                  <a
-                    href="#"
-                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]"
-                  >
-                    <Cog6ToothIcon className="size-6 shrink-0 text-gray-400 group-hover:text-[#288dcf]" />
-                    Settings
-                  </a>
                 </li>
               </ul>
             </nav>
