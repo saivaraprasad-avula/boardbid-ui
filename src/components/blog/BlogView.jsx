@@ -1,4 +1,6 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+
+const BASE_PATH = '/boardbid-ui';
 
 const mockPosts = [
   {
@@ -31,6 +33,9 @@ export default function BlogView() {
         className="prose max-w-none"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
+      <Link to={`${BASE_PATH}/`} className="text-blue-600 underline">
+        Back to home
+      </Link>
     </article>
   );
 }
