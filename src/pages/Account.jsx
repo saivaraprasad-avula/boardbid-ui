@@ -4,7 +4,7 @@ import InternalLayout from '../layout/InternalLayout';
 export default function Account() {
   return (
     <InternalLayout>
-      <UserProfile />
+      <UserProfile routing="path" path="/account" />
     </InternalLayout>
   );
 }
