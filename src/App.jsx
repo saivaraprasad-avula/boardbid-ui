@@ -25,7 +25,7 @@ function App() {
         <Route path="/campaign/new" element={<ProtectedRoute><NewCampaignPage /></ProtectedRoute>} />
         <Route path="/upload-creative" element={<ProtectedRoute><UploadCreative /></ProtectedRoute>} />
         <Route path="/reports" element={<ProtectedRoute><Reports /></ProtectedRoute>} /> {/* ✅ Add this route */}
-        <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+        <Route path="/account/*" element={<ProtectedRoute><Account /></ProtectedRoute>} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/about" element={<About />} />
         <Route path="/press" element={<Press />} />
