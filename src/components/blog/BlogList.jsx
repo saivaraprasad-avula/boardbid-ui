@@ -1,6 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 
+// ensure navigation works when the app is hosted under a non-root base path
+const BASE_PATH = '/boardbid-ui';
+
 const mockPosts = [
   {
     id: 1,
@@ -24,7 +27,7 @@ export default function BlogList() {
       {mockPosts.map((post) => (
         <Card
           key={post.id}
-          onClick={() => navigate(`/blog/${post.id}`)}
+          onClick={() => navigate(`${BASE_PATH}/blog/${post.id}`)}
           className="cursor-pointer hover:shadow-lg transition-shadow"
         >
           <CardHeader>
