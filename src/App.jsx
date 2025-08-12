@@ -15,6 +15,7 @@ import BlogPost from './pages/BlogPost';
 import About from './pages/About';
 import Press from './pages/Press';
 import Support from './pages/Support';
+import Contact from './pages/Contact';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/press" element={<Press />} />
         <Route path="/support" element={<Support />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
     </Routes>

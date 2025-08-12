@@ -9,7 +9,7 @@ import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/clerk-re
   const navigation = [
     { name: 'Product', href: '#' },
     { name: 'Pricing', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Contact', href: '/contact' },
   ]
 
 export default function Hero() {
