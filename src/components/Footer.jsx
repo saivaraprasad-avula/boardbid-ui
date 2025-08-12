@@ -3,11 +3,15 @@ import { SignUpButton } from '@clerk/clerk-react';
 import { Link } from 'react-router-dom';
 
 const navigation = {
-  support: [{ name: 'Submit ticket', href: '/support' }],
+  support: [
+    { name: 'Submit ticket', href: '/support' },
+    { name: 'Contact', href: '/contact' },
+  ],
   company: [
     { name: 'About', href: '/about' },
     { name: 'Blogs', href: '/blogs' },
     { name: 'Press', href: '/press' },
+    { name: 'Contact', href: '/contact' },
   ],
   legal: [
     { name: 'Terms of Service', href: '/terms' },

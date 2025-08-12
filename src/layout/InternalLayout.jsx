@@ -29,7 +29,7 @@ const navigation = [
 const teams = [
   { id: 1, name: 'Packages', href: '#', initial: 'P', current: false },
   { id: 2, name: 'Blogs', href: '#', initial: 'B', current: false },
-  { id: 3, name: 'Support', href: '#', initial: 'S', current: false },
+  { id: 3, name: 'Support', href: '/contact', initial: 'S', current: false },
 ];
 
 function classNames(...classes) {
