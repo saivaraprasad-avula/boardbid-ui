@@ -25,7 +25,7 @@ function App() {
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/campaign/new" element={<ProtectedRoute><NewCampaignPage /></ProtectedRoute>} />
-        <Route path="/upload-creative" element={<ProtectedRoute><UploadCreative /></ProtectedRoute>} />
+        <Route path="/manage-creatives" element={<ProtectedRoute><UploadCreative /></ProtectedRoute>} />
         <Route path="/campaigns" element={<ProtectedRoute><Campaigns /></ProtectedRoute>} />
         <Route path="/campaigns/:id/*" element={<ProtectedRoute><CampaignDetail /></ProtectedRoute>} />
         <Route path="/account/*" element={<ProtectedRoute><Account /></ProtectedRoute>} />
