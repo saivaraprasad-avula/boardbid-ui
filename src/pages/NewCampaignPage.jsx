@@ -1,11 +1,12 @@
 import InternalLayout from "../layout/InternalLayout";
 import PageHeader from "../components/PageHeader";
+import Card from "../components/Card";
 
 export default function NewCampaignPage() {
   return (
     <InternalLayout>
       <PageHeader title="New Campaign" />
-      <div className="w-full px-0 py-10">
+      <Card title="New Campaign Form">
         <iframe
           className="w-full h-[1000px]"
           src="https://forms.fillout.com/t/umZFxzNKgUus"
@@ -13,7 +14,7 @@ export default function NewCampaignPage() {
           style={{ background: "transparent", border: "none" }}
           allowFullScreen
         />
-      </div>
+      </Card>
     </InternalLayout>
   );
 }
