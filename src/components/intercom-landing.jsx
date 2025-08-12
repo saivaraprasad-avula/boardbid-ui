@@ -6,5 +6,5 @@ export default function Component() {
     app_id: 'p1go89tx',
   });
 
-  return <div>Example App</div>;
+  return <div></div>;
 }

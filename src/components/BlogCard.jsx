@@ -47,9 +47,6 @@ export default function BlogCard({ post }) {
                 {post.author.name}
               </Link>
             </p>
-            {post.author.role && (
-              <p className="text-gray-600 dark:text-gray-400">{post.author.role}</p>
-            )}
           </div>
         </div>
       </div>
