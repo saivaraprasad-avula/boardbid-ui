@@ -1,6 +1,7 @@
 // ✅ src/pages/UploadCreative.jsx (with InternalLayout)
 import React, { useState } from 'react';
 import InternalLayout from '../layout/InternalLayout';
+import Card from '../components/Card';
 import { validateCreative } from '../utils/validateCreative';
 import { db } from '../utils/db';
 
@@ -106,9 +107,7 @@ export default function UploadCreative() {
 
   return (
     <InternalLayout>
-      <h2 className="text-3xl font-bold text-gray-800 mb-8">🎨 Upload & Validate Creative</h2>
-
-      <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+      <Card title="🎨 Upload & Validate Creative">
         <label className="block mb-4 text-sm font-medium text-gray-700">
           Select a creative (jpg, png, or mp4)
         </label>
@@ -190,7 +189,7 @@ export default function UploadCreative() {
             )}
           </div>
         )}
-      </div>
+      </Card>
     </InternalLayout>
   );
 }
