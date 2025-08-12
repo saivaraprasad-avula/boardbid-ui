@@ -1,6 +1,7 @@
 // ✅ src/pages/UploadCreative.jsx (with InternalLayout)
 import React, { useState } from 'react';
 import InternalLayout from '../layout/InternalLayout';
+import PageHeader from '../components/PageHeader';
 import Card from '../components/Card';
 import { validateCreative } from '../utils/validateCreative';
 import { db } from '../utils/db';
@@ -107,6 +108,7 @@ export default function UploadCreative() {
 
   return (
     <InternalLayout>
+      <PageHeader title="Upload Creative" />
       <Card title="🎨 Upload & Validate Creative">
         <label className="block mb-4 text-sm font-medium text-gray-700">
           Select a creative (jpg, png, or mp4)
