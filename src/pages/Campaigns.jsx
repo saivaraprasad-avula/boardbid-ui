@@ -1,4 +1,5 @@
 import InternalLayout from '../layout/InternalLayout';
+import PageHeader from '../components/PageHeader';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { EllipsisHorizontalIcon } from '@heroicons/react/20/solid';
 import { useNavigate } from 'react-router-dom';
@@ -29,6 +30,7 @@ export default function Campaigns() {
 
   return (
     <InternalLayout>
+      <PageHeader title="My Campaigns" />
       <ul role="list" className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-3 xl:gap-x-8">
         {clients.map((client) => (
           <li
