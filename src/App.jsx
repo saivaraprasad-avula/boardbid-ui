@@ -5,7 +5,8 @@ import SignUpPage from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
 import NewCampaignPage from './pages/NewCampaignPage';
 import UploadCreative from './pages/UploadCreative';
-import Reports from './pages/Reports';
+import Campaigns from './pages/Campaigns';
+import CampaignDetail from './pages/CampaignDetail';
 import Account from './pages/Account';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -25,7 +26,8 @@ function App() {
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/campaign/new" element={<ProtectedRoute><NewCampaignPage /></ProtectedRoute>} />
         <Route path="/upload-creative" element={<ProtectedRoute><UploadCreative /></ProtectedRoute>} />
-        <Route path="/reports" element={<ProtectedRoute><Reports /></ProtectedRoute>} /> {/* ✅ Add this route */}
+        <Route path="/campaigns" element={<ProtectedRoute><Campaigns /></ProtectedRoute>} />
+        <Route path="/campaigns/:id/*" element={<ProtectedRoute><CampaignDetail /></ProtectedRoute>} />
         <Route path="/account/*" element={<ProtectedRoute><Account /></ProtectedRoute>} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:slug" element={<BlogPost />} />
