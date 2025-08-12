@@ -21,7 +21,7 @@ export default function Integrations() {
         <div className="mx-auto max-w-2xl lg:max-w-none">
         <div className="flex justify-center">
             <div className="text-center">
-                <h2 className="text-base/7 font-semibold text-indigo-600">Access billboards across the Globe thorugh</h2>
+                <h2 className="text-base/7 font-semibold text-indigo-600">Access billboards across the Globe through</h2>
                 <h2 className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                 Our unparalleled reach
                 </h2>

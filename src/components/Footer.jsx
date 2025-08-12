@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom';
 
 const navigation = {
   support: [
-    { name: 'Submit ticket', href: '/support' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Submit ticket', href: '/contact' },
   ],
   company: [
     { name: 'About', href: '/about' },
     { name: 'Blogs', href: '/blogs' },
-    { name: 'Press', href: '/press' },
     { name: 'Contact', href: '/contact' },
   ],
   legal: [

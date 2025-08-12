@@ -9,6 +9,7 @@ import BlogFlyer from '../components/BlogFlyer';
 import Footer from '../components/Footer';
 import MediaFormatsBento from "../components/VenuesSection";
 import { posts } from '../data/blogs';
+import Intercom from '../components/intercom-landing';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <WhyChoose />
       <BlogFlyer posts={posts} />
       <Footer />
+      <Intercom />
     </>
   );
 }
