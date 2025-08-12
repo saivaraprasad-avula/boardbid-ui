@@ -5,7 +5,6 @@ import Card from "../components/Card";
 export default function NewCampaignPage() {
   return (
     <InternalLayout>
-      <PageHeader title="New Campaign" />
       <Card title="New Campaign Form">
         <iframe
           className="w-full h-[1000px]"

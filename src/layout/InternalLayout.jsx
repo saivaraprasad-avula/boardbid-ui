@@ -21,8 +21,8 @@ import { UserButton } from '@clerk/clerk-react';
 
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
-  { name: 'Manage Creatives', href: '/manage-creatives', icon: DocumentDuplicateIcon },
   { name: 'New Campaign', href: '/campaign/new', icon: FolderIcon },
+  { name: 'Manage Creatives', href: '/manage-creatives', icon: DocumentDuplicateIcon },
   { name: 'My Campaigns', href: '/campaigns', icon: ClipboardDocumentListIcon },
 ];
 

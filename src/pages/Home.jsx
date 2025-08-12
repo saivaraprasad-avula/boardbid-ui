@@ -7,6 +7,7 @@ import TargetLocations from '../components/TargetLocations';
 import WhyChoose from '../components/WhyChoose';
 import BlogFlyer from '../components/BlogFlyer';
 import Footer from '../components/Footer';
+import MediaFormatsBento from "../components/VenuesSection";
 import { posts } from '../data/blogs';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <HowItWorks />
       <Integrations />
+      <MediaFormatsBento/>
       <TargetLocations />
       <WhyChoose />
       <BlogFlyer posts={posts} />

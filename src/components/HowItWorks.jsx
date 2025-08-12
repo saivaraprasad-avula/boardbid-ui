@@ -1,4 +1,6 @@
 // src/components/HowItWorks.jsx
+import LandingSectionHeading from "./LandingSectionHeading";
+
 export default function HowItWorks() {
   const steps = [
     {

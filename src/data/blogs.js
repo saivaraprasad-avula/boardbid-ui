@@ -12,7 +12,7 @@ export const posts = [
     category: { title: 'Marketing', href: '#' },
     author: {
       name: 'Jamie Rush',
-      role: 'Marketing Strategist',
+      role: '',
       href: '#',
       imageUrl: '',
     },
@@ -36,7 +36,7 @@ export const posts = [
     category: { title: 'Marketing', href: '#' },
     author: {
       name: 'Kavya Mohana Adusumilli',
-      role: 'Content Writer',
+      role: '',
       href: '#',
       imageUrl: '',
     },
@@ -60,7 +60,7 @@ export const posts = [
     category: { title: 'Technology', href: '#' },
     author: {
       name: 'Sai Vara Prasad Avula',
-      role: 'Product Director',
+      role: '',
       href: '#',
       imageUrl: '',
     },
