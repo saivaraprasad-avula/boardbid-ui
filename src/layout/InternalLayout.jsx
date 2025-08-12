@@ -11,11 +11,11 @@ import {
 import {
   Bars3Icon,
   BellIcon,
-  ChartPieIcon,
   DocumentDuplicateIcon,
   FolderIcon,
   HomeIcon,
   XMarkIcon,
+  ClipboardDocumentListIcon,
 } from '@heroicons/react/24/outline';
 import { UserButton } from '@clerk/clerk-react';
 
@@ -23,7 +23,7 @@ const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
   { name: 'Upload Creative', href: '/upload-creative', icon: DocumentDuplicateIcon },
   { name: 'New Campaign', href: '/campaign/new', icon: FolderIcon },
-  { name: 'Reports', href: '/reports', icon: ChartPieIcon },
+  { name: 'My Campaigns', href: '/campaigns', icon: ClipboardDocumentListIcon },
 ];
 
 const teams = [
