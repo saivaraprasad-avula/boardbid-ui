@@ -70,10 +70,16 @@ boardbid-ui/
 
 ## 🔐 Authentication
 
-This project uses [Clerk](https://clerk.com/docs/quickstarts/react) for user management. Create a `.env` file at the project root with:
+This project uses [Clerk](https://clerk.com/docs/quickstarts/react) for user management. Create a `.env` file at the project root with your **development** key:
 
 ```
 VITE_CLERK_PUBLISHABLE_KEY=pk_test_aW50ZW5zZS1zY29ycGlvbi00Ny5jbGVyay5hY2NvdW50cy5kZXYk
+```
+
+For production builds, supply your live publishable key. You can do this by creating a `.env.production` file:
+
+```
+VITE_CLERK_PUBLISHABLE_KEY=pk_live_Y2xlcmsuYm9hcmRiaWQuYWkk
 ```
 
 The application expects this key at runtime.
