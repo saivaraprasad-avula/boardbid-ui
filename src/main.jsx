@@ -28,7 +28,7 @@ function ClerkApp() {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/boardbid-ui">
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <ClerkApp />
     </BrowserRouter>
   </StrictMode>,
