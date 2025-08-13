@@ -1,6 +1,7 @@
 // src/components/Footer.jsx
 import { SignUpButton } from '@clerk/clerk-react';
 import { Link } from 'react-router-dom';
+import { withBase } from '../utils/basePath.js';
 
 const navigation = {
   support: [
@@ -56,7 +57,7 @@ export default function Footer() {
             We plan and manage your billboard campaigns end-to-end from strategy to booking, built around your goals.
           </p>
           <div className="mt-8 flex justify-center">
-            <SignUpButton mode="modal" afterSignUpUrl="/dashboard">
+            <SignUpButton mode="modal" afterSignUpUrl={withBase('/dashboard')}>
               <button
                 className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >

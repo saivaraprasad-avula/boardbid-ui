@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/clerk-react'
+import { withBase } from '../utils/basePath.js'
 
 const navigation = [
   { name: 'Product', to: '#how-it-works' },
@@ -52,7 +53,7 @@ export default function Hero() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <SignedOut>
-              <SignInButton mode="modal" afterSignInUrl="/dashboard">
+              <SignInButton mode="modal" afterSignInUrl={withBase('/dashboard')}>
                 <button className="text-sm font-semibold text-gray-900 hover:text-indigo-600">
                   Log in <span aria-hidden="true">&rarr;</span>
                 </button>
@@ -100,7 +101,7 @@ export default function Hero() {
                 </div>
                 <div className="py-6">
                   <SignedOut>
-                    <SignInButton mode="modal" afterSignInUrl="/dashboard">
+                    <SignInButton mode="modal" afterSignInUrl={withBase('/dashboard')}>
                       <button className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:bg-gray-50">
                         Log in
                       </button>
@@ -157,7 +158,7 @@ export default function Hero() {
 
             <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <SignedOut>
-                <SignUpButton mode="modal" afterSignUpUrl="/dashboard">
+                <SignUpButton mode="modal" afterSignUpUrl={withBase('/dashboard')}>
                   <button className="w-full sm:w-auto rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-gray-800">
                     Get started
                   </button>
