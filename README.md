@@ -77,7 +77,7 @@ VITE_CLERK_PUBLISHABLE_KEY=pk_test_aW50ZW5zZS1zY29ycGlvbi00Ny5jbGVyay5hY2NvdW50c
 VITE_CLERK_PUBLISHABLE_KEY_PROD=pk_live_Y2xlcmsuYm9hcmRiaWQuYWkk
 ```
 
-At runtime the app selects the development key when served from `localhost` or `https://saivaraprasad-avula.github.io/boardbid-ui/` and falls back to the production key for all other origins.
+At runtime the app loads the production key only when served from `boardbid.ai` or its subdomains. All other origins, including `localhost` and the GitHub Pages demo, use the development key.
 
 Authenticated users can access dashboards, campaign tools, and manage their profile on `/account`.
 
