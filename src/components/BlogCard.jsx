@@ -4,12 +4,14 @@ export default function BlogCard({ post }) {
   return (
     <article className="flex flex-col items-start justify-between">
       <div className="relative w-full">
-        <img
-          alt={post.title}
-          src={post.imageUrl}
-          className="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-2/1 lg:aspect-3/2 dark:bg-gray-800"
-        />
-        <div className="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10" />
+        <Link to={post.href}>
+          <img
+            alt={post.title}
+            src={post.imageUrl}
+            className="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-2/1 lg:aspect-3/2 dark:bg-gray-800"
+          />
+          <div className="absolute inset-0 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10" />
+        </Link>
       </div>
       <div className="flex max-w-xl grow flex-col justify-between">
         <div className="mt-8 flex items-center gap-x-4 text-xs">
@@ -30,7 +32,9 @@ export default function BlogCard({ post }) {
               {post.title}
             </Link>
           </h3>
-          <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600 dark:text-gray-400">{post.description}</p>
+          <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600 dark:text-gray-400">
+            {post.description}
+          </p>
         </div>
         <div className="relative mt-8 flex items-center gap-x-4 justify-self-end">
           {post.author.imageUrl && (
