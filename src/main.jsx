@@ -7,12 +7,11 @@ import './index.css';
 import App from './App.jsx';
 
 const hostname = window.location.hostname;
-const isLocal = hostname === 'localhost';
-const isGhPages = hostname === 'saivaraprasad-avula.github.io';
-const PUBLISHABLE_KEY =
-  isLocal || isGhPages
-    ? import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
-    : import.meta.env.VITE_CLERK_PUBLISHABLE_KEY_PROD;
+const isBoardBidDomain =
+  hostname === 'boardbid.ai' || hostname.endsWith('.boardbid.ai');
+const PUBLISHABLE_KEY = isBoardBidDomain
+  ? import.meta.env.VITE_CLERK_PUBLISHABLE_KEY_PROD
+  : import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 if (!PUBLISHABLE_KEY) {
   throw new Error('Missing Clerk Publishable Key');
