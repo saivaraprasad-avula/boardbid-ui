@@ -6,7 +6,14 @@ import { withBase } from './utils/basePath.js';
 import './index.css';
 import App from './App.jsx';
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+const hostname = window.location.hostname;
+const isLocal = hostname === 'localhost';
+const isGhPages = hostname === 'saivaraprasad-avula.github.io';
+const PUBLISHABLE_KEY =
+  isLocal || isGhPages
+    ? import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+    : import.meta.env.VITE_CLERK_PUBLISHABLE_KEY_PROD;
+
 if (!PUBLISHABLE_KEY) {
   throw new Error('Missing Clerk Publishable Key');
 }
