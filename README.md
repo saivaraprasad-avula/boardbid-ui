@@ -70,19 +70,14 @@ boardbid-ui/
 
 ## 🔐 Authentication
 
-This project uses [Clerk](https://clerk.com/docs/quickstarts/react) for user management. Create a `.env` file at the project root with your **development** key:
+This project uses [Clerk](https://clerk.com/docs/quickstarts/react) for user management. Provide both development and production publishable keys in your `.env`:
 
 ```
 VITE_CLERK_PUBLISHABLE_KEY=pk_test_aW50ZW5zZS1zY29ycGlvbi00Ny5jbGVyay5hY2NvdW50cy5kZXYk
+VITE_CLERK_PUBLISHABLE_KEY_PROD=pk_live_Y2xlcmsuYm9hcmRiaWQuYWkk
 ```
 
-For production builds, supply your live publishable key. You can do this by creating a `.env.production` file:
-
-```
-VITE_CLERK_PUBLISHABLE_KEY=pk_live_Y2xlcmsuYm9hcmRiaWQuYWkk
-```
-
-The application expects this key at runtime.
+At runtime the app selects the development key when served from `localhost` or `https://saivaraprasad-avula.github.io/boardbid-ui/` and falls back to the production key for all other origins.
 
 Authenticated users can access dashboards, campaign tools, and manage their profile on `/account`.
 
