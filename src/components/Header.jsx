@@ -7,6 +7,7 @@ import {
   SignUpButton,
   UserButton,
 } from '@clerk/clerk-react';
+import { withBase } from '../utils/basePath.js';
 
 export default function Header({ staticHeader = false }) {
   const headerRef = useRef(null);
@@ -56,19 +57,19 @@ export default function Header({ staticHeader = false }) {
         <Link to="/blogs" className="hover:text-emerald-600 transition">Blog</Link>
         <Link to="/contact" className="hover:text-emerald-600 transition">Contact</Link>
         <SignedOut>
-          <SignInButton mode="modal" afterSignInUrl="/dashboard">
+          <SignInButton mode="modal" afterSignInUrl={withBase('/dashboard')}>
             <button className="hover:text-emerald-600 transition">Login</button>
           </SignInButton>
-          <SignUpButton mode="modal" afterSignUpUrl="/dashboard">
+          <SignUpButton mode="modal" afterSignUpUrl={withBase('/dashboard')}>
             <button className="hover:text-emerald-600 transition">Sign Up</button>
           </SignUpButton>
         </SignedOut>
           <SignedIn>
             <Link to="/dashboard" className="hover:text-emerald-600 transition">Dashboard</Link>
             <UserButton
-              afterSignOutUrl="/"
+              afterSignOutUrl={withBase('/')}
               userProfileMode="navigation"
-              userProfileUrl="/account"
+              userProfileUrl={withBase('/account')}
             />
           </SignedIn>
         </nav>

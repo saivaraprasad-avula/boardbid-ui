@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, useNavigate } from 'react-router-dom';
 import { ClerkProvider } from '@clerk/clerk-react';
+import { withBase } from './utils/basePath.js';
 import './index.css';
 import App from './App.jsx';
 
@@ -16,10 +17,10 @@ function ClerkApp() {
     <ClerkProvider
       publishableKey={PUBLISHABLE_KEY}
       navigate={(to) => navigate(to)}
-      signInUrl="/login"
-      signUpUrl="/sign-up"
-      userProfileUrl="/account"
-      afterSignOutUrl="/"
+      signInUrl={withBase('/login')}
+      signUpUrl={withBase('/sign-up')}
+      userProfileUrl={withBase('/account')}
+      afterSignOutUrl={withBase('/')}
     >
       <App />
     </ClerkProvider>

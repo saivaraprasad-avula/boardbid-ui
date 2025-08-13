@@ -18,6 +18,7 @@ import {
   ClipboardDocumentListIcon,
 } from '@heroicons/react/24/outline';
 import { UserButton } from '@clerk/clerk-react';
+import { withBase } from '../utils/basePath.js';
 
 
 const navigation = [
@@ -219,9 +220,9 @@ export default function InternalLayout({ children }) {
                 </button>
                 <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" />
                 <UserButton
-                  afterSignOutUrl="/"
+                  afterSignOutUrl={withBase('/')}
                   userProfileMode="navigation"
-                  userProfileUrl="/account"
+                  userProfileUrl={withBase('/account')}
                 />
               </div>
             </div>
