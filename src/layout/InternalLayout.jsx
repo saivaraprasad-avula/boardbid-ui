@@ -219,9 +219,9 @@ export default function InternalLayout({ children }) {
                 </button>
                 <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" />
                 <UserButton
-                  afterSignOutUrl={import.meta.env.BASE_URL}
+                  afterSignOutUrl="/"
                   userProfileMode="navigation"
-                  userProfileUrl={`${import.meta.env.BASE_URL}account`}
+                  userProfileUrl="/account"
                 />
               </div>
             </div>

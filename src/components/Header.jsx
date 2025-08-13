@@ -66,9 +66,9 @@ export default function Header({ staticHeader = false }) {
           <SignedIn>
             <Link to="/dashboard" className="hover:text-emerald-600 transition">Dashboard</Link>
             <UserButton
-              afterSignOutUrl={import.meta.env.BASE_URL}
+              afterSignOutUrl="/"
               userProfileMode="navigation"
-              userProfileUrl={`${import.meta.env.BASE_URL}account`}
+              userProfileUrl="/account"
             />
           </SignedIn>
         </nav>

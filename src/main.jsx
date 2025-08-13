@@ -16,10 +16,10 @@ function ClerkApp() {
     <ClerkProvider
       publishableKey={PUBLISHABLE_KEY}
       navigate={(to) => navigate(to)}
-      signInUrl={`${import.meta.env.BASE_URL}login`}
-      signUpUrl={`${import.meta.env.BASE_URL}sign-up`}
-      userProfileUrl={`${import.meta.env.BASE_URL}account`}
-      afterSignOutUrl={import.meta.env.BASE_URL}
+      signInUrl="/login"
+      signUpUrl="/sign-up"
+      userProfileUrl="/account"
+      afterSignOutUrl="/"
     >
       <App />
     </ClerkProvider>
