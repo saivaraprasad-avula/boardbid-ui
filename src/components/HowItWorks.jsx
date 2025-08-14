@@ -16,18 +16,6 @@ export default function HowItWorks() {
       ),
     },
     {
-      title: 'Finalize Creatives',
-      description: 'Upload your ad creatives or get help from us to design them.',
-      iconColor: 'text-blue-500',
-      svg: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
-        />
-      ),
-    },
-    {
       title: 'Allocate Budget',
       description: 'Decide campaign spend, regions, and timeframe.',
       iconColor: 'text-yellow-500',
@@ -36,6 +24,18 @@ export default function HowItWorks() {
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      ),
+    },
+    {
+      title: 'Finalize Creatives',
+      description: 'Upload your ad creatives or get help from us to design them.',
+      iconColor: 'text-blue-500',
+      svg: (
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
         />
       ),
     },

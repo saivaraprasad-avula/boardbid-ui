@@ -97,7 +97,7 @@ export default function InternalLayout({ children }) {
                       </ul>
                     </li>
                     <li className="mt-auto">
-                      <div className="text-xs/6 font-semibold text-gray-400">Your teams</div>
+                      <div className="text-xs/6 font-semibold text-gray-400">Other Links</div>
                       <ul role="list" className="-mx-2 mt-2 space-y-1">
                         {teams.map((team) => (
                           <li key={team.name}>
@@ -174,7 +174,7 @@ export default function InternalLayout({ children }) {
                   </ul>
                 </li>
                 <li className="mt-auto">
-                  <div className="text-xs/6 font-semibold text-gray-400">Your teams</div>
+                  <div className="text-xs/6 font-semibold text-gray-400">Other Links</div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
                     {teams.map((team) => (
                       <li key={team.name}>
