@@ -35,7 +35,7 @@ function ClerkApp() {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+    <BrowserRouter basename="/">
       <ClerkApp />
     </BrowserRouter>
   </StrictMode>,
