@@ -10,7 +10,7 @@ import {
 } from '@headlessui/react';
 import {
   Bars3Icon,
-  BellIcon,
+  /* BellIcon, */
   DocumentDuplicateIcon,
   FolderIcon,
   HomeIcon,
@@ -29,7 +29,6 @@ const navigation = [
 ];
 
 const teams = [
-  { id: 1, name: 'Packages', href: '#', initial: 'P', current: false },
   { id: 2, name: 'Blogs', href: '/blogs', initial: 'B', current: false },
   { id: 3, name: 'Support', href: '/contact', initial: 'S', current: false },
 ];
@@ -218,10 +217,12 @@ export default function InternalLayout({ children }) {
             <div aria-hidden="true" className="h-6 w-px bg-gray-200 lg:hidden" />
             <div className="flex flex-1 justify-end gap-x-4 self-stretch lg:gap-x-6">
               <div className="flex items-center gap-x-4 lg:gap-x-6">
+                {/*
                 <button type="button" className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="size-6" />
                 </button>
+                */}
                 <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" />
                 <UserButton
                   afterSignOutUrl={withBase('/')}

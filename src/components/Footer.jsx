@@ -1,5 +1,5 @@
 // src/components/Footer.jsx
-import { SignUpButton } from '@clerk/clerk-react';
+import { SignUpButton, SignedIn, SignedOut } from '@clerk/clerk-react';
 import { Link } from 'react-router-dom';
 import { withBase } from '../utils/basePath.js';
 
@@ -57,13 +57,24 @@ export default function Footer() {
             We plan and manage your billboard campaigns end-to-end from strategy to booking, built around your goals.
           </p>
           <div className="mt-8 flex justify-center">
-            <SignUpButton mode="modal" afterSignUpUrl={withBase('/dashboard')}>
-              <button
-                className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-              >
-                Get started
-              </button>
-            </SignUpButton>
+            <SignedOut>
+              <SignUpButton mode="modal" afterSignUpUrl={withBase('/dashboard')}>
+                <button
+                  className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                >
+                  Get started
+                </button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <Link to="/dashboard">
+                <button
+                  className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                >
+                  Dashboard
+                </button>
+              </Link>
+            </SignedIn>
           </div>
         </div>
         <div className="mt-24 border-t border-white/10 pt-12 xl:grid xl:grid-cols-3 xl:gap-8">
