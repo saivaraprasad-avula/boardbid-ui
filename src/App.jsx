@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop.jsx';
 import Home from './pages/Home';
 import SignInPage from './pages/SignIn';
 import SignUpPage from './pages/SignUp';
@@ -20,7 +21,9 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<SignInPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
@@ -38,7 +41,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
-    </Routes>
+      </Routes>
+    </>
   );
 }
 
