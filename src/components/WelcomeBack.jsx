@@ -19,7 +19,7 @@ export default function WelcomeBack() {
               <img
                 alt=""
                 src={user?.imageUrl}
-                className="mx-auto size-20 rounded-full dark:outline dark:-outline-offset-1 dark:outline-white/10"
+                className="mx-auto h-20 w-20 rounded-full object-cover aspect-square dark:outline dark:-outline-offset-1 dark:outline-white/10"
               />
             </div>
             <div className="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
