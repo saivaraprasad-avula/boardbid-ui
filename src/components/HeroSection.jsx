@@ -26,7 +26,7 @@ export default function Hero() {
               <span className="sr-only">BoardBid.ai</span>
               <img
                 alt="BoardBid logo"
-                src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg"
+                src="https://ik.imagekit.io/boardbid/BoardBid%20final.avif?updatedAt=1755054268128"
                 className="h-8 w-auto"
               />
             </Link>
@@ -84,7 +84,7 @@ export default function Hero() {
               <Link to="/" className="-m-1.5 p-1.5">
                 <img
                   alt="BoardBid logo Mobile"
-                  src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg"
+                  src="https://ik.imagekit.io/boardbid/BoardBid%20final.avif?updatedAt=1755054268128"
                   className="h-16 w-auto"
                 />
               </Link>

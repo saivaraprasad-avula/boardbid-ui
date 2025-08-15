@@ -62,7 +62,7 @@ export default function InternalLayout({ children }) {
                   <Link to="/">
                     <img
                       alt="Boardbid Logo"
-                      src="https://ik.imagekit.io/boardbid/logo-optimized.avif?updatedAt=1748049683476"
+                      src="https://ik.imagekit.io/boardbid/BoardBid%20final.avif?updatedAt=1755054268128"
                       className="h-8 w-auto"
                     />
                   </Link>
@@ -139,7 +139,7 @@ export default function InternalLayout({ children }) {
               <Link to="/">
                 <img
                   alt="Boardbid Logo"
-                  src="https://ik.imagekit.io/boardbid/BoardBid%20logo.svg"
+                  src="https://ik.imagekit.io/boardbid/BoardBid%20final.avif?updatedAt=1755054268128"
                   className="h-8 w-auto"
                 />
               </Link>
