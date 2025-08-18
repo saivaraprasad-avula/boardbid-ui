@@ -8,7 +8,6 @@ import {
   MapPinIcon,
 } from '@heroicons/react/24/outline'
 import HeroHeader from '../components/HeroHeader'
-import Header from '../components/Header'
 import Footer from '../components/Footer'
 import PricingCTA from '../components/PricingCTA'
 
@@ -16,7 +15,6 @@ export default function Pricing() {
   return (
     <div className="bg-white pt-24 sm:pt-32">
       <HeroHeader />
-      <Header />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Headline */}

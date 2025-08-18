@@ -11,7 +11,6 @@ import {
   UserGroupIcon,
 } from '@heroicons/react/20/solid'
 import HeroHeader from '../components/HeroHeader'
-import Header from '../components/Header'
 import Footer from '../components/Footer'
 import OurLeadershipTeam from '../components/OurLeadershipTeam.jsx'
 
@@ -77,7 +76,6 @@ export default function About() {
     <div className="bg-white">
       {/* Header */}
       <HeroHeader />
-      <Header />
 
       <main className="relative isolate">
         {/* Background blob */}

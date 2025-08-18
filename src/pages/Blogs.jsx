@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header';
+import HeroHeader from '../components/HeroHeader';
 import Footer from '../components/Footer';
 import BlogFlyer from '../components/BlogFlyer';
 import { posts } from '../data/blogs';
@@ -7,7 +7,7 @@ import { posts } from '../data/blogs';
 export default function Blogs() {
   return (
     <>
-      <Header staticHeader />
+      <HeroHeader />
       <BlogFlyer posts={posts} />
       <Footer />
     </>
