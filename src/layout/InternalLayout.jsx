@@ -16,8 +16,9 @@ import {
   HomeIcon,
   XMarkIcon,
   ClipboardDocumentListIcon,
+  ArrowLeftOnRectangleIcon,
 } from '@heroicons/react/24/outline';
-import { UserButton } from '@clerk/clerk-react';
+import { UserButton, SignOutButton } from '@clerk/clerk-react';
 import { withBase } from '../utils/basePath.js';
 
 
@@ -96,7 +97,7 @@ export default function InternalLayout({ children }) {
                         ))}
                       </ul>
                     </li>
-                    <li className="mt-auto">
+                    <li>
                       <div className="text-xs/6 font-semibold text-gray-400">Other Links</div>
                       <ul role="list" className="-mx-2 mt-2 space-y-1">
                         {teams.map((team) => (
@@ -125,6 +126,19 @@ export default function InternalLayout({ children }) {
                           </li>
                         ))}
                       </ul>
+                    </li>
+                    <li className="mt-auto">
+                      <SignOutButton redirectUrl={withBase('/')}
+                        >
+                        <button
+                          className="group flex w-full gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]"
+                        >
+                          <ArrowLeftOnRectangleIcon
+                            className="size-6 shrink-0 text-gray-400 group-hover:text-[#288dcf]"
+                          />
+                          Sign out
+                        </button>
+                      </SignOutButton>
                     </li>
                   </ul>
                 </nav>
@@ -173,7 +187,7 @@ export default function InternalLayout({ children }) {
                     ))}
                   </ul>
                 </li>
-                <li className="mt-auto">
+                <li>
                   <div className="text-xs/6 font-semibold text-gray-400">Other Links</div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
                     {teams.map((team) => (
@@ -202,6 +216,19 @@ export default function InternalLayout({ children }) {
                       </li>
                     ))}
                   </ul>
+                </li>
+                <li className="mt-auto">
+                  <SignOutButton redirectUrl={withBase('/')}
+                    >
+                    <button
+                      className="group flex w-full gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]"
+                    >
+                      <ArrowLeftOnRectangleIcon
+                        className="size-6 shrink-0 text-gray-400 group-hover:text-[#288dcf]"
+                      />
+                      Sign out
+                    </button>
+                  </SignOutButton>
                 </li>
               </ul>
             </nav>
