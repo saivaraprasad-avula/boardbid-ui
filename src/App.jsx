@@ -18,7 +18,7 @@ import Press from './pages/Press';
 import Support from './pages/Support';
 import Contact from './pages/Contact';
 import ProtectedRoute from './components/ProtectedRoute';
-import Pricing from  './pages/Pricing';
+import Pricing from './pages/Pricing';
 
 function App() {
   return (
