@@ -33,11 +33,9 @@ export default function Pricing() {
         <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-8 lg:max-w-6xl lg:grid-cols-2">
           {/* Left card */}
           <div className="rounded-2xl ring-1 ring-gray-200 p-8 sm:p-10">
-            <h3 className="text-xl font-semibold text-gray-900">Custom Pricing — No Packages (for now)</h3>
+            <h3 className="text-xl font-semibold text-gray-900">Pricing That Fits Your Campaign</h3>
             <p className="mt-4 text-sm text-gray-600">
-              Since our inventory is biddable via Vistar’s DSP, your actual cost is the CPM (cost per thousand impressions),
-              which varies based on targeting, formats, and demand. Instead of locking you into rigid packages, we’re quoting
-              initial deals custom — so you only pay for what’s right for your campaign.
+            Since our inventory is biddable via Vistar’s DSP, your actual cost is the CPM (cost per thousand impressions), which varies by targeting, formats, and demand. Rather than forcing fixed bundles, we tailor pricing to each campaign — so you only pay for what delivers the most value to your goals.
             </p>
 
             <div className="mt-8">
@@ -50,7 +48,7 @@ export default function Pricing() {
                   <CheckIcon className="h-5 w-5 text-indigo-600" /> Budgets starting as low as $1,000
                 </li>
                 <li className="flex gap-x-2">
-                  <CheckIcon className="h-5 w-5 text-indigo-600" /> Targeting options by audience, location, or event
+                  <CheckIcon className="h-5 w-5 text-indigo-600" /> Flexible targeting by audience, location, or event
                 </li>
                 <li className="flex gap-x-2">
                   <CheckIcon className="h-5 w-5 text-indigo-600" /> Powered by Vistar Media’s premium DSP network
@@ -104,12 +102,7 @@ export default function Pricing() {
 
             {/* Buttons */}
             <div className="mt-6 flex flex-col gap-3">
-              <a
-                href="#"
-                className="w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow hover:bg-indigo-500"
-              >
-                Signup
-              </a>
+              <br />
               <a
                 href="#"
                 className="w-full rounded-md border border-gray-300 px-3 py-2 text-center text-sm font-semibold text-gray-700 hover:bg-gray-50"
