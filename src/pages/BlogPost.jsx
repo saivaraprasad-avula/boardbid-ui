@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { posts } from '../data/blogs';
-import Header from '../components/Header';
+import HeroHeader from '../components/HeroHeader';
 import Footer from '../components/Footer';
 
 export default function BlogPost() {
@@ -10,7 +10,7 @@ export default function BlogPost() {
   if (!post) {
     return (
       <>
-        <Header staticHeader />
+        <HeroHeader />
         <div className="mx-auto max-w-7xl px-6 py-24 text-center">
           <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">Blog not found</h1>
         </div>
@@ -21,7 +21,7 @@ export default function BlogPost() {
 
   return (
     <>
-      <Header staticHeader />
+      <HeroHeader />
       <article
         className="
           mx-auto max-w-3xl

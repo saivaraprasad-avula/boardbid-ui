@@ -1,4 +1,4 @@
-import Header from '../components/Header';
+import HeroHeader from '../components/HeroHeader';
 import Footer from '../components/Footer';
 import Card from '../components/Card';
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
@@ -6,7 +6,7 @@ import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/2
 export default function Contact() {
   return (
     <>
-      <Header staticHeader />
+      <HeroHeader />
       <main className="bg-white">
         {/* Outer spacing so it's not too close to the header */}
         <section className="pt-10 sm:pt-14 lg:pt-16 pb-12">
