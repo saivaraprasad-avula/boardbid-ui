@@ -15,28 +15,33 @@ export default function PricingCTA() {
               min-h-[160px] sm:min-h-[180px] md:min-h-[200px] lg:min-h-[250px]
             "
           >
-            {/* Headline — ~20% smaller than previous large version */}
+            {/* Mobile-friendly heading */}
             <h2
               className="
-                text-center md:text-left
-                text-xl sm:text-2xl md:text-2xl lg:text-3xl
+                max-w-3xl text-center md:text-left
+                text-lg sm:text-2xl md:text-2xl lg:text-3xl
                 font-semibold tracking-tight text-gray-900 leading-snug
+                text-pretty sm:text-balance
               "
             >
               Outdoor ads, minus the overload.
+              {/* show the line break only from sm and up */}
               <br className="hidden sm:block" />
               <span className="sm:whitespace-nowrap">Catch eyes while we handle the rest.</span>
             </h2>
 
-            {/* CTAs */}
-            <div className="flex w-full items-center justify-center gap-4 md:w-auto md:justify-end">
+            {/* CTAs: stack on mobile, row on md+ */}
+            <div className="flex w-full flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center md:w-auto md:justify-end">
               <Link
                 to="/sign-up"
-                className="rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="w-full sm:w-auto rounded-md bg-indigo-600 px-4 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
               </Link>
-              <Link to="/about" className="text-sm font-semibold text-gray-900">
+              <Link
+                to="/about"
+                className="w-full sm:w-auto text-center text-sm font-semibold text-gray-900"
+              >
                 Learn more <span aria-hidden="true">→</span>
               </Link>
             </div>
