@@ -12,7 +12,7 @@ export default function PricingCTA() {
               px-5 py-10 sm:px-8 sm:py-12 md:px-10 md:py-14 lg:px-16 lg:py-16
               flex flex-col items-center justify-center gap-6
               md:flex-row md:items-center md:justify-between
-              min-h-[300px]
+              min-h-[160px] sm:min-h-[180px] md:min-h-[200px] lg:min-h-[250px]
             "
           >
             {/* Headline — ~20% smaller than previous large version */}
