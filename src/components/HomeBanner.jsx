@@ -2,7 +2,7 @@ import { XMarkIcon } from '@heroicons/react/20/solid'
 
 export default function Banner() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+    <div className="hidden sm:fixed sm:inset-x-0 sm:bottom-0 sm:z-50 sm:isolate sm:flex sm:items-center sm:gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
       <div
         aria-hidden="true"
         className="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"
