@@ -10,18 +10,12 @@ import {
   SunIcon,
   UserGroupIcon,
 } from '@heroicons/react/20/solid'
-import Header from '../components/Header' // Placeholder for your Header component
-import Footer from '../components/Footer' // Placeholder for your Footer component
+import HeroHeader from '../components/HeroHeader'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import OurLeadershipTeam from '../components/OurLeadershipTeam.jsx'
 
-/**
- * BoardBid.ai — About Page (clean)
- * - Retains: About BoardBid.ai, Stats, Image section, Our values
- * - CTA: image removed, icon added
- * - Removed: Header markup, Footer markup, Team section
- * - Placeholders left for your Header/Footer components
- */
-
-// Stats shown below the About copy
+// Stats
 const stats = [
   { label: 'Founded', value: '2025' },
   { label: 'Screens reachable', value: '100k+' },
@@ -69,7 +63,7 @@ const values = [
   },
 ]
 
-// Benefits for CTA
+// Benefits
 const aboutBenefits = [
   'Direct access to premium inventory without going through agencies or juggling multiple vendors.',
   "Transparent CPM-based pricing so you know exactly what you're paying for.",
@@ -81,8 +75,8 @@ const aboutBenefits = [
 export default function About() {
   return (
     <div className="bg-white">
-      {/* ======= Header Placeholder (use your own component) ======= */}
-      {/* <Header staticHeader /> */}
+      {/* Header */}
+      <HeroHeader />
       <Header />
 
       <main className="relative isolate">
@@ -96,14 +90,16 @@ export default function About() {
               clipPath:
                 'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
             }}
-            className="aspect-1108/632 w-277 flex-none bg-linear-to-r from-[#80caff] to-[#288dcf] opacity-25"
+            className="aspect-[1108/632] w-[277px] flex-none bg-gradient-to-r from-[#80caff] to-[#288dcf] opacity-25"
           />
         </div>
 
         {/* About BoardBid.ai (Hero) */}
         <div className="px-6 pt-14 lg:px-8">
           <div className="mx-auto max-w-3xl pt-24 text-center sm:pt-32">
-            <p className="text-sm font-semibold tracking-widest text-[#288dcf] uppercase">About BoardBid.ai</p>
+            <p className="text-sm font-semibold tracking-widest text-[#288dcf] uppercase">
+              About BoardBid.ai
+            </p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               AI-Powered OOH Advertising for Businesses That Want to Scale
             </h1>
@@ -114,7 +110,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* About copy (2-col) + Stats */}
+        {/* About copy + Stats */}
         <div className="mx-auto mt-20 max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
             <div className="grid max-w-xl grid-cols-1 gap-8 text-base/7 text-gray-700 lg:max-w-none lg:grid-cols-2">
@@ -150,8 +146,7 @@ export default function About() {
           </div>
         </div>
 
-
-        {/* Our values (kept) */}
+        {/* Our values */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Our values</h2>
@@ -172,7 +167,10 @@ export default function About() {
           </dl>
         </div>
 
-        {/* CTA (Benefits) — image removed, icon added */}
+        {/* Team */}
+        <OurLeadershipTeam />
+
+        {/* CTA */}
         <div className="relative isolate -z-10 mt-32 sm:mt-40">
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl rounded-3xl bg-white/75 px-6 py-16 shadow-lg ring-1 ring-gray-900/5 sm:p-12 lg:p-16">
@@ -182,10 +180,7 @@ export default function About() {
                   <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-4xl">
                     Why advertisers choose BoardBid.ai
                   </h2>
-                  <ul
-                    role="list"
-                    className="mt-8 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-gray-950 sm:grid-cols-2"
-                  >
+                  <ul role="list" className="mt-8 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-gray-950 sm:grid-cols-2">
                     {aboutBenefits.map((benefit) => (
                       <li key={benefit} className="flex gap-x-3">
                         <CheckCircleIcon aria-hidden="true" className="h-6 w-6 flex-none text-[#288dcf]" />
@@ -193,12 +188,6 @@ export default function About() {
                       </li>
                     ))}
                   </ul>
-
-                  {/* Optional CTA buttons placeholder */}
-                  <div className="mt-10 flex gap-4">
-                    {/* <PrimaryButton to="/sign-up">Create a free account</PrimaryButton> */}
-                    {/* <SecondaryLink to="/contact">Talk to us →</SecondaryLink> */}
-                  </div>
                 </div>
               </div>
             </div>
@@ -214,29 +203,16 @@ export default function About() {
                 clipPath:
                   'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
               }}
-              className="aspect-1318/752 w-329.5 flex-none bg-linear-to-r from-[#9fd6fc] to-[#288dcf] opacity-40"
+              className="aspect-[1318/752] w-[329.5px] flex-none bg-gradient-to-r from-[#9fd6fc] to-[#288dcf] opacity-40"
             />
           </div>
         </div>
-
-        {/* Mission (kept) 
-        <section className="mx-auto mt-32 max-w-4xl px-6 sm:mt-40">
-          <div className="text-center">
-            <p className="text-sm font-semibold tracking-widest text-[#288dcf] uppercase">Our mission</p>
-            <h3 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              To democratize premium OOH media
-            </h3>
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-700">
-              Helping ambitious businesses turn big ideas into campaigns that get noticed.
-            </p>
-          </div>
-        </section> */}
       </main>
 
-      {/* ======= Footer Placeholder (use your own component) ======= */}
-      <div className='mt-24 border-t border-gray-200'>
-       <Footer />
-       </div>
+      {/* Footer */}
+      <div className="mt-24 border-t border-gray-200">
+        <Footer />
+      </div>
     </div>
   )
 }

@@ -18,6 +18,7 @@ import Press from './pages/Press';
 import Support from './pages/Support';
 import Contact from './pages/Contact';
 import ProtectedRoute from './components/ProtectedRoute';
+import Pricing from  './pages/Pricing';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/pricing" element={<Pricing />} />
       </Routes>
     </>
   );
