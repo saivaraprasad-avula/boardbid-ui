@@ -45,7 +45,7 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className="bg-gray-900">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 pt-16 pb-8 sm:pt-24 sm:pb-8 lg:px-8 lg:pt-32 lg:pb-8">
         <div className="mx-auto max-w-2xl text-center">
           <hgroup>
           <h2 className="text-base/6 font-semibold font-sans text-indigo-400">Out-of-home, without the overwhelm</h2>

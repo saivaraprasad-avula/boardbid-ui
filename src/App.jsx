@@ -17,6 +17,7 @@ import About from './pages/About';
 import Press from './pages/Press';
 import Support from './pages/Support';
 import Contact from './pages/Contact';
+import Pricing from './pages/Pricing';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path="/press" element={<Press />} />
         <Route path="/support" element={<Support />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
