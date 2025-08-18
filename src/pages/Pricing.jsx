@@ -10,11 +10,12 @@ import {
 import HeroHeader from '../components/HeroHeader'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import PricingCTA from '../components/PricingCTA'
 
 
 export default function Pricing() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-white pt-24 sm:pt-32">
       <HeroHeader />
       <Header />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -119,6 +120,7 @@ export default function Pricing() {
           </div>
         </div>
       </div>
+      <PricingCTA />
       <Footer />
     </div>
   )
