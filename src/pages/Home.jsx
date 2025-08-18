@@ -7,6 +7,7 @@ import TargetLocations from '../components/TargetLocations';
 import WhyChoose from '../components/WhyChoose';
 import BlogFlyer from '../components/BlogFlyer';
 import Footer from '../components/Footer';
+import FooterCTA from '../components/FooterCTA';
 import MediaFormatsBento from "../components/VenuesSection";
 import { posts } from '../data/blogs';
 import Intercom from '../components/intercom-landing';
@@ -22,6 +23,7 @@ export default function Home() {
       <TargetLocations />
       <WhyChoose />
       <BlogFlyer posts={posts} />
+      <FooterCTA />
       <Footer />
       <Intercom />
     </>

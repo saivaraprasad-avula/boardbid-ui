@@ -1,6 +1,5 @@
 // src/components/Footer.jsx
 import { Link } from 'react-router-dom';
-import FooterCTA from './FooterCTA.jsx';
 
 const navigation = {
   support: [
@@ -44,8 +43,7 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className="bg-gray-900">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
-        <FooterCTA />
+      <div className="mx-auto max-w-7xl px-6 pb-16 sm:pb-24 lg:px-8 lg:pb-32">
         <div className="mt-24 border-t border-white/10 pt-12 xl:grid xl:grid-cols-3 xl:gap-8">
           <img
             alt="Boardbid.ai Logo"
