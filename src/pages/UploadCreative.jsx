@@ -5,6 +5,7 @@ import { TrashIcon } from '@heroicons/react/24/outline';
 import InternalLayout from '../layout/InternalLayout';
 import PageHeader from '../components/PageHeader';
 import Card from '../components/Card';
+import Drawer from '../components/Drawer';
 import { validateCreative } from '../utils/validateCreative';
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -18,6 +19,7 @@ export default function UploadCreative() {
   const [showRuleResults, setShowRuleResults] = useState(false);
   const [ruleStatus, setRuleStatus] = useState({});
   const [creatives, setCreatives] = useState([]);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
     if (user) {
@@ -31,7 +33,8 @@ export default function UploadCreative() {
       const res = await fetch(`${API_URL}/users/${user.id}/creatives`);
       if (res.ok) {
         const data = await res.json();
-        setCreatives(Array.isArray(data) ? data : []);
+        const arr = Array.isArray(data) ? data : data.creatives || [];
+        setCreatives(arr);
       }
     } catch (err) {
       console.error('Failed to fetch creatives', err);
@@ -124,8 +127,45 @@ export default function UploadCreative() {
 
   return (
     <InternalLayout>
-      <PageHeader title="Manage Creatives" />
-      <Card title="Upload & Validate Creative">
+      <PageHeader
+        title="Manage Creatives"
+        actions={[{ label: 'Upload Creative', variant: 'primary', onClick: () => setDrawerOpen(true) }]}
+      />
+
+      <Card title="Your Creatives" className="mt-8">
+        {creatives.length === 0 ? (
+          <p className="text-sm text-gray-500">No creatives uploaded yet.</p>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {creatives.map((c, idx) => {
+              const name = c.filename || c.name || c;
+              const url = c.url || c.public_url || '';
+              const isVideo = url
+                ? url.toLowerCase().endsWith('.mp4')
+                : typeof name === 'string' && name.toLowerCase().endsWith('.mp4');
+              return (
+                <div key={name + idx} className="flex flex-col items-center border rounded-lg p-2">
+                  {url && (
+                    isVideo ? (
+                      <video src={url} controls className="w-full h-32 object-contain" />
+                    ) : (
+                      <img src={url} alt={name} className="w-full h-32 object-contain" />
+                    )
+                  )}
+                  <button
+                    onClick={() => handleDelete(name)}
+                    className="mt-2 flex items-center text-red-600 hover:text-red-800 text-xs"
+                  >
+                    <TrashIcon className="h-4 w-4 mr-1" /> Delete
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </Card>
+
+      <Drawer open={drawerOpen} onClose={setDrawerOpen} title="Upload & Validate Creative">
         <label className="block mb-4 text-sm font-medium text-gray-700">
           Select a creative (jpg, png, or mp4)
         </label>
@@ -158,7 +198,7 @@ export default function UploadCreative() {
           <button
             onClick={handleValidate}
             disabled={!file}
-            className={`px-6 py-2 text-white font-semibold rounded-lg transition 
+            className={`px-6 py-2 text-white font-semibold rounded-lg transition
               ${file ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-gray-400 cursor-not-allowed'}`}
           >
             Validate Creative
@@ -170,7 +210,7 @@ export default function UploadCreative() {
             <h3 className="text-lg font-semibold text-gray-800 mb-3">
               ✅ Validation Result:
               <span
-                className={`ml-2 px-2 py-1 rounded-full text-sm font-medium 
+                className={`ml-2 px-2 py-1 rounded-full text-sm font-medium
                   ${validationResult.status === 'approved' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}
               >
                 {validationResult.status.toUpperCase()}
@@ -201,44 +241,13 @@ export default function UploadCreative() {
 
             {validationResult.status === 'approved' && savedFileName && (
               <div className="mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-sm text-emerald-700">
-                <p><strong>🎉 Creative approved and saved as:</strong> <code>{savedFileName}</code></p>
-                <p>This file is now ready to be used in your campaign builder.</p>
+                <p><strong>🎉 Creative uploaded and pending approval:</strong> <code>{savedFileName}</code></p>
+                <p>We'll notify you once it's reviewed.</p>
               </div>
             )}
           </div>
         )}
-      </Card>
-
-      <Card title="Your Creatives" className="mt-8">
-        {creatives.length === 0 ? (
-          <p className="text-sm text-gray-500">No creatives uploaded yet.</p>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {creatives.map((c, idx) => {
-              const name = c.name || c;
-              const url = c.url || c.public_url || '';
-              const isVideo = url ? url.toLowerCase().endsWith('.mp4') : name.toLowerCase().endsWith('.mp4');
-              return (
-                <div key={name + idx} className="flex flex-col items-center border rounded-lg p-2">
-                  {url && (
-                    isVideo ? (
-                      <video src={url} controls className="w-full h-32 object-contain" />
-                    ) : (
-                      <img src={url} alt={name} className="w-full h-32 object-contain" />
-                    )
-                  )}
-                  <button
-                    onClick={() => handleDelete(name)}
-                    className="mt-2 flex items-center text-red-600 hover:text-red-800 text-xs"
-                  >
-                    <TrashIcon className="h-4 w-4 mr-1" /> Delete
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-        )}
-      </Card>
+      </Drawer>
     </InternalLayout>
   );
 }
