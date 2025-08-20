@@ -56,21 +56,31 @@ export default function PageHeader({
         <div className="mt-4 flex flex-wrap gap-2 md:mt-0 md:ml-4">
           {rightSlot
             ? rightSlot
-            : actions.map(({ label, to, onClick, variant = "secondary" }, i) => {
-                const cls =
-                  "inline-flex items-center rounded-md px-3 py-2 text-sm font-semibold " +
-                  "focus-visible:outline-2 focus-visible:outline-offset-2 " +
-                  (variants[variant] || variants.secondary);
-                return to ? (
-                  <Link key={i} to={to} className={cls}>
-                    {label}
-                  </Link>
-                ) : (
-                  <button key={i} type="button" onClick={onClick} className={cls}>
-                    {label}
-                  </button>
-                );
-              })}
+            : actions.map(
+                ({ label, to, onClick, variant = "secondary", icon: Icon }, i) => {
+                  const cls =
+                    "inline-flex items-center rounded-md px-3 py-2 text-sm font-semibold " +
+                    "focus-visible:outline-2 focus-visible:outline-offset-2 " +
+                    (variants[variant] || variants.secondary);
+
+                  const content = (
+                    <>
+                      {Icon && <Icon className="mr-1.5 h-5 w-5" aria-hidden="true" />}
+                      {label}
+                    </>
+                  );
+
+                  return to ? (
+                    <Link key={i} to={to} className={cls}>
+                      {content}
+                    </Link>
+                  ) : (
+                    <button key={i} type="button" onClick={onClick} className={cls}>
+                      {content}
+                    </button>
+                  );
+                }
+              )}
         </div>
       </div>
     </div>
