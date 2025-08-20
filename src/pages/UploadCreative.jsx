@@ -31,21 +31,18 @@ export default function UploadCreative() {
     if (!user) return;
     try {
       const res = await fetch(`${API_URL}/users/${user.id}/creatives`);
-      if (res.ok) {
-        const data = await res.json();
-        let arr = [];
-        if (Array.isArray(data)) {
-          arr = data;
-        } else if (Array.isArray(data.creatives)) {
-          arr = data.creatives;
-        } else if (data.creatives && typeof data.creatives === 'object') {
-          arr = Object.entries(data.creatives).map(([filename, value]) => ({
-            filename,
-            url: typeof value === 'string' ? value : value.url || value.public_url || ''
-          }));
-        }
-        setCreatives(arr);
-      }
+      if (!res.ok) return;
+
+      const data = await res.json();
+      // Normalise the backend response
+      const arr = Array.isArray(data?.creatives)
+        ? data.creatives.map((c) => ({
+            filename: c.filename || c.name || '',
+            url: c.url || c.public_url || ''
+          }))
+        : [];
+
+      setCreatives(arr);
     } catch (err) {
       console.error('Failed to fetch creatives', err);
     }
@@ -104,7 +101,8 @@ export default function UploadCreative() {
   const handleDelete = async (name) => {
     if (!user) return;
     try {
-      const res = await fetch(`${API_URL}/users/${user.id}/creatives/${name}`, {
+      const encoded = encodeURIComponent(name);
+      const res = await fetch(`${API_URL}/users/${user.id}/creatives/${encoded}`, {
         method: 'DELETE'
       });
       if (res.ok) {
@@ -251,7 +249,7 @@ export default function UploadCreative() {
 
             {validationResult.status === 'approved' && savedFileName && (
               <div className="mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-sm text-emerald-700">
-                <p><strong>🎉 Creative uploaded and pending approval:</strong> <code>{savedFileName}</code></p>
+                <p><strong>🎉 Upload Successful and Pending Approval:</strong> <code>{savedFileName}</code></p>
                 <p>We'll notify you once it's reviewed.</p>
               </div>
             )}
