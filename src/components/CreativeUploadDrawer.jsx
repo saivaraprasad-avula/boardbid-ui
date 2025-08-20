@@ -123,9 +123,9 @@ export default function CreativeUploadDrawer({ open, onClose, onUploaded }) {
   return (
     <Drawer
       open={open}
-      onClose={() => {
+      onClose={(value) => {
         resetState();
-        onClose?.();
+        onClose?.(value);
       }}
       title={drawerTitle}
     >
