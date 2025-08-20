@@ -33,7 +33,17 @@ export default function UploadCreative() {
       const res = await fetch(`${API_URL}/users/${user.id}/creatives`);
       if (res.ok) {
         const data = await res.json();
-        const arr = Array.isArray(data) ? data : data.creatives || [];
+        let arr = [];
+        if (Array.isArray(data)) {
+          arr = data;
+        } else if (Array.isArray(data.creatives)) {
+          arr = data.creatives;
+        } else if (data.creatives && typeof data.creatives === 'object') {
+          arr = Object.entries(data.creatives).map(([filename, value]) => ({
+            filename,
+            url: typeof value === 'string' ? value : value.url || value.public_url || ''
+          }));
+        }
         setCreatives(arr);
       }
     } catch (err) {
