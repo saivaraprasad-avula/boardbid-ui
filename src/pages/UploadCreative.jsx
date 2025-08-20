@@ -31,23 +31,16 @@ export default function UploadCreative() {
     if (!user) return;
     try {
       const res = await fetch(`${API_URL}/users/${user.id}/creatives`);
-      if (res.ok) {
-        const data = await res.json();
-        let arr = [];
-        if (Array.isArray(data)) {
-          arr = data;
-        } else if (Array.isArray(data.creatives)) {
-          arr = data.creatives;
-        } else if (data.creatives && typeof data.creatives === 'object') {
-          arr = Object.entries(data.creatives).map(([filename, value]) => ({
-            filename,
-            url: typeof value === 'string' ? value : value.url || value.public_url || ''
-          }));
-        }
-        setCreatives(arr);
+      if (!res.ok) {
+        setCreatives([]);
+        return;
       }
+
+      const data = await res.json();
+      setCreatives(Array.isArray(data?.creatives) ? data.creatives : []);
     } catch (err) {
       console.error('Failed to fetch creatives', err);
+      setCreatives([]);
     }
   };
 
@@ -104,7 +97,8 @@ export default function UploadCreative() {
   const handleDelete = async (name) => {
     if (!user) return;
     try {
-      const res = await fetch(`${API_URL}/users/${user.id}/creatives/${name}`, {
+      const encoded = encodeURIComponent(name);
+      const res = await fetch(`${API_URL}/users/${user.id}/creatives/${encoded}`, {
         method: 'DELETE'
       });
       if (res.ok) {
@@ -148,19 +142,15 @@ export default function UploadCreative() {
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {creatives.map((c, idx) => {
-              const name = c.filename || c.name || c;
-              const url = c.url || c.public_url || '';
-              const isVideo = url
-                ? url.toLowerCase().endsWith('.mp4')
-                : typeof name === 'string' && name.toLowerCase().endsWith('.mp4');
+              const name = c.filename;
+              const url = c.url;
+              const isVideo = url.toLowerCase().endsWith('.mp4');
               return (
                 <div key={name + idx} className="flex flex-col items-center border rounded-lg p-2">
-                  {url && (
-                    isVideo ? (
-                      <video src={url} controls className="w-full h-32 object-contain" />
-                    ) : (
-                      <img src={url} alt={name} className="w-full h-32 object-contain" />
-                    )
+                  {isVideo ? (
+                    <video src={url} controls className="w-full h-32 object-contain" />
+                  ) : (
+                    <img src={url} alt={name} className="w-full h-32 object-contain" />
                   )}
                   <button
                     onClick={() => handleDelete(name)}
@@ -251,7 +241,7 @@ export default function UploadCreative() {
 
             {validationResult.status === 'approved' && savedFileName && (
               <div className="mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-sm text-emerald-700">
-                <p><strong>🎉 Creative uploaded and pending approval:</strong> <code>{savedFileName}</code></p>
+                <p><strong>🎉 Upload Successful and Pending Approval:</strong> <code>{savedFileName}</code></p>
                 <p>We'll notify you once it's reviewed.</p>
               </div>
             )}
