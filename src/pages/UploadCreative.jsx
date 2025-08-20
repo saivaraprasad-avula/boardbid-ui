@@ -1,7 +1,14 @@
 // src/pages/UploadCreative.jsx
 import React, { useEffect, useState, useRef } from 'react';
 import { useUser } from '@clerk/clerk-react';
-import { TrashIcon, EyeIcon, LinkIcon, PhotoIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
+import {
+  TrashIcon,
+  EyeIcon,
+  LinkIcon,
+  PhotoIcon,
+  CheckCircleIcon,
+  ArrowUpTrayIcon,
+} from '@heroicons/react/24/solid';
 import InternalLayout from '../layout/InternalLayout';
 import PageHeader from '../components/PageHeader';
 import Card from '../components/Card';
@@ -100,7 +107,12 @@ export default function UploadCreative() {
       <PageHeader
         title="Manage Creatives"
         actions={[
-          { label: 'Upload Creative', variant: 'primary', onClick: () => setDrawerOpen(true) },
+          {
+            label: 'Upload Creative',
+            variant: 'primary',
+            onClick: () => setDrawerOpen(true),
+            icon: ArrowUpTrayIcon,
+          },
         ]}
       />
 
