@@ -1,19 +1,33 @@
 // ✅ src/pages/Reports.jsx (updated with InternalLayout)
 import React, { useEffect, useState } from 'react';
-import { db } from '../utils/db';
+import { useUser } from '@clerk/clerk-react';
 import { format } from 'date-fns';
 import InternalLayout from '../layout/InternalLayout';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Reports() {
+  const { user } = useUser();
   const [campaigns, setCampaigns] = useState([]);
 
   useEffect(() => {
+    if (!user) return;
     const loadCampaigns = async () => {
-      const all = await db.campaigns.toArray();
-      setCampaigns(all.reverse());
+      try {
+        const res = await fetch(`${API_URL}/users/${user.id}/campaigns`);
+        if (!res.ok) {
+          setCampaigns([]);
+          return;
+        }
+        const data = await res.json();
+        setCampaigns(Array.isArray(data?.campaigns) ? data.campaigns : []);
+      } catch (err) {
+        console.error('Failed to fetch campaigns', err);
+        setCampaigns([]);
+      }
     };
     loadCampaigns();
-  }, []);
+  }, [user]);
 
   return (
     <InternalLayout>

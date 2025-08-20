@@ -31,20 +31,16 @@ export default function UploadCreative() {
     if (!user) return;
     try {
       const res = await fetch(`${API_URL}/users/${user.id}/creatives`);
-      if (!res.ok) return;
+      if (!res.ok) {
+        setCreatives([]);
+        return;
+      }
 
       const data = await res.json();
-      // Normalise the backend response
-      const arr = Array.isArray(data?.creatives)
-        ? data.creatives.map((c) => ({
-            filename: c.filename || c.name || '',
-            url: c.url || c.public_url || ''
-          }))
-        : [];
-
-      setCreatives(arr);
+      setCreatives(Array.isArray(data?.creatives) ? data.creatives : []);
     } catch (err) {
       console.error('Failed to fetch creatives', err);
+      setCreatives([]);
     }
   };
 
@@ -146,19 +142,15 @@ export default function UploadCreative() {
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {creatives.map((c, idx) => {
-              const name = c.filename || c.name || c;
-              const url = c.url || c.public_url || '';
-              const isVideo = url
-                ? url.toLowerCase().endsWith('.mp4')
-                : typeof name === 'string' && name.toLowerCase().endsWith('.mp4');
+              const name = c.filename;
+              const url = c.url;
+              const isVideo = url.toLowerCase().endsWith('.mp4');
               return (
                 <div key={name + idx} className="flex flex-col items-center border rounded-lg p-2">
-                  {url && (
-                    isVideo ? (
-                      <video src={url} controls className="w-full h-32 object-contain" />
-                    ) : (
-                      <img src={url} alt={name} className="w-full h-32 object-contain" />
-                    )
+                  {isVideo ? (
+                    <video src={url} controls className="w-full h-32 object-contain" />
+                  ) : (
+                    <img src={url} alt={name} className="w-full h-32 object-contain" />
                   )}
                   <button
                     onClick={() => handleDelete(name)}
