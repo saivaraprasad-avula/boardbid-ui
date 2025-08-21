@@ -10,6 +10,7 @@ import {
 import HeroHeader from '../components/HeroHeader'
 import Footer from '../components/Footer'
 import PricingCTA from '../components/PricingCTA'
+import PricingVideo from '../components/PricingVideo'
 
 export default function Pricing() {
   return (
@@ -151,6 +152,7 @@ export default function Pricing() {
         </div>
       </div>
 
+      <PricingVideo />
       <PricingCTA />
       <Footer />
     </div>
