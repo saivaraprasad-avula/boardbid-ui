@@ -3,7 +3,6 @@
 import React from 'react'
 import {
   AcademicCapIcon,
-  CheckCircleIcon,
   HandRaisedIcon,
   RocketLaunchIcon,
   SparklesIcon,
@@ -13,6 +12,7 @@ import {
 import HeroHeader from '../components/HeroHeader'
 import Footer from '../components/Footer'
 import OurLeadershipTeam from '../components/OurLeadershipTeam.jsx'
+import Philosophy from '../components/Philosophy.jsx'
 
 // Stats
 const stats = [
@@ -62,14 +62,6 @@ const values = [
   },
 ]
 
-// Benefits
-const aboutBenefits = [
-  'Direct access to premium inventory without going through agencies or juggling multiple vendors.',
-  "Transparent CPM-based pricing so you know exactly what you're paying for.",
-  'AI-assisted planning and targeting to stretch your budget further.',
-  'Real-time bidding and instant proposals so you can go from idea to live campaign in hours, not weeks.',
-  'Nationwide and hyperlocal reach to match your growth strategy.',
-]
 
 export default function About() {
   return (
@@ -168,43 +160,8 @@ export default function About() {
         {/* Team */}
         <OurLeadershipTeam />
 
-        {/* CTA */}
-        <div className="relative isolate -z-10 mt-32 sm:mt-40">
-          <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl rounded-3xl bg-white/75 px-6 py-16 shadow-lg ring-1 ring-gray-900/5 sm:p-12 lg:p-16">
-              <div className="flex items-start gap-4">
-                <CheckCircleIcon aria-hidden="true" className="h-10 w-10 flex-none text-[#288dcf]" />
-                <div>
-                  <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-4xl">
-                    Why advertisers choose BoardBid.ai
-                  </h2>
-                  <ul role="list" className="mt-8 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-gray-950 sm:grid-cols-2">
-                    {aboutBenefits.map((benefit) => (
-                      <li key={benefit} className="flex gap-x-3">
-                        <CheckCircleIcon aria-hidden="true" className="h-6 w-6 flex-none text-[#288dcf]" />
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Secondary background blob */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-x-0 -top-16 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
-          >
-            <div
-              style={{
-                clipPath:
-                  'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
-              }}
-              className="aspect-[1318/752] w-[329.5px] flex-none bg-gradient-to-r from-[#9fd6fc] to-[#288dcf] opacity-40"
-            />
-          </div>
-        </div>
+        {/* Philosophy */}
+        <Philosophy />
       </main>
 
       {/* Footer */}

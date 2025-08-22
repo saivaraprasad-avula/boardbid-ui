@@ -8,7 +8,7 @@ import { SignedIn, SignedOut, SignInButton } from '@clerk/clerk-react'
 import { withBase } from '../utils/basePath.js'
 
 const navigation = [
-  { name: 'Product', to: '/#how-it-works' },
+  { name: 'About', to: '/about' },
   { name: 'Pricing', to: '/pricing' },
   { name: 'Contact', to: '/contact' },
 ]
