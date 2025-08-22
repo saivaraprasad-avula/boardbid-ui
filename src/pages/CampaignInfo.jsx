@@ -70,14 +70,21 @@ export default function CampaignInfo() {
         value !== '' &&
         (!Array.isArray(value) || value.length > 0)
     )
-    .map(([key, value]) => ({
-      label:
-        labelMap[key] ||
-        key
-          .replace(/_/g, ' ')
-          .replace(/\b\w/g, (c) => c.toUpperCase()),
-      value: Array.isArray(value) ? value.join(', ') : value,
-    }));
+    .map(([key, value]) => {
+      const formattedValue = Array.isArray(value)
+        ? value.join(', ')
+        : typeof value === 'object'
+          ? JSON.stringify(value)
+          : value;
+      return {
+        label:
+          labelMap[key] ||
+          key
+            .replace(/_/g, ' ')
+            .replace(/\b\w/g, (c) => c.toUpperCase()),
+        value: formattedValue,
+      };
+    });
 
   return (
     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
