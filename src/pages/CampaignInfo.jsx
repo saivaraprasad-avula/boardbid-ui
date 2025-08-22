@@ -50,16 +50,34 @@ export default function CampaignInfo() {
     return <p className="text-gray-500">No details available.</p>;
   }
 
-  const fields = [
-    { label: 'Company Name', value: campaign.company_name },
-    { label: 'Campaign Type', value: campaign.campaign_type?.join(', ') },
-    { label: 'Industry', value: campaign.industry },
-    { label: 'Goals', value: campaign.campaign_goals?.join(', ') },
-    { label: 'Budget', value: campaign.ooh_budget_range },
-    { label: 'Start Date', value: campaign.campaign_start_date },
-    { label: 'End Date', value: campaign.campaign_end_date },
-    { label: 'Status', value: campaign.status },
-  ];
+  const labelMap = {
+    company_name: 'Company Name',
+    campaign_type: 'Campaign Type',
+    industry: 'Industry',
+    campaign_goals: 'Goals',
+    ooh_budget_range: 'Budget',
+    campaign_start_date: 'Start Date',
+    campaign_end_date: 'End Date',
+    status: 'Status',
+  };
+
+  const fields = Object.entries(campaign)
+    .filter(
+      ([key, value]) =>
+        key !== 'attachments' &&
+        value !== null &&
+        value !== undefined &&
+        value !== '' &&
+        (!Array.isArray(value) || value.length > 0)
+    )
+    .map(([key, value]) => ({
+      label:
+        labelMap[key] ||
+        key
+          .replace(/_/g, ' ')
+          .replace(/\b\w/g, (c) => c.toUpperCase()),
+      value: Array.isArray(value) ? value.join(', ') : value,
+    }));
 
   return (
     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
