@@ -72,48 +72,50 @@ export default function Banner() {
       </div>
 
       {/* Modal / Sheet */}
-      {open && (
-        <div
-          className="fixed inset-0 z-50 bg-black/50"
-          role="dialog"
-          aria-modal="true"
-        >
-          <div className="flex h-full w-full items-end sm:items-center justify-center p-0 sm:p-4">
-            {/* On mobile: full-screen sheet; on desktop: centered dialog */}
-            <div
+      <div
+        className={
+          open
+            ? 'fixed inset-0 z-50 bg-black/50'
+            : 'hidden'
+        }
+        role="dialog"
+        aria-modal="true"
+      >
+        <div className="flex h-full w-full items-end sm:items-center justify-center p-0 sm:p-4">
+          {/* On mobile: full-screen sheet; on desktop: centered dialog */}
+          <div
+            className="
+              relative w-full bg-white shadow-xl overflow-y-auto
+              h-[90dvh] rounded-none
+              sm:h-[700px] sm:max-w-3xl sm:rounded-lg sm:p-4
+            "
+          >
+            {/* Close button */}
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
               className="
-                relative w-full bg-white shadow-xl overflow-y-auto
-                h-[90dvh] rounded-none
-                sm:h-[700px] sm:max-w-3xl sm:rounded-lg sm:p-4
+                absolute right-3 top-3 z-10 rounded-full p-2
+                text-gray-500 hover:text-gray-700 focus:outline-none
               "
+              aria-label="Close"
             >
-              {/* Close button */}
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="
-                  absolute right-3 top-3 z-10 rounded-full p-2
-                  text-gray-500 hover:text-gray-700 focus:outline-none
-                "
-                aria-label="Close"
-              >
-                <XMarkIcon className="h-6 w-6" />
-              </button>
+              <XMarkIcon className="h-6 w-6" />
+            </button>
 
-              {/* Content container (Fillout) */}
-              <div className="w-full h-full sm:h-auto sm:min-h-[500px] p-0 sm:p-1">
-                <div
-                  className="w-full h-full"
-                  data-fillout-id="kee9zs7Rc3us"
-                  data-fillout-embed-type="standard"
-                  data-fillout-inherit-parameters
-                  data-fillout-dynamic-resize
-                />
-              </div>
+            {/* Content container (Fillout) */}
+            <div className="w-full h-full sm:h-auto sm:min-h-[500px] p-0 sm:p-1">
+              <div
+                className="w-full h-full"
+                data-fillout-id="kee9zs7Rc3us"
+                data-fillout-embed-type="standard"
+                data-fillout-inherit-parameters
+                data-fillout-dynamic-resize
+              />
             </div>
           </div>
         </div>
-      )}
+      </div>
     </>
   )
 }
