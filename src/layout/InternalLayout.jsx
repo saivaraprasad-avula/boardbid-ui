@@ -21,12 +21,11 @@ import {
 import { UserButton, SignOutButton } from '@clerk/clerk-react';
 import { withBase } from '../utils/basePath.js';
 
-
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
   { name: 'New Campaign', href: '/campaign/new', icon: FolderIcon },
-  { name: 'Manage Creatives', href: '/manage-creatives', icon: DocumentDuplicateIcon },
   { name: 'My Campaigns', href: '/campaigns', icon: ClipboardDocumentListIcon },
+  { name: 'Manage Creatives', href: '/manage-creatives', icon: DocumentDuplicateIcon },
 ];
 
 const teams = [
@@ -42,9 +41,79 @@ export default function InternalLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { pathname } = useLocation();
 
+  // treat a nav item as active for nested routes too
+  const isActive = (href) => pathname === href || pathname.startsWith(href + '/');
+
+  const NavLinks = () => (
+    <ul role="list" className="-mx-2 space-y-1">
+      {navigation.map((item) => {
+        const active = isActive(item.href);
+        return (
+          <li key={item.name}>
+            <Link
+              to={item.href}
+              aria-current={active ? 'page' : undefined}
+              className={classNames(
+                active
+                  ? 'bg-gray-50 text-[#288dcf]'
+                  : 'text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]',
+                // pill button look + compact spacing
+                'group relative flex gap-x-3 rounded-xl px-3 py-2 text-sm font-semibold transition-colors'
+              )}
+            >
+              {/* active left accent bar */}
+              <span
+                className={classNames(
+                  'absolute left-0 top-1 bottom-1 w-1 rounded-r',
+                  active ? 'bg-[#288dcf]' : 'bg-transparent group-hover:bg-[#288dcf]/30'
+                )}
+              />
+              <item.icon
+                className={classNames(
+                  active ? 'text-[#288dcf]' : 'text-gray-400 group-hover:text-[#288dcf]',
+                  'size-5 shrink-0'
+                )}
+              />
+              <span className="truncate">{item.name}</span>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
+
+  const TeamLinks = () => (
+    <>
+      <div className="text-xs font-semibold text-gray-400">Other Links</div>
+      <ul role="list" className="-mx-2 mt-2 space-y-1">
+        {teams.map((team) => (
+          <li key={team.name}>
+            <Link
+              to={team.href}
+              className={classNames(
+                'group flex gap-x-3 rounded-xl px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]'
+              )}
+            >
+              <span
+                className={classNames(
+                  'flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium',
+                  'border-gray-200 text-gray-400 group-hover:border-[#288dcf] group-hover:text-[#288dcf]'
+                )}
+              >
+                {team.initial}
+              </span>
+              <span className="truncate">{team.name}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+
   return (
     <>
       <div>
+        {/* Mobile drawer */}
         <Dialog open={sidebarOpen} onClose={setSidebarOpen} className="relative z-50 lg:hidden">
           <DialogBackdrop className="fixed inset-0 bg-gray-900/80 transition-opacity duration-300 ease-linear data-closed:opacity-0" />
           <div className="fixed inset-0 flex">
@@ -58,84 +127,24 @@ export default function InternalLayout({ children }) {
                 </div>
               </TransitionChild>
 
-              <div className="flex grow flex-col gap-y-8 overflow-y-auto bg-white px-6 pb-4">
+              <div className="flex grow flex-col gap-y-6 overflow-y-auto bg-white/95 backdrop-blur px-6 pb-4 border-r border-gray-200">
                 <div className="flex h-16 shrink-0 items-center">
-                  <Link to="/">
+                  <Link to="/" onClick={() => setSidebarOpen(false)}>
                     <img
-                      alt="Boardbid Logo"
+                      alt="BoardBid Logo"
                       src="https://ik.imagekit.io/boardbid/BoardBid%20final.avif?updatedAt=1755054268128"
                       className="h-8 w-auto"
                     />
                   </Link>
                 </div>
                 <nav className="flex flex-1 flex-col">
-                  <ul role="list" className="flex flex-1 flex-col gap-y-7">
-                    <li>
-                      <ul role="list" className="-mx-2 space-y-1">
-                        {navigation.map((item) => (
-                          <li key={item.name}>
-                            <Link
-                              to={item.href}
-                              className={classNames(
-                                pathname === item.href
-                                  ? 'bg-gray-50 text-[#288dcf]'
-                                  : 'text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]',
-                                'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold'
-                              )}
-                            >
-                              <item.icon
-                                className={classNames(
-                                  pathname === item.href
-                                    ? 'text-[#288dcf]'
-                                    : 'text-gray-400 group-hover:text-[#288dcf]',
-                                  'size-6 shrink-0'
-                                )}
-                              />
-                              {item.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
-                    <li>
-                      <div className="text-xs/6 font-semibold text-gray-400">Other Links</div>
-                      <ul role="list" className="-mx-2 mt-2 space-y-1">
-                        {teams.map((team) => (
-                          <li key={team.name}>
-                            <Link
-                              to={team.href}
-                              className={classNames(
-                                team.current
-                                  ? 'bg-gray-50 text-[#288dcf]'
-                                  : 'text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]',
-                                'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold'
-                              )}
-                            >
-                              <span
-                                className={classNames(
-                                  team.current
-                                    ? 'border-[#288dcf] text-[#288dcf]'
-                                    : 'border-gray-200 text-gray-400 group-hover:border-[#288dcf] group-hover:text-[#288dcf]',
-                                  'flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium'
-                                )}
-                              >
-                                {team.initial}
-                              </span>
-                              <span className="truncate">{team.name}</span>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
+                  <ul role="list" className="flex flex-1 flex-col gap-y-6">
+                    <li><NavLinks /></li>
+                    <li><TeamLinks /></li>
                     <li className="mt-auto">
-                      <SignOutButton redirectUrl={withBase('/')}
-                        >
-                        <button
-                          className="group flex w-full gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]"
-                        >
-                          <ArrowLeftOnRectangleIcon
-                            className="size-6 shrink-0 text-gray-400 group-hover:text-[#288dcf]"
-                          />
+                      <SignOutButton redirectUrl={withBase('/')}>
+                        <button className="group flex w-full gap-x-3 rounded-xl px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]">
+                          <ArrowLeftOnRectangleIcon className="size-5 shrink-0 text-gray-400 group-hover:text-[#288dcf]" />
                           Sign out
                         </button>
                       </SignOutButton>
@@ -147,85 +156,26 @@ export default function InternalLayout({ children }) {
           </div>
         </Dialog>
 
+        {/* Desktop sidebar */}
         <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
-          <div className="flex grow flex-col gap-y-8 overflow-y-auto bg-white px-6 pb-4 border-r border-gray-200">
+          <div className="flex grow flex-col gap-y-6 overflow-y-auto bg-white/95 backdrop-blur px-6 pb-4 border-r border-gray-200">
             <div className="flex h-16 shrink-0 items-center">
               <Link to="/">
                 <img
-                  alt="Boardbid Logo"
+                  alt="BoardBid Logo"
                   src="https://ik.imagekit.io/boardbid/BoardBid%20final.avif?updatedAt=1755054268128"
                   className="h-8 w-auto"
                 />
               </Link>
             </div>
             <nav className="flex flex-1 flex-col">
-              <ul role="list" className="flex flex-1 flex-col gap-y-7">
-                <li>
-                  <ul role="list" className="-mx-2 space-y-1">
-                    {navigation.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          to={item.href}
-                          className={classNames(
-                            pathname === item.href
-                              ? 'bg-gray-50 text-[#288dcf]'
-                              : 'text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]',
-                            'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold'
-                          )}
-                        >
-                          <item.icon
-                            className={classNames(
-                              pathname === item.href
-                                ? 'text-[#288dcf]'
-                                : 'text-gray-400 group-hover:text-[#288dcf]',
-                              'size-6 shrink-0'
-                            )}
-                          />
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-                <li>
-                  <div className="text-xs/6 font-semibold text-gray-400">Other Links</div>
-                  <ul role="list" className="-mx-2 mt-2 space-y-1">
-                    {teams.map((team) => (
-                      <li key={team.name}>
-                        <Link
-                          to={team.href}
-                          className={classNames(
-                            team.current
-                              ? 'bg-gray-50 text-[#288dcf]'
-                              : 'text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]',
-                            'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold'
-                          )}
-                        >
-                          <span
-                            className={classNames(
-                              team.current
-                                ? 'border-[#288dcf] text-[#288dcf]'
-                                : 'border-gray-200 text-gray-400 group-hover:border-[#288dcf] group-hover:text-[#288dcf]',
-                              'flex size-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium'
-                            )}
-                          >
-                            {team.initial}
-                          </span>
-                          <span className="truncate">{team.name}</span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
+              <ul role="list" className="flex flex-1 flex-col gap-y-6">
+                <li><NavLinks /></li>
+                <li><TeamLinks /></li>
                 <li className="mt-auto">
-                  <SignOutButton redirectUrl={withBase('/')}
-                    >
-                    <button
-                      className="group flex w-full gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]"
-                    >
-                      <ArrowLeftOnRectangleIcon
-                        className="size-6 shrink-0 text-gray-400 group-hover:text-[#288dcf]"
-                      />
+                  <SignOutButton redirectUrl={withBase('/')}>
+                    <button className="group flex w-full gap-x-3 rounded-xl px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:text-[#288dcf]">
+                      <ArrowLeftOnRectangleIcon className="size-5 shrink-0 text-gray-400 group-hover:text-[#288dcf]" />
                       Sign out
                     </button>
                   </SignOutButton>
@@ -235,8 +185,9 @@ export default function InternalLayout({ children }) {
           </div>
         </div>
 
+        {/* Top bar */}
         <div className="lg:pl-72">
-          <div className="sticky top-0 z-40 flex h-16 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-xs sm:gap-x-6 sm:px-6 lg:px-8">
+          <div className="sticky top-0 z-40 flex h-16 items-center gap-x-4 border-b border-gray-200 bg-white/95 backdrop-blur px-4 shadow-xs sm:gap-x-6 sm:px-6 lg:px-8">
             <button type="button" onClick={() => setSidebarOpen(true)} className="-m-2.5 p-2.5 text-gray-700 lg:hidden hover:text-gray-900">
               <span className="sr-only">Open sidebar</span>
               <Bars3Icon className="size-6" />
@@ -244,12 +195,7 @@ export default function InternalLayout({ children }) {
             <div aria-hidden="true" className="h-6 w-px bg-gray-200 lg:hidden" />
             <div className="flex flex-1 justify-end gap-x-4 self-stretch lg:gap-x-6">
               <div className="flex items-center gap-x-4 lg:gap-x-6">
-                {/*
-                <button type="button" className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="size-6" />
-                </button>
-                */}
+                {/* notifications placeholder */}
                 <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" />
                 <UserButton
                   afterSignOutUrl={withBase('/')}

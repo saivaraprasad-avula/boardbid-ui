@@ -6,7 +6,7 @@ export default function PricingVideo() {
       <div className="relative overflow-hidden rounded-2xl ring-1 ring-gray-200 shadow-sm bg-white">
         <div className="aspect-video">
           <iframe
-            src="https://www.youtube.com/embed/VzCY-NefSQE?rel=0&modestbranding=1&playsinline=1&showinfo=0&iv_load_policy=3&cc_load_policy=1"
+            src="https://www.youtube.com/embed/pBG1pxlcyS8?rel=0&modestbranding=1&playsinline=1&showinfo=0&iv_load_policy=3&cc_load_policy=1"
             title="BoardBid.ai — How CPM Pricing Works"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
