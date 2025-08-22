@@ -5,6 +5,8 @@ import { EllipsisHorizontalIcon } from '@heroicons/react/20/solid';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useUser } from '@clerk/clerk-react';
+import Lottie from 'lottie-react';
+import loadingAnim from '../assets/loading.json';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -12,11 +14,13 @@ export default function Campaigns() {
   const navigate = useNavigate();
   const { user } = useUser();
   const [campaigns, setCampaigns] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!user) return;
 
     const loadCampaigns = async () => {
+      setIsLoading(true);
       try {
         const res = await fetch(`${API_URL}/users/${user.id}/campaigns`);
         if (!res.ok) {
@@ -28,6 +32,8 @@ export default function Campaigns() {
       } catch (err) {
         console.error('Failed to fetch campaigns', err);
         setCampaigns([]);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -37,7 +43,13 @@ export default function Campaigns() {
   return (
     <InternalLayout>
       <PageHeader title="My Campaigns" />
-      {campaigns.length === 0 ? (
+      {isLoading ? (
+        <div className="flex h-48 items-center justify-center">
+          <div className="h-24 w-24">
+            <Lottie animationData={loadingAnim} loop autoplay />
+          </div>
+        </div>
+      ) : campaigns.length === 0 ? (
         <p className="text-center text-gray-500">No campaigns found.</p>
       ) : (
         <ul role="list" className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-3 xl:gap-x-8">
