@@ -23,7 +23,7 @@ export default function NewCampaignPage() {
       <Card title="New Campaign Form">
         <iframe
           className="w-full h-[1000px]"
-          src={`https://boardbid.fillout.com/t/umZFxzNKgUus?hideCookieBanner=true&user_id=${encodeURIComponent(
+          src={`https://boardbid.fillout.com/new-campaign?user_id=${encodeURIComponent(
             userId
           )}`}
           frameBorder="0"
