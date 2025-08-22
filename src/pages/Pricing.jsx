@@ -63,7 +63,6 @@ export default function Pricing() {
           <div className="rounded-2xl ring-1 ring-gray-200 p-8 sm:p-10">
             <h3 className="text-xl font-semibold text-gray-900">Quick CPM Snapshot</h3>
 
-            {/* Desktop/Tablet (unchanged) + Mobile-only stacked duplicate */}
             <dl className="mt-6 space-y-4 text-sm text-gray-700">
               {/* Digital Billboards */}
               <div className="hidden sm:flex sm:items-center sm:justify-between">
@@ -134,25 +133,21 @@ export default function Pricing() {
               CPM = cost per thousand impressions. Pricing varies by city, targeting, and seasonality.
             </p>
 
-            {/* Single CTA */}
             <div className="mt-6 flex justify-center">
-            <a
-              href="#"
-              className="
-                w-full sm:w-auto
-                rounded-md border border-gray-300 px-5 py-2
-                text-center text-sm font-semibold text-gray-700
-                hover:bg-gray-50
-              "
-            >
-              Book a Meeting
-            </a>
-          </div>
+              <a
+                href="#"
+                className="w-full sm:w-auto rounded-md border border-gray-300 px-5 py-2 text-center text-sm font-semibold text-gray-700 hover:bg-gray-50"
+              >
+                Book a Meeting
+              </a>
+            </div>
           </div>
         </div>
+
+        {/* Video sits on the same rhythm/edges as the content above */}
+        <PricingVideo />
       </div>
 
-      <PricingVideo />
       <PricingCTA />
       <Footer />
     </div>

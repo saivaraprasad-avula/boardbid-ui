@@ -6,7 +6,7 @@ export default function CampaignQuotes() {
         type="button"
         className="rounded-md bg-blue-600 px-4 py-2 text-white shadow-sm hover:bg-blue-500"
       >
-        Pay with Strio
+        Pay with Stripe
       </button>
     </div>
   );

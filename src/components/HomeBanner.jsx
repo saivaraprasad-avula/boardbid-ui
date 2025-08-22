@@ -5,6 +5,7 @@ export default function Banner() {
   const [show, setShow] = useState(true)
   const [open, setOpen] = useState(false)
 
+  // load Fillout script
   useEffect(() => {
     if (open && !document.querySelector('script[src="https://server.fillout.com/embed/v1/"]')) {
       const script = document.createElement('script')
@@ -14,13 +15,21 @@ export default function Banner() {
     }
   }, [open])
 
+  // lock background scroll when popup is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+  }, [open])
+
   if (!show) return null
 
   return (
     <>
       <div className="fixed inset-x-0 bottom-0 z-50 isolate bg-gray-50 px-6 py-2.5 sm:px-3.5 shadow">
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-x-6">
-
           {/* Text */}
           <p className="text-sm text-gray-900">
             <strong className="font-semibold">Schedule a short call with us —</strong>
@@ -36,7 +45,7 @@ export default function Banner() {
             Book a Call <span aria-hidden="true">&rarr;</span>
           </button>
 
-          {/* X button, spaced after button */}
+          {/* Dismiss banner */}
           <button
             type="button"
             onClick={() => setShow(false)}
@@ -50,7 +59,11 @@ export default function Banner() {
 
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <div className="relative w-full max-w-3xl rounded-lg bg-white p-4 shadow-xl">
+          {/* popup fixed at 500px height, scrolls inside */}
+          <div
+            className="relative w-full max-w-3xl rounded-lg bg-white p-4 shadow-xl overflow-y-auto"
+            style={{ height: '700px' }}
+          >
             <button
               type="button"
               onClick={() => setOpen(false)}
@@ -59,8 +72,9 @@ export default function Banner() {
               <span className="sr-only">Close</span>
               <XMarkIcon className="h-5 w-5" />
             </button>
+
             <div
-              style={{ width: '100%', height: '500px' }}
+              style={{ width: '100%', minHeight: '500px' }}
               data-fillout-id="kee9zs7Rc3us"
               data-fillout-embed-type="standard"
               data-fillout-inherit-parameters

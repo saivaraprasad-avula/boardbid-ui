@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export default function PricingCTA() {
+export default function PricingCTA({ showLearnMore = true }) {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -25,12 +25,11 @@ export default function PricingCTA() {
               "
             >
               Outdoor ads, minus the overload.
-              {/* show the line break only from sm and up */}
               <br className="hidden sm:block" />
               <span className="sm:whitespace-nowrap">Catch eyes while we handle the rest.</span>
             </h2>
 
-            {/* CTAs: stack on mobile, row on md+ */}
+            {/* CTAs */}
             <div className="flex w-full flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center md:w-auto md:justify-end">
               <Link
                 to="/sign-up"
@@ -38,12 +37,15 @@ export default function PricingCTA() {
               >
                 Get started
               </Link>
-              <Link
-                to="/about"
-                className="w-full sm:w-auto text-center text-sm font-semibold text-gray-900"
-              >
-                Learn more <span aria-hidden="true">→</span>
-              </Link>
+
+              {showLearnMore && (
+                <Link
+                  to="/about"
+                  className="w-full sm:w-auto text-center text-sm font-semibold text-gray-900"
+                >
+                  Learn more <span aria-hidden="true">→</span>
+                </Link>
+              )}
             </div>
           </div>
         </div>

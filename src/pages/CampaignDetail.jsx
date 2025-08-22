@@ -14,8 +14,8 @@ export default function CampaignDetail() {
   const { id } = useParams();
   const navigation = [
     { name: 'Details', to: 'details' },
-    { name: 'Creative', to: 'creative' },
     { name: 'Quotes', to: 'quotes' },
+    { name: 'Creative', to: 'creative' },
     { name: 'View Campaign Progress', to: 'progress' },
     { name: 'Reports', to: 'reports' },
   ];
@@ -51,8 +51,8 @@ export default function CampaignDetail() {
         <div className="py-5">
           <Routes>
             <Route path="details" element={<CampaignInfo />} />
-            <Route path="creative" element={<CampaignCreative />} />
             <Route path="quotes" element={<CampaignQuotes />} />
+            <Route path="creative" element={<CampaignCreative />} />
             <Route path="progress" element={<CampaignProgress />} />
             <Route path="reports" element={<CampaignReports />} />
             <Route index element={<Navigate to={`/campaigns/${id}/details`} replace />} />

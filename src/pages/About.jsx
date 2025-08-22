@@ -13,6 +13,7 @@ import HeroHeader from '../components/HeroHeader'
 import Footer from '../components/Footer'
 import OurLeadershipTeam from '../components/OurLeadershipTeam.jsx'
 import Philosophy from '../components/Philosophy.jsx'
+import PricingCTA from '../components/PricingCTA.jsx'
 
 // Stats
 const stats = [
@@ -157,11 +158,15 @@ export default function About() {
           </dl>
         </div>
 
+        {/* Philosophy */}
+        <Philosophy />
+
         {/* Team */}
         <OurLeadershipTeam />
 
-        {/* Philosophy */}
-        <Philosophy />
+        {/* Pricing CTA */}
+        <PricingCTA showLearnMore={false} />
+
       </main>
 
       {/* Footer */}
