@@ -3,6 +3,8 @@ import { NavLink, Routes, Route, Navigate, useParams } from 'react-router-dom';
 import CampaignCreative from './CampaignCreative';
 import CampaignProgress from './CampaignProgress';
 import CampaignReports from './CampaignReports';
+import CampaignInfo from './CampaignInfo';
+import CampaignQuotes from './CampaignQuotes';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -11,7 +13,9 @@ function classNames(...classes) {
 export default function CampaignDetail() {
   const { id } = useParams();
   const navigation = [
+    { name: 'Details', to: 'details' },
     { name: 'Creative', to: 'creative' },
+    { name: 'Quotes', to: 'quotes' },
     { name: 'View Campaign Progress', to: 'progress' },
     { name: 'Reports', to: 'reports' },
   ];
@@ -46,10 +50,12 @@ export default function CampaignDetail() {
         {/* Child routes render their own Card — don’t wrap in another card here */}
         <div className="py-5">
           <Routes>
+            <Route path="details" element={<CampaignInfo />} />
             <Route path="creative" element={<CampaignCreative />} />
+            <Route path="quotes" element={<CampaignQuotes />} />
             <Route path="progress" element={<CampaignProgress />} />
             <Route path="reports" element={<CampaignReports />} />
-            <Route index element={<Navigate to={`/campaigns/${id}/creative`} replace />} />
+            <Route index element={<Navigate to={`/campaigns/${id}/details`} replace />} />
           </Routes>
         </div>
       </div>
