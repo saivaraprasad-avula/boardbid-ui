@@ -21,8 +21,8 @@ export default function Home() {
       <Integrations />
       <MediaFormatsBento/>
       <TargetLocations />
-      <WhyChoose />
       <BlogFlyer posts={posts} />
+      <WhyChoose /> 
       <FooterCTA />
       <Footer />
       <Intercom />
