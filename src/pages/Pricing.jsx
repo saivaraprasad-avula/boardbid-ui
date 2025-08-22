@@ -135,7 +135,9 @@ export default function Pricing() {
 
             <div className="mt-6 flex justify-center">
               <a
-                href="#"
+                href="https://boardbid.fillout.com/kee9zs7Rc3us"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto rounded-md border border-gray-300 px-5 py-2 text-center text-sm font-semibold text-gray-700 hover:bg-gray-50"
               >
                 Book a Meeting

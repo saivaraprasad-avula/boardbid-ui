@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useUser } from '@clerk/clerk-react';
 import Lottie from 'lottie-react';
 import loadingAnim from '../assets/loading.json';
+import { MegaphoneIcon } from '@heroicons/react/24/outline';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -161,11 +162,13 @@ export default function Campaigns() {
         </div>
       ) : campaigns.length === 0 ? (
         <div className="mx-auto max-w-md rounded-2xl border border-dashed border-gray-300 p-8 text-center dark:border-white/10">
-          <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600/10">📣</div>
+          <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600/10">
+            <MegaphoneIcon className="h-6 w-6 text-indigo-600" aria-hidden="true" />
+          </div>
           <h3 className="text-base font-semibold text-gray-900 dark:text-white">No campaigns yet</h3>
           <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">Create your first campaign to start planning.</p>
           <button
-            onClick={() => navigate('/new-campaign')}
+            onClick={() => navigate('/campaign/new')}
             className="mt-4 inline-flex items-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             New Campaign
