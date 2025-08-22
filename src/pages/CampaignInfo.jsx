@@ -7,6 +7,18 @@ import loadingAnim from '../assets/loading.json';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
+function fmtDate(d) {
+  if (!d) return '-';
+  const t = new Date(d);
+  return isNaN(t.valueOf())
+    ? d
+    : t.toLocaleDateString(undefined, {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      });
+}
+
 export default function CampaignInfo() {
   const { id } = useParams();
   const { user } = useUser();
@@ -61,21 +73,35 @@ export default function CampaignInfo() {
     status: 'Status',
   };
 
+  const hiddenKeys = [
+    'attachments',
+    'id',
+    'user_id',
+    'userId',
+    'source',
+    'submission_id',
+    'submissionId',
+    'raw',
+  ];
+
   const fields = Object.entries(campaign)
     .filter(
       ([key, value]) =>
-        key !== 'attachments' &&
+        !hiddenKeys.includes(key) &&
         value !== null &&
         value !== undefined &&
         value !== '' &&
         (!Array.isArray(value) || value.length > 0)
     )
     .map(([key, value]) => {
+      const isDateField = key.toLowerCase().includes('date');
       const formattedValue = Array.isArray(value)
         ? value.join(', ')
-        : typeof value === 'object'
-          ? JSON.stringify(value)
-          : value;
+        : isDateField
+          ? fmtDate(value)
+          : typeof value === 'object'
+            ? JSON.stringify(value)
+            : value;
       return {
         label:
           labelMap[key] ||
@@ -123,9 +149,8 @@ export default function CampaignInfo() {
                         <div className="ml-4 shrink-0">
                           <a
                             href={file.url}
-                            className="font-medium text-indigo-600 hover:text-indigo-500"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            download
+                            className="inline-flex items-center rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                           >
                             Download
                           </a>
