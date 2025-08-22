@@ -15,71 +15,102 @@ export default function Banner() {
     }
   }, [open])
 
-  // lock background scroll when popup is open
+  // lock background scroll when popup is open + close on Esc
   useEffect(() => {
+    const onKey = (e) => e.key === 'Escape' && setOpen(false)
     if (open) {
       document.body.style.overflow = 'hidden'
+      window.addEventListener('keydown', onKey)
     } else {
       document.body.style.overflow = ''
+      window.removeEventListener('keydown', onKey)
     }
+    return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
   if (!show) return null
 
   return (
     <>
-      <div className="fixed inset-x-0 bottom-0 z-50 isolate bg-gray-50 px-6 py-2.5 sm:px-3.5 shadow">
-        <div className="mx-auto flex max-w-7xl items-center justify-center gap-x-6">
-          {/* Text */}
-          <p className="text-sm text-gray-900">
-            <strong className="font-semibold">Schedule a short call with us —</strong>
-            we’ll dive into your campaign objectives and tailor the right strategy.
-          </p>
+      {/* Bottom banner */}
+      <div
+        className="fixed inset-x-0 bottom-0 z-50 isolate bg-gray-50 shadow"
+        style={{
+          // add safe-area padding on iOS
+          paddingBottom: 'calc(env(safe-area-inset-bottom) + 0.625rem)',
+        }}
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-2.5">
+          <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center sm:gap-6">
+            {/* Text */}
+            <p className="text-sm text-gray-900 text-center sm:text-left">
+              <strong className="font-semibold">Schedule a short call with us — </strong>
+              we’ll dive into your campaign objectives and tailor the right strategy.
+            </p>
 
-          {/* Button */}
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            className="rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-          >
-            Book a Call <span aria-hidden="true">&rarr;</span>
-          </button>
+            {/* CTA + Dismiss in a row on mobile */}
+            <div className="flex items-center justify-center gap-3">
+              <button
+                type="button"
+                onClick={() => setOpen(true)}
+                className="min-w-[10rem] rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+              >
+                Book a Call <span aria-hidden="true">→</span>
+              </button>
 
-          {/* Dismiss banner */}
-          <button
-            type="button"
-            onClick={() => setShow(false)}
-            className="ml-6 inline-flex items-center justify-center rounded-full p-1 text-gray-500 hover:text-gray-700 focus:outline-none"
-          >
-            <span className="sr-only">Dismiss</span>
-            <XMarkIcon aria-hidden="true" className="h-4 w-4" />
-          </button>
+              <button
+                type="button"
+                onClick={() => setShow(false)}
+                className="inline-flex items-center justify-center rounded-full p-2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                aria-label="Dismiss banner"
+              >
+                <XMarkIcon aria-hidden="true" className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
+      {/* Modal / Sheet */}
       {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          {/* popup fixed at 500px height, scrolls inside */}
-          <div
-            className="relative w-full max-w-3xl rounded-lg bg-white p-4 shadow-xl overflow-y-auto"
-            style={{ height: '700px' }}
-          >
-            <button
-              type="button"
-              onClick={() => setOpen(false)}
-              className="absolute right-2 top-2 rounded-full p-1 text-gray-500 hover:text-gray-700 focus:outline-none"
-            >
-              <span className="sr-only">Close</span>
-              <XMarkIcon className="h-5 w-5" />
-            </button>
-
+        <div
+          className="fixed inset-0 z-50 bg-black/50"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="flex h-full w-full items-end sm:items-center justify-center p-0 sm:p-4">
+            {/* On mobile: full-screen sheet; on desktop: centered dialog */}
             <div
-              style={{ width: '100%', minHeight: '500px' }}
-              data-fillout-id="kee9zs7Rc3us"
-              data-fillout-embed-type="standard"
-              data-fillout-inherit-parameters
-              data-fillout-dynamic-resize
-            ></div>
+              className="
+                relative w-full bg-white shadow-xl overflow-y-auto
+                h-[90dvh] rounded-none
+                sm:h-[700px] sm:max-w-3xl sm:rounded-lg sm:p-4
+              "
+            >
+              {/* Close button */}
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                className="
+                  absolute right-3 top-3 z-10 rounded-full p-2
+                  text-gray-500 hover:text-gray-700 focus:outline-none
+                "
+                aria-label="Close"
+              >
+                <XMarkIcon className="h-6 w-6" />
+              </button>
+
+              {/* Content container (Fillout) */}
+              <div className="w-full h-full sm:h-auto sm:min-h-[500px] p-0 sm:p-1">
+                <div
+                  className="w-full h-full"
+                  data-fillout-id="kee9zs7Rc3us"
+                  data-fillout-embed-type="standard"
+                  data-fillout-inherit-parameters
+                  data-fillout-dynamic-resize
+                />
+              </div>
+            </div>
           </div>
         </div>
       )}

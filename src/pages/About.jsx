@@ -14,6 +14,7 @@ import Footer from '../components/Footer'
 import OurLeadershipTeam from '../components/OurLeadershipTeam.jsx'
 import Philosophy from '../components/Philosophy.jsx'
 import PricingCTA from '../components/PricingCTA.jsx'
+import HomeBanner from '../components/HomeBanner.jsx'
 
 // Stats
 const stats = [
@@ -69,6 +70,7 @@ export default function About() {
     <div className="bg-white">
       {/* Header */}
       <HeroHeader />
+      <HomeBanner />  
 
       <main className="relative isolate">
         {/* Background blob */}

@@ -11,11 +11,13 @@ import HeroHeader from '../components/HeroHeader'
 import Footer from '../components/Footer'
 import PricingCTA from '../components/PricingCTA'
 import PricingVideo from '../components/PricingVideo'
+import HomeBanner from '../components/HomeBanner'
 
 export default function Pricing() {
   return (
     <div className="bg-white pt-24 sm:pt-32">
       <HeroHeader />
+      <HomeBanner />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Headline */}
@@ -132,17 +134,7 @@ export default function Pricing() {
             <p className="mt-4 text-xs text-gray-500">
               CPM = cost per thousand impressions. Pricing varies by city, targeting, and seasonality.
             </p>
-
-            <div className="mt-6 flex justify-center">
-              <a
-                href="https://boardbid.fillout.com/kee9zs7Rc3us"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto rounded-md border border-gray-300 px-5 py-2 text-center text-sm font-semibold text-gray-700 hover:bg-gray-50"
-              >
-                Book a Meeting
-              </a>
-            </div>
+            {/* Book a Meeting button removed */}
           </div>
         </div>
 
