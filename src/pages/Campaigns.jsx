@@ -2,6 +2,7 @@ import InternalLayout from '../layout/InternalLayout';
 import PageHeader from '../components/PageHeader';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { EllipsisHorizontalIcon } from '@heroicons/react/20/solid';
+import { MegaphoneIcon } from '@heroicons/react/24/outline';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useUser } from '@clerk/clerk-react';
@@ -75,14 +76,14 @@ export default function Campaigns() {
       ) : campaigns.length === 0 ? (
         <div className="mx-auto max-w-3xl rounded-2xl border border-dashed border-gray-300 p-10 text-center dark:border-white/10">
           <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-600/10">
-            <span className="text-base">📣</span>
+            <MegaphoneIcon className="h-6 w-6 text-indigo-600" />
           </div>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">No campaigns yet</h3>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Create your first campaign to start planning inventory and tracking status.
           </p>
           <button
-            onClick={() => navigate('/new-campaign')}
+            onClick={() => navigate('/campaign/new')}
             className="mt-5 inline-flex items-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             New Campaign
