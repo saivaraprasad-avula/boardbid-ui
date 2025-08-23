@@ -21,7 +21,7 @@ function StatusPill({ value }) {
     v === 'cancelled' ? 'bg-rose-100 text-rose-700 ring-rose-200' :
     'bg-gray-100 text-gray-700 ring-gray-200';
   return (
-    <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ${cls}`}>
+    <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium ring-1 ${cls}`}>
       {value}
     </span>
   );
@@ -33,8 +33,6 @@ function fmtDate(d) {
   if (Number.isNaN(t.valueOf())) return String(d);
   return t.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
 }
-
-// local date-time for the “Created …” badge
 function fmtDateTimeLocal(d) {
   if (!d) return '';
   const t = new Date(d);
@@ -48,7 +46,6 @@ function fmtDateTimeLocal(d) {
     timeZoneName: 'short',
   }).format(t);
 }
-
 function isEmpty(val) {
   return val == null || val === '' || (Array.isArray(val) && val.length === 0);
 }
@@ -177,7 +174,7 @@ export default function Campaigns() {
       ) : (
         <ul
           role="list"
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3"
+          className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 xl:grid-cols-3"
         >
           {campaigns.map((campaign, i) => {
             const details = topFiveDetails(campaign);
@@ -201,51 +198,53 @@ export default function Campaigns() {
               >
                 {/* Entire card is clickable */}
                 <div
+                  role="button"
+                  tabIndex={0}
                   onClick={() => navigate(`/campaigns/${campaign.id}`)}
-                  className="cursor-pointer"
+                  onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && navigate(`/campaigns/${campaign.id}`)}
+                  className="cursor-pointer focus-visible:outline-none"
                 >
-                  {/* Header */}
-                  <div className="border-b border-gray-100 px-4 py-3 sm:px-5 sm:py-4 dark:border-white/10">
-                    <div className="flex flex-wrap items-center gap-2">
-                      {/* index bubble + title/id */}
-                      <div className="inline-flex h-8 w-8 items-center justify-center rounded-full
-                                      bg-gradient-to-br from-indigo-500 to-violet-600 text-white text-sm font-semibold
-                                      ring-2 ring-white/80 dark:ring-gray-900/60">
+                  {/* Header — vertical layout with labels on top */}
+                  <div className="flex flex-col gap-y-2 border-b border-gray-100 px-3 py-3 sm:px-5 sm:py-4 dark:border-white/10">
+                    {/* Index bubble and text stack */}
+                    <div className="flex items-start gap-3">
+                      {/* Index bubble */}
+                      <div className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-sm font-semibold text-white ring-2 ring-white/80 dark:ring-gray-900/60">
                         {i + 1}
                       </div>
-
+                      {/* Text stack */}
                       <div className="min-w-0 flex-1">
-                        <div className="truncate text-sm font-semibold text-gray-900 dark:text-white">
+                        <div className="text-sm font-semibold text-gray-900 sm:text-base dark:text-white">
                           {campaign.company_name || 'Untitled'}
                         </div>
-                        <div className="mt-0.5 truncate text-[11px] text-gray-500 dark:text-gray-400">
+                        <div className="mt-0.5 truncate text-[11px] text-gray-500 dark:text-gray-400" title={campaign.id}>
                           Campaign ID: {campaign.id}
                         </div>
                       </div>
-
-                      {/* badges (wrap on xs) */}
-                      <div className="flex items-center gap-2">
-                        {statusVal && <StatusPill value={statusVal} />}
-                        {createdAt && (
-                          <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-800 ring-1 ring-gray-200">
-                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-gray-400" />
-                            Created {fmtDateTimeLocal(createdAt)}
-                          </span>
-                        )}
-                      </div>
+                    </div>
+                    {/* Badges container - now a separate row below */}
+                    <div className="flex flex-wrap items-center gap-1.5 pt-1 sm:gap-2">
+                      {statusVal && <StatusPill value={statusVal} />}
+                      {createdAt && (
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-medium text-gray-800 ring-1 ring-gray-200">
+                          <span className="inline-block h-1.5 w-1.5 rounded-full bg-gray-400" />
+                          <span className="hidden sm:inline">Created {fmtDateTimeLocal(createdAt)}</span>
+                          <span className="sm:hidden">Created {fmtDate(createdAt)}</span>
+                        </span>
+                      )}
                     </div>
                   </div>
 
                   {/* Details */}
-                  <dl className="px-4 py-3 sm:px-5 sm:py-4">
-                    <div className="grid gap-3 sm:grid-cols-2">
+                  <dl className="px-3 py-3 sm:px-5 sm:py-4">
+                    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                       {details.map((d) => (
                         <div
                           key={`${campaign.id}-${d.key}`}
                           className="rounded-lg bg-gray-50 p-3 text-sm dark:bg-white/5"
                         >
                           <dt className="text-[11px] font-medium text-gray-500 dark:text-gray-400">{d.label}</dt>
-                          <dd className="mt-0.5 text-gray-900 dark:text-gray-200 line-clamp-2 break-words">
+                          <dd className="mt-0.5 text-gray-900 dark:text-gray-200 break-words">
                             {d.norm}
                           </dd>
                         </div>

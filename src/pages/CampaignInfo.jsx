@@ -110,6 +110,7 @@ export default function CampaignInfo() {
     campaign['targetLocationAttachment'] ?? null;
   const tlaFiles = parseTargetLocationAttachment(tlaRaw);
 
+  // labels & order (ensures important ones show first on mobile)
   const labelMap = {
     company_name: 'Company Name',
     campaign_type: 'Campaign Type',
@@ -118,21 +119,27 @@ export default function CampaignInfo() {
     ooh_budget_range: 'Budget',
     campaign_start_date: 'Start Date',
     campaign_end_date: 'End Date',
-    // status & created_* are handled in header; don’t include them in fields
   };
+  const mobileOrder = [
+    'company_name',
+    'campaign_type',
+    'industry',
+    'campaign_goals',
+    'ooh_budget_range',
+    'campaign_start_date',
+    'campaign_end_date',
+  ];
 
   const hiddenKeys = [
-    // handled elsewhere
-    'status', 'campaign_status',
+    'status','campaign_status',
     'created_at','createdAt','created',
     'submitted_at','submittedAt',
-    // raw/unwanted
     'attachments',
     'Target Location Attachment','target_location_attachment','targetLocationAttachment',
     'id','user_id','userId','source','submission_id','submissionId','raw',
   ];
 
-  const fields = Object.entries(campaign)
+  const allFields = Object.entries(campaign)
     .filter(([key, value]) =>
       !hiddenKeys.includes(key) &&
       value !== null && value !== undefined && value !== '' &&
@@ -144,25 +151,30 @@ export default function CampaignInfo() {
         ? value.join(', ')
         : isDateField ? fmtDate(value)
         : typeof value === 'object' ? JSON.stringify(value) : value;
-      return {
-        label: labelMap[key] || key.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
-        value: formattedValue,
-      };
+      const label = labelMap[key] || key.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+      return { key, label, value: formattedValue };
     });
 
+  // Sort for mobile (prioritize key items first, keep the rest after)
+  const prioritized = [
+    ...mobileOrder
+      .map(k => allFields.find(f => f && f.key === k))
+      .filter(Boolean),
+    ...allFields.filter(f => !mobileOrder.includes(f.key)),
+  ];
+
   return (
-    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-      {/* Header with badges */}
-      <div className="px-4 py-6 sm:px-6 flex items-start justify-between gap-4">
+    <div className="bg-white shadow-sm sm:rounded-lg overflow-visible">
+      {/* Header with badges (stacks on mobile) */}
+      <div className="px-4 py-5 sm:px-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <h3 className="text-base font-semibold leading-7 text-gray-900">Campaign Information</h3>
-          <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Basic details about your campaign.</p>
+          <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
+            Basic details about your campaign.
+          </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          {/* Status badge (only if available) */}
           {status && <StatusPill value={status} />}
-
-          {/* Created badge (only if available) */}
           {createdAt && (
             <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm">
               <span className="inline-block h-2 w-2 rounded-full bg-white/80" />
@@ -172,18 +184,33 @@ export default function CampaignInfo() {
         </div>
       </div>
 
-      <div className="border-t border-gray-100">
+      {/* MOBILE: card grid (labels above values) */}
+      <div className="px-4 pb-4 grid grid-cols-1 gap-3 sm:hidden">
+        {prioritized.map((f) => (
+          <div
+            key={`m-${f.key}`}
+            className="rounded-xl ring-1 ring-gray-200 bg-white px-4 py-3"
+          >
+            <div className="text-xs font-medium text-gray-500">{f.label}</div>
+            <div className="mt-1 text-sm font-medium text-gray-900 break-words break-all">
+              {f.value || ''}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* DESKTOP/TABLET: definition list */}
+      <div className="hidden sm:block border-t border-gray-100">
         <dl className="divide-y divide-gray-100">
-          {fields.map((field) => (
-            <div key={field.label} className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          {allFields.map((field) => (
+            <div key={field.key} className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-900">{field.label}</dt>
-              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 break-words break-all">
                 {field.value || ''}
               </dd>
             </div>
           ))}
 
-          {/* Target Location Attachment — render only if available */}
           {tlaFiles.length > 0 && (
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-900">Target Location Attachment</dt>

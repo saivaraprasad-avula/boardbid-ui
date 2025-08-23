@@ -4,7 +4,6 @@ export default function PricingCTA({ showLearnMore = true }) {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* match widths: max-w-4xl then lg:max-w-6xl like the section above */}
         <div className="mx-auto mt-16 mb-16 w-full max-w-4xl lg:max-w-6xl">
           <div
             className="
@@ -15,18 +14,21 @@ export default function PricingCTA({ showLearnMore = true }) {
               min-h-[160px] sm:min-h-[180px] md:min-h-[200px] lg:min-h-[250px]
             "
           >
-            {/* Mobile-friendly heading */}
+            {/* Heading with fixed line control */}
             <h2
               className="
-                max-w-3xl text-center md:text-left
+                text-center md:text-left
                 text-lg sm:text-2xl md:text-2xl lg:text-3xl
                 font-semibold tracking-tight text-gray-900 leading-snug
-                text-pretty sm:text-balance
+                space-y-2
               "
             >
-              Outdoor ads, minus the overload.
-              <br className="hidden sm:block" />
-              <span className="sm:whitespace-nowrap">Catch eyes while we handle the rest.</span>
+              <span className="block whitespace-nowrap">
+                Outdoor ads, minus the overload.
+              </span>
+              <span className="block whitespace-nowrap">
+                Catch eyes while we handle the rest.
+              </span>
             </h2>
 
             {/* CTAs */}
