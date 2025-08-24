@@ -1,5 +1,6 @@
 import OpsLayout from '../layout/OpsLayout';
 import Card from '../components/Card';
+import CampaignsOpsStats from '../components/CampaignsOpsStats';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -32,6 +33,7 @@ export default function OpsHome() {
   return (
     <OpsLayout>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <CampaignsOpsStats />
         <Card title="Campaigns">
           {isLoading ? (
             <div className="py-8 text-center text-sm text-gray-500">Loading...</div>
