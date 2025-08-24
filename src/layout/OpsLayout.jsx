@@ -8,11 +8,8 @@ import OpsToggle from '../components/OpsToggle.jsx';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-  { name: 'Reports', href: '#', current: false },
+  { name: 'Campaigns', href: '#', current: true },
+  { name: 'Inbox', href: '#', current: false },
 ];
 
 function classNames(...classes) {
