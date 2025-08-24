@@ -22,8 +22,8 @@ function classNames(...classes) {
 export default function OpsLayout({ children }) {
   return (
     <div className="min-h-full">
-      <div className="bg-[#288dcf] pb-6">
-        <Disclosure as="nav" className="border-b border-[#d6eaf8]/25 bg-[#288dcf] lg:border-none">
+      <div className="bg-[#4ba6dc] pb-6">
+        <Disclosure as="nav" className="border-b border-[#d6eaf8]/25 bg-[#4ba6dc] lg:border-none">
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
             <div className="relative flex h-16 items-center justify-between lg:border-b lg:border-[#d6eaf8]/25">
               <div className="flex items-center px-2 lg:px-0">
