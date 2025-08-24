@@ -24,7 +24,7 @@ export default function OpsLayout({ children }) {
     <div className="min-h-full">
       <div className="bg-black pb-6">
         <Disclosure as="nav" className="border-b border-white/10 bg-black lg:border-none">
-          <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
+          <div className="px-2 sm:px-4 lg:px-8">
             <div className="relative flex h-16 items-center justify-between lg:border-b lg:border-white/10">
               <div className="flex items-center px-2 lg:px-0">
                 <div className="shrink-0">
@@ -107,13 +107,15 @@ export default function OpsLayout({ children }) {
           </DisclosurePanel>
         </Disclosure>
         <header className="py-10">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-tight text-white">Ops Home</h1>
           </div>
         </header>
       </div>
 
-      <main className="py-6">{children}</main>
+      <main className="py-6">
+        <div className="px-4 sm:px-6 lg:px-8">{children}</div>
+      </main>
     </div>
   );
 }

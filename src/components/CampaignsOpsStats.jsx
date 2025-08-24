@@ -1,6 +1,6 @@
-export default function CampaignsOpsStats() {
+export default function CampaignsOpsStats({ campaigns = [] }) {
   const stats = [
-    { name: 'Total Subscribers', stat: '71,897' },
+    { name: 'Total Campaigns', stat: campaigns.length.toString() },
     { name: 'Avg. Open Rate', stat: '58.16%' },
     { name: 'Avg. Click Rate', stat: '24.57%' },
   ];
