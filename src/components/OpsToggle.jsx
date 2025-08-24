@@ -1,12 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import { withBase } from '../utils/basePath.js';
 
-export default function OpsToggle() {
+export default function OpsToggle({ defaultChecked = false }) {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     if (e.target.checked) {
       navigate(withBase('/ops'));
+    } else {
+      navigate(withBase('/dashboard'));
     }
   };
 
@@ -18,6 +20,7 @@ export default function OpsToggle() {
         type="checkbox"
         aria-label="Enable ops mode"
         className="absolute inset-0 appearance-none focus:outline-hidden"
+        defaultChecked={defaultChecked}
         onChange={handleChange}
       />
     </div>
