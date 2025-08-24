@@ -1,13 +1,15 @@
 export default function CampaignsOpsStats({ campaigns = [] }) {
   const stats = [
-    { name: 'Total Campaigns', stat: campaigns.length.toString() },
-    { name: 'Avg. Open Rate', stat: '58.16%' },
-    { name: 'Avg. Click Rate', stat: '24.57%' },
+    { name: 'Total', stat: campaigns.length.toString() },
+    { name: 'Unassigned', stat: '-' },
+    { name: 'In Progress', stat: '-' },
+    { name: 'Closed', stat: '-' },
   ];
 
   return (
-    <div className="mt-8 mb-6">
-      <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+    <div className="mt-8 mb-8">
+
+      <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-4">
         {stats.map((item) => (
           <div
             key={item.name}
