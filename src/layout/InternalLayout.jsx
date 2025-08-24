@@ -19,6 +19,7 @@ import {
   ArrowLeftOnRectangleIcon,
 } from '@heroicons/react/24/outline';
 import { UserButton, SignOutButton } from '@clerk/clerk-react';
+import OpsToggle from '../components/OpsToggle.jsx';
 import { withBase } from '../utils/basePath.js';
 
 const navigation = [
@@ -196,7 +197,12 @@ export default function InternalLayout({ children }) {
             <div className="flex flex-1 justify-end gap-x-4 self-stretch lg:gap-x-6">
               <div className="flex items-center gap-x-4 lg:gap-x-6">
                 {/* notifications placeholder */}
-                <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" />
+                {pathname === '/dashboard' && (
+                  <>
+                    <OpsToggle />
+                    <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" />
+                  </>
+                )}
                 <UserButton
                   afterSignOutUrl={withBase('/')}
                   userProfileMode="navigation"

@@ -17,6 +17,7 @@ import About from './pages/About';
 import Press from './pages/Press';
 import Support from './pages/Support';
 import Contact from './pages/Contact';
+import OpsHome from './pages/OpsHome';
 import ProtectedRoute from './components/ProtectedRoute';
 import Pricing from './pages/Pricing';
 
@@ -43,6 +44,7 @@ function App() {
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/ops" element={<ProtectedRoute><OpsHome /></ProtectedRoute>} />
       </Routes>
     </>
   );
