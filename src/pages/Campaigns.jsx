@@ -6,7 +6,6 @@ import { useUser } from '@clerk/clerk-react';
 import Lottie from 'lottie-react';
 import loadingAnim from '../assets/loading.json';
 import { MegaphoneIcon } from '@heroicons/react/24/outline';
-import CampaignStats from '../components/CampaignStats';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -151,7 +150,6 @@ export default function Campaigns() {
   return (
     <InternalLayout>
       <PageHeader title="My Campaigns" />
-      {!isLoading && <CampaignStats campaigns={campaigns} />}
 
       {isLoading ? (
         <div className="flex h-48 items-center justify-center">
