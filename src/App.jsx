@@ -19,6 +19,7 @@ import Support from './pages/Support';
 import Contact from './pages/Contact';
 import OpsHome from './pages/OpsHome';
 import OpsInbox from './pages/OpsInbox.jsx';
+import OpsCampaignDetail from './pages/OpsCampaignDetail.jsx';
 import ProtectedRoute from './components/ProtectedRoute';
 import Pricing from './pages/Pricing';
 
@@ -47,6 +48,7 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/ops" element={<ProtectedRoute><OpsHome /></ProtectedRoute>} />
         <Route path="/ops/inbox" element={<ProtectedRoute><OpsInbox /></ProtectedRoute>} />
+        <Route path="/ops/campaigns/:id/*" element={<ProtectedRoute><OpsCampaignDetail /></ProtectedRoute>} />
       </Routes>
     </>
   );
