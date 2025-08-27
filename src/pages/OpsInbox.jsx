@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useUser } from '@clerk/clerk-react';
 import OpsLayout from '../layout/OpsLayout';
 import OpsAssignMenu from '../components/OpsAssignMenu.jsx';
@@ -8,6 +8,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 export default function OpsInbox() {
   const { user } = useUser();
+  const navigate = useNavigate();
   const [campaigns, setCampaigns] = useState([]);
   const [opsUsers, setOpsUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -101,14 +102,15 @@ export default function OpsInbox() {
                 <th scope="col" className="px-3 py-3.5 text-sm font-semibold text-gray-900">
                   Status
                 </th>
-                <th scope="col" className="py-3.5 pl-3 pr-4 sm:pr-6">
-                  <span className="sr-only">View</span>
-                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
               {campaigns.map((c) => (
-                <tr key={c.id}>
+                <tr
+                  key={c.id}
+                  onClick={() => navigate(`/ops/campaigns/${c.id}`)}
+                  className="cursor-pointer hover:bg-gray-50"
+                >
                   <td className="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">
                     {c.company_name || '-'}
                   </td>
@@ -143,14 +145,6 @@ export default function OpsInbox() {
                   </td>
                   <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                     {c.status || '-'}
-                  </td>
-                  <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                    <Link
-                      to={`/campaigns/${c.id}`}
-                      className="text-indigo-600 hover:text-indigo-900"
-                    >
-                      View<span className="sr-only">, {c.company_name}</span>
-                    </Link>
                   </td>
                 </tr>
               ))}

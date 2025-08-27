@@ -58,24 +58,34 @@ function StatusPill({ value }) {
   return <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ring-1 ${cls}`}>{value}</span>;
 }
 
-export default function CampaignInfo() {
+export default function CampaignInfo({ ops = false }) {
   const { id } = useParams();
   const { user } = useUser();
   const [campaign, setCampaign] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (!user) return;
     (async () => {
       setIsLoading(true);
       try {
-        const res = await fetch(`${API_URL}/users/${user.id}/campaigns`);
-        if (res.ok) {
-          const data = await res.json();
-          const found = (data.campaigns || []).find((c) => c.id === id);
-          setCampaign(found || null);
+        if (ops) {
+          const res = await fetch(`${API_URL}/campaigns/${id}`);
+          if (res.ok) {
+            const data = await res.json();
+            setCampaign(data.campaign || data || null);
+          } else {
+            setCampaign(null);
+          }
         } else {
-          setCampaign(null);
+          if (!user) return;
+          const res = await fetch(`${API_URL}/users/${user.id}/campaigns`);
+          if (res.ok) {
+            const data = await res.json();
+            const found = (data.campaigns || []).find((c) => c.id === id);
+            setCampaign(found || null);
+          } else {
+            setCampaign(null);
+          }
         }
       } catch (err) {
         console.error('Failed to load campaign', err);
@@ -84,7 +94,7 @@ export default function CampaignInfo() {
         setIsLoading(false);
       }
     })();
-  }, [user, id]);
+  }, [ops, user, id]);
 
   if (isLoading) {
     return (
