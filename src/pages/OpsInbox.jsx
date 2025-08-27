@@ -53,7 +53,8 @@ export default function OpsInbox() {
       const res = await fetch(`${API_URL}/ops-users/campaigns/${campaignId}/assign`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ops_user_id: selected.id }),
+        credentials: 'include',
+        body: JSON.stringify({ user_id: selected.id }),
       });
       if (res.ok) {
         setCampaigns((prev) =>
