@@ -1,25 +1,23 @@
 'use client';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { UserButton } from '@clerk/clerk-react';
 import { withBase } from '../utils/basePath.js';
 import OpsToggle from '../components/OpsToggle.jsx';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
-const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-  { name: 'Reports', href: '#', current: false },
-];
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function OpsLayout({ children }) {
+export default function OpsLayout({ children, title = 'Ops Home' }) {
+  const location = useLocation();
+  const navigation = [
+    { name: 'Campaigns', href: withBase('/ops') },
+    { name: 'Inbox', href: withBase('/ops/inbox') },
+  ];
+
   return (
     <div className="min-h-full">
       <div className="bg-black pb-6">
@@ -40,9 +38,8 @@ export default function OpsLayout({ children }) {
                       <Link
                         key={item.name}
                         to={item.href}
-                        aria-current={item.current ? 'page' : undefined}
                         className={classNames(
-                          item.current
+                          location.pathname === item.href
                             ? 'bg-white text-black'
                             : 'text-white hover:bg-white hover:text-black',
                           'rounded-md px-3 py-2 text-sm font-medium',
@@ -55,7 +52,6 @@ export default function OpsLayout({ children }) {
                 </div>
               </div>
               <div className="flex lg:hidden">
-                {/* Mobile menu button */}
                 <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-white">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
@@ -82,9 +78,8 @@ export default function OpsLayout({ children }) {
                   key={item.name}
                   as={Link}
                   to={item.href}
-                  aria-current={item.current ? 'page' : undefined}
                   className={classNames(
-                    item.current
+                    location.pathname === item.href
                       ? 'bg-white text-black'
                       : 'text-white hover:bg-white hover:text-black',
                     'block rounded-md px-3 py-2 text-base font-medium',
@@ -108,7 +103,7 @@ export default function OpsLayout({ children }) {
         </Disclosure>
         <header className="py-10">
           <div className="px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold tracking-tight text-white">Ops Home</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-white">{title}</h1>
           </div>
         </header>
       </div>

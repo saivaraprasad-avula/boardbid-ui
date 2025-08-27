@@ -1,5 +1,6 @@
 import OpsLayout from '../layout/OpsLayout';
 import CampaignsOpsStats from '../components/CampaignsOpsStats';
+import OpsAssignMenu from '../components/OpsAssignMenu.jsx';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +9,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 export default function OpsHome() {
   const [campaigns, setCampaigns] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [opsUsers, setOpsUsers] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -27,10 +29,43 @@ export default function OpsHome() {
     })();
   }, []);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch(`${API_URL}/ops-users`);
+        if (!res.ok) setOpsUsers([]);
+        else {
+          const data = await res.json();
+          setOpsUsers(Array.isArray(data?.ops_users) ? data.ops_users : []);
+        }
+      } catch (e) {
+        console.error('Failed to fetch ops users', e);
+        setOpsUsers([]);
+      }
+    })();
+  }, []);
+
+  const handleAssign = async (campaignId, user) => {
+    try {
+      const res = await fetch(`${API_URL}/ops-users/campaigns/${campaignId}/assign`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ops_user_id: user.id }),
+      });
+      if (res.ok) {
+        setCampaigns((prev) =>
+          prev.map((c) => (c.id === campaignId ? { ...c, ops_user: user } : c)),
+        );
+      }
+    } catch (e) {
+      console.error('Failed to assign ops user', e);
+    }
+  };
+
   const fmt = (val) => (Array.isArray(val) ? val.join(', ') : val || '-');
 
   return (
-    <OpsLayout>
+    <OpsLayout title="Campaigns">
       <CampaignsOpsStats campaigns={campaigns} />
       {isLoading ? (
         <div className="py-8 text-center text-sm text-gray-500">Loading...</div>
@@ -64,6 +99,12 @@ export default function OpsHome() {
                     Budget
                   </th>
                   <th scope="col" className="px-3 py-3.5 text-sm font-semibold text-gray-900">
+                    Created By
+                  </th>
+                  <th scope="col" className="px-3 py-3.5 text-sm font-semibold text-gray-900">
+                    Assigned To
+                  </th>
+                  <th scope="col" className="px-3 py-3.5 text-sm font-semibold text-gray-900">
                     Status
                   </th>
                   <th scope="col" className="py-3.5 pl-3 pr-4 sm:pr-6">
@@ -82,6 +123,29 @@ export default function OpsHome() {
                     </td>
                     <td className="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 md:table-cell">
                       {c.ooh_budget_range || '-'}
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      {c.created_by ? (
+                        <div className="flex items-center">
+                          {c.created_by.image_url ? (
+                            <img
+                              src={c.created_by.image_url}
+                              alt={c.created_by.email}
+                              className="mr-2 h-6 w-6 rounded-full"
+                            />
+                          ) : null}
+                          {c.created_by.email}
+                        </div>
+                      ) : (
+                        '-'
+                      )}
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      <OpsAssignMenu
+                        current={c.ops_user}
+                        opsUsers={opsUsers}
+                        onSelect={(u) => handleAssign(c.id, u)}
+                      />
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                       {c.status || '-'}
