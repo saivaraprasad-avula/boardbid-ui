@@ -11,8 +11,8 @@ export default function OpsAssignMenu({ current, opsUsers = [], onSelect }) {
         {label}
         <ChevronDownIcon aria-hidden="true" className="-mr-1 h-5 w-5 text-gray-400" />
       </MenuButton>
-      <MenuItems className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg outline-1 outline-black/5">
-        <div className="max-h-60 overflow-y-auto py-1">
+      <MenuItems className="absolute right-0 z-10 mt-2 w-64 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5">
+        <div className="py-1">
           {opsUsers.map((u) => (
             <MenuItem key={u.id}>
               {({ active }) => (

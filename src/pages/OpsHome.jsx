@@ -51,7 +51,8 @@ export default function OpsHome() {
       const res = await fetch(`${API_URL}/ops-users/campaigns/${campaignId}/assign`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ops_user_id: user.id }),
+        credentials: 'include',
+        body: JSON.stringify({ user_id: user.id }),
       });
       if (res.ok) {
         setCampaigns((prev) =>
