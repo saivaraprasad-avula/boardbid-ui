@@ -40,9 +40,9 @@ export default function Contact() {
                       <BuildingOffice2Icon aria-hidden="true" className="h-6 w-6 text-gray-400" />
                     </dt>
                     <dd className="text-gray-800">
-                      131 Continental Dr, Suite 305
+                      2261 Market Street STE 85992
                       <br />
-                      Newark, Delaware 19713
+                      San Francisco, CA 94114
                     </dd>
                   </div>
 
