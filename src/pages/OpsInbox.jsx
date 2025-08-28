@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUser } from '@clerk/clerk-react';
 import OpsLayout from '../layout/OpsLayout';
 import OpsAssignMenu from '../components/OpsAssignMenu.jsx';
+import UserAvatarName from '../components/UserAvatarName.jsx';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -123,16 +124,7 @@ export default function OpsInbox() {
                   </td>
                   <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                     {c.created_by ? (
-                      <div className="flex items-center">
-                        {c.created_by.image_url ? (
-                          <img
-                            src={c.created_by.image_url}
-                            alt={c.created_by.email}
-                            className="mr-2 h-6 w-6 rounded-full"
-                          />
-                        ) : null}
-                        {c.created_by.email}
-                      </div>
+                      <UserAvatarName user={c.created_by} size="md" />
                     ) : (
                       '-'
                     )}

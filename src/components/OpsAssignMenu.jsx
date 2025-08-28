@@ -8,6 +8,7 @@ import {
   Transition,
 } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import UserAvatarName from './UserAvatarName.jsx';
 
 function cls(...xs) {
   return xs.filter(Boolean).join(' ');
@@ -47,7 +48,7 @@ export default function OpsAssignMenu({ current, opsUsers = [], onSelect }) {
 
   const Portal = ({ children }) => ReactDOM.createPortal(children, document.body);
 
-  const labelFor = (u) => u?.email || u?.full_name || u?.user_id || u?.id || 'user';
+  const labelFor = (u) => u?.full_name || u?.email || u?.user_id || u?.id || 'user';
 
   const ButtonContent = ({ label }) => (
     <>
@@ -57,17 +58,13 @@ export default function OpsAssignMenu({ current, opsUsers = [], onSelect }) {
   );
 
   const LabelWhenAssigned = () => (
-    <div className="flex items-center" onClick={stop}>
-      {resolvedCurrent?.image_url ? (
-        <img
-          src={resolvedCurrent.image_url}
-          alt={labelFor(resolvedCurrent)}
-          className="mr-2 h-5 w-5 rounded-full"
-        />
-      ) : null}
-      <span className="mr-2 max-w-[14rem] truncate text-sm text-gray-900">
-        {labelFor(resolvedCurrent)}
-      </span>
+    <div className="mr-2" onClick={stop}>
+      <UserAvatarName
+        user={resolvedCurrent}
+        size="xs"
+        className="max-w-[14rem]"
+        textClass="text-sm text-gray-900"
+      />
     </div>
   );
 

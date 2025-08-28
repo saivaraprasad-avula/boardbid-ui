@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useUser } from '@clerk/clerk-react';
 import { PaperClipIcon } from '@heroicons/react/20/solid';
 import Lottie from 'lottie-react';
+import UserAvatarName from '../components/UserAvatarName.jsx';
 import loadingAnim from '../assets/loading.json';
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -112,6 +113,9 @@ export default function CampaignInfo({ ops = false }) {
     campaign.created_at || campaign.createdAt || campaign.created ||
     campaign.submitted_at || campaign.submittedAt || null;
   const status = campaign.status || campaign.campaign_status || null;
+  const createdBy = campaign.created_by || campaign.createdBy || null;
+  const assignedTo =
+    campaign.assigned_to || campaign.assignedTo || campaign.ops_user || null;
 
   // Parse Target Location Attachment (render only if present & non-empty)
   const tlaRaw =
@@ -196,6 +200,22 @@ export default function CampaignInfo({ ops = false }) {
 
       {/* MOBILE: card grid (labels above values) */}
       <div className="px-4 pb-4 grid grid-cols-1 gap-3 sm:hidden">
+        {createdBy && (
+          <div className="rounded-xl ring-1 ring-gray-200 bg-white px-4 py-3">
+            <div className="text-xs font-medium text-gray-500">Created By</div>
+            <div className="mt-1 text-sm font-medium text-gray-900 break-words break-all">
+              <UserAvatarName user={createdBy} />
+            </div>
+          </div>
+        )}
+        {assignedTo && (
+          <div className="rounded-xl ring-1 ring-gray-200 bg-white px-4 py-3">
+            <div className="text-xs font-medium text-gray-500">Assigned To</div>
+            <div className="mt-1 text-sm font-medium text-gray-900 break-words break-all">
+              <UserAvatarName user={assignedTo} />
+            </div>
+          </div>
+        )}
         {prioritized.map((f) => (
           <div
             key={`m-${f.key}`}
@@ -212,6 +232,22 @@ export default function CampaignInfo({ ops = false }) {
       {/* DESKTOP/TABLET: definition list */}
       <div className="hidden sm:block border-t border-gray-100">
         <dl className="divide-y divide-gray-100">
+          {createdBy && (
+            <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="text-sm font-medium text-gray-900">Created By</dt>
+              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                <UserAvatarName user={createdBy} />
+              </dd>
+            </div>
+          )}
+          {assignedTo && (
+            <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="text-sm font-medium text-gray-900">Assigned To</dt>
+              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                <UserAvatarName user={assignedTo} />
+              </dd>
+            </div>
+          )}
           {allFields.map((field) => (
             <div key={field.key} className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-900">{field.label}</dt>

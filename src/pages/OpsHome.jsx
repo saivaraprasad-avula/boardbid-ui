@@ -1,6 +1,7 @@
 import OpsLayout from '../layout/OpsLayout';
 import CampaignsOpsStats from '../components/CampaignsOpsStats';
 import OpsAssignMenu from '../components/OpsAssignMenu.jsx';
+import UserAvatarName from '../components/UserAvatarName.jsx';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -157,18 +158,8 @@ export default function OpsHome() {
 
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                       {c.created_by ? (
-                        <div className="flex items-center">
-                          {c.created_by.image_url ? (
-                            <img
-                              src={c.created_by.image_url}
-                              alt={c.created_by.email ?? 'avatar'}
-                              className="mr-2 h-6 w-6 rounded-full"
-                              onClick={(e) => e.stopPropagation()}
-                            />
-                          ) : null}
-                          <span onClick={(e) => e.stopPropagation()}>
-                            {c.created_by.email ?? c.created_by.full_name ?? c.created_by.user_id}
-                          </span>
+                        <div onClick={(e) => e.stopPropagation()}>
+                          <UserAvatarName user={c.created_by} size="md" />
                         </div>
                       ) : (
                         '-'
