@@ -42,7 +42,7 @@ export default function GetStartedCard() {
   const steps = [
     {
       id: 1,
-      content: 'Fill the New Campaign Form',
+      content: 'Request a Campaign Proposal',
       icon: PencilSquareIcon,
       iconBackground: 'bg-[#288dcf]',
       links: [{ label: 'New Campaign', href: '/campaign/new' }],
@@ -77,7 +77,7 @@ export default function GetStartedCard() {
       content: 'Upload Creatives or get help in Designing them',
       icon: PhotoIcon,
       iconBackground: 'bg-[#288dcf]',
-      links: [{ label: 'Manage Creatives', href: '/manage-creatives' }],
+      links: [{ label: 'Manage Creative', href: '/manage-creatives' }],
     },
     {
       id: 5,

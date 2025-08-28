@@ -25,9 +25,9 @@ import { withBase } from '../utils/basePath.js';
 
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
-  { name: 'New Campaign', href: '/campaign/new', icon: FolderIcon },
+  { name: 'Request a Proposal', href: '/campaign/new', icon: FolderIcon },
   { name: 'My Campaigns', href: '/campaigns', icon: ClipboardDocumentListIcon },
-  { name: 'Manage Creatives', href: '/manage-creatives', icon: DocumentDuplicateIcon },
+  { name: 'Manage Creative', href: '/manage-creatives', icon: DocumentDuplicateIcon },
 ];
 
 const teams = [

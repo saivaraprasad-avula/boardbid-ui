@@ -1,51 +1,68 @@
-'use client'
+'use client';
 
-import { Link } from 'react-router-dom'
-import { SignedIn, SignedOut, SignUpButton } from '@clerk/clerk-react'
-import { withBase } from '../utils/basePath.js'
-import HeroHeader from './HeroHeader.jsx'
+import { useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { SignedIn, SignedOut, SignUpButton } from '@clerk/clerk-react';
+import { withBase } from '../utils/basePath.js';
+import HeroHeader from './HeroHeader.jsx';
+import ConversationStarter from './ConversationStarter.jsx';
 
 export default function Hero() {
-  
+  const headlineRef = useRef(null);
+
   return (
     <div className="bg-white">
       <HeroHeader />
 
       {/* Hero Section */}
-      {/* MOBILE-ONLY TWEAKS: smaller paddings & card width; DESKTOP remains as you had it */}
-      <div className="relative isolate bg-white px-4 pt-28 pb-16 sm:px-6 sm:pt-36 sm:pb-24 lg:px-8 lg:pt-36 lg:pb-52">
-        <div className="mx-auto max-w-4xl">
+      <div className="relative isolate bg-white px-4 pt-20 pb-14 sm:px-6 sm:pt-28 sm:pb-20 lg:px-8 lg:pt-32 lg:pb-32">
+        <div className="mx-auto max-w-7xl">
           <div
             className="
-              text-center rounded-3xl bg-[#bfcde0] shadow-md
+              text-center rounded-[28px] bg-[#bfcde0] shadow-md
               px-5 py-8
               sm:px-10 sm:py-12
               md:px-16 md:py-16
-              lg:px-32 lg:py-24
+              lg:px-28 lg:py-20
             "
           >
+            {/* Heading */}
             <h1
+              ref={headlineRef}
               className="
-                text-[26px]
-                sm:text-[32px]
-                md:text-[36px]
-                lg:text-[50px]
-                tracking-[-0.4px] sm:tracking-[-0.6px] md:tracking-[-0.72px] lg:tracking-[-2px]
-                font-sans leading-[1.2] md:leading-[1.15] lg:leading-none
-                text-black font-normal text-center
-                mb-4 md:mb-6 lg:mb-11
+                text-[26px] sm:text-[32px] md:text-[38px] lg:text-[44px]
+                font-sans font-medium leading-tight tracking-tight
+                text-black text-center
               "
             >
-              We make Digital Out-of-Home (DOOH) advertising easy
+              We make Digital Out-of-Home (DOOH){' '}
+              <span className="md:hidden">advertising easy</span>
+              <span className="hidden md:inline">
+                <br />
+                advertising easy
+              </span>
             </h1>
 
-            <p className="mx-auto max-w-2xl text-neutral-950 text-sm sm:text-base md:text-lg leading-relaxed">
+            {/* Sub-heading — lighter and smaller */}
+            <p
+              className="
+                mx-auto mt-3 max-w-2xl
+                text-neutral-800 text-xs sm:text-sm md:text-base
+                leading-relaxed font-normal opacity-85
+              "
+            >
               From launch to IPO, plan and book impactful Programmatic DOOH campaigns with{' '}
               <span className="font-semibold text-gray-900">AI-powered strategy</span> and{' '}
               <span className="font-semibold text-gray-900">zero agency friction</span>.
             </p>
+            <br></br>
+            {/* Input */}
+            <div className="mt-5 md:mt-7">
+              <ConversationStarter headlineRef={headlineRef} />
+            </div>
 
-            <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            {/* CTA Buttons */}
+            <div className="mt-7 md:mt-9 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <SignedOut>
                 <SignUpButton mode="modal" afterSignUpUrl={withBase('/dashboard')}>
                   <button className="w-full sm:w-auto rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-gray-800">
@@ -53,6 +70,7 @@ export default function Hero() {
                   </button>
                 </SignUpButton>
               </SignedOut>
+
               <SignedIn>
                 <Link
                   to="/dashboard"
@@ -66,5 +84,5 @@ export default function Hero() {
         </div>
       </div>
     </div>
-  )
+  );
 }
