@@ -52,12 +52,24 @@ export default function ConversationStarter({ className = '' }) {
   function openIntercomWith(text) {
     const msg = (text || '').trim();
     if (!msg) return;
-    if (typeof window !== 'undefined' && typeof window.Intercom === 'function') {
-      window.Intercom('showNewMessage', msg);
-      window.Intercom('trackEvent', 'hero_conversation_start', { query: msg });
-    } else {
-      alert('Opening chat… (ensure Intercom snippet is loaded)');
+
+    function attemptOpen(retries = 10) {
+      const ready =
+        typeof window !== 'undefined' &&
+        typeof window.Intercom === 'function' &&
+        (window.Intercom.booted || window.Intercom('booted'));
+
+      if (ready) {
+        window.Intercom('showNewMessage', msg);
+        window.Intercom('trackEvent', 'hero_conversation_start', { query: msg });
+      } else if (retries > 0) {
+        setTimeout(() => attemptOpen(retries - 1), 100);
+      } else if (typeof window !== 'undefined') {
+        alert('Opening chat… (ensure Intercom snippet is loaded)');
+      }
     }
+
+    attemptOpen();
   }
 
   function expandAndShow() {
