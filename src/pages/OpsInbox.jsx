@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '@clerk/clerk-react';
 import OpsLayout from '../layout/OpsLayout';
-import OpsAssignMenu from '../components/OpsAssignMenu.jsx';
-import UserAvatarName from '../components/UserAvatarName.jsx';
+import OpsCampaignTable from '../components/OpsCampaignTable.jsx';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -166,66 +165,17 @@ export default function OpsInbox() {
     }
   };
 
-  const fmt = (val) => (Array.isArray(val) ? val.join(', ') : val || '-');
-
   return (
     <OpsLayout title="Inbox">
-      {isLoading ? (
-        <div className="py-8 text-center text-sm text-gray-500">Loading...</div>
-      ) : campaigns.length === 0 ? (
-        <div className="py-8 text-center text-sm text-gray-500">No campaigns found.</div>
-      ) : (
-        <div className="mt-8 flow-root overflow-x-auto">
-          <table className="w-full text-left">
-            <thead className="bg-white">
-              <tr>
-                <th className="px-3 py-3.5 text-sm font-semibold text-gray-900">Company</th>
-                <th className="hidden px-3 py-3.5 text-sm font-semibold text-gray-900 sm:table-cell">
-                  Type
-                </th>
-                <th className="hidden px-3 py-3.5 text-sm font-semibold text-gray-900 md:table-cell">
-                  Budget
-                </th>
-                <th className="px-3 py-3.5 text-sm font-semibold text-gray-900">Created By</th>
-                <th className="px-3 py-3.5 text-sm font-semibold text-gray-900">Assigned To</th>
-                <th className="px-3 py-3.5 text-sm font-semibold text-gray-900">Status</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              {campaigns.map((c) => (
-                <tr
-                  key={c.id}
-                  onClick={() => navigate(`/ops/campaigns/${c.id}`)}
-                  className="cursor-pointer hover:bg-gray-50"
-                >
-                  <td className="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">
-                    {c.company_name || '-'}
-                  </td>
-                  <td className="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell">
-                    {fmt(c.campaign_type)}
-                  </td>
-                  <td className="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 md:table-cell">
-                    {c.ooh_budget_range || '-'}
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                    {c.created_by ? <UserAvatarName user={c.created_by} size="md" /> : '-'}
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500" onClick={(e) => e.stopPropagation()}>
-                    <OpsAssignMenu
-                      current={c.assigned_to ?? c.ops_user ?? null}
-                      opsUsers={opsUsers}
-                      onSelect={(u) => handleAssign(c.id, u)}
-                    />
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                    {c.status || '-'}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+      <OpsCampaignTable
+        title="Inbox"
+        campaigns={campaigns}
+        opsUsers={opsUsers}
+        onAssign={handleAssign}
+        onRowClick={(id) => navigate(`/ops/campaigns/${id}`)}
+        isLoading={isLoading}
+        className="mt-8"
+      />
     </OpsLayout>
   );
 }

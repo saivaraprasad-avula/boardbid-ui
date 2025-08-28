@@ -7,7 +7,6 @@ import {
   MenuItems,
   Transition,
 } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { ArrowsRightLeftIcon, UserPlusIcon } from '@heroicons/react/24/outline';
 import UserAvatarName from './UserAvatarName.jsx';
 
@@ -33,9 +32,6 @@ export default function OpsAssignMenu({ current, opsUsers = [], onSelect }) {
     return { user_id: uid, ...fromList, ...current };
   }, [current, normalized]);
 
-  // prevent row navigation when clicking inside the control
-  const stop = (e) => e.stopPropagation();
-
   const recalc = () => {
     const el = buttonRef.current;
     if (!el) return;
@@ -52,7 +48,7 @@ export default function OpsAssignMenu({ current, opsUsers = [], onSelect }) {
   const labelFor = (u) => u?.full_name || u?.email || u?.user_id || u?.id || 'user';
 
   const LabelWhenAssigned = () => (
-    <div className="mr-2" onClick={stop}>
+    <div className="mr-2">
       <UserAvatarName
         user={resolvedCurrent}
         size="xs"
@@ -62,8 +58,8 @@ export default function OpsAssignMenu({ current, opsUsers = [], onSelect }) {
     </div>
   );
 
-   return (
-     <Menu as="div" className="relative inline-flex items-center gap-2" onClick={stop}>
+  return (
+    <Menu as="div" className="relative inline-flex items-center gap-2">
       {({ open }) => {
         useLayoutEffect(() => {
           if (open) {
@@ -84,6 +80,7 @@ export default function OpsAssignMenu({ current, opsUsers = [], onSelect }) {
 
             <MenuButton
               ref={buttonRef}
+              onClick={(e) => e.stopPropagation()}
               className={cls(
                 'inline-flex items-center rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500'
               )}
