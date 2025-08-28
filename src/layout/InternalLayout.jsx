@@ -20,6 +20,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { UserButton, SignOutButton } from '@clerk/clerk-react';
 import OpsToggle from '../components/OpsToggle.jsx';
+import useIsOpsUser from '../hooks/useIsOpsUser.js';
 import { withBase } from '../utils/basePath.js';
 
 const navigation = [
@@ -41,6 +42,7 @@ function classNames(...classes) {
 export default function InternalLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { pathname } = useLocation();
+  const { isOpsUser } = useIsOpsUser();
 
   // treat a nav item as active for nested routes too
   const isActive = (href) => pathname === href || pathname.startsWith(href + '/');
@@ -197,7 +199,7 @@ export default function InternalLayout({ children }) {
             <div className="flex flex-1 justify-end gap-x-4 self-stretch lg:gap-x-6">
               <div className="flex items-center gap-x-4 lg:gap-x-6">
                 {/* notifications placeholder */}
-                {pathname === '/dashboard' && (
+                {pathname === '/dashboard' && isOpsUser && (
                   <>
                     <OpsToggle />
                     <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" />
