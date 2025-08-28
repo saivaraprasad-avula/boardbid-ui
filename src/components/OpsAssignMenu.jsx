@@ -8,6 +8,7 @@ import {
   Transition,
 } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { ArrowsRightLeftIcon, UserPlusIcon } from '@heroicons/react/24/outline';
 import UserAvatarName from './UserAvatarName.jsx';
 
 function cls(...xs) {
@@ -50,13 +51,6 @@ export default function OpsAssignMenu({ current, opsUsers = [], onSelect }) {
 
   const labelFor = (u) => u?.full_name || u?.email || u?.user_id || u?.id || 'user';
 
-  const ButtonContent = ({ label }) => (
-    <>
-      {label}
-      <ChevronDownIcon aria-hidden="true" className="-mr-1 h-5 w-5 text-gray-400" />
-    </>
-  );
-
   const LabelWhenAssigned = () => (
     <div className="mr-2" onClick={stop}>
       <UserAvatarName
@@ -68,8 +62,8 @@ export default function OpsAssignMenu({ current, opsUsers = [], onSelect }) {
     </div>
   );
 
-  return (
-    <Menu as="div" className="relative inline-block text-left" onClick={stop}>
+   return (
+     <Menu as="div" className="relative inline-flex items-center gap-2" onClick={stop}>
       {({ open }) => {
         useLayoutEffect(() => {
           if (open) {
@@ -91,13 +85,15 @@ export default function OpsAssignMenu({ current, opsUsers = [], onSelect }) {
             <MenuButton
               ref={buttonRef}
               className={cls(
-                'inline-flex w-full justify-center gap-x-1.5 rounded-md',
-                'bg-white px-3 py-2 text-sm font-semibold text-gray-900',
-                'shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
+                'inline-flex items-center rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500'
               )}
               aria-label={resolvedCurrent ? 'Reassign ops owner' : 'Assign ops owner'}
             >
-              <ButtonContent label={resolvedCurrent ? 'Reassign' : 'Assign'} />
+              {resolvedCurrent ? (
+                <ArrowsRightLeftIcon className="h-4 w-4 text-gray-500" />
+              ) : (
+                <UserPlusIcon className="h-4 w-4 text-gray-500" />
+              )}
             </MenuButton>
 
             <Portal>

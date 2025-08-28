@@ -8,6 +8,7 @@ import loadingAnim from '../assets/loading.json';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
+/* ---------- helpers ---------- */
 function fmtDate(d) {
   if (!d) return '-';
   const t = new Date(d);
@@ -21,15 +22,72 @@ function fmtDateTime(d) {
   return isNaN(t.valueOf())
     ? d
     : t.toLocaleString(undefined, {
-        year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
       });
 }
 function humanFileSize(bytes) {
   if (!bytes || isNaN(bytes)) return '';
-  const units = ['B','KB','MB','GB','TB']; let i = 0, v = Number(bytes);
-  while (v >= 1024 && i < units.length - 1) { v /= 1024; i++; }
+  const units = ['B', 'KB', 'MB', 'GB', 'TB'];
+  let i = 0;
+  let v = Number(bytes);
+  while (v >= 1024 && i < units.length - 1) {
+    v /= 1024;
+    i++;
+  }
   return `${v.toFixed(v < 10 && i > 0 ? 1 : 0)} ${units[i]}`;
 }
+
+/** Parse strings/objects that represent a user into a normalized shape for <UserAvatarName /> */
+function parseUserMaybe(input) {
+  if (!input) return null;
+
+  let u = input;
+  // If it's a JSON string, try to parse
+  if (typeof u === 'string') {
+    const s = u.trim();
+    if (s.startsWith('{') || s.startsWith('[')) {
+      try { u = JSON.parse(s); } catch { /* ignore */ }
+    }
+  }
+
+  // If still a string after JSON attempt, assume it's a Clerk user id
+  if (typeof u === 'string') {
+    return { user_id: u };
+  }
+
+  // If it's an array, pick first usable element
+  if (Array.isArray(u)) {
+    const first = u.find(Boolean);
+    return parseUserMaybe(first);
+  }
+
+  if (typeof u === 'object') {
+    // Normalize common key variants
+    const user_id =
+      u.user_id || u.userId || u.id || u.clerk_id || u.clerkId || null;
+    const full_name =
+      u.full_name || u.fullName || u.name || [u.first_name, u.last_name].filter(Boolean).join(' ') || null;
+    const email =
+      u.email || u.email_address || u.emailAddress || (u.primary_email_address && u.primary_email_address.email_address) || null;
+    const image_url =
+      u.image_url || u.imageUrl || u.avatar_url || u.profile_image_url || null;
+
+    // If it was inside a nested field (e.g., { user: {...} })
+    if (!user_id && typeof u.user === 'object') {
+      return parseUserMaybe(u.user);
+    }
+
+    return { user_id, full_name, email, image_url };
+  }
+
+  return null;
+}
+
+/** Parse Fillout/array/object attachment fields into a clean list */
 function parseTargetLocationAttachment(value) {
   let v = value;
   if (typeof v === 'string' && (v.trim().startsWith('[') || v.trim().startsWith('{'))) {
@@ -45,6 +103,7 @@ function parseTargetLocationAttachment(value) {
     return { url, name, size };
   }).filter(Boolean);
 }
+
 function StatusPill({ value }) {
   if (!value) return null;
   const v = String(value).toLowerCase();
@@ -54,11 +113,13 @@ function StatusPill({ value }) {
     draft: 'bg-gray-100 text-gray-700 ring-gray-200',
     completed: 'bg-indigo-100 text-indigo-700 ring-indigo-200',
     cancelled: 'bg-rose-100 text-rose-700 ring-rose-200',
+    requested: 'bg-blue-100 text-blue-700 ring-blue-200',
   };
   const cls = map[v] || 'bg-gray-100 text-gray-700 ring-gray-200';
   return <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ring-1 ${cls}`}>{value}</span>;
 }
 
+/* ---------- component ---------- */
 export default function CampaignInfo({ ops = false }) {
   const { id } = useParams();
   const { user } = useUser();
@@ -112,19 +173,31 @@ export default function CampaignInfo({ ops = false }) {
   const createdAt =
     campaign.created_at || campaign.createdAt || campaign.created ||
     campaign.submitted_at || campaign.submittedAt || null;
-  const status = campaign.status || campaign.campaign_status || null;
-  const createdBy = campaign.created_by || campaign.createdBy || null;
-  const assignedTo =
-    campaign.assigned_to || campaign.assignedTo || campaign.ops_user || null;
+  const status = campaign.status || campaign.campaign_status || 'requested';
 
-  // Parse Target Location Attachment (render only if present & non-empty)
+  // People (normalize both; these can be objects or JSON strings)
+  const createdByRaw = campaign.created_by || campaign.createdBy || null;
+
+  // ✅ Prefer rich JSON/object for assigned user before falling back to a plain id
+  const assignedToRaw =
+    campaign['Assigned To User'] ??
+    campaign.assigned_to_user ??
+    campaign.ops_user ??
+    campaign.assignedTo ??
+    campaign.assigned_to ??
+    null;
+
+  const createdBy = parseUserMaybe(createdByRaw);
+  const assignedTo = parseUserMaybe(assignedToRaw);
+
+  // Parse Target Location Attachment
   const tlaRaw =
     campaign['Target Location Attachment'] ??
     campaign['target_location_attachment'] ??
     campaign['targetLocationAttachment'] ?? null;
   const tlaFiles = parseTargetLocationAttachment(tlaRaw);
 
-  // labels & order (ensures important ones show first on mobile)
+  // Labels & mobile priority
   const labelMap = {
     company_name: 'Company Name',
     campaign_type: 'Campaign Type',
@@ -144,6 +217,7 @@ export default function CampaignInfo({ ops = false }) {
     'campaign_end_date',
   ];
 
+  // Hide raw/system keys (incl. the JSON “Assigned To User”)
   const hiddenKeys = [
     'status','campaign_status',
     'created_at','createdAt','created',
@@ -151,6 +225,9 @@ export default function CampaignInfo({ ops = false }) {
     'attachments',
     'Target Location Attachment','target_location_attachment','targetLocationAttachment',
     'id','user_id','userId','source','submission_id','submissionId','raw',
+    'created_by','createdBy',
+    'assigned_to','assignedTo','ops_user',
+    'assigned_to_user','Assigned To User','assigned_to_user_json',
   ];
 
   const allFields = Object.entries(campaign)
@@ -169,23 +246,19 @@ export default function CampaignInfo({ ops = false }) {
       return { key, label, value: formattedValue };
     });
 
-  // Sort for mobile (prioritize key items first, keep the rest after)
+  // Sort for mobile
   const prioritized = [
-    ...mobileOrder
-      .map(k => allFields.find(f => f && f.key === k))
-      .filter(Boolean),
+    ...mobileOrder.map(k => allFields.find(f => f && f.key === k)).filter(Boolean),
     ...allFields.filter(f => !mobileOrder.includes(f.key)),
   ];
 
   return (
     <div className="bg-white shadow-sm sm:rounded-lg overflow-visible">
-      {/* Header with badges (stacks on mobile) */}
+      {/* Header with badges */}
       <div className="px-4 py-5 sm:px-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <h3 className="text-base font-semibold leading-7 text-gray-900">Campaign Information</h3>
-          <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
-            Basic details about your campaign.
-          </p>
+          <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Basic details about your campaign.</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           {status && <StatusPill value={status} />}
@@ -198,56 +271,71 @@ export default function CampaignInfo({ ops = false }) {
         </div>
       </div>
 
-      {/* MOBILE: card grid (labels above values) */}
+      {/* MOBILE */}
       <div className="px-4 pb-4 grid grid-cols-1 gap-3 sm:hidden">
-        {createdBy && (
-          <div className="rounded-xl ring-1 ring-gray-200 bg-white px-4 py-3">
-            <div className="text-xs font-medium text-gray-500">Created By</div>
-            <div className="mt-1 text-sm font-medium text-gray-900 break-words break-all">
-              <UserAvatarName user={createdBy} />
-            </div>
-          </div>
-        )}
-        {assignedTo && (
-          <div className="rounded-xl ring-1 ring-gray-200 bg-white px-4 py-3">
-            <div className="text-xs font-medium text-gray-500">Assigned To</div>
-            <div className="mt-1 text-sm font-medium text-gray-900 break-words break-all">
-              <UserAvatarName user={assignedTo} />
-            </div>
-          </div>
-        )}
         {prioritized.map((f) => (
-          <div
-            key={`m-${f.key}`}
-            className="rounded-xl ring-1 ring-gray-200 bg-white px-4 py-3"
-          >
+          <div key={`m-${f.key}`} className="rounded-xl ring-1 ring-gray-200 bg-white px-4 py-3">
             <div className="text-xs font-medium text-gray-500">{f.label}</div>
-            <div className="mt-1 text-sm font-medium text-gray-900 break-words break-all">
-              {f.value || ''}
-            </div>
+            <div className="mt-1 text-sm font-medium text-gray-900 break-words break-all">{f.value || ''}</div>
           </div>
         ))}
+
+        {tlaFiles.length > 0 && (
+          <div className="rounded-xl ring-1 ring-gray-200 bg-white px-4 py-3">
+            <div className="text-xs font-medium text-gray-500">Target Location Attachment</div>
+            <ul role="list" className="mt-2 divide-y divide-gray-100 rounded-md border border-gray-200">
+              {tlaFiles.map((file, idx) => (
+                <li key={`${file.name}-${idx}`} className="flex items-center justify-between py-4 pr-5 pl-4 text-sm leading-6">
+                  <div className="flex w-0 flex-1 items-center">
+                    <PaperClipIcon aria-hidden="true" className="h-5 w-5 shrink-0 text-gray-400" />
+                    <div className="ml-4 flex min-w-0 flex-1 gap-2">
+                      <span className="truncate font-medium text-gray-900">{file.name || 'attachment'}</span>
+                      {file.size ? <span className="shrink-0 text-gray-400">{humanFileSize(file.size)}</span> : null}
+                    </div>
+                  </div>
+                  <div className="ml-4 shrink-0">
+                    {file.url ? (
+                      <a
+                        href={file.url}
+                        download={file.name || true}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      >
+                        Download
+                      </a>
+                    ) : null}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {(createdBy || assignedTo) && (
+          <div className="rounded-xl ring-1 ring-gray-200 bg-white px-4 py-4">
+            <div className="text-xs font-medium text-gray-500">People</div>
+            <div className="mt-2 flex flex-col gap-3">
+              {createdBy && (
+                <div>
+                  <div className="text-xs font-medium text-gray-500">Created By</div>
+                  <div className="mt-1"><UserAvatarName user={createdBy} /></div>
+                </div>
+              )}
+              {assignedTo && (
+                <div>
+                  <div className="text-xs font-medium text-gray-500">Assigned To</div>
+                  <div className="mt-1"><UserAvatarName user={assignedTo} /></div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* DESKTOP/TABLET: definition list */}
+      {/* DESKTOP/TABLET */}
       <div className="hidden sm:block border-t border-gray-100">
         <dl className="divide-y divide-gray-100">
-          {createdBy && (
-            <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-900">Created By</dt>
-              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                <UserAvatarName user={createdBy} />
-              </dd>
-            </div>
-          )}
-          {assignedTo && (
-            <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-900">Assigned To</dt>
-              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                <UserAvatarName user={assignedTo} />
-              </dd>
-            </div>
-          )}
           {allFields.map((field) => (
             <div key={field.key} className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt className="text-sm font-medium text-gray-900">{field.label}</dt>
@@ -287,6 +375,28 @@ export default function CampaignInfo({ ops = false }) {
                     </li>
                   ))}
                 </ul>
+              </dd>
+            </div>
+          )}
+
+          {(createdBy || assignedTo) && (
+            <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="text-sm font-medium text-gray-900">People</dt>
+              <dd className="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                <div className="flex flex-col gap-3">
+                  {createdBy && (
+                    <div>
+                      <div className="text-xs font-medium text-gray-500">Created By</div>
+                      <div className="mt-1"><UserAvatarName user={createdBy} /></div>
+                    </div>
+                  )}
+                  {assignedTo && (
+                    <div>
+                      <div className="text-xs font-medium text-gray-500">Assigned To</div>
+                      <div className="mt-1"><UserAvatarName user={assignedTo} /></div>
+                    </div>
+                  )}
+                </div>
               </dd>
             </div>
           )}

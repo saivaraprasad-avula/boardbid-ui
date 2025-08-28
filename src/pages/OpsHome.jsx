@@ -7,6 +7,78 @@ import { useNavigate } from 'react-router-dom';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
+/* ---------- helpers ---------- */
+function parseUserMaybe(input) {
+  if (!input) return null;
+
+  let u = input;
+
+  // If it's a JSON string, try to parse
+  if (typeof u === 'string') {
+    const s = u.trim();
+    if (s.startsWith('{') || s.startsWith('[')) {
+      try { u = JSON.parse(s); } catch { /* ignore */ }
+    }
+  }
+
+  // If still a string, assume it's a Clerk user id
+  if (typeof u === 'string') return { user_id: u };
+
+  // If array, use first usable element
+  if (Array.isArray(u)) {
+    const first = u.find(Boolean);
+    return parseUserMaybe(first);
+  }
+
+  if (typeof u === 'object') {
+    if (u && typeof u.user === 'object') return parseUserMaybe(u.user);
+
+    const user_id =
+      u.user_id || u.userId || u.id || u.clerk_id || u.clerkId || null;
+
+    const full_name =
+      u.full_name ||
+      u.fullName ||
+      u.name ||
+      [u.first_name, u.last_name].filter(Boolean).join(' ') ||
+      null;
+
+    const email =
+      u.email ||
+      u.email_address ||
+      u.emailAddress ||
+      (u.primary_email_address && u.primary_email_address.email_address) ||
+      null;
+
+    const image_url =
+      u.image_url || u.imageUrl || u.avatar_url || u.profile_image_url || null;
+
+    return { user_id, full_name, email, image_url };
+  }
+
+  return null;
+}
+
+function normalizeCampaign(c) {
+  if (!c) return c;
+
+  // Prefer richer objects/JSON before plain IDs
+  const assignedToRaw =
+    c['Assigned To User'] ??
+    c.assigned_to_user ??
+    c.ops_user ??
+    c.assignedTo ??
+    c.assigned_to ??
+    null;
+
+  const createdByRaw = c.created_by ?? c.createdBy ?? null;
+
+  const assigned_to = parseUserMaybe(assignedToRaw);
+  const created_by = parseUserMaybe(createdByRaw);
+
+  return { ...c, assigned_to, created_by };
+}
+
 export default function OpsHome() {
   const navigate = useNavigate();
   const [campaigns, setCampaigns] = useState([]);
@@ -22,7 +94,8 @@ export default function OpsHome() {
           setCampaigns([]);
         } else {
           const data = await res.json();
-          setCampaigns(Array.isArray(data?.campaigns) ? data.campaigns : []);
+          const raw = Array.isArray(data?.campaigns) ? data.campaigns : [];
+          setCampaigns(raw.map(normalizeCampaign));
         }
       } catch (e) {
         console.error('Failed to fetch campaigns', e);
@@ -54,7 +127,6 @@ export default function OpsHome() {
   // Assign handler -> NEW route + correct body key `ops_user_id`
   const handleAssign = async (campaignId, user) => {
     try {
-      // Normalize id shape: prefer Clerk id in `user_id`, fallback to `id`
       const clerkId = user?.user_id ?? user?.id;
       if (!clerkId) {
         console.error('No Clerk user_id on selected ops user:', user);
@@ -73,12 +145,13 @@ export default function OpsHome() {
         return;
       }
 
-      // Prefer backend response if it returns the updated campaign
       const maybeUpdated = await res.json().catch(() => null);
       if (maybeUpdated && maybeUpdated.id) {
-        setCampaigns(prev => prev.map(c => (c.id === campaignId ? maybeUpdated : c)));
+        setCampaigns(prev =>
+          prev.map(c => (c.id === campaignId ? normalizeCampaign(maybeUpdated) : c))
+        );
       } else {
-        // Optimistic patch (keeps both `assigned_to` and legacy `ops_user`)
+        // Optimistic patch
         const assigned = {
           user_id: clerkId,
           full_name: user.full_name ?? null,
@@ -88,11 +161,7 @@ export default function OpsHome() {
         setCampaigns(prev =>
           prev.map(c =>
             c.id === campaignId
-              ? {
-                  ...c,
-                  assigned_to: assigned,
-                  ops_user: assigned,
-                }
+              ? { ...c, assigned_to: assigned, ops_user: assigned }
               : c
           )
         );
@@ -125,7 +194,6 @@ export default function OpsHome() {
                   Budget
                 </th>
                 <th className="px-3 py-3.5 text-sm font-semibold text-gray-900">Created By</th>
-                {/* Sticky on wide screens so you don’t have to scroll to assign */}
                 <th className="px-3 py-3.5 text-sm font-semibold text-gray-900 lg:sticky lg:right-24 lg:bg-white">
                   Assigned To
                 </th>
@@ -136,54 +204,50 @@ export default function OpsHome() {
             </thead>
 
             <tbody className="divide-y divide-gray-200">
-              {campaigns.map((c) => {
-                const assigned = c.assigned_to ?? c.ops_user ?? null;
-                return (
-                  <tr
-                    key={c.id}
-                    onClick={() => navigate(`/ops/campaigns/${c.id}`)}
-                    className="cursor-pointer hover:bg-gray-50"
+              {campaigns.map((c) => (
+                <tr
+                  key={c.id}
+                  onClick={() => navigate(`/ops/campaigns/${c.id}`)}
+                  className="cursor-pointer hover:bg-gray-50"
+                >
+                  <td className="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">
+                    {c.company_name || '-'}
+                  </td>
+
+                  <td className="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell">
+                    {fmt(c.campaign_type)}
+                  </td>
+
+                  <td className="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 md:table-cell">
+                    {c.ooh_budget_range || '-'}
+                  </td>
+
+                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    {c.created_by ? (
+                      <div onClick={(e) => e.stopPropagation()}>
+                        <UserAvatarName user={c.created_by} size="md" />
+                      </div>
+                    ) : (
+                      '-'
+                    )}
+                  </td>
+
+                  <td
+                    className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 lg:sticky lg:right-24 lg:bg-white"
+                    onClick={(e) => e.stopPropagation()}
                   >
-                    <td className="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">
-                      {c.company_name || '-'}
-                    </td>
+                    <OpsAssignMenu
+                      current={c.assigned_to ?? c.ops_user ?? null}
+                      opsUsers={opsUsers}
+                      onSelect={(u) => handleAssign(c.id, u)}
+                    />
+                  </td>
 
-                    <td className="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell">
-                      {fmt(c.campaign_type)}
-                    </td>
-
-                    <td className="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 md:table-cell">
-                      {c.ooh_budget_range || '-'}
-                    </td>
-
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {c.created_by ? (
-                        <div onClick={(e) => e.stopPropagation()}>
-                          <UserAvatarName user={c.created_by} size="md" />
-                        </div>
-                      ) : (
-                        '-'
-                      )}
-                    </td>
-
-                    {/* Sticky assign column; stop row click when interacting */}
-                    <td
-                      className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 lg:sticky lg:right-24 lg:bg-white"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <OpsAssignMenu
-                        current={assigned}
-                        opsUsers={opsUsers}
-                        onSelect={(u) => handleAssign(c.id, u)}
-                      />
-                    </td>
-
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 lg:sticky lg:right-0 lg:bg-white">
-                      {c.status || '-'}
-                    </td>
-                  </tr>
-                );
-              })}
+                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 lg:sticky lg:right-0 lg:bg-white">
+                    {c.status || '-'}
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
