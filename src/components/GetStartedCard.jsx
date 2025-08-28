@@ -10,26 +10,26 @@ import CardHeader from './CardHeader';
 const steps = [
   {
     id: 1,
-    content: 'Fill in the Form',
+    content: 'Fill the New Campaign Form',
     icon: PencilSquareIcon,
     iconBackground: 'bg-[#288dcf]',
   },
   {
     id: 2,
-    content: 'Speak to our AI/Human Experts',
+    content: 'Speak to our Experts',
     icon: ChatBubbleLeftRightIcon,
     iconBackground: 'bg-[#288dcf]',
   },
   {
     id: 3,
-    content: 'Upload Creatives or get help in Designing them',
-    icon: PhotoIcon,
+    content: 'Make Payment',
+    icon: CreditCardIcon,
     iconBackground: 'bg-[#288dcf]',
   },
   {
     id: 4,
-    content: 'Do Payment',
-    icon: CreditCardIcon,
+    content: 'Upload Creatives or get help in Designing them',
+    icon: PhotoIcon,
     iconBackground: 'bg-[#288dcf]',
   },
   {
