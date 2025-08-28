@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop.jsx';
+import Intercom from './components/intercom-landing';
 import Home from './pages/Home';
 import SignInPage from './pages/SignIn';
 import SignUpPage from './pages/SignUp';
@@ -27,6 +28,7 @@ import Pricing from './pages/Pricing';
 function App() {
   return (
     <>
+      <Intercom />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
