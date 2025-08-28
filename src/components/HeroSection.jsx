@@ -61,25 +61,9 @@ export default function Hero() {
               <ConversationStarter headlineRef={headlineRef} />
             </div>
 
-            {/* CTA Buttons */}
-            <div className="mt-7 md:mt-9 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-              <SignedOut>
-                <SignUpButton mode="modal" afterSignUpUrl={withBase('/dashboard')}>
-                  <button className="w-full sm:w-auto rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-gray-800">
-                    Get started
-                  </button>
-                </SignUpButton>
-              </SignedOut>
-
-              <SignedIn>
-                <Link
-                  to="/dashboard"
-                  className="w-full sm:w-auto rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-gray-800"
-                >
-                  Dashboard
-                </Link>
-              </SignedIn>
-            </div>
+            {/* CTA Buttons - REMOVED */}
+            {/* The previous code for the buttons has been removed here. */}
+            
           </div>
         </div>
       </div>

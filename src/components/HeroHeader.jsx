@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { SignedIn, SignedOut, SignInButton } from '@clerk/clerk-react'
+import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/clerk-react'
 import { withBase } from '../utils/basePath.js'
 
 const navigation = [
@@ -37,13 +37,9 @@ export default function HeroHeader() {
           'flex items-center justify-between transition-all duration-300 will-change-transform',
           compact
             ? [
-                // ⬅️ FULL WIDTH: remove caps completely
                 'w-[80%] max-w-none',
-                // shape + black glass + white text
                 'rounded-2xl bg-black/90 text-white supports-[backdrop-filter]:backdrop-blur-md',
-                // subtle ring + shadow
                 'ring-1 ring-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.25)]',
-                // spacing
                 'px-4 py-3 sm:px-6 lg:px-8',
               ].join(' ')
             : [
@@ -106,19 +102,33 @@ export default function HeroHeader() {
         </div>
 
         {/* Right Side */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
           <SignedOut>
+            {/* Display Log in and Get started buttons when signed out */}
             <SignInButton mode="modal" afterSignInUrl={withBase('/dashboard')}>
               <button
                 className={`text-sm font-semibold transition-colors ${
                   compact ? 'text-white hover:text-indigo-300' : 'text-gray-900 hover:text-indigo-600'
                 }`}
               >
-                Log in <span aria-hidden="true">&rarr;</span>
+                Log in
               </button>
             </SignInButton>
+            <SignUpButton mode="modal" afterSignUpUrl={withBase('/dashboard')}>
+              <button
+                // Updated className for a black and white button with a hover effect and a perimeter
+                className={`rounded-full px-4 py-2 text-sm font-semibold transition-all shadow-md ${
+                  compact
+                    ? 'bg-white text-gray-900 hover:bg-gray-200 hover:ring-2 hover:ring-white' // Adjusted for compact header
+                    : 'bg-black text-white hover:bg-white hover:text-black hover:ring-2 hover:ring-black'
+                }`}
+              >
+                Get started
+              </button>
+            </SignUpButton>
           </SignedOut>
           <SignedIn>
+            {/* Display only the Dashboard button when signed in */}
             <Link
               to="/dashboard"
               className={`text-sm font-semibold transition-colors ${
@@ -196,8 +206,9 @@ export default function HeroHeader() {
               </div>
 
               {/* Auth */}
-              <div className="py-6">
+              <div className="py-6 flex flex-col gap-y-4">
                 <SignedOut>
+                  {/* Display Log in and Get started in mobile drawer when signed out */}
                   <SignInButton mode="modal" afterSignInUrl={withBase('/dashboard')}>
                     <button
                       className={`-mx-3 block w-full rounded-lg px-3 py-2.5 text-left text-base font-semibold ${
@@ -209,8 +220,20 @@ export default function HeroHeader() {
                       Log in
                     </button>
                   </SignInButton>
+                  <SignUpButton mode="modal" afterSignUpUrl={withBase('/dashboard')}>
+                    <button
+                      className={`-mx-3 block w-full rounded-lg px-3 py-2.5 text-left text-base font-semibold ${
+                        compact
+                          ? 'bg-white text-gray-900 hover:bg-gray-200'
+                          : 'bg-indigo-600 text-white hover:bg-indigo-500'
+                      }`}
+                    >
+                      Get started
+                    </button>
+                  </SignUpButton>
                 </SignedOut>
                 <SignedIn>
+                  {/* Display only the Dashboard button in mobile drawer when signed in */}
                   <Link
                     to="/dashboard"
                     onClick={() => setMobileMenuOpen(false)}

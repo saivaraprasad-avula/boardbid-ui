@@ -1,3 +1,4 @@
+// components/ConversationStarter.jsx
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -20,10 +21,9 @@ function toTitleCase(s = '') {
 export default function ConversationStarter({ className = '' }) {
   const [value, setValue] = useState('');
   const [showPanel, setShowPanel] = useState(false);
-  const [expanded, setExpanded] = useState(false); // controls width animation
+  const [expanded, setExpanded] = useState(false);
   const inputRef = useRef(null);
-
-  // 9 US prompts (normalized)
+  
   const prompts = useMemo(
     () =>
       [
@@ -40,7 +40,6 @@ export default function ConversationStarter({ className = '' }) {
     []
   );
 
-  // Rotate placeholder every 2s
   const [phIndex, setPhIndex] = useState(0);
   useEffect(() => {
     const t = setInterval(() => setPhIndex((i) => (i + 1) % prompts.length), 2000);
@@ -49,27 +48,26 @@ export default function ConversationStarter({ className = '' }) {
 
   const placeholder = prompts[phIndex];
 
+  // The simplified and most reliable `openIntercomWith` function.
+  // It removes the `onShow` callback to avoid conflicts and uses a safe delay.
   function openIntercomWith(text) {
     const msg = (text || '').trim();
     if (!msg) return;
 
-    function attemptOpen(retries = 10) {
-      const ready =
-        typeof window !== 'undefined' &&
-        typeof window.Intercom === 'function' &&
-        (window.Intercom.booted || window.Intercom('booted'));
+    const waitForIntercom = setInterval(() => {
+      if (typeof window !== 'undefined' && typeof window.Intercom === 'function') {
+        clearInterval(waitForIntercom); 
+        
+        window.Intercom('boot', { app_id: 'p1go89tx' });
+        window.Intercom('show');
 
-      if (ready) {
-        window.Intercom('showNewMessage', msg);
-        window.Intercom('trackEvent', 'hero_conversation_start', { query: msg });
-      } else if (retries > 0) {
-        setTimeout(() => attemptOpen(retries - 1), 100);
-      } else if (typeof window !== 'undefined') {
-        alert('Opening chat… (ensure Intercom snippet is loaded)');
+        // A longer, more reliable delay to ensure the UI is fully rendered
+        setTimeout(() => {
+          window.Intercom('showNewMessage', msg);
+          window.Intercom('trackEvent', 'hero_conversation_start', { query: msg });
+        }, 500); 
       }
-    }
-
-    attemptOpen();
+    }, 50); 
   }
 
   function expandAndShow() {
@@ -85,7 +83,7 @@ export default function ConversationStarter({ className = '' }) {
 
   function onChipClick(text) {
     setValue(text);
-    setTimeout(() => openIntercomWith(text), 25);
+    openIntercomWith(text);
   }
 
   return (
@@ -94,7 +92,6 @@ export default function ConversationStarter({ className = '' }) {
       <div
         className={[
           'mx-auto transition-all duration-500 ease-out',
-          // Initial: ~20–25% wider; Expanded: wide
           expanded
             ? 'max-w-3xl md:max-w-4xl lg:max-w-5xl'
             : 'max-w-lg md:max-w-xl lg:max-w-2xl',
@@ -135,7 +132,6 @@ export default function ConversationStarter({ className = '' }) {
         </form>
       </div>
 
-      {/* 3×3 suggestion tiles — shown once focused/clicked */}
       {showPanel && (
         <div
           className={[
