@@ -21,6 +21,7 @@ import OpsHome from './pages/OpsHome';
 import OpsInbox from './pages/OpsInbox.jsx';
 import OpsCampaignDetail from './pages/OpsCampaignDetail.jsx';
 import ProtectedRoute from './components/ProtectedRoute';
+import OpsProtectedRoute from './components/OpsProtectedRoute.jsx';
 import Pricing from './pages/Pricing';
 
 function App() {
@@ -46,9 +47,9 @@ function App() {
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/pricing" element={<Pricing />} />
-        <Route path="/ops" element={<ProtectedRoute><OpsHome /></ProtectedRoute>} />
-        <Route path="/ops/inbox" element={<ProtectedRoute><OpsInbox /></ProtectedRoute>} />
-        <Route path="/ops/campaigns/:id/*" element={<ProtectedRoute><OpsCampaignDetail /></ProtectedRoute>} />
+        <Route path="/ops" element={<OpsProtectedRoute><OpsHome /></OpsProtectedRoute>} />
+        <Route path="/ops/inbox" element={<OpsProtectedRoute><OpsInbox /></OpsProtectedRoute>} />
+        <Route path="/ops/campaigns/:id/*" element={<OpsProtectedRoute><OpsCampaignDetail /></OpsProtectedRoute>} />
       </Routes>
     </>
   );
