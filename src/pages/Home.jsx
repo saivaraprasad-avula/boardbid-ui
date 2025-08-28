@@ -9,7 +9,6 @@ import Footer from '../components/Footer';
 import FooterCTA from '../components/FooterCTA';
 import MediaFormatsBento from "../components/VenuesSection";
 import { posts } from '../data/blogs';
-import Intercom from '../components/intercom-landing';
 import HomeBanner from '../components/HomeBanner';
 
 export default function Home() {
@@ -25,7 +24,6 @@ export default function Home() {
       <WhyChoose /> 
       <FooterCTA />
       <Footer />
-      <Intercom />
     </>
   );
 }
