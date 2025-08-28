@@ -104,7 +104,7 @@ export default function PrivacyPolicy() {
           <SectionHeading>Contact</SectionHeading>
           <p>
             <strong>Email:</strong> support@boardbid.ai<br />
-            131 Continental Dr, Suite 305, Newark, New Castle County, Delaware 19713, United States
+            2261 Market Street STE 85992, San Francisco, CA 94114, United States
           </p>
         </div>
       </div>

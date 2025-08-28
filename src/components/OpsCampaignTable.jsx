@@ -67,7 +67,7 @@ export default function OpsCampaignTable({
               <tr
                 key={c.id}
                 onClick={() => onRowClick && onRowClick(c.id)}
-                className="cursor-pointer hover:bg-gray-50"
+                className="group cursor-pointer hover:bg-gray-50"
               >
                 <td className="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">
                   {c.company_name || '-'}
@@ -84,7 +84,7 @@ export default function OpsCampaignTable({
                 <td
                   className={cls(
                     'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
-                    sticky ? 'lg:sticky lg:right-24 lg:bg-white' : ''
+                    sticky ? 'lg:sticky lg:right-24 lg:bg-white lg:group-hover:bg-gray-50' : ''
                   )}
                 >
                   <OpsAssignMenu
@@ -96,7 +96,7 @@ export default function OpsCampaignTable({
                 <td
                   className={cls(
                     'whitespace-nowrap px-3 py-4 text-sm text-gray-500',
-                    sticky ? 'lg:sticky lg:right-0 lg:bg-white' : ''
+                    sticky ? 'lg:sticky lg:right-0 lg:bg-white lg:group-hover:bg-gray-50' : ''
                   )}
                 >
                   {c.status || '-'}
