@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { SignedIn, SignedOut, SignUpButton } from '@clerk/clerk-react';
 import { withBase } from '../utils/basePath.js';
 import HeroHeader from './HeroHeader.jsx';
-import ConversationStarter from './ConversationStarter.jsx';
 import Highlight from './Highlight.jsx'; // <-- NEW
 
 export default function Hero() {
@@ -63,12 +62,34 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Input (pushed to the bottom) */}
-            <div className="mt-5 md:mt-7">
-              <ConversationStarter headlineRef={headlineRef} />
+            {/* CTA Buttons */}
+            <div
+              className="mt-5 md:mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
+            >
+              <SignedOut>
+                <SignUpButton mode="modal" afterSignUpUrl={withBase('/dashboard')}>
+                  <button
+                    className="rounded-full bg-black px-4 py-2 text-sm font-semibold text-white shadow-md transition-all hover:bg-white hover:text-black hover:ring-2 hover:ring-black"
+                  >
+                    Get started
+                  </button>
+                </SignUpButton>
+              </SignedOut>
+              <SignedIn>
+                <Link
+                  to="/dashboard"
+                  className="rounded-full bg-black px-4 py-2 text-sm font-semibold text-white shadow-md transition-all hover:bg-white hover:text-black hover:ring-2 hover:ring-black"
+                >
+                  Dashboard <span aria-hidden="true">→</span>
+                </Link>
+              </SignedIn>
+              <button
+                onClick={() => window.Intercom && window.Intercom('show')}
+                className="text-sm font-semibold text-gray-900"
+              >
+                Talk to us live <span aria-hidden="true">→</span>
+              </button>
             </div>
-
-            {/* CTA Buttons - REMOVED (per your note) */}
           </div>
         </div>
       </div>

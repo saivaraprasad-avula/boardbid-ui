@@ -31,13 +31,13 @@ export default function OpsLayout({ children, title }) {
             <div className="relative flex h-16 items-center justify-between lg:border-b lg:border-white/10">
               {/* Left: logo + desktop nav */}
               <div className="flex items-center px-2 lg:px-0">
-                <div className="shrink-0">
+                <Link to={withBase('/')} className="shrink-0">
                   <img
                     alt="BoardBid Logo"
                     src="https://ik.imagekit.io/boardbid/BoardBid%20logo-White.avif"
                     className="h-8 w-auto"
                   />
-                </div>
+                </Link>
 
                 {/* Desktop nav */}
                 <div className="hidden lg:ml-10 lg:block">
