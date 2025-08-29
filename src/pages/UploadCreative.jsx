@@ -105,7 +105,7 @@ export default function UploadCreative() {
   return (
     <InternalLayout>
       <PageHeader
-        title="Manage Creatives"
+        title="Manage Creative"
         actions={[
           {
             label: 'Upload Creative',
