@@ -1,4 +1,3 @@
-// components/ConversationStarter.jsx
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -6,7 +5,6 @@ import { ArrowUpIcon } from '@heroicons/react/24/outline';
 
 const ACRONYMS = ['ATL', 'DFW', 'SF', 'NYC'];
 
-// Title Case without breaking acronyms inside parentheses
 function toTitleCase(s = '') {
   return s
     .split(' ')
@@ -23,7 +21,7 @@ export default function ConversationStarter({ className = '' }) {
   const [showPanel, setShowPanel] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const inputRef = useRef(null);
-  
+
   const prompts = useMemo(
     () =>
       [
@@ -46,29 +44,7 @@ export default function ConversationStarter({ className = '' }) {
     return () => clearInterval(t);
   }, [prompts.length]);
 
-  const placeholder = prompts[phIndex];
-
-  // The simplified and most reliable `openIntercomWith` function.
-  // It removes the `onShow` callback to avoid conflicts and uses a safe delay.
-  function openIntercomWith(text) {
-    const msg = (text || '').trim();
-    if (!msg) return;
-
-    const waitForIntercom = setInterval(() => {
-      if (typeof window !== 'undefined' && typeof window.Intercom === 'function') {
-        clearInterval(waitForIntercom); 
-        
-        window.Intercom('boot', { app_id: 'p1go89tx' });
-        window.Intercom('show');
-
-        // A longer, more reliable delay to ensure the UI is fully rendered
-        setTimeout(() => {
-          window.Intercom('showNewMessage', msg);
-          window.Intercom('trackEvent', 'hero_conversation_start', { query: msg });
-        }, 500); 
-      }
-    }, 50); 
-  }
+  const placeholder = `I want to buy ${prompts[phIndex]}`;
 
   function expandAndShow() {
     setExpanded(true);
@@ -78,17 +54,30 @@ export default function ConversationStarter({ className = '' }) {
   function onSubmit(e) {
     e?.preventDefault();
     expandAndShow();
-    openIntercomWith(value || placeholder);
-  }
 
-  function onChipClick(text) {
-    setValue(text);
-    openIntercomWith(text);
+    // The core fix: wrap the Intercom calls in a timeout.
+    setTimeout(() => {
+      if (typeof window !== 'undefined' && typeof window.Intercom === 'function') {
+        // Boot Intercom if not already done.
+        window.Intercom('boot', { app_id: 'p1go89tx' });
+        
+        // Show the messenger.
+        window.Intercom('show');
+        
+        // Use a second, shorter timeout to send the message after the messenger is visible.
+        setTimeout(() => {
+          const msg = (value || placeholder).trim();
+          if (msg) {
+            window.Intercom('showNewMessage', msg);
+            window.Intercom('trackEvent', 'hero_conversation_start', { query: msg });
+          }
+        }, 500); // 500ms delay to ensure the window is ready.
+      }
+    }, 50); // Small initial delay to ensure the event loop processes correctly.
   }
 
   return (
     <div className={`w-full ${className}`}>
-      {/* Animated width wrapper */}
       <div
         className={[
           'mx-auto transition-all duration-500 ease-out',
@@ -97,7 +86,10 @@ export default function ConversationStarter({ className = '' }) {
             : 'max-w-lg md:max-w-xl lg:max-w-2xl',
         ].join(' ')}
       >
-        {/* Input */}
+        <div className="mb-4 text-center text-xl font-bold text-gray-900">
+          Where do you want to advertise?
+        </div>
+
         <form
           onSubmit={onSubmit}
           className="w-full rounded-2xl border bg-white/85 backdrop-blur border-zinc-200 shadow-sm transition focus-within:shadow-md"
@@ -115,7 +107,6 @@ export default function ConversationStarter({ className = '' }) {
               className="flex-1 bg-transparent outline-none text-zinc-900 placeholder:text-zinc-500 text-base sm:text-lg"
             />
 
-            {/* Vertically up arrow button */}
             <button
               type="submit"
               className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white hover:bg-black transition active:scale-95"
@@ -125,45 +116,8 @@ export default function ConversationStarter({ className = '' }) {
               <ArrowUpIcon className="h-5 w-5" />
             </button>
           </div>
-
-          <div className="px-5 pb-4 text-sm text-zinc-600">
-            Start campaign planning with a simple conversation.
-          </div>
         </form>
       </div>
-
-      {showPanel && (
-        <div
-          className={[
-            'mx-auto mt-5 transition-all duration-500 ease-out',
-            expanded
-              ? 'max-w-3xl md:max-w-4xl lg:max-w-5xl'
-              : 'max-w-lg md:max-w-xl lg:max-w-2xl',
-            'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3',
-          ].join(' ')}
-        >
-          {prompts.map((p, i) => (
-            <button
-              key={i}
-              type="button"
-              onMouseDown={(e) => e.preventDefault()}
-              onClick={() => onChipClick(p)}
-              className="
-                flex items-center justify-center text-center
-                rounded-xl border
-                border-[#bfd0e4]
-                bg-[#e7eff8] hover:bg-[#dde8f5]
-                text-[#1f2937] font-medium
-                h-20 px-4 text-sm sm:text-[15px]
-                shadow-[0_1px_0_0_rgba(255,255,255,0.6)_inset]
-                transition
-              "
-            >
-              <span className="line-clamp-2">{p}</span>
-            </button>
-          ))}
-        </div>
-      )}
     </div>
   );
 }
