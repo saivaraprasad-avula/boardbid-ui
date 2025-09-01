@@ -1,3 +1,4 @@
+// filename: src/pages/Contact.jsx
 import HeroHeader from '../components/HeroHeader';
 import Footer from '../components/Footer';
 import Card from '../components/Card';
@@ -5,13 +6,51 @@ import Seo from '../components/Seo.jsx';
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 export default function Contact() {
+  const url = 'https://boardbid.ai/contact';
+  const ogImage = 'https://boardbid.ai/og/boardbid-og.png';
+
   return (
     <>
       <Seo
         title="Contact Us"
-        description="Get in touch with our team."
-        canonical="https://example.com/contact"
+        description="Get in touch with the BoardBid.ai team for DOOH campaign questions, support, and partnerships."
+        url={url}
+        canonical={url}
+        image={ogImage}
+        keywords={['BoardBid', 'DOOH', 'digital billboards', 'contact']}
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          'name': 'Contact BoardBid.ai',
+          'url': url,
+          'about': 'Support and inquiries for BoardBid.ai DOOH advertising platform',
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'BoardBid.ai',
+            'url': 'https://boardbid.ai',
+            'logo': {
+              '@type': 'ImageObject',
+              'url': 'https://boardbid.ai/logo-optimized.avif'
+            },
+            'contactPoint': [{
+              '@type': 'ContactPoint',
+              'contactType': 'customer support',
+              'email': 'support@boardbid.ai',
+              'telephone': '+1-415-418-7575',
+              'areaServed': 'US'
+            }],
+            'address': {
+              '@type': 'PostalAddress',
+              'streetAddress': '2261 Market Street STE 85992',
+              'addressLocality': 'San Francisco',
+              'addressRegion': 'CA',
+              'postalCode': '94114',
+              'addressCountry': 'US'
+            }
+          }
+        }}
       />
+
       <HeroHeader />
       <main className="bg-white">
         {/* spacing below header */}
@@ -88,7 +127,6 @@ export default function Contact() {
               <div className="lg:col-span-5 lg:pl-4">
                 <div className="mx-auto max-w-xl lg:max-w-none">
                   <Card title="Send us a message">
-                    {/* fixed, sensible heights per breakpoint; scroll inside if needed */}
                     <div className="h-[520px] sm:h-[560px] md:h-[600px] lg:h-[620px] overflow-auto">
                       <iframe
                         title="Contact form"
@@ -105,7 +143,6 @@ export default function Contact() {
         </section>
       </main>
 
-      {/* Footer with extra breathing room above */}
       <div className="pt-8 sm:pt-10 lg:pt-12 bg-white">
         <Footer />
       </div>

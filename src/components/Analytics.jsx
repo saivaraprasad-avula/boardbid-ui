@@ -1,3 +1,4 @@
+// filename: src/components/Analytics.jsx
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -14,10 +15,26 @@ export default function Analytics() {
     const script = document.createElement('script');
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+
+    // When GA finishes loading, send initial page_view once.
+    script.onload = () => {
+      if (!window.gtag) return;
+      const path = window.location.pathname + window.location.search;
+      if (lastPath.current !== path) {
+        lastPath.current = path;
+        window.gtag('event', 'page_view', {
+          page_location: window.location.href,
+          page_path: path,
+          page_title: document.title || undefined,
+        });
+      }
+    };
+
     document.head.appendChild(script);
 
+    // Define gtag stub + config (disable auto page_view)
     window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
+    function gtag(){ window.dataLayer.push(arguments); }
     window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', GA_ID, { send_page_view: false });
@@ -33,7 +50,7 @@ export default function Analytics() {
     window.gtag('event', 'page_view', {
       page_location: window.location.href,
       page_path: path,
-      page_title: document.title,
+      page_title: document.title || undefined,
     });
   }, [location]);
 
