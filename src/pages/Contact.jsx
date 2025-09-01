@@ -1,11 +1,17 @@
 import HeroHeader from '../components/HeroHeader';
 import Footer from '../components/Footer';
 import Card from '../components/Card';
+import Seo from '../components/Seo.jsx';
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 export default function Contact() {
   return (
     <>
+      <Seo
+        title="Contact Us"
+        description="Get in touch with our team."
+        canonical="https://example.com/contact"
+      />
       <HeroHeader />
       <main className="bg-white">
         {/* spacing below header */}
@@ -53,10 +59,10 @@ export default function Contact() {
                     </dt>
                     <dd>
                       <a
-                        href="tel:+19805809992"
+                        href="tel:+14154187575"
                         className="text-gray-800 hover:text-gray-900 underline decoration-gray-300 underline-offset-4"
                       >
-                        +1 (980) 580-9992
+                        +1 (415) 418-7575
                       </a>
                     </dd>
                   </div>

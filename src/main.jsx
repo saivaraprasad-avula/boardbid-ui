@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, useNavigate } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { ClerkProvider } from '@clerk/clerk-react';
 import { withBase } from './utils/basePath.js';
 import './index.css';
@@ -35,8 +36,10 @@ function ClerkApp() {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/">
-      <ClerkApp />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter basename="/">
+        <ClerkApp />
+      </BrowserRouter>
+    </HelmetProvider>
   </StrictMode>,
 );
