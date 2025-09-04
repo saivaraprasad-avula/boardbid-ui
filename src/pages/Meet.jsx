@@ -2,16 +2,20 @@ import { Link } from 'react-router-dom';
 import HeroHeader from '../components/HeroHeader';
 import PricingCTA from '../components/PricingCTA';
 import Footer from '../components/Footer';
+import SectionHeader from '../components/SectionHeader';
 
 export default function Meet() {
   return (
     <div className="bg-white pt-24 sm:pt-32">
       <HeroHeader />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <p className="mx-auto mb-8 max-w-3xl text-center text-lg leading-8 text-gray-600">
-          Schedule a quick call with our team to explore billboard, airport, transit and other DOOH ad opportunities
-          for your brand.
-        </p>
+        <SectionHeader
+          title="Book a Meeting"
+          description={
+            'Schedule a quick call with our team to explore billboard, airport, transit, and other DOOH ad opportunities. '
+            + 'See how BoardBid.ai can help your brand go live in days.'
+          }
+        />
         <div className="mx-auto w-full max-w-3xl">
           <iframe
             src="https://boardbid.fillout.com/book-a-meeting"
