@@ -25,6 +25,7 @@ import OpsCampaignDetail from './pages/OpsCampaignDetail.jsx';
 import ProtectedRoute from './components/ProtectedRoute';
 import OpsProtectedRoute from './components/OpsProtectedRoute.jsx';
 import Pricing from './pages/Pricing';
+import Meet from './pages/Meet';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/meet" element={<Meet />} />
         <Route path="/ops" element={<OpsProtectedRoute><OpsHome /></OpsProtectedRoute>} />
         <Route path="/ops/inbox" element={<OpsProtectedRoute><OpsInbox /></OpsProtectedRoute>} />
         <Route path="/ops/campaigns/:id/*" element={<OpsProtectedRoute><OpsCampaignDetail /></OpsProtectedRoute>} />
