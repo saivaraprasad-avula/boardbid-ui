@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import HeroHeader from '../components/HeroHeader';
 import PricingCTA from '../components/PricingCTA';
 import Footer from '../components/Footer';
+import SectionHeader from '../components/SectionHeader';
 
 const FILLOUT_SHARE_URL =
   'https://boardbid.fillout.com/book-a-meeting?transparentBackground=1&hideTitle=1';
@@ -96,13 +97,6 @@ export default function Meet() {
   return (
     <div className="relative bg-white">
       <HeroHeader />
-<<<<<<< Updated upstream
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <p className="mx-auto mb-8 max-w-3xl text-center text-lg leading-8 text-gray-600">
-          Schedule a quick call with our team to explore billboard, airport, transit and other DOOH ad opportunities
-          for your brand.
-        </p>
-=======
 
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-12 sm:pt-24 sm:pb-16 lg:px-8">
         <SectionHeader
@@ -114,7 +108,6 @@ export default function Meet() {
         />
 
         {/* Elegant card wrapper */}
->>>>>>> Stashed changes
         <div className="mx-auto w-full max-w-3xl">
           <div
             ref={wrapperRef}
