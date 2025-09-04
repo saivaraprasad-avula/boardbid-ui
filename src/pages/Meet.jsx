@@ -8,6 +8,10 @@ export default function Meet() {
     <div className="bg-white pt-24 sm:pt-32">
       <HeroHeader />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <p className="mx-auto mb-8 max-w-3xl text-center text-lg leading-8 text-gray-600">
+          Schedule a quick call with our team to explore billboard, airport, and transit ad opportunities
+          for your brand.
+        </p>
         <div className="mx-auto w-full max-w-3xl">
           <iframe
             src="https://boardbid.fillout.com/book-a-meeting"
@@ -21,7 +25,7 @@ export default function Meet() {
             to="/"
             className="text-sm font-semibold text-indigo-600 hover:text-indigo-500"
           >
-            Know more about us <span aria-hidden="true">→</span>
+            Learn more about BoardBid.ai
           </Link>
         </div>
       </div>
