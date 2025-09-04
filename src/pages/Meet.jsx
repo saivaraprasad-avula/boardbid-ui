@@ -9,7 +9,7 @@ export default function Meet() {
       <HeroHeader />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <p className="mx-auto mb-8 max-w-3xl text-center text-lg leading-8 text-gray-600">
-          Schedule a quick call with our team to explore billboard, airport, and transit ad opportunities
+          Schedule a quick call with our team to explore billboard, airport, transit and other DOOH ad opportunities
           for your brand.
         </p>
         <div className="mx-auto w-full max-w-3xl">
