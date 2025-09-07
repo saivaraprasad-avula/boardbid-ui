@@ -56,7 +56,6 @@ export default function Header({ staticHeader = false }) {
       <nav className="space-x-6 text-sm font-semibold text-gray-700">
         <Link to="/blogs" className="hover:text-emerald-600 transition">Blog</Link>
         <Link to="/contact" className="hover:text-emerald-600 transition">Contact</Link>
-        <Link to="/venue-types" className="hover:text-emerald-600 transition">Venue Types</Link>
         <SignedOut>
           <SignInButton mode="modal" afterSignInUrl={withBase('/dashboard')}>
             <button className="hover:text-emerald-600 transition">Login</button>

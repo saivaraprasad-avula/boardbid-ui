@@ -10,6 +10,7 @@ import { withBase } from '../utils/basePath.js'
 const navigation = [
   { name: 'About', to: '/about' },
   { name: 'Pricing', to: '/pricing' },
+  { name: 'Venue Types', to: '/venue-types' },
   { name: 'Contact', to: '/contact' },
 ]
 
