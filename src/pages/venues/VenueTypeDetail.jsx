@@ -1,6 +1,13 @@
 import { useParams } from 'react-router-dom';
 import PageHeader from '../../components/PageHeader.jsx';
-import { venueTypes } from '../../data/venueTypes.js';
+import Card from '../../components/Card.jsx';
+import YouTubePlayer from '../../components/YouTubePlayer.jsx';
+import { PlayIcon } from '@heroicons/react/24/solid';
+import {
+  venueTypes,
+  VENUE_PLACEHOLDER_IMG,
+  VENUE_VIDEO_PLACEHOLDER_THUMB,
+} from '../../data/venueTypes.js';
 
 export default function VenueTypeDetail() {
   const { slug } = useParams();
@@ -14,19 +21,70 @@ export default function VenueTypeDetail() {
     );
   }
 
+  const imgSrc =
+    venue.image && venue.image.trim() !== '' ? venue.image : VENUE_PLACEHOLDER_IMG;
+
   return (
-    <div className="mx-auto max-w-3xl px-6 py-24">
-      <PageHeader title={venue.name} align="center" />
-      {venue.image && (
-        <img src={venue.image} alt={venue.name} className="mb-10 w-full rounded-lg object-cover" />
-      )}
-      <div className="space-y-8">
-        <p className="whitespace-pre-line">{venue.websiteCopy}</p>
-        <div>
-          <h2 className="text-xl font-semibold">Video Copy</h2>
-          <p className="mt-2 whitespace-pre-line">{venue.videoCopy}</p>
+    <div className="mx-auto max-w-4xl px-6 py-24">
+      <PageHeader
+        title={venue.name}
+        subtitle="Format overview & examples"
+        align="center"
+      />
+
+      {/* Hero Image */}
+      <Card className="mt-10">
+        <div className="relative h-64 w-full overflow-hidden rounded-lg">
+          <img
+            src={imgSrc}
+            alt={venue.name}
+            className="h-full w-full object-cover"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
         </div>
-      </div>
+      </Card>
+
+      {/* Website Copy */}
+      <Card className="mt-8">
+        <div className="prose prose-gray max-w-none">
+          <h2 className="mb-2 text-xl font-semibold text-gray-900">Overview</h2>
+          <p className="whitespace-pre-line leading-7 text-gray-700">
+            {venue.websiteCopy}
+          </p>
+        </div>
+      </Card>
+
+      {/* Video Section */}
+      <Card className="mt-8">
+        <div className="prose prose-gray max-w-none">
+          <h2 className="mb-4 text-xl font-semibold text-gray-900">Video</h2>
+
+          {venue.youtubeId ? (
+            <div className="mb-6">
+              <YouTubePlayer
+                videoId={venue.youtubeId}
+                title={`${venue.name} — Video`}
+              />
+            </div>
+          ) : (
+            <div className="mb-6 relative overflow-hidden rounded-lg ring-1 ring-gray-200/60">
+              <img
+                src={VENUE_VIDEO_PLACEHOLDER_THUMB}
+                alt="Video placeholder"
+                className="h-56 w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                <div className="flex items-center gap-3 rounded-full bg-white/90 px-4 py-2 shadow">
+                  <PlayIcon className="h-5 w-5 text-[#288dcf]" />
+                  <span className="text-sm font-medium text-gray-800">
+                    Video coming soon
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </Card>
     </div>
   );
 }

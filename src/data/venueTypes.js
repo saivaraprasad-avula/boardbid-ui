@@ -1,8 +1,12 @@
+export const VENUE_PLACEHOLDER_IMG = 'https://placehold.co/800x400?text=Image+coming+soon';
+export const VENUE_VIDEO_PLACEHOLDER_THUMB = 'https://placehold.co/800x400?text=Video+coming+soon';
+
 export const venueTypes = [
   {
     slug: 'airports',
     name: 'Airports',
-    image: '',
+    image: 'https://images.unsplash.com/photo-1502920917128-1aa500764b8a?auto=format&fit=crop&w=1350&q=80',
+    youtubeId: 'JqU99jzviLo',
     websiteCopy: `Airports are among the most premium advertising environments in the world, offering long dwell times and repeated exposure across a traveler’s journey. From check-in counters and TSA lines to gate concourses, lounges, and baggage claims, airport advertising reaches business professionals, international tourists, and affluent families at moments when they are highly attentive.
 Airports are located in every major U.S. market and international gateway. Large digital walls, interactive kiosks, baggage claim displays, and airline lounge screens each provide multiple touchpoints. The average traveler spends 1–3 hours inside an airport, making it one of the most effective OOH environments for recall.
 Airports are best suited for luxury goods, travel and hospitality, financial services, tech, B2B enterprise, and CPG brands. Examples: a luggage brand dominating baggage claim, a credit card brand in premium lounges, or a ski resort geo-targeting flights leaving Miami. Creative can be dayparted to departure/arrival waves or dynamically updated based on weather and delays.`,
@@ -13,6 +17,7 @@ With BoardBid.ai, you can access airport screens nationwide and align your campa
     slug: 'bars',
     name: 'Bars',
     image: '',
+    youtubeId: '',
     websiteCopy: `Bars provide one of the most social, high-energy OOH environments. Digital screens appear in sports bars, pubs, and nightlife venues where people gather to watch games, celebrate, and socialize. Unlike commuting or retail environments, bar audiences are relaxed, engaged, and often posting on social media, amplifying brand impressions beyond the venue.
 Bars exist in urban entertainment districts, college towns, and suburban centers. Dwell times average 90–120 minutes, and many venues align with live events, sports schedules, and weekend peaks.
 This format is ideal for beer, wine, and spirits (where compliant), sports betting and fantasy apps, streaming platforms, QSR and delivery services, telecom, and rideshare. Example: a streaming brand sponsoring Sunday football viewings, a food delivery brand promoting late-night ordering, or a rideshare app reminding guests to get home safely.`,
@@ -23,6 +28,7 @@ With BoardBid.ai, you can run campaigns across bar networks nationwide. Imagine 
     slug: 'billboards',
     name: 'Billboards',
     image: '',
+    youtubeId: '',
     websiteCopy: `Billboards are the cornerstone of out-of-home, offering massive reach and brand stature. Static bulletins provide long-term visibility, while digital boards allow advertisers to rotate creatives, daypart, and even react to real-time conditions. Positioned along highways, arterial roads, and urban centers, they deliver impressions at unmatched scale.
 Billboards are in every U.S. market, from rural highways to Times Square. They reach commuters, drivers, tourists, and urban professionals.
 Best-fit advertisers include auto, telecom, QSR, retail, streaming, finance, tourism, and government agencies. Examples: a new QSR franchise announcing its opening, a streaming platform launching a series premiere, or a government campaign promoting safety with “Click It or Ticket.” Digital billboards can dynamically update with traffic, weather, or live scores.`,
@@ -33,6 +39,7 @@ With BoardBid.ai, you can buy billboard space from Clear Channel, Outfront, Lama
     slug: 'casual-dining',
     name: 'Casual Dining',
     image: '',
+    youtubeId: '',
     websiteCopy: `Casual dining restaurants are community hubs where families and friends spend time together. Digital screens appear in dining rooms, bar areas, and waiting zones, reaching diners during long dwell times of 45–90 minutes.
 These venues exist across suburbs, small towns, and cities, making them highly scalable for regional or national campaigns. Audiences are family-oriented, with parents, children, and young adults making household decisions.
 Best categories: family entertainment, beverages, QSR, grocery, CPG, retail, and streaming. Examples: a soft drink reinforcing consumption, a family movie promoting a release during kids’ nights, or a theme park running summer promotions.`,
@@ -43,6 +50,7 @@ With BoardBid.ai, you can advertise across restaurant networks nationwide. From 
     slug: 'convenience-stores',
     name: 'Convenience Stores',
     image: '',
+    youtubeId: '',
     websiteCopy: `Convenience stores combine in-store displays and fuel pump screens, reaching shoppers during quick trips for gas, snacks, and essentials. Most consumers visit multiple times per week, providing frequency and consistency.
 These venues are located along commuter corridors and neighborhood intersections. Audiences range from professionals grabbing morning coffee to teens buying snacks at night.
 Best-fit advertisers include beverages, energy drinks, snacks, candy, lottery/fintech, automotive fluids, and QSR/delivery services. Examples: morning coffee promos between 6–10am, energy drink ads in afternoons, and QSR tie-ins based on location.`,
@@ -53,6 +61,7 @@ With BoardBid.ai, you can run campaigns in convenience store networks across the
     slug: 'colleges-universities',
     name: 'Colleges & Universities',
     image: '',
+    youtubeId: '',
     websiteCopy: `Colleges and universities are powerful out-of-home environments that connect with Gen Z consumers at a formative life stage. Screens are located in dining halls, student centers, libraries, gyms, and residence lobbies, ensuring repeated daily exposure.
 Campuses exist across nearly every U.S. state, offering scalable reach for regional or national campaigns. Students are trend-sensitive, tech-savvy, and in the process of forming long-term brand loyalties.
 Best-fit categories include wireless carriers, banking and student credit cards, fashion and footwear, streaming services, gaming, QSR, food delivery, and recruitment campaigns. Examples: an energy drink promoting during finals week, a fashion retailer running back-to-school campaigns, or a streaming service offering student discounts.`,
@@ -63,6 +72,7 @@ With BoardBid.ai, you can run campaigns across campus networks nationwide — wh
     slug: 'dispensaries',
     name: 'Dispensaries',
     image: '',
+    youtubeId: '',
     websiteCopy: `Dispensaries offer highly targeted reach to age-verified adult consumers in legalized markets. Screens appear in waiting areas, checkout counters, and digital menu boards, reaching consumers in discovery and purchase mindsets.
 Audiences skew 21–44, wellness-focused, lifestyle-oriented, and culturally engaged. They’re open to exploration, making dispensaries ideal for brands that want to connect authentically.
 Best-fit categories: cannabis accessories, CBD, beverages, snacks, lifestyle apparel, music/entertainment, and delivery services. Examples: promoting snack foods during evening peaks, pairing music streaming ads with dispensary visits, or highlighting wellness products at checkout.`,
@@ -73,6 +83,7 @@ With BoardBid.ai, you can activate dispensary screens programmatically across le
     slug: 'dmv',
     name: 'DMVs',
     image: '',
+    youtubeId: '',
     websiteCopy: `Departments of Motor Vehicles (DMVs) are high-dwell environments where residents spend extended wait times. Screens reach a broad cross-section of the population during driver’s license testing, renewals, and registrations.
 Audiences include first-time drivers, parents, older adults, and diverse community members. Wait times often exceed 30 minutes, creating a captive audience for messaging.
 Best categories: auto insurance, driving schools, government safety campaigns, auto dealers, financial services, and civic education. Examples: insurance companies offering quotes during renewals, public safety campaigns like “Don’t Text and Drive,” and local dealerships promoting lease specials.`,
@@ -83,6 +94,7 @@ With BoardBid.ai, you can run DMV campaigns with precision, promoting auto insur
     slug: 'doctors-offices',
     name: 'Doctor\u2019s Offices',
     image: '',
+    youtubeId: '',
     websiteCopy: `Doctor’s offices reach patients and caregivers in healthcare settings where trust and attention are high. Screens are located in waiting rooms, check-in counters, and exam area corridors.
 Audiences include families, seniors, and health-conscious adults — all focused on wellness. Patients spend significant time in waiting rooms, making this a highly attentive environment.
 Best-fit categories: OTC products, vitamins, health insurance, wellness apps, pharma (where compliant), and lifestyle brands. Examples: allergy medicine during spring, flu campaigns in fall, or supplements during winter. Educational creative performs especially well here.`,
@@ -93,6 +105,7 @@ With BoardBid.ai, you can activate doctor’s office screens nationwide. From vi
     slug: 'gas-stations',
     name: 'Gas Stations',
     image: '',
+    youtubeId: '',
     websiteCopy: `Gas stations are high-frequency touchpoints where consumers fuel their cars multiple times each week. Screens are positioned at fuel pumps, in-store checkout lines, and forecourt displays, reaching drivers and passengers on the go.
 Audiences are broad, spanning daily commuters, road-trippers, and families. Visits often happen at predictable dayparts — morning commutes, after-work errands, and weekend travel.
 Best-fit categories: beverages, coffee, snacks, automotive fluids, QSR, fintech, and road-trip essentials. Examples: coffee brands owning mornings, energy drinks running in afternoons, and QSR promoting drive-thru offers tied to nearby locations.`,
@@ -103,6 +116,7 @@ With BoardBid.ai, you can target gas station networks nationwide. Imagine a beve
     slug: 'gyms',
     name: 'Gyms',
     image: '',
+    youtubeId: '',
     websiteCopy: `Gyms and fitness centers are aspirational advertising environments where audiences are motivated, health-conscious, and actively working on personal goals. Screens are positioned near cardio zones, weight rooms, locker corridors, and studio class areas, ensuring high visibility.
 Gyms are present in nearly every metro and suburban area across the U.S., from national chains to boutique studios. Audiences skew Millennials and Gen Z, with strong representation among professionals and high disposable income households.
 Best-fit categories: athletic apparel, footwear, wearables, nutrition, supplements, fitness apps, wellness brands, health insurance, and lifestyle services. Examples: an athletic brand showcasing new sneakers, a supplement brand pushing recovery products, or a wellness app promoting memberships. Campaigns can daypart around morning and evening peak hours and align with seasonal health goals like New Year resolutions or summer fitness.`,
@@ -113,6 +127,7 @@ With BoardBid.ai, you can launch campaigns across gyms nationwide. From sneakers
     slug: 'hotels',
     name: 'Hotels',
     image: '',
+    youtubeId: '',
     websiteCopy: `Hotels provide premium advertising access to leisure and business travelers alike. Screens are positioned in lobbies, elevators, bars, and conference centers, delivering repeated exposure across a guest’s stay.
 Hotels are located in every metro, airport district, and resort destination. They attract a mix of executives, event attendees, tourists, and families. Guests often spend several days on property, increasing message frequency.
 Best-fit categories: travel and tourism, local attractions, dining and nightlife, credit cards, electronics and accessories, premium CPG, and auto rentals. Examples: a credit card brand highlighting travel perks, a tour company promoting same-day excursions, or a local restaurant advertising to visitors in hotel elevators. Campaigns can align with conferences, seasonal tourism, or major city events.`,
@@ -123,6 +138,7 @@ With BoardBid.ai, you can target hotels across the U.S. and beyond. Whether you�
     slug: 'liquor-stores',
     name: 'Liquor Stores',
     image: '',
+    youtubeId: '',
     websiteCopy: `Liquor stores reach shoppers during high-intent purchase moments, as they prepare for social gatherings, celebrations, or personal enjoyment. Screens are located at checkout counters, product displays, and entrance areas.
 These stores exist in every community, with peak traffic around weekends, holidays, and evenings. Audiences are 21+, often shopping for specific occasions, making them highly receptive to upsells and cross-promotions.
 Best-fit categories: spirits, beer, wine (where compliant), mixers, snacks, premium ice, glassware, and rideshare apps. Examples: promoting limited-release whiskey, bundling mixers with vodka, or a rideshare company encouraging safe rides after parties. Campaigns can flight around major holidays like July 4th, Thanksgiving, and New Year’s Eve.`,
@@ -133,6 +149,7 @@ With BoardBid.ai, you can activate liquor store screens across key markets. From
     slug: 'malls',
     name: 'Malls',
     image: '',
+    youtubeId: '',
     websiteCopy: `Malls and lifestyle centers provide direct access to shoppers in browsing and buying mode. Screens appear along concourses, food courts, escalators, and anchor-store entryways, influencing decisions minutes before purchase.
 Malls exist nationwide, from suburban hubs to flagship urban shopping centers. Audiences include families, teens, tourists, and fashion-conscious adults.
 Best-fit categories: fashion, beauty, footwear, electronics, dining, entertainment, and financial services. Examples: a beauty brand promoting seasonal collections, a streaming service launching a series premiere, or a local store announcing a grand opening. Campaigns can align with back-to-school, Black Friday, and holiday gift seasons.`,
@@ -143,6 +160,7 @@ With BoardBid.ai, you can run campaigns across mall networks nationwide. Whether
     slug: 'movie-theaters',
     name: 'Movie Theaters',
     image: '',
+    youtubeId: '',
     websiteCopy: `Movie theaters provide premium advertising with immersive, distraction-free experiences. Ads run on the big screen before showtime, as well as on lobby and concession displays.
 Theaters are found in every metro and suburban market. Audiences include families, couples, and fans attending blockbuster premieres. Viewers are highly attentive, with no ability to skip ads, making theaters one of the most engaging OOH environments.
 Best-fit categories: entertainment, streaming, gaming, QSR, automotive, telecom, and premium CPG. Examples: aligning campaigns with blockbuster releases, producing branded trailers, or launching interactive lobby displays. Campaigns often peak during summer movie season and holiday weekends.`,
@@ -153,6 +171,7 @@ With BoardBid.ai, you can activate campaigns across theaters nationwide. From en
     slug: 'office-buildings',
     name: 'Office Buildings',
     image: '',
+    youtubeId: '',
     websiteCopy: `Office buildings and corporate towers provide advertisers with consistent, high-value exposure to professional audiences. Screens are located in lobbies, elevators, break areas, and parking garages, ensuring repeated visibility throughout the workday.
 These venues exist in every major metro and suburban office park. Audiences include executives, professionals, decision-makers, and office staff — people who directly influence B2B and consumer purchase decisions.
 Best-fit categories: B2B software, IT solutions, financial services, insurance, consulting, executive education, luxury goods, and premium travel. Examples: a SaaS company promoting enterprise solutions, a fintech brand advertising retirement products, or a luxury carmaker connecting with high-earning professionals. Campaigns can align with work hours, conferences, or urban commuting schedules.`,
@@ -163,6 +182,7 @@ With BoardBid.ai, you can target Class A office towers nationwide. Whether you�
     slug: 'pharmacies',
     name: 'Pharmacies',
     image: '',
+    youtubeId: '',
     websiteCopy: `Pharmacies are trusted community touchpoints where consumers shop for health, wellness, and everyday essentials. Screens are located in waiting areas, checkout aisles, and product displays, delivering influence at the point of purchase.
 Pharmacies exist in every neighborhood, often co-located with grocery and convenience. Audiences include seniors, caregivers, families, and wellness-focused adults.
 Best-fit categories: OTC remedies, vitamins and supplements, insurance, health apps, diagnostics, CPG, and seasonal wellness products. Examples: flu medicine in fall, allergy campaigns in spring, vitamin bundles in winter, or wellness apps offering sign-up QR codes.`,
@@ -173,6 +193,7 @@ With BoardBid.ai, you can activate campaigns in pharmacy networks nationwide. Fr
     slug: 'qsr',
     name: 'QSR',
     image: '',
+    youtubeId: '',
     websiteCopy: `Quick service restaurants (QSR) deliver high-frequency reach, as consumers visit for breakfast, lunch, dinner, and snacks. Screens are located at order counters, dining rooms, and drive-thru lanes, ensuring multiple touchpoints.
 QSRs exist in every community — from urban centers to small towns. Audiences include families, students, workers, and commuters who are habitual visitors.
 Best-fit categories: beverages, snacks, food delivery, entertainment, financial apps, mobile wallets, and local retail. Examples: a beverage brand tying promotions to mealtimes, a delivery app advertising dinner offers, or a mobile wallet encouraging contactless pay.`,
@@ -183,6 +204,7 @@ With BoardBid.ai, you can activate campaigns across national QSR networks. Wheth
     slug: 'recreational-locations',
     name: 'Recreational Locations',
     image: '',
+    youtubeId: '',
     websiteCopy: `Recreational venues include bowling alleys, skating rinks, arcades, trampoline parks, golf simulators, and family entertainment centers. Screens are placed in lobbies, play areas, and concession zones, reaching audiences while they relax and have fun.
 These venues exist nationwide, particularly in suburban and family-oriented communities. Audiences include families, teens, and young adults enjoying leisure activities.
 Best-fit categories: snacks, beverages, entertainment, gaming, apparel, local attractions, and education/enrichment brands. Examples: a gaming console brand promoting during arcades, a local theme park targeting families at bowling alleys, or a beverage brand tying into weekend recreation.`,
@@ -193,6 +215,7 @@ With BoardBid.ai, you can run campaigns across recreational networks nationwide.
     slug: 'retail',
     name: 'Retail',
     image: '',
+    youtubeId: '',
     websiteCopy: `Retail environments include big-box stores, specialty shops, home improvement centers, electronics stores, and department stores. Screens are positioned in aisles, concourses, and checkout counters, delivering influence at the point of purchase.
 Retail networks cover every major U.S. market. Audiences include families, shoppers, students, and professionals across income levels, often in buying mode.
 Best-fit categories: electronics, appliances, fashion, beauty, smart home products, financial services, loyalty programs, and CPG. Examples: a fashion brand promoting seasonal styles, an electronics company showcasing new releases, or a financial service driving loyalty card sign-ups.`,
@@ -203,6 +226,7 @@ With BoardBid.ai, you can activate campaigns across retail networks nationwide. 
     slug: 'salons',
     name: 'Salons',
     image: '',
+    youtubeId: '',
     websiteCopy: `Salons and barbershops are highly attentive advertising environments where clients spend 45–120 minutes during services. Screens are placed in waiting areas, mirrors, and styling stations, ensuring repeated exposure while customers are engaged and relaxed.
 Salons exist in every neighborhood — from upscale urban studios to suburban barbershops — and reach style-conscious consumers who trust professional recommendations. Dwell times are long, making salons ideal for messaging that benefits from repeated impressions.
 Best-fit categories: beauty and skincare, haircare, fashion, wellness apps, luxury products, credit cards, and local retail. Examples: a beauty brand showcasing seasonal looks, a subscription service offering automatic product refills, or a fashion retailer driving traffic to nearby stores.`,
@@ -213,6 +237,7 @@ With BoardBid.ai, you can activate campaigns across salon networks nationwide. F
     slug: 'schools',
     name: 'Schools',
     image: '',
+    youtubeId: '',
     websiteCopy: `School advertising networks include common areas, entryways, athletic facilities, and hallways in public and private schools. They connect with students, parents, teachers, and staff in trusted local community settings.
 Schools exist in suburban and urban neighborhoods across the U.S., often serving as central community hubs. Audiences include parents making family decisions, educators, and students participating in extracurricular programs.
 Best-fit categories: tutoring, after-school enrichment, family entertainment, local retail, safety programs, and health/wellness services. Examples: a tutoring company promoting enrollment before school terms, a local family fun center advertising weekend specials, or a safety campaign reinforcing community awareness.`,
@@ -223,6 +248,7 @@ With BoardBid.ai, you can reach schools across the U.S. to promote tutoring, loc
     slug: 'sports-entertainment',
     name: 'Sports Entertainment',
     image: '',
+    youtubeId: '',
     websiteCopy: `Sports venues — from professional stadiums and arenas to local sports bars — capture fans at their peak excitement. Screens are located in concourses, suites, food courts, and viewing zones, delivering high-energy impressions.
 These venues exist in every major market and align with tentpole sporting events like NFL, NBA, MLB, NHL, and NCAA seasons. Audiences are passionate, engaged, and ready to celebrate with brands that become part of the action.
 Best-fit categories: beer/spirits (where compliant), sports betting and fantasy, QSR, automotive, telco, entertainment, and retail. Examples: a beer brand running “cheers” creative during scoring moments, a betting app promoting same-day odds, or an auto brand showcasing during halftime.`,
@@ -233,6 +259,7 @@ With BoardBid.ai, you can run campaigns across sports entertainment venues natio
     slug: 'street-furniture',
     name: 'Street Furniture',
     image: '',
+    youtubeId: '',
     websiteCopy: `Street furniture includes bus shelters, kiosks, transit benches, and newsstands — providing high-frequency, street-level visibility in urban and suburban corridors. Positioned along sidewalks and commuter routes, these placements deliver repeated impressions to pedestrians, transit riders, and drivers.
 Street furniture is present in nearly every metro and neighborhood, making it scalable for both national and local campaigns.
 Best-fit categories: mobile apps, telco, QSR, retail, entertainment, streaming, and civic campaigns. Examples: a food delivery app running location-based ads, a telco brand promoting new plans, or a city tourism board welcoming visitors.`,
@@ -243,6 +270,7 @@ With BoardBid.ai, you can activate street furniture campaigns in cities nationwi
     slug: 'taxis-rideshares',
     name: 'Taxis & Rideshares',
     image: '',
+    youtubeId: '',
     websiteCopy: `Taxi and rideshare advertising combines interior screens with digital rooftop signage, delivering both one-to-one engagement and citywide impressions. Interior tablets target riders during trips, while rooftop units reach urban pedestrians and drivers.
 These formats are concentrated in urban cores, airports, nightlife districts, and event zones, making them ideal for tourism and citywide branding. Audiences include business travelers, tourists, and urban residents.
 Best-fit categories: entertainment, streaming, fintech, travel, dining, local attractions, and delivery services. Examples: a rideshare app promoting itself on competitor vehicles, a streaming brand entertaining passengers, or a restaurant driving foot traffic after nightlife events.`,
@@ -253,6 +281,7 @@ With BoardBid.ai, you can activate rideshare and taxi campaigns in major metros.
     slug: 'transit-stations',
     name: 'Transit Stations',
     image: '',
+    youtubeId: '',
     websiteCopy: `Transit stations — including subways, commuter rail hubs, and bus terminals — capture audiences during dwell times while waiting for transportation. Screens are positioned on platforms, concourses, and entry/exit points, delivering multiple impressions as commuters move through the space.
 Transit stations are concentrated in every major metro, reaching millions of daily riders. Audiences include urban professionals, students, blue-collar workers, and tourists. The frequency of commuting ensures repeated exposure, often five days per week.
 Best-fit categories: banking, telco, government services, retail, entertainment, and QSR. Examples: a bank promoting contactless payments, a telco launching new data plans, or a QSR driving lunch traffic with nearby offers. Campaigns can align with rush-hour peaks and major city events.`,
@@ -263,6 +292,7 @@ With BoardBid.ai, you can run campaigns across transit stations in major cities 
     slug: 'urban-panels',
     name: 'Urban Panels',
     image: '',
+    youtubeId: '',
     websiteCopy: `Urban panels are street-level displays built into kiosks, bus shelters, and city infrastructure. Positioned at eye level in high-density pedestrian and vehicular zones, they deliver constant impressions in neighborhoods where people live, shop, and work.
 These panels are prominent in metro areas, often clustered in retail corridors, transit-heavy streets, and entertainment districts. They are designed for repeated exposure, delivering frequency and consistency for both national and local campaigns.
 Best-fit categories: fashion, beauty, telco, mobile apps, entertainment, QSR, and tourism. Examples: a fashion retailer showcasing seasonal looks, a telco advertising unlimited plans, or a city tourism board welcoming visitors downtown.`,
@@ -273,6 +303,7 @@ With BoardBid.ai, you can activate campaigns on urban panels across cities natio
     slug: 'veterinary-offices',
     name: 'Veterinary Offices',
     image: '',
+    youtubeId: '',
     websiteCopy: `Veterinary offices are trusted community environments where pet owners spend extended time waiting for appointments. Screens in lobbies, exam rooms, and checkout counters connect with engaged, pet-focused households.
 These venues exist in every suburb and urban neighborhood. Audiences include families and individuals who spend above average on pets, often considering them part of the family.
 Best-fit categories: pet food and treats, pet insurance, grooming and boarding, veterinary products, automotive (pet-safe travel), and cleaning supplies. Examples: a premium pet food brand advertising subscription deliveries, an insurance company promoting coverage plans, or a grooming service showcasing seasonal specials.`,
