@@ -26,6 +26,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 import OpsProtectedRoute from './components/OpsProtectedRoute.jsx';
 import Pricing from './pages/Pricing';
 import Meet from './pages/Meet';
+import VenueTypes from './pages/venues/VenueTypes.jsx';
+import VenueTypeDetail from './pages/venues/VenueTypeDetail.jsx';
 
 function App() {
   return (
@@ -53,6 +55,8 @@ function App() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/meet" element={<Meet />} />
+        <Route path="/venue-types" element={<VenueTypes />} />
+        <Route path="/venue-types/:slug" element={<VenueTypeDetail />} />
         <Route path="/ops" element={<OpsProtectedRoute><OpsHome /></OpsProtectedRoute>} />
         <Route path="/ops/inbox" element={<OpsProtectedRoute><OpsInbox /></OpsProtectedRoute>} />
         <Route path="/ops/campaigns/:id/*" element={<OpsProtectedRoute><OpsCampaignDetail /></OpsProtectedRoute>} />
