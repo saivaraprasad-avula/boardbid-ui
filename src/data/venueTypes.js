@@ -5,7 +5,7 @@ export const venueTypes = [
   {
     slug: 'airports',
     name: 'Airports',
-    image: 'https://images.unsplash.com/photo-1502920917128-1aa500764b8a?auto=format&fit=crop&w=1350&q=80',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Airports.avif?updatedAt=1757274625809',
     youtubeId: 'JqU99jzviLo',
     websiteCopy: `Airports are among the most premium advertising environments in the world, offering long dwell times and repeated exposure across a traveler’s journey. From check-in counters and TSA lines to gate concourses, lounges, and baggage claims, airport advertising reaches business professionals, international tourists, and affluent families at moments when they are highly attentive.
 Airports are located in every major U.S. market and international gateway. Large digital walls, interactive kiosks, baggage claim displays, and airline lounge screens each provide multiple touchpoints. The average traveler spends 1–3 hours inside an airport, making it one of the most effective OOH environments for recall.
@@ -16,7 +16,7 @@ With BoardBid.ai, you can access airport screens nationwide and align your campa
   {
     slug: 'bars',
     name: 'Bars',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Bars.avif?updatedAt=1757274618898',
     youtubeId: '',
     websiteCopy: `Bars provide one of the most social, high-energy OOH environments. Digital screens appear in sports bars, pubs, and nightlife venues where people gather to watch games, celebrate, and socialize. Unlike commuting or retail environments, bar audiences are relaxed, engaged, and often posting on social media, amplifying brand impressions beyond the venue.
 Bars exist in urban entertainment districts, college towns, and suburban centers. Dwell times average 90–120 minutes, and many venues align with live events, sports schedules, and weekend peaks.
@@ -27,7 +27,7 @@ With BoardBid.ai, you can run campaigns across bar networks nationwide. Imagine 
   {
     slug: 'billboards',
     name: 'Billboards',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Billboards.avif?updatedAt=1757274618858',
     youtubeId: '',
     websiteCopy: `Billboards are the cornerstone of out-of-home, offering massive reach and brand stature. Static bulletins provide long-term visibility, while digital boards allow advertisers to rotate creatives, daypart, and even react to real-time conditions. Positioned along highways, arterial roads, and urban centers, they deliver impressions at unmatched scale.
 Billboards are in every U.S. market, from rural highways to Times Square. They reach commuters, drivers, tourists, and urban professionals.
@@ -38,7 +38,7 @@ With BoardBid.ai, you can buy billboard space from Clear Channel, Outfront, Lama
   {
     slug: 'casual-dining',
     name: 'Casual Dining',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Casual%20Dining.avif?updatedAt=1757274618706',
     youtubeId: '',
     websiteCopy: `Casual dining restaurants are community hubs where families and friends spend time together. Digital screens appear in dining rooms, bar areas, and waiting zones, reaching diners during long dwell times of 45–90 minutes.
 These venues exist across suburbs, small towns, and cities, making them highly scalable for regional or national campaigns. Audiences are family-oriented, with parents, children, and young adults making household decisions.
@@ -60,7 +60,7 @@ With BoardBid.ai, you can run campaigns in convenience store networks across the
   {
     slug: 'colleges-universities',
     name: 'Colleges & Universities',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Colleges%20%26%20Universities.avif?updatedAt=1757274618620',
     youtubeId: '',
     websiteCopy: `Colleges and universities are powerful out-of-home environments that connect with Gen Z consumers at a formative life stage. Screens are located in dining halls, student centers, libraries, gyms, and residence lobbies, ensuring repeated daily exposure.
 Campuses exist across nearly every U.S. state, offering scalable reach for regional or national campaigns. Students are trend-sensitive, tech-savvy, and in the process of forming long-term brand loyalties.
@@ -93,7 +93,7 @@ With BoardBid.ai, you can run DMV campaigns with precision, promoting auto insur
   {
     slug: 'doctors-offices',
     name: 'Doctor\u2019s Offices',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Doctor%27s%20Offices.avif?updatedAt=1757274618428',
     youtubeId: '',
     websiteCopy: `Doctor’s offices reach patients and caregivers in healthcare settings where trust and attention are high. Screens are located in waiting rooms, check-in counters, and exam area corridors.
 Audiences include families, seniors, and health-conscious adults — all focused on wellness. Patients spend significant time in waiting rooms, making this a highly attentive environment.
@@ -115,7 +115,7 @@ With BoardBid.ai, you can target gas station networks nationwide. Imagine a beve
   {
     slug: 'gyms',
     name: 'Gyms',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Gyms.avif?updatedAt=1757274618341',
     youtubeId: '',
     websiteCopy: `Gyms and fitness centers are aspirational advertising environments where audiences are motivated, health-conscious, and actively working on personal goals. Screens are positioned near cardio zones, weight rooms, locker corridors, and studio class areas, ensuring high visibility.
 Gyms are present in nearly every metro and suburban area across the U.S., from national chains to boutique studios. Audiences skew Millennials and Gen Z, with strong representation among professionals and high disposable income households.
@@ -126,7 +126,7 @@ With BoardBid.ai, you can launch campaigns across gyms nationwide. From sneakers
   {
     slug: 'hotels',
     name: 'Hotels',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Hotels.avif?updatedAt=1757274617785',
     youtubeId: '',
     websiteCopy: `Hotels provide premium advertising access to leisure and business travelers alike. Screens are positioned in lobbies, elevators, bars, and conference centers, delivering repeated exposure across a guest’s stay.
 Hotels are located in every metro, airport district, and resort destination. They attract a mix of executives, event attendees, tourists, and families. Guests often spend several days on property, increasing message frequency.
@@ -159,7 +159,7 @@ With BoardBid.ai, you can run campaigns across mall networks nationwide. Whether
   {
     slug: 'movie-theaters',
     name: 'Movie Theaters',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Movie%20Theatres.avif?updatedAt=1757274618620',
     youtubeId: '',
     websiteCopy: `Movie theaters provide premium advertising with immersive, distraction-free experiences. Ads run on the big screen before showtime, as well as on lobby and concession displays.
 Theaters are found in every metro and suburban market. Audiences include families, couples, and fans attending blockbuster premieres. Viewers are highly attentive, with no ability to skip ads, making theaters one of the most engaging OOH environments.
@@ -170,7 +170,7 @@ With BoardBid.ai, you can activate campaigns across theaters nationwide. From en
   {
     slug: 'office-buildings',
     name: 'Office Buildings',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Office%20Buildings.avif?updatedAt=1757274626520',
     youtubeId: '',
     websiteCopy: `Office buildings and corporate towers provide advertisers with consistent, high-value exposure to professional audiences. Screens are located in lobbies, elevators, break areas, and parking garages, ensuring repeated visibility throughout the workday.
 These venues exist in every major metro and suburban office park. Audiences include executives, professionals, decision-makers, and office staff — people who directly influence B2B and consumer purchase decisions.
@@ -203,7 +203,7 @@ With BoardBid.ai, you can activate campaigns across national QSR networks. Wheth
   {
     slug: 'recreational-locations',
     name: 'Recreational Locations',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Recreational%20Locations.avif?updatedAt=1757274619234',
     youtubeId: '',
     websiteCopy: `Recreational venues include bowling alleys, skating rinks, arcades, trampoline parks, golf simulators, and family entertainment centers. Screens are placed in lobbies, play areas, and concession zones, reaching audiences while they relax and have fun.
 These venues exist nationwide, particularly in suburban and family-oriented communities. Audiences include families, teens, and young adults enjoying leisure activities.
@@ -225,7 +225,7 @@ With BoardBid.ai, you can activate campaigns across retail networks nationwide. 
   {
     slug: 'salons',
     name: 'Salons',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Salons.avif?updatedAt=1757274625583',
     youtubeId: '',
     websiteCopy: `Salons and barbershops are highly attentive advertising environments where clients spend 45–120 minutes during services. Screens are placed in waiting areas, mirrors, and styling stations, ensuring repeated exposure while customers are engaged and relaxed.
 Salons exist in every neighborhood — from upscale urban studios to suburban barbershops — and reach style-conscious consumers who trust professional recommendations. Dwell times are long, making salons ideal for messaging that benefits from repeated impressions.
@@ -247,7 +247,7 @@ With BoardBid.ai, you can reach schools across the U.S. to promote tutoring, loc
   {
     slug: 'sports-entertainment',
     name: 'Sports Entertainment',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Sports%20Entertainment.avif?updatedAt=1757274618886',
     youtubeId: '',
     websiteCopy: `Sports venues — from professional stadiums and arenas to local sports bars — capture fans at their peak excitement. Screens are located in concourses, suites, food courts, and viewing zones, delivering high-energy impressions.
 These venues exist in every major market and align with tentpole sporting events like NFL, NBA, MLB, NHL, and NCAA seasons. Audiences are passionate, engaged, and ready to celebrate with brands that become part of the action.
@@ -291,7 +291,7 @@ With BoardBid.ai, you can run campaigns across transit stations in major cities 
   {
     slug: 'urban-panels',
     name: 'Urban Panels',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Urban%20Panels.avif?updatedAt=1757274626715',
     youtubeId: '',
     websiteCopy: `Urban panels are street-level displays built into kiosks, bus shelters, and city infrastructure. Positioned at eye level in high-density pedestrian and vehicular zones, they deliver constant impressions in neighborhoods where people live, shop, and work.
 These panels are prominent in metro areas, often clustered in retail corridors, transit-heavy streets, and entertainment districts. They are designed for repeated exposure, delivering frequency and consistency for both national and local campaigns.
@@ -302,7 +302,7 @@ With BoardBid.ai, you can activate campaigns on urban panels across cities natio
   {
     slug: 'veterinary-offices',
     name: 'Veterinary Offices',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Veterinary%20Offices.avif?updatedAt=1757274625684',
     youtubeId: '',
     websiteCopy: `Veterinary offices are trusted community environments where pet owners spend extended time waiting for appointments. Screens in lobbies, exam rooms, and checkout counters connect with engaged, pet-focused households.
 These venues exist in every suburb and urban neighborhood. Audiences include families and individuals who spend above average on pets, often considering them part of the family.
