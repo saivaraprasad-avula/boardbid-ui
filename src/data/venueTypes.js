@@ -10,7 +10,7 @@ export const venueTypes = [
   {
     slug: 'airports',
     name: 'Airports',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Airports.avif?updatedAt=1757274625809',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Airports.avif?updatedAt=1757390459771',
     youtubeId: 'JqU99jzviLo',
     websiteCopy: `Airports are premium, controlled environments with long, purposeful dwell times across a traveler’s journey — check-in, security, concourse, lounge, and baggage claim. Screens are brand-safe, highly visible, and perceived as upscale. The same passenger encounters multiple touchpoints, making frequency and sequencing easy to plan.
 Airline lounges and priority lanes add further audience refinement. Creative can be dayparted to departure waves, aligned to routes/destinations, or dynamically updated for weather and delays. This venue fits luxury, finance, tech, tourism, and B2B.`,
@@ -31,7 +31,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'bars',
     name: 'Bars',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Bars.avif?updatedAt=1757274618898',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Bars.avif?updatedAt=1757390459787',
     youtubeId: '',
     websiteCopy: `Bars and pubs are social, high-energy environments. Screens sit near seating clusters and at the bar, often integrated with live sports, trivia, or music. Guests linger, making repeated exposures natural. Tone can be playful and timely — think score triggers or happy-hour windows.`,
     videoCopy: `Bring your brand into big-game moments and weekend rituals with context-aware placements.`,
@@ -51,7 +51,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'billboards',
     name: 'Billboards',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Billboards.avif?updatedAt=1757274618858',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Billboards.avif?updatedAt=1757390459814',
     youtubeId: '',
     websiteCopy: `Billboards deliver scale and stature — the archetypal brand canvas. Static bulletins build sustained presence; digital boards add flexibility (dayparting, countdowns, live data). Locations include highways, arterials, and city landmarks, delivering broad reach.`,
     videoCopy: `Own the skyline or rotate timely messages across a city with a few clicks.`,
@@ -71,7 +71,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'casual-dining',
     name: 'Casual Dining',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Casual%20Dining.avif?updatedAt=1757274618706',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Casual%20Dining.avif?updatedAt=1757390459565',
     youtubeId: '',
     websiteCopy: `Family-friendly restaurants create relaxed, high-dwell settings. Screens typically face dining areas or waiting zones, reaching entire households. Messaging can be seasonally themed and community-minded, with offers that suit shared meals or kids’ nights.`,
     videoCopy: `Be part of family time with upbeat, meal-friendly creative and local offers.`,
@@ -91,7 +91,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'convenience-stores',
     name: 'Convenience Stores',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Convenience%20Stores.avif?updatedAt=1757390458802',
     youtubeId: '',
     websiteCopy: `C-stores and forecourts reach shoppers during quick, frequent trips. Pump screens and entrance displays capture attention pre-store; counter screens influence last-mile decisions. Dayparting is powerful (morning coffee, afternoon energy, evening snacks).`,
     videoCopy: `Own moments of daily routine with bite-sized, time-of-day messages.`,
@@ -111,7 +111,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'colleges-universities',
     name: 'Colleges & Universities',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Colleges%20%26%20Universities.avif?updatedAt=1757274618620',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Colleges%20%26%20Universities.avif?updatedAt=1757390459443',
     youtubeId: '',
     websiteCopy: `Campus networks reach Gen Z daily across dining halls, student centers, libraries, gyms, and dorms. Students are trend-forward and price-sensitive. Messaging that is helpful, perks-driven, or identity-aware performs well.`,
     videoCopy: `Meet students where they live, study, and socialize — all day long.`,
@@ -131,7 +131,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'dispensaries',
     name: 'Dispensaries',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Dispensaries.webp',
     youtubeId: '',
     websiteCopy: `Dispensaries provide age-verified reach in legal markets. Screens near menus, waiting areas, and checkout engage customers in discovery mode. Educational, lifestyle, and pairing content (snacks, music) fits well with browsing behavior.`,
     videoCopy: `Speak to exploration and wellness; keep tone clear, compliant, and helpful.`,
@@ -151,7 +151,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'dmv',
     name: 'DMVs',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/DMV%27s.avif?updatedAt=1757390459411',
     youtubeId: '',
     websiteCopy: `DMVs offer unusually long dwell in a civic setting. Messaging is best when useful or safety-oriented, with clear local relevance. Insurance, auto services, training, and public service campaigns feel native here.`,
     videoCopy: `Use the wait to educate, quote, or encourage safer choices.`,
@@ -171,7 +171,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'doctors-offices',
     name: 'Doctor’s Offices',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Doctor%27s%20Offices.avif?updatedAt=1757274618428',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Doctor%27s%20Offices.avif?updatedAt=1757390459406',
     youtubeId: '',
     websiteCopy: `Healthcare waiting rooms and corridors provide attentive, trust-oriented contexts. Educational formats perform well, especially seasonally relevant topics (allergy, flu, screenings). Tone should be supportive and clear.`,
     videoCopy: `Pair education with practical next steps — coverage checks, store locators, or symptom tools.`,
@@ -191,7 +191,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'gas-stations',
     name: 'Gas Stations',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Gas%20Stations.avif?updatedAt=1757390459008',
     youtubeId: '',
     websiteCopy: `Forecourt and in-store screens connect with drivers during habitual visits. Pump placements deliver focused attention windows; in-store counters drive immediate add-on purchases. Timing around commute peaks is effective.`,
     videoCopy: `Own repeat routines with tight, time-of-day rotations and proximity offers.`,
@@ -211,7 +211,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'gyms',
     name: 'Gyms',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Gyms.avif?updatedAt=1757274618341',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Gyms.avif?updatedAt=1757390459386',
     youtubeId: '',
     websiteCopy: `Fitness centers combine aspirational mindset with repeat weekly visits. Screens near cardio zones, studios, and lockers are highly visible. Products tied to performance, recovery, and wearable tech fit naturally here.`,
     videoCopy: `Reach motivated audiences as they pursue health goals and routines.`,
@@ -231,7 +231,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'hotels',
     name: 'Hotels',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Hotels.avif?updatedAt=1757274617785',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Hotels.avif?updatedAt=1757390467265',
     youtubeId: '',
     websiteCopy: `Hotels host both leisure and business travelers. Screens in lobbies, elevators, lounges, and meeting spaces provide repeated exposures across a stay. Local experience offers and premium services fit well.`,
     videoCopy: `Guide guests to the best of the city — dining, attractions, retail, and tours.`,
@@ -251,7 +251,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'liquor-stores',
     name: 'Liquor Stores',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Liquor%20Stores.avif?updatedAt=1757391381183',
     youtubeId: '',
     websiteCopy: `Adult shoppers make specific, occasion-led purchases. Screens at entrance and checkout influence trade-ups, mixers, and pairings. Weekends and holidays see predictable spikes.`,
     videoCopy: `Be the brand they pick for the next celebration or quiet night in.`,
@@ -271,7 +271,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'malls',
     name: 'Malls',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Malls.webp',
     youtubeId: '',
     websiteCopy: `Malls and lifestyle centers put messaging directly into browsing and buying moments. Concourse and food-court screens drive footfall and discovery minutes before purchase.`,
     videoCopy: `Turn window-shopping into store visits with timely, store-level CTAs.`,
@@ -291,7 +291,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'movie-theaters',
     name: 'Movie Theaters',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Movie%20Theatres.avif?updatedAt=1757274618620',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Movie%20Theatres.avif?updatedAt=1757390468729',
     youtubeId: '',
     websiteCopy: `Cinema combines premium sight, sound, and attention. Pre-show ads and lobby displays are immersive and unskippable. Audiences arrive focused and excited for shared cultural moments.`,
     videoCopy: `Pair your story with the biggest stories on the big screen.`,
@@ -311,7 +311,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'office-buildings',
     name: 'Office Buildings',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Office%20Buildings.avif?updatedAt=1757274626520',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Office%20Buildings.avif?updatedAt=1757390468831',
     youtubeId: '',
     websiteCopy: `Class-A towers and office campuses deliver professional audiences throughout the workday. Lobby and elevator screens provide repeated exposure; break-area screens support longer reads. B2B and premium consumer categories align naturally.`,
     videoCopy: `Reach decision-makers and influencers during work-mode moments.`,
@@ -331,7 +331,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'pharmacies',
     name: 'Pharmacies',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Pharmacies.avif?updatedAt=1757391380581',
     youtubeId: '',
     websiteCopy: `Trusted, everyday health retail. Screens in waiting and checkout areas influence OTC, vitamins, and seasonal wellness. Helpful guidance and easy product cues outperform hard sells.`,
     videoCopy: `Be the helpful nudge that makes healthy choices easier.`,
@@ -351,7 +351,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'qsr',
     name: 'QSR',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/QSR.avif?updatedAt=1757391381035',
     youtubeId: '',
     websiteCopy: `Quick-service restaurants deliver repeat exposures across breakfast, lunch, and dinner. Drive-through, counter, and dining-area screens provide multiple moments to influence choice and ticket size.`,
     videoCopy: `Turn cravings into orders with time-banded creative and value cues.`,
@@ -371,7 +371,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'recreational-locations',
     name: 'Recreational Locations',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Recreational%20Locations.avif?updatedAt=1757274619234',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Recreational%20Locations.avif?updatedAt=1757390469067',
     youtubeId: '',
     websiteCopy: `Bowling, arcades, skating, trampoline parks, golf sims, and family fun centers create upbeat, playful contexts. Screens are visible during waiting, play breaks, and concessions.`,
     videoCopy: `Show up during playtime with fun, visual creative and family-friendly CTAs.`,
@@ -391,7 +391,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'retail',
     name: 'Retail',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Retail.avif?updatedAt=1757391381314',
     youtubeId: '',
     websiteCopy: `From big-box to specialty, retail screens influence decisions in aisle and at checkout. Use them to announce launches, compare features, or drive loyalty activation.`,
     videoCopy: `Help shoppers decide faster with clear, visual value props.`,
@@ -411,7 +411,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'salons',
     name: 'Salons',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Salons.avif?updatedAt=1757274625583',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Salons.avif?updatedAt=1757390469447',
     youtubeId: '',
     websiteCopy: `Salons and barbershops have long, attentive appointments in a recommendation-driven environment. Beauty, fashion, wellness, and finance premium cards fit naturally.`,
     videoCopy: `Leverage trust and time on site with step-by-step visuals and before/after frames.`,
@@ -431,7 +431,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'schools',
     name: 'Schools',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Schools.avif?updatedAt=1757391381722',
     youtubeId: '',
     websiteCopy: `K-12 networks reach parents, students, and staff in trusted community spaces. Messaging should be informative, supportive, and age-appropriate. Education, safety, family retail, and enrichment programs fit well.`,
     videoCopy: `Serve the community with helpful information and simple actions.`,
@@ -451,7 +451,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'sports-entertainment',
     name: 'Sports Entertainment',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Sports%20Entertainment.avif?updatedAt=1757274618886',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Sports%20Entertainment.avif?updatedAt=1757390478940',
     youtubeId: '',
     websiteCopy: `Stadiums, arenas, and sports bars concentrate attention during peak excitement. Screens in concourses, suites, and fan zones align brands with shared wins and rituals.`,
     videoCopy: `Tap into team pride and big-moment energy with reactive creative.`,
@@ -471,7 +471,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'street-furniture',
     name: 'Street Furniture',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Street%20Furniture.webp',
     youtubeId: '',
     websiteCopy: `Bus shelters, kiosks, and benches offer pedestrian-level visibility with frequent, repeated impressions. Great for apps, retail, and civic messages along daily paths.`,
     videoCopy: `Meet people where they walk, wait, and explore — eye-level and everyday.`,
@@ -491,7 +491,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'taxis-rideshares',
     name: 'Taxis & Rideshares',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Taxis%20%26%20Rideshares.avif?updatedAt=1757391381457',
     youtubeId: '',
     websiteCopy: `Interior tablets and rooftop digital combine one-to-one engagement with citywide presence. Airport, nightlife, and event corridors amplify reach. Interactive formats can capture attention between pickups.`,
     videoCopy: `Follow the city’s movement — inside the car and across the skyline.`,
@@ -511,7 +511,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'transit-stations',
     name: 'Transit Stations',
-    image: '',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Transit%20Stations.avif?updatedAt=1757391381244',
     youtubeId: '',
     websiteCopy: `Subway, bus, and rail hubs capture repeated weekday exposure during waits and transfers. Platforms and concourses deliver large canvases and predictable commuter flows.`,
     videoCopy: `Be part of the daily routine with clear, legible messaging at a glance.`,
@@ -531,7 +531,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'urban-panels',
     name: 'Urban Panels',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Urban%20Panels.avif?updatedAt=1757274626715',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Urban%20Panels.avif?updatedAt=1757390479811',
     youtubeId: '',
     websiteCopy: `Eye-level panels embedded in city infrastructure (kiosks, shelters) deliver constant impressions in dense districts. Ideal for fashion, beauty, apps, and tourism.`,
     videoCopy: `Own the streetscape with sleek, style-forward creative.`,
@@ -551,7 +551,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'veterinary-offices',
     name: 'Veterinary Offices',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Veterinary%20Offices.avif?updatedAt=1757274625684',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Veterinary%20Offices.avif?updatedAt=1757390479568',
     youtubeId: '',
     websiteCopy: `Pet owners spend attentive time in lobby and exam areas. Messaging that is practical, reassuring, and pet-centric performs best (nutrition, insurance, grooming, travel).`,
     videoCopy: `Talk to devoted pet families with empathetic, helpful creative.`,
