@@ -11,7 +11,7 @@ export const venueTypes = [
     slug: 'airports',
     name: 'Airports',
     image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Airports.avif?updatedAt=1757390459771',
-    youtubeId: 'JqU99jzviLo',
+    youtubeId: '_uzJI-mFqws',
     websiteCopy: `Airports are premium, controlled environments with long, purposeful dwell times across a traveler’s journey — check-in, security, concourse, lounge, and baggage claim. Screens are brand-safe, highly visible, and perceived as upscale. The same passenger encounters multiple touchpoints, making frequency and sequencing easy to plan.
 Airline lounges and priority lanes add further audience refinement. Creative can be dayparted to departure waves, aligned to routes/destinations, or dynamically updated for weather and delays. This venue fits luxury, finance, tech, tourism, and B2B.`,
     videoCopy: `Airports connect you with decision-makers and high-intent travelers across multiple stages of the trip. With BoardBid.ai, align to terminals, airlines, or time bands to scale efficiently.`,
@@ -111,7 +111,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'colleges-universities',
     name: 'Colleges & Universities',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Colleges%20%26%20Universities.avif?updatedAt=1757390459443',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Colleges%20and%20Universities.avif?updatedAt=1757488568074',
     youtubeId: '',
     websiteCopy: `Campus networks reach Gen Z daily across dining halls, student centers, libraries, gyms, and dorms. Students are trend-forward and price-sensitive. Messaging that is helpful, perks-driven, or identity-aware performs well.`,
     videoCopy: `Meet students where they live, study, and socialize — all day long.`,
@@ -151,7 +151,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'dmv',
     name: 'DMVs',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/DMV%27s.avif?updatedAt=1757390459411',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/DMVs.avif?updatedAt=1757488499986',
     youtubeId: '',
     websiteCopy: `DMVs offer unusually long dwell in a civic setting. Messaging is best when useful or safety-oriented, with clear local relevance. Insurance, auto services, training, and public service campaigns feel native here.`,
     videoCopy: `Use the wait to educate, quote, or encourage safer choices.`,
@@ -171,7 +171,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'doctors-offices',
     name: 'Doctor’s Offices',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Doctor%27s%20Offices.avif?updatedAt=1757390459406',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Doctors%20Offices.avif?updatedAt=1757488603804',
     youtubeId: '',
     websiteCopy: `Healthcare waiting rooms and corridors provide attentive, trust-oriented contexts. Educational formats perform well, especially seasonally relevant topics (allergy, flu, screenings). Tone should be supportive and clear.`,
     videoCopy: `Pair education with practical next steps — coverage checks, store locators, or symptom tools.`,
@@ -491,7 +491,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
   {
     slug: 'taxis-rideshares',
     name: 'Taxis & Rideshares',
-    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Taxis%20%26%20Rideshares.avif?updatedAt=1757391381457',
+    image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Taxis%20and%20Rideshares.avif?updatedAt=1757488392333',
     youtubeId: '',
     websiteCopy: `Interior tablets and rooftop digital combine one-to-one engagement with citywide presence. Airport, nightlife, and event corridors amplify reach. Interactive formats can capture attention between pickups.`,
     videoCopy: `Follow the city’s movement — inside the car and across the skyline.`,
