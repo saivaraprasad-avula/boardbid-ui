@@ -7,32 +7,44 @@ export default function YouTubePlayer({ videoId, title }) {
   const playerRef = useRef(null);
   const readyRef = useRef(false);
 
+  // Load the YouTube Iframe API once per page
   useEffect(() => {
     const API_SRC = 'https://www.youtube.com/iframe_api';
 
-    const checkAndInit = () => {
-      if (window.YT && window.YT.Player) {
-        initPlayer();
-        return true;
-      }
-      return false;
-    };
-
-    if (checkAndInit()) return;
-
-    let tag = document.querySelector(`script[src="${API_SRC}"]`);
-    if (!tag) {
-      tag = document.createElement('script');
-      tag.src = API_SRC;
-      tag.async = true;
-      document.body.appendChild(tag);
+    // If API already loaded, init immediately
+    if (window.YT && window.YT.Player) {
+      initPlayer();
+      return;
     }
 
-    const iv = setInterval(() => {
-      if (checkAndInit()) clearInterval(iv);
-    }, 100);
+    // If a loader is already present, poll until ready
+    const existing = document.querySelector(`script[src="${API_SRC}"]`);
+    if (existing) {
+      const iv = setInterval(() => {
+        if (window.YT && window.YT.Player) {
+          clearInterval(iv);
+          initPlayer();
+        }
+      }, 100);
+      // Safety timeout
+      setTimeout(() => clearInterval(iv), 8000);
+      return;
+    }
 
-    setTimeout(() => clearInterval(iv), 8000);
+    // Inject script
+    const tag = document.createElement('script');
+    tag.src = API_SRC;
+    tag.async = true;
+    document.body.appendChild(tag);
+
+    // Hook global ready callback
+    const prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => {
+      if (typeof prev === 'function') prev();
+      initPlayer();
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const initPlayer = () => {
@@ -65,6 +77,7 @@ export default function YouTubePlayer({ videoId, title }) {
     });
   };
 
+  // Politely but firmly ask for HD (with graceful fallbacks)
   const tryRequestHD = (player) => {
     if (!player || typeof player.setPlaybackQuality !== 'function') return;
     const prefs = ['highres', 'hd2160', 'hd1440', 'hd1080', 'hd720', 'large'];
