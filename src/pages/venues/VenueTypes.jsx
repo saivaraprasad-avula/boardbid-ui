@@ -6,6 +6,7 @@ import HomeBanner from "../../components/HomeBanner.jsx";
 import PricingCTA from "../../components/PricingCTA.jsx";
 import Footer from "../../components/Footer.jsx";
 import { venueTypes, VENUE_PLACEHOLDER_IMG } from "../../data/venueTypes.js";
+import Seo from "../../components/Seo.jsx";
 
 // ✅ Only icons that exist in @heroicons/react/24/outline
 import {
@@ -63,6 +64,7 @@ const iconMap = {
 export default function VenueTypes() {
   return (
     <div className="bg-white pt-24 sm:pt-32">
+      <Seo title="Venue Types" description="Explore advertising environments" />
       <HeroHeader />
       <HomeBanner />
 
