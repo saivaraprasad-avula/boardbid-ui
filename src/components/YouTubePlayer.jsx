@@ -10,39 +10,36 @@ export default function YouTubePlayer({ videoId, title }) {
   useEffect(() => {
     const API_SRC = 'https://www.youtube.com/iframe_api';
 
-    if (window.YT && window.YT.Player) {
-      initPlayer();
-      return;
-    }
-
-    const existing = document.querySelector(`script[src="${API_SRC}"]`);
-    if (existing) {
-      const iv = setInterval(() => {
-        if (window.YT && window.YT.Player) {
-          clearInterval(iv);
-          initPlayer();
-        }
-      }, 100);
-      setTimeout(() => clearInterval(iv), 8000);
-      return;
-    }
-
-    const tag = document.createElement('script');
-    tag.src = API_SRC;
-    tag.async = true;
-    document.body.appendChild(tag);
-
-    const prev = window.onYouTubeIframeAPIReady;
-    window.onYouTubeIframeAPIReady = () => {
-      if (typeof prev === 'function') prev();
-      initPlayer();
+    const checkAndInit = () => {
+      if (window.YT && window.YT.Player) {
+        initPlayer();
+        return true;
+      }
+      return false;
     };
+
+    if (checkAndInit()) return;
+
+    let tag = document.querySelector(`script[src="${API_SRC}"]`);
+    if (!tag) {
+      tag = document.createElement('script');
+      tag.src = API_SRC;
+      tag.async = true;
+      document.body.appendChild(tag);
+    }
+
+    const iv = setInterval(() => {
+      if (checkAndInit()) clearInterval(iv);
+    }, 100);
+
+    setTimeout(() => clearInterval(iv), 8000);
   }, []);
 
   const initPlayer = () => {
     if (!iframeRef.current || (playerRef.current && readyRef.current)) return;
 
     playerRef.current = new window.YT.Player(iframeRef.current, {
+      videoId,
       playerVars: {
         rel: 0,
         modestbranding: 1,

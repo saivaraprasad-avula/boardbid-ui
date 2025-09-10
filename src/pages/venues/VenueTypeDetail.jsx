@@ -6,6 +6,7 @@ import HomeBanner from "../../components/HomeBanner.jsx";
 import PricingCTA from "../../components/PricingCTA.jsx";
 import Footer from "../../components/Footer.jsx";
 import YouTubePlayer from "../../components/YouTubePlayer.jsx";
+import Seo from "../../components/Seo.jsx";
 import {
   PlayIcon,
   MapPinIcon,
@@ -93,6 +94,10 @@ export default function VenueTypeDetail() {
 
   return (
     <div className="bg-white pt-24 sm:pt-32">
+      <Seo
+        title={venue ? venue.name : 'Venue Not Found'}
+        description={venue?.websiteCopy}
+      />
       <HeroHeader />
       <HomeBanner />
 

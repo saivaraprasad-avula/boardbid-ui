@@ -10,10 +10,12 @@ import FooterCTA from '../components/FooterCTA';
 import MediaFormatsBento from "../components/VenuesSection";
 import { posts } from '../data/blogs';
 import HomeBanner from '../components/HomeBanner';
+import Seo from '../components/Seo.jsx';
 
 export default function Home() {
   return (
     <>
+      <Seo title="Home" />
       <HomeBanner />
       <HeroSection />
       <HowItWorks />

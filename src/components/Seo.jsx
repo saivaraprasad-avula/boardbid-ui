@@ -4,8 +4,7 @@ import { Helmet } from 'react-helmet-async';
 const DEFAULTS = {
   siteName: 'BoardBid.ai',
   baseUrl: 'https://boardbid.ai',
-  // Replace with a real OG image hosted on your domain if you have one:
-  ogImage: 'https://boardbid.ai/og/boardbid-og.png',
+  ogImage: 'https://ik.imagekit.io/boardbid/BoardBid-OG.jpg?updatedAt=1757489348517',
   description:
     'BoardBid.ai makes DOOH advertising simple—discover inventory, build campaigns, and launch across digital billboards with ease.',
 };
