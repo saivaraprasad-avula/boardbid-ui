@@ -4,21 +4,13 @@ import React, { useState } from 'react';
 import Drawer from './Drawer';
 import VenueList from './VenueList';
 import LandingSectionHeading from './LandingSectionHeading';
+import { venueTypes } from '../data/venueTypes.js';
 
 export default function VenuesSection() {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   // All Venues
-  const allVenues = [
-    { name: 'Airports' }, { name: 'Bars' }, { name: 'Billboards' }, { name: 'Casual Dining' },
-    { name: 'Convenience Stores' }, { name: 'Colleges & Universities' }, { name: 'Dispensaries' },
-    { name: 'DMVs' }, { name: "Doctor’s Offices" }, { name: 'Gas Stations' }, { name: 'Gyms' },
-    { name: 'Hotels' }, { name: 'Liquor Stores' }, { name: 'Malls' }, { name: 'Movie Theaters' },
-    { name: 'Office Buildings' }, { name: 'Pharmacies' }, { name: 'QSR' }, { name: 'Recreational Locations' },
-    { name: 'Retail' }, { name: 'Salons' }, { name: 'Schools' }, { name: 'Sports Entertainment' },
-    { name: 'Street Furniture' }, { name: 'Taxis & Rideshares' }, { name: 'Transit Stations' },
-    { name: 'Urban Panels' }, { name: 'Veterinary Offices' },
-  ];
+  const allVenues = venueTypes.map(({ slug, name, image }) => ({ slug, name, image }));
 
   // Top Venues
   const topVenues = [
