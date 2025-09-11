@@ -32,7 +32,7 @@ Airline lounges and priority lanes add further audience refinement. Creative can
     slug: 'bars',
     name: 'Bars',
     image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/Bars.avif?updatedAt=1757390459787',
-    youtubeId: '',
+    youtubeId: '0H2a4e2FvvE',
     websiteCopy: `Bars and pubs are social, high-energy environments. Screens sit near seating clusters and at the bar, often integrated with live sports, trivia, or music. Guests linger, making repeated exposures natural. Tone can be playful and timely — think score triggers or happy-hour windows.`,
     videoCopy: `Bring your brand into big-game moments and weekend rituals with context-aware placements.`,
     highlights: [
