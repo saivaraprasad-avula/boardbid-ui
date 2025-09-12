@@ -149,8 +149,8 @@ Airline lounges and priority lanes add further audience refinement. Creative can
     ],
   },
   {
-    slug: 'dmv',
-    name: 'DMVs',
+    slug: 'dma',
+    name: 'DMAs',
     image: 'https://ik.imagekit.io/boardbid/Venue%20Type%20Images/DMVs.avif?updatedAt=1757488499986',
     youtubeId: '',
     websiteCopy: `DMVs offer unusually long dwell in a civic setting. Messaging is best when useful or safety-oriented, with clear local relevance. Insurance, auto services, training, and public service campaigns feel native here.`,
