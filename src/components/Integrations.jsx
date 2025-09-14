@@ -8,13 +8,6 @@ export default function Integrations() {
     { id: 5, name: 'Countries', value: '22' },
   ];
 
-  const partners = [
-    {
-      name: 'Vistar Media',
-      src:'https://ik.imagekit.io/boardbid/vistar-media-logo.svg?updatedAt=1754582368549'
-    }
-  ];
-
   return (
     <section className="py-12 px-6 text-center bg-white mb-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -46,16 +39,6 @@ export default function Integrations() {
           </div>
           </div>
       </div> 
-      </div>
-
-      {/* Powered by */}
-      <div className="mt-10 text-center">
-        <p className="text-gray-600 text-sm mb-3">Powered by</p>
-        <div className="flex justify-center items-center">
-          {partners.map((p, i) => (
-            <img key={i} src={p.src} alt={p.name} className="h-8 transform transition duration-300 hover:scale-105" />
-          ))}
-        </div>
       </div>
     </section>
   );

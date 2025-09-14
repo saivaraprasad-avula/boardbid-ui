@@ -100,11 +100,7 @@ export default function Hero() {
               style={{ backgroundColor: BAND_BG }}
             >
               <p className="text-center text-xs sm:text-sm md:text-base font-medium text-white max-w-[960px] mx-auto leading-relaxed">
-                Available across the world’s top media owners:{' '}
-                <span className="font-semibold">Clear Channel Outdoor</span> ·{' '}
-                <span className="font-semibold">Lamar</span> ·{' '}
-                <span className="font-semibold">OUTFRONT</span> ·{' '}
-                <span className="font-semibold">JCDecaux</span> · and hundreds more.
+                Available across leading media owners worldwide, including major billboard and transit networks.
               </p>
             </div>
 

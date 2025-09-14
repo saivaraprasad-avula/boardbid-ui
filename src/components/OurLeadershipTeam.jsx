@@ -7,12 +7,6 @@ const ik = (url, tr) => (url.includes('?') ? `${url}&tr=${tr}` : `${url}?tr=${tr
 
 const people = [
   {
-    name: 'Jamie Rush',
-    role: 'Chief Executive Officer',
-    imageUrl: 'https://ik.imagekit.io/boardbid/Jamie%20Headshot.avif',
-    fit: 'contain', // tall portrait → keep full frame
-  },
-  {
     name: 'Sai Vara Prasad Avula',
     role: 'Chief Technology Officer',
     imageUrl: 'https://ik.imagekit.io/boardbid/Sai%20headshot.avif',
