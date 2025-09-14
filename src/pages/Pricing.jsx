@@ -37,7 +37,7 @@ export default function Pricing() {
           <div className="rounded-2xl ring-1 ring-gray-200 p-8 sm:p-10">
             <h3 className="text-xl font-semibold text-gray-900">Pricing That Fits Your Campaign</h3>
             <p className="mt-4 text-sm text-gray-600">
-              Since our inventory is biddable via Vistar’s DSP, your actual cost is the CPM (cost per thousand
+              Since our inventory is biddable via a leading DOOH DSP, your actual cost is the CPM (cost per thousand
               impressions), which varies by targeting, formats, and demand. Rather than forcing fixed bundles, we tailor
               pricing to each campaign — so you only pay for what delivers the most value to your goals.
             </p>
@@ -55,7 +55,7 @@ export default function Pricing() {
                   <CheckIcon className="h-5 w-5 text-indigo-600" /> Flexible targeting by audience, location, or event
                 </li>
                 <li className="flex gap-x-2">
-                  <CheckIcon className="h-5 w-5 text-indigo-600" /> Powered by Vistar Media’s premium DSP network
+                  <CheckIcon className="h-5 w-5 text-indigo-600" /> Powered by a premium DOOH DSP network
                 </li>
               </ul>
             </div>

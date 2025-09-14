@@ -110,7 +110,7 @@ export default function About() {
               <div>
                 <p className="leading-8">
                   We believe buying outdoor media should be as easy as booking a hotel room—no endless vendor calls, no
-                  hidden markups, no complicated contracts. That’s why we’ve combined Vistar Media’s world-class
+                  hidden markups, no complicated contracts. That’s why we’ve combined world-class
                   programmatic technology with our own AI-driven planning tools, giving advertisers the ability to search,
                   target, bid, and launch campaigns across billboards, transit media, place-based screens, airport displays,
                   mall signage, gas station TV, rideshare ads, point-of-purchase networks, sports venues, street furniture,
