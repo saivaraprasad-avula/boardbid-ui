@@ -11,8 +11,8 @@ export const posts = [
     datetime: '2025-07-21',
     category: { title: 'Marketing', href: '#' },
     author: {
-      name: 'Jamie Rush',
-      role: 'DOOH Marketing Strategist',
+      name: 'Sai Vara Prasad Avula',
+      role: 'CTO, BoardBid.ai',
       href: '#',
       imageUrl: '',
     },
