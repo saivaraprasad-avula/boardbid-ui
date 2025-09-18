@@ -1,5 +1,5 @@
 {
-  "maintenanceMode": true,
+  "maintenanceMode": false,
   "maintenance": {
     "tag": "🚧 Upgrades Underway",
     "heading": "We’ll Be Right Back",
