@@ -68,6 +68,20 @@ boardbid-ui/
    npm run build
    ```
 
+---
+
+## 🛠 Maintenance Mode Toggle
+
+The main site now reads a lightweight runtime config from [`public/app-config.json`](public/app-config.json). Update the
+`maintenanceMode` boolean in that file to switch between the full application and the maintenance splash screen—no rebuild
+required:
+
+- `true` &rarr; Serve the upgrades-in-progress message to all visitors.
+- `false` &rarr; Load the full React application as usual.
+
+You can also customise the maintenance copy, headline, and preview metadata in the same JSON file if you need to adjust the
+messaging while the site is offline.
+
 ## 🔐 Authentication
 
 This project uses [Clerk](https://clerk.com/docs/quickstarts/react) for user management. Provide both development and production publishable keys in your `.env`:
