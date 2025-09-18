@@ -1,0 +1,16 @@
+{
+  "maintenanceMode": true,
+  "maintenance": {
+    "tag": "🚧 Upgrades Underway",
+    "heading": "We’ll Be Right Back",
+    "body": [
+      "The BoardBid.ai experience is getting a fresh upgrade to serve you better. During this short pause, the rest of the site is taking a break. Please stay tuned—we’ll be live again within a few days."
+    ],
+    "contactEmail": "support@boardbid.ai",
+    "meta": {
+      "title": "BoardBid.ai — Upgrades in Progress",
+      "description": "BoardBid.ai is temporarily offline while we roll out new upgrades. Please stay tuned for the relaunch.",
+      "image": "https://ik.imagekit.io/boardbid/BoardBid-OG.jpg?updatedAt=1757489348517"
+    }
+  }
+}
